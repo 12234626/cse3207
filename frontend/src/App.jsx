@@ -5,11 +5,10 @@ import "./App.css";
 function App() {
   return (
     <Routes>
-      <Route src='' />
-      <Route src='' />
+      <Route src="" />
+      <Route src="" />
     </Routes>
   );
 }
 
 export default App;
-
