@@ -15,23 +15,18 @@ class User extends Model {
   
   // 유저 비밀번호
   @AllowNull(false)
-  @Column({type: DataType.INTEGER.UNSIGNED})
-  public password!: number;
-  
-  //유저 학년
-  @AllowNull(false)
-  @Column({type: DataType.INTEGER.UNSIGNED})
-  public grade!: number;
+  @Column({type: DataType.STRING(50)})
+  public password!: string;
 
-  //유저 학과
+  // 유저 학과
   @AllowNull(false)
   @Column({type: DataType.STRING(50)})
   public department!: string;
 
-  //유저 전화번호
+  // 유저 전화번호
   @AllowNull(false)
-  @Column({type: DataType.INTEGER.UNSIGNED})
-  public phoneNum!: number;
+  @Column({type: DataType.STRING(20)})
+  public phone!: string;
 };
 
 export default User;

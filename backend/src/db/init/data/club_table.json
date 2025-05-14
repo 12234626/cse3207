@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Coding Club",
+    "type": "central",
+    "field": "Programming",
+    "admin": 101
+  },
+  {
+    "id": 2,
+    "name": "Music Club",
+    "type": "group",
+    "field": "Music",
+    "admin": 102
+  }
+]

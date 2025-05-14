@@ -2,11 +2,15 @@
   {
     "id": 1,
     "name": "aaa aaa",
-    "password": "bbb_bbb@example.com"
+    "password": "bbbbb",
+    "department": "ccccc",
+    "phone": "123456789"
   },
   {
     "id": 2,
-    "name": "ccc ccc",
-    "password": "ddd_ddd@example.com"
+    "name": "ddd ddd",
+    "password": "eeeeee",
+    "department": "fffff",
+    "phone": "987654321"
   }
 ]

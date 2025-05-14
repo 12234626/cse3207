@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "type": "notice",
+    "title": "Welcome to the Coding Club",
+    "content": "We are excited to have you join our club. Stay tuned for upcoming events!",
+    "club_id": 1
+  },
+  {
+    "id": 2,
+    "type": "event",
+    "title": "Music Club Annual Concert",
+    "content": "Join us for an evening of amazing performances by our talented members.",
+    "club_id": 2
+  }
+]

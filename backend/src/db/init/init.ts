@@ -50,7 +50,7 @@ async function initTable() {
 function syncDB() {
   return new Promise(async function (resolve, reject) {
     // 데이터베이스 초기화
-    // await initDB()
+    await initDB()
 
     // 데이터베이스 연결
     await sequelize
@@ -59,7 +59,7 @@ function syncDB() {
       console.log("데이터베이스 동기화 성공");
   
       // 테이블 데이터 초기화
-      // await initData();
+      await initTable();
 
       resolve(true);
     })
