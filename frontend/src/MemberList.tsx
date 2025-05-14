@@ -5,7 +5,7 @@ function MemberList() {
   return (
     <div className="screen">
       <div className="phoneScreen">
-        <div className="list">
+        <div className="members">
           <div className="element">
             <div className="member">
               <div className="memberName">김ㅇㅇ</div>
@@ -14,9 +14,9 @@ function MemberList() {
             </div>
           </div>
         </div>
-        <div className="view-2">
+        <div className="topBar">
           <div className="back">{"<"}</div>
-          <div className="text-wrapper-3">동아리 부원 명단</div>
+          <div className="memberListText">동아리 부원 명단</div>
         </div>
       </div>
     </div>
