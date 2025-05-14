@@ -15,9 +15,8 @@
   width: 393px;
 }
 
-.screen .list {
+.screen .members {
   background-color: #ffffff;
-  border: 3px solid red;
   height: 728px;
   left: 0;
   position: absolute;
@@ -69,7 +68,35 @@
   top: 19px;
 }
 
-.screen .view-2 {
+.screen .delete {
+  background-color: #9f9f9f1c;
+  border: 1px solid #0000001c;
+  border-radius: 20px;
+  height: 40px;
+  left: 309px;
+  position: absolute;
+  top: 6px;
+  width: 57px;
+}
+/* .screen .buttonBox {
+  border: 3px solid green;
+  height: 40px;
+  left: 309px;
+  position: absolute;
+  top: 6px;
+  width: 57px;
+} */
+
+/* .screen .delete {
+  background-color: #9f9f9f1c;
+  border: 1px solid #0000001c;
+  border-radius: 20px;
+  height: 40px;
+  position: relative;
+  width: 55px;
+} */
+
+.screen .topBar {
   height: 25px;
   left: 16px;
   position: absolute;
@@ -78,6 +105,7 @@
 }
 
 .screen .back {
+  color: white;
   height: 24px;
   left: 0;
   position: absolute;
@@ -85,7 +113,7 @@
   width: 24px;
 }
 
-.screen .text-wrapper-3 {
+.screen .memberListText {
   color: #ffffff;
   font-family: "SeoulNamsan CBL-Regular", Helvetica;
   font-size: 20px;

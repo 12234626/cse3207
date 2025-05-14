@@ -3,32 +3,37 @@ import "./RequestList.css";
 
 function RequestList() {
   return (
-    <div className="div-wrapper">
-      <div className="div">
-        <div className="view">
+    <div className="screen">
+      <div className="phoneScreen">
+        <div className="requests">
           <div className="element">
-            <div className="overlap">
-              <div className="overlap-group-wrapper">
-                <div className="overlap-group">
+            <div className="request">
+              <div className="requestName">김ㅇㅇ</div>
+              <div className="requestInfo">ㅇㅇ학과 학번</div>
+              <button className="refusal">
+                거절
+                {/* <button className="overlap-group">거절
                   <div className="text-wrapper">거절</div>
-                </div>
-              </div>
+                </button> */}
+              </button>
 
-              <div className="overlap-wrapper">
-                <div className="overlap-group">
+              <button className="acceptance">
+                수락
+                {/* <button className="overlap-group">
+                  수락
                   <div className="text-wrapper-2">수락</div>
-                </div>
-              </div>
+                </button> */}
+              </button>
 
-              <div className="text-wrapper-3">김ㅇㅇ</div>
-              <div className="text-wrapper-4">ㅇㅇ학과 학번</div>
+              {/* <div className="requestName">김ㅇㅇ</div>
+              <div className="requestInfo">ㅇㅇ학과 학번</div> */}
             </div>
           </div>
         </div>
 
-        <div className="view-2">
-          <div className="back">화살표</div>
-          <div className="text-wrapper-5">받은 가입 요청</div>
+        <div className="topBar">
+          <div className="back">{"<"}</div>
+          <div className="requestListText">받은 가입 요청</div>
         </div>
       </div>
     </div>
