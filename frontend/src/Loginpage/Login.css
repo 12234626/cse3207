@@ -1,0 +1,130 @@
+.screen {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .screen .div {
+    background-color: #ffffff;
+    height: 852px;
+    position: relative;
+    width: 393px;
+  }
+  
+  .screen .text-wrapper {
+    color: #0000009c;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 15px;
+    font-weight: 700;
+    left: 196px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-decoration: underline;
+    top: 474px;
+    width: 107px;
+  }
+  
+  .screen .text-wrapper-2 {
+    color: #0000009c;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 15px;
+    font-weight: 700;
+    left: 118px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-decoration: underline;
+    top: 474px;
+    width: 60px;
+  }
+  
+  .screen .view {
+    height: 108px;
+    left: 269px;
+    position: absolute;
+    top: 344px;
+    width: 77px;
+  }
+  
+  .screen .overlap-group {
+    background-color: var(--maincolor);
+    border-radius: 5px;
+    height: 108px;
+    position: relative;
+    width: 72px;
+  }
+  
+  .screen .LOGIN {
+    height: 23px;
+    left: 8px;
+    position: absolute;
+    top: 45px;
+    width: 56px;
+  }
+  
+  .screen .overlap-wrapper {
+    height: 48px;
+    left: 62px;
+    position: absolute;
+    top: 404px;
+    width: 193px;
+  }
+  
+  .screen .overlap {
+    background-color: #f5f5f5;
+    border: 1px solid;
+    border-color: #00000040;
+    border-radius: 5px;
+    height: 48px;
+    position: relative;
+    width: 191px;
+  }
+  
+  .screen .text-wrapper-3 {
+    color: #0000009c;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 15px;
+    font-weight: 700;
+    left: 19px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 13px;
+    white-space: nowrap;
+    width: 81px;
+  }
+  
+  .screen .overlap-group-wrapper {
+    height: 48px;
+    left: 62px;
+    position: absolute;
+    top: 345px;
+    width: 193px;
+  }
+  
+  .screen .text-wrapper-4 {
+    color: #0000009c;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 15px;
+    font-weight: 700;
+    left: 19px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    white-space: nowrap;
+    width: 37px;
+  }
+  
+  .screen .view-2 {
+    background-color: #899ec7;
+    height: 63px;
+    left: 137px;
+    position: absolute;
+    top: 246px;
+    width: 119px;
+  }
+  
