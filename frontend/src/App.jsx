@@ -1,24 +1,15 @@
 import React from "react";
-import "./MemberList.css";
+import { Route } from "react-router-dom";
+import "./App.css";
 
-function MemberList() {
+function App() {
   return (
-    <div className="screen">
-      <div className="phoneScreen">
-        <div className="list">
-          {/* <div className="element"> */}
-          <div className="member">
-            <div className="memberName">김ㅇㅇ</div>
-            <div className="memberInfo">ㅇㅇ학과 학번</div>
-          </div>
-          {/* </div> */}
-        </div>
-        <div className="view-2">
-          <div className="back">{"<"}</div>
-          <div className="text-wrapper-3">동아리 부원 명단</div>
-        </div>
-      </div>
-    </div>
+    <Routes>
+      <Route src='' />
+      <Route src='' />
+    </Routes>
   );
 }
-export default MemberList;
+
+export default App;
+
