@@ -66,8 +66,7 @@ function MainDong() {
         </div>
       </div>
     </div>
-        );
-    }
+  );
+}
 
-
-export default Main;
+export default MainDong;
