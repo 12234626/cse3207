@@ -1,0 +1,135 @@
+.screen {
+  background-color: #ffffff;
+  border: 3px solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .phoneScreen {
+  background-color: #ffffff;
+  border: 3px, solid red;
+  height: 852px;
+  position: relative;
+  width: 393px;
+}
+
+.screen .findPW {
+  color: #0000009c;
+  font-family: "Inter-Bold";
+  font-size: 15px;
+  font-weight: 700;
+  left: 196px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-decoration: underline;
+  top: 474px;
+  width: 107px;
+}
+
+.screen .joinTheMembership {
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 15px;
+  font-weight: 700;
+  left: 118px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-decoration: underline;
+  top: 474px;
+  width: 60px;
+}
+
+.screen .login {
+  background-color: rgba(92, 110, 247, 1);
+  text-align: center;
+  border-radius: 5px;
+  height: 108px;
+  left: 269px;
+  position: absolute;
+  top: 350px;
+  width: 77px;
+}
+
+/* .screen .overlap-group {
+  border-radius: 5px;
+  height: 108px;
+  position: absolute;
+  width: 72px;
+} */
+
+/* .screen .login {
+  height: 23px;
+  left: 8px;
+  position: absolute;
+  top: 45px;
+  width: 56px;
+} */
+
+.screen .PWbox {
+  border: 3px, solid green;
+  height: 48px;
+  left: 62px;
+  position: absolute;
+  top: 404px;
+  width: 193px;
+}
+
+/* .screen .overlap {
+  background-color: #f5f5f5;
+  border: 1px solid;
+  border-color: #000000;
+  border-radius: 5px;
+  height: 48px;
+  position: relative;
+  width: 191px;
+} */
+
+.screen .inputPW {
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 5px;
+  white-space: nowrap;
+  width: 180px;
+  height: 25px;
+}
+
+.screen .SIDbox {
+  border: 3px solid orange;
+  height: 48px;
+  left: 62px;
+  position: absolute;
+  top: 345px;
+  width: 193px;
+}
+
+.screen .inputSid {
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 10px;
+  white-space: nowrap;
+  width: 180px;
+  height: 25px;
+}
+
+.screen .logo {
+  background-color: #899ec7;
+  height: 63px;
+  left: 137px;
+  position: absolute;
+  top: 246px;
+  width: 119px;
+}
