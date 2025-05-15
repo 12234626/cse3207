@@ -1,12 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
+  const navigate = useNavigate();
+
+  const handleSignUpClick = () => {
+    navigate("/Signp");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
         <div className="findPW">비밀번호찾기</div>
-        <div className="joinTheMembership">회원가입</div>
+        <div className="joinTheMembership" onClick={handleSignUpClick}>
+          회원가입
+        </div>
         <button className="login">LOGIN</button>
         <div className="SIDbox">
           {/* <div className="overlap-group"> */}

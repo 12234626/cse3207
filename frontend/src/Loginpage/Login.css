@@ -103,6 +103,7 @@
 }
 
 .screen .SIDbox {
+  border: 3px solid orange;
   height: 48px;
   left: 62px;
   position: absolute;
