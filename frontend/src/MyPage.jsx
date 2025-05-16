@@ -10,70 +10,71 @@ import "./MyPage.css";
 function MyPage() {
   return (
     <div className="screen">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="view">
-            <div className="overlap-group-wrapper">
+      <div className="phoneScreen">
+        <div className="main">
+          <div className="myPageScreen">
+            {/* <div className="overlap-group-wrapper">
               <div className="overlap-group">
                 <div className="text-wrapper">탈퇴</div>
 
                 <div className="image" alt="Image" />
               </div>
-            </div>
+            </div> */}
 
-            <div className="div-wrapper">
+            {/* <div className="div-wrapper">
               <div className="overlap-group">
                 <div className="text-wrapper">문의사항</div>
 
                 <div className="image" alt="Image" />
               </div>
-            </div>
+            </div> */}
 
-            <div className="div">
-              <div className="overlap-group">
-                <div className="text-wrapper">관리자 권한</div>
+            <div className="createClub">
+              <div className="listBox">
+                <div className="textMyPage">동아리 생성</div>
 
-                <div className="image" alt="Image" />
+                <button className="enterButton" alt="Image" />
               </div>
             </div>
 
-            <div className="view-2">
-              <div className="overlap-group">
-                <div className="text-wrapper">동아리 가입 요청 현황</div>
+            <div className="requestStatus">
+              <div className="listBox">
+                <div className="textMyPage">동아리 가입 요청 현황</div>
 
-                <div className="image" alt="Image" />
+                <button className="enterButton" alt="Image" />
               </div>
             </div>
 
-            <div className="view-3">
-              <div className="overlap-group">
-                <div className="text-wrapper">내가 가입한 동아리</div>
+            <div className="joinedClub">
+              <div className="listBox">
+                <div className="textMyPage">내가 가입한 동아리</div>
 
-                <div className="image" alt="Image" />
+                <button className="enterButton" alt="Image" />
               </div>
             </div>
 
-            <div className="view-4">
-              <div className="overlap-2">
-                <div className="text-wrapper-2">회원 정보 수정</div>
+            <div className="fixMemberInfo">
+              <div className="fixMemberInfo1">
+                <div className="fixInfoButton">회원 정보 수정</div>
 
-                <div className="view-5" />
+                <div className="profileImage" />
 
-                <div className="text-wrapper-3">학번, 학과</div>
+                <div className="sidAndMajor">학번, 학과</div>
 
-                <div className="text-wrapper-4">이름</div>
+                <div className="name">이름</div>
               </div>
             </div>
           </div>
 
-          <div className="view-6">
-            <div className="view-7">
-              <div className="overlap-group-2">
-                <div className="text-wrapper-5">마이페이지</div>
-              </div>
-            </div>
+          <div className="top">
+            {/* <div className="view-7"> */}
+            <button className="myPageY">
+              마이페이지
+              {/* <div className="text-wrapper-5">마이페이지</div> */}
+            </button>
+            {/* </div> */}
 
-            <div className="img" alt="Image" />
+            <button className="home" alt="Image"></button>
           </div>
         </div>
       </div>
