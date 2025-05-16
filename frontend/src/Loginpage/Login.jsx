@@ -9,13 +9,19 @@ function Login() {
     navigate("/SignUp");
   };
 
+  const handleLoginClick = () => {
+    navigate("/MainDong");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
         <div className="joinTheMembership" onClick={handleSignUpClick}>
           회원가입
         </div>
-        <button className="login">LOGIN</button>
+        <button className="login" onClick={handleLoginClick}>
+          LOGIN
+        </button>
         <div className="SIDbox">
           {/* <div className="overlap-group"> */}
           {/* <div className="text-wrapper-3">비밀번호</div> */}
