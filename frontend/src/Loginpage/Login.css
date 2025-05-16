@@ -1,6 +1,5 @@
 .screen {
   background-color: #ffffff;
-  border: 3px solid blue;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9,13 +8,12 @@
 
 .screen .phoneScreen {
   background-color: #ffffff;
-  border: 3px, solid red;
   height: 852px;
   position: relative;
   width: 393px;
 }
 
-.screen .findPW {
+/* .screen .findPW {
   color: #0000009c;
   font-family: "Inter-Bold";
   font-size: 15px;
@@ -27,19 +25,19 @@
   text-decoration: underline;
   top: 474px;
   width: 107px;
-}
+} */
 
 .screen .joinTheMembership {
   color: #0000009c;
   font-family: "Inter-Bold", Helvetica;
   font-size: 15px;
   font-weight: 700;
-  left: 118px;
+  left: 167px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   text-decoration: underline;
-  top: 474px;
+  top: 480px;
   width: 60px;
 }
 
@@ -70,7 +68,6 @@
 } */
 
 .screen .PWbox {
-  border: 3px, solid green;
   height: 48px;
   left: 62px;
   position: absolute;
@@ -103,7 +100,6 @@
 }
 
 .screen .SIDbox {
-  border: 3px solid orange;
   height: 48px;
   left: 62px;
   position: absolute;

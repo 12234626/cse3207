@@ -1,7 +1,7 @@
 import React from "react";
 import "./SignUp.css";
 
-function SignUp(){
+function SignUp() {
   return (
     <div className="screen">
       <div className="div">
@@ -43,6 +43,6 @@ function SignUp(){
       </div>
     </div>
   );
-};
+}
 
 export default SignUp;

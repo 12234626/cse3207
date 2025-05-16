@@ -12,7 +12,6 @@ function Login() {
   return (
     <div className="screen">
       <div className="phoneScreen">
-        <div className="findPW">비밀번호찾기</div>
         <div className="joinTheMembership" onClick={handleSignUpClick}>
           회원가입
         </div>
