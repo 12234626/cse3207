@@ -15,7 +15,7 @@ function Login() {
 
   return (
     <div className="screen">
-      <div className="phoneScreen">
+      <div className="LoginScreen">
         <div className="joinTheMembership" onClick={handleSignUpClick}>
           회원가입
         </div>

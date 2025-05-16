@@ -10,7 +10,7 @@ function SignUp() {
   };
   return (
     <div className="screen">
-      <div className="phoneScreen">
+      <div className="SignUpScreen">
         <div className="inputPW">
           {/* <div className="rectangle" /> */}
           <input
@@ -21,7 +21,7 @@ function SignUp() {
             autocomplete="on"
           />
 
-          <div className="text-wrapper">비밀번호</div>
+          <div className="texts">비밀번호</div>
         </div>
 
         <div className="inputPhone">
@@ -34,7 +34,7 @@ function SignUp() {
             id="name"
             autocomplete="on"
           />
-          <div className="text-wrapper">전화번호</div>
+          <div className="texts">전화번호</div>
         </div>
 
         <div className="inputMajor">
@@ -47,7 +47,7 @@ function SignUp() {
             id="name"
             autocomplete="on"
           />
-          <div className="text-wrapper">학과</div>
+          <div className="texts">학과</div>
         </div>
 
         <div className="inputSid">
@@ -60,7 +60,7 @@ function SignUp() {
             autocomplete="on"
           />
 
-          <div className="text-wrapper">학번</div>
+          <div className="texts">학번</div>
         </div>
 
         <div className="inputName">
@@ -73,7 +73,7 @@ function SignUp() {
             autocomplete="on"
           />
 
-          <div className="text-wrapper">이름</div>
+          <div className="texts">이름</div>
         </div>
 
         <button className="joinButton" onClick={handleSignUpClick}>

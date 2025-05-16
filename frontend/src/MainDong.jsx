@@ -32,26 +32,26 @@ function MainDong() {
             </button>
           </div>
 
-          <div className="view-2">
-            <div className="view-3">
-              <div className="overlap-group-3">
-                <div className="text-wrapper-3">모집중</div>
+          <div className="clubScreen">
+            <div className="term">
+              <div className="term1">
+                <div className="textTerm">모집중</div>
               </div>
             </div>
 
-            <div className="view-4">
-              <div className="overlap-3">
-                <div className="text-wrapper-4">분야:</div>
+            <div className="category">
+              <div className="category1">
+                <div className="textCategory1">분야:</div>
 
-                <div className="text-wrapper-5">연구</div>
+                <div className="textCategory2">연구</div>
               </div>
             </div>
 
-            <div className="view-5">
-              <div className="overlap-4">
-                <div className="text-wrapper-4">영역:</div>
+            <div className="range">
+              <div className="range1">
+                <div className="textRange1">영역:</div>
 
-                <div className="text-wrapper-6">중앙동아리</div>
+                <div className="textRange2">중앙동아리</div>
               </div>
             </div>
 

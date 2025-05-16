@@ -128,7 +128,7 @@
   white-space: nowrap;
 } */
 
-.screen .view-2 {
+.screen .clubScreen {
   border: 3px solid red;
   background-color: #ffffff;
   height: 728px;
@@ -138,7 +138,7 @@
   width: 393px;
 }
 
-.screen .view-3 {
+.screen .term {
   border: 3px solid orange;
   height: 31px;
   left: 283px;
@@ -147,7 +147,7 @@
   width: 75px;
 }
 
-.screen .overlap-group-3 {
+.screen .term1 {
   background-color: #9f9f9f1c;
   border: 1px solid;
   border-color: #0000001c;
@@ -157,7 +157,7 @@
   width: 73px;
 }
 
-.screen .text-wrapper-3 {
+.screen .textTerm {
   color: rgba(92, 110, 247, 1);
   font-family: "Inter-Bold", Helvetica;
   font-size: 15px;
@@ -170,7 +170,7 @@
   width: 50px;
 }
 
-.screen .view-4 {
+.screen .category {
   border: 3px solid green;
   height: 31px;
   left: 171px;
@@ -179,7 +179,7 @@
   width: 103px;
 }
 
-.screen .overlap-3 {
+.screen .category1 {
   background-color: #9f9f9f1c;
   border: 1px solid;
   border-color: #0000001c;
@@ -189,7 +189,7 @@
   width: 99px;
 }
 
-.screen .text-wrapper-4 {
+.screen .textCategory1 {
   color: #00000059;
   font-family: "Sedgwick Ave-Regular", Helvetica;
   font-size: 15px;
@@ -202,7 +202,7 @@
   width: 37px;
 }
 
-.screen .text-wrapper-5 {
+.screen .textCategory2 {
   color: rgba(92, 110, 247, 1);
   font-family: "Inter-Bold", Helvetica;
   font-size: 15px;
@@ -215,7 +215,7 @@
   width: 35px;
 }
 
-.screen .view-5 {
+.screen .range {
   border: 3px solid blue;
   height: 31px;
   left: 17px;
@@ -224,7 +224,7 @@
   width: 145px;
 }
 
-.screen .overlap-4 {
+.screen .textRange1 {
   background-color: #9f9f9f1c;
   border: 1px solid;
   border-color: #0000001c;
@@ -234,7 +234,7 @@
   width: 141px;
 }
 
-.screen .text-wrapper-6 {
+.screen .textRange2 {
   color: rgba(92, 110, 247, 1);
   font-family: "Inter-Bold", Helvetica;
   font-size: 15px;

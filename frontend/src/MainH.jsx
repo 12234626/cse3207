@@ -3,11 +3,11 @@ import "./MainH.css";
 
 function MainH() {
   return (
-    <div className="div-wrapper">
-      <div className="overlap-wrapper">
+    <div className="screen">
+      <div className="phoneScreen">
         <div className="overlap">
           <div className="view">
-            {/* <img className="user" alt="User" src={user} /> */}
+            <div className="user" />
           </div>
 
           <div className="overlap-group">

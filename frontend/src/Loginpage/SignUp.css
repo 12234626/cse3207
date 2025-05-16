@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.screen .phoneScreen {
+.screen .SignUpScreen {
   background-color: #ffffff;
   height: 852px;
   position: relative;
@@ -32,7 +32,7 @@
   width: 259px;
 }
 
-.screen .text-wrapper {
+.screen .texts {
   color: #0000009c;
   font-family: "Inter-Bold", Helvetica;
   font-size: 15px;
