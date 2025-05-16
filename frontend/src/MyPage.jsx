@@ -15,8 +15,8 @@ function MyPage() {
     navigate("/MainDong");
   };
 
-  const handleRequestStatus = () => {
-    navigate("/RequestList");
+  const handleFixInfoButton = () => {
+    navigate("/FixMemberInfo");
   };
 
   const handleJoinedClub = () => {
@@ -56,11 +56,7 @@ function MyPage() {
               <div className="listBox">
                 <div className="textMyPage">동아리 가입 요청 현황</div>
 
-                <button
-                  className="enterButton"
-                  alt="Image"
-                  onClick={handleRequestStatus}
-                />
+                <button className="enterButton" alt="Image" />
               </div>
             </div>
 
@@ -78,7 +74,9 @@ function MyPage() {
 
             <div className="fixMemberInfo">
               <div className="fixMemberInfo1">
-                <div className="fixInfoButton">회원 정보 수정</div>
+                <div className="fixInfoButton" onClick={handleFixInfoButton}>
+                  회원 정보 수정
+                </div>
 
                 <div className="profileImage" />
 
