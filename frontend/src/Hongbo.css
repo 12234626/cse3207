@@ -1,119 +1,119 @@
 .screen {
-    background-color: #5c6ef6;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .screen .div {
-    background-color: var(--maincolor);
-    height: 852px;
-    overflow: hidden;
-    position: relative;
-    width: 393px;
-  }
-  
-  .screen .view {
-    height: 728px;
-    left: 0;
-    position: absolute;
-    top: 124px;
-    width: 397px;
-  }
-  
-  .screen .overlap-group {
-    background-color: #ffffff;
-    height: 728px;
-    position: relative;
-    width: 393px;
-  }
-  
-  .screen .text-wrapper {
-    color: #000000;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 17px;
-    font-weight: 700;
-    left: 31px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 426px;
-  }
-  
-  .screen .rectangle {
-    background-color: #899ec7;
-    height: 160px;
-    left: 27px;
-    position: absolute;
-    top: 61px;
-    width: 160px;
-  }
-  
-  .screen .rectangle-2 {
-    background-color: #899ec7;
-    height: 160px;
-    left: 207px;
-    position: absolute;
-    top: 61px;
-    width: 160px;
-  }
-  
-  .screen .rectangle-3 {
-    background-color: #899ec7;
-    height: 160px;
-    left: 207px;
-    position: absolute;
-    top: 244px;
-    width: 160px;
-  }
-  
-  .screen .rectangle-4 {
-    background-color: #899ec7;
-    height: 160px;
-    left: 27px;
-    position: absolute;
-    top: 244px;
-    width: 160px;
-  }
-  
-  .screen .text-wrapper-2 {
-    color: #000000;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 17px;
-    font-weight: 700;
-    left: 31px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 25px;
-  }
-  
-  .screen .view-2 {
-    height: 24px;
-    left: 16px;
-    position: absolute;
-    top: 86px;
-    width: 217px;
-  }
-  
-  .screen .image {
-    height: 24px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 24px;
-  }
-  
-  .screen .text-wrapper-3 {
-    color: #ffffff;
-    font-family: "SeoulNamsan CBL-Regular", Helvetica;
-    font-size: 20px;
-    font-weight: 400;
-    left: 147px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 2px;
-    white-space: nowrap;
-  }
+  background-color: #5c6ef6;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .div {
+  background-color: var(--maincolor);
+  height: 852px;
+  overflow: hidden;
+  position: relative;
+  width: 393px;
+}
+
+.screen .view {
+  height: 728px;
+  left: 0;
+  position: absolute;
+  top: 124px;
+  width: 397px;
+}
+
+.screen .overlap-group {
+  background-color: #ffffff;
+  height: 728px;
+  position: relative;
+  width: 393px;
+}
+
+.screen .text-wrapper {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 17px;
+  font-weight: 700;
+  left: 31px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 426px;
+}
+
+.screen .rectangle {
+  background-color: #899ec7;
+  height: 160px;
+  left: 27px;
+  position: absolute;
+  top: 61px;
+  width: 160px;
+}
+
+.screen .rectangle-2 {
+  background-color: #899ec7;
+  height: 160px;
+  left: 207px;
+  position: absolute;
+  top: 61px;
+  width: 160px;
+}
+
+.screen .rectangle-3 {
+  background-color: #899ec7;
+  height: 160px;
+  left: 207px;
+  position: absolute;
+  top: 244px;
+  width: 160px;
+}
+
+.screen .rectangle-4 {
+  background-color: #899ec7;
+  height: 160px;
+  left: 27px;
+  position: absolute;
+  top: 244px;
+  width: 160px;
+}
+
+.screen .text-wrapper-2 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 17px;
+  font-weight: 700;
+  left: 31px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 25px;
+}
+
+.screen .view-2 {
+  height: 24px;
+  left: 16px;
+  position: absolute;
+  top: 86px;
+  width: 217px;
+}
+
+.screen .image {
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 24px;
+}
+
+.screen .text-wrapper-3 {
+  color: #ffffff;
+  font-family: "SeoulNamsan CBL-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 147px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 2px;
+  white-space: nowrap;
+}
