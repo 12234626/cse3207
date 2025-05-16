@@ -1,7 +1,104 @@
-.screen{
-    background-color: black;
+.screen {
+  background-color: black;
 }
 
-.text-wrapper{
-    
+.screen .div {
+  background-color: #ffffff;
+  height: 852px;
+  position: relative;
+  width: 393px;
+}
+
+.screen .view {
+  height: 71px;
+  left: 67px;
+  position: absolute;
+  top: 325px;
+  width: 261px;
+}
+
+.screen .rectangle {
+  background-color: #f5f5f5;
+  border: 1px solid #00000040;
+  border-radius: 5px;
+  height: 48px;
+  left: 0;
+  position: absolute;
+  top: 23px;
+  width: 259px;
+}
+
+.screen .text-wrapper {
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 15px;
+  font-weight: 700;
+  left: 5px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 81px;
+}
+
+.screen .view-2 {
+  height: 71px;
+  left: 67px;
+  position: absolute;
+  top: 527px;
+  width: 261px;
+}
+
+.screen .view-3 {
+  height: 71px;
+  left: 67px;
+  position: absolute;
+  top: 426px;
+  width: 261px;
+}
+
+.screen .div-2 {
+  height: 71px;
+  left: 67px;
+  position: absolute;
+  top: 224px;
+  width: 261px;
+}
+.screen .view-4 {
+  height: 71px;
+  left: 67px;
+  position: absolute;
+  top: 123px;
+  width: 261px;
+}
+
+.screen .overlap-group-wrapper {
+  height: 36px;
+  left: 150px;
+  position: absolute;
+  top: 671px;
+  width: 95px;
+}
+
+.screen .overlap-group {
+  background-color: rgba(92, 110, 247, 1);
+  border-radius: 5px;
+  height: 36px;
+  position: relative;
+  width: 93px;
+}
+
+.screen .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 15px;
+  font-weight: 700;
+  left: 19px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 10px;
+  white-space: nowrap;
+  width: 73px;
 }
