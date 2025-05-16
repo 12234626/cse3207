@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./MainH.css";
 
 function MainH() {
+  const navigate = useNavigate();
+
+  const handleMainDongClick = () => {
+    navigate("/MainDong");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -18,9 +25,10 @@ function MainH() {
             </div>
 
             <div className="view-2">
-              <div className="overlap-2">
-                <div className="text-wrapper-2">동아리</div>
-              </div>
+              <button className="clubPost2" onClick={handleMainDongClick}>
+                동아리
+                {/* <div className="text-wrapper-2">동아리</div> */}
+              </button>
             </div>
 
             <div className="view-wrapper">

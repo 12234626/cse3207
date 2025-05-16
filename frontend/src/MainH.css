@@ -83,12 +83,17 @@
   width: 123px;
 }
 
-.screen .overlap-2 {
-  background-color: var(--maincolor);
+.screen .clubPost2 {
+  background-color: rgba(92, 110, 247, 1);
+  border: 0;
   border-radius: 20px 20px 0px 0px;
   height: 59px;
   position: relative;
   width: 121px;
+  color: #ffffff;
+  font-family: "SeoulNamsan CBL-Regular", Helvetica;
+  font-size: 17px;
+  font-weight: 400;
 }
 
 .screen .text-wrapper-2 {
