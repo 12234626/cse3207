@@ -1,5 +1,9 @@
 .screen {
   background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
 .screen .div {
