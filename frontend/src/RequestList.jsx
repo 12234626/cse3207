@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./RequestList.css";
 
 function RequestList() {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate("/MyPage");
+  };
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -32,7 +38,7 @@ function RequestList() {
         </div>
 
         <div className="topBar">
-          <div className="back">{"<"}</div>
+          <button className="back" onClick={handleBackClick}></button>
           <div className="requestListText">받은 가입 요청</div>
         </div>
       </div>
