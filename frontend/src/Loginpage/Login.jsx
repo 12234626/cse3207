@@ -21,7 +21,7 @@ function Login() {
           {/* <div className="text-wrapper-3">비밀번호</div> */}
           <input
             type="text"
-            className="inputSid"
+            className="loginSid"
             name="name"
             id="name"
             autocomplete="on"
@@ -34,7 +34,7 @@ function Login() {
           {/* <div className="text-wrapper-4">학번</div> */}
           <input
             type="password"
-            className="inputPW"
+            className="loginPW"
             name="pw"
             id="pw"
             autocomplete="on"

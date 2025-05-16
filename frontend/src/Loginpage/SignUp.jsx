@@ -4,42 +4,78 @@ import "./SignUp.css";
 function SignUp() {
   return (
     <div className="screen">
-      <div className="div">
-        <div className="view">
-          <div className="rectangle" />
+      <div className="phoneScreen">
+        <div className="inputPW">
+          {/* <div className="rectangle" /> */}
+          <input
+            type="text"
+            className="inputBox"
+            name="name"
+            id="name"
+            autocomplete="on"
+          />
 
           <div className="text-wrapper">비밀번호</div>
         </div>
 
-        <div className="view-2">
-          <div className="rectangle" />
+        <div className="inputPhone">
+          {/* <div className="rectangle" /> */}
 
+          <input
+            type="text"
+            className="inputBox"
+            name="name"
+            id="name"
+            autocomplete="on"
+          />
           <div className="text-wrapper">전화번호</div>
         </div>
 
-        <div className="view-3">
-          <div className="rectangle" />
+        <div className="inputMajor">
+          {/* <div className="rectangle" /> */}
 
+          <input
+            type="text"
+            className="inputBox"
+            name="name"
+            id="name"
+            autocomplete="on"
+          />
           <div className="text-wrapper">학과</div>
         </div>
 
-        <div className="div-2">
-          <div className="rectangle" />
+        <div className="inputSid">
+          {/* <div className="rectangle" /> */}
+          <input
+            type="text"
+            className="inputBox"
+            name="name"
+            id="name"
+            autocomplete="on"
+          />
 
           <div className="text-wrapper">학번</div>
         </div>
 
-        <div className="view-4">
-          <div className="rectangle" />
+        <div className="inputName">
+          {/* <div className="rectangle" /> */}
+          <input
+            type="text"
+            className="inputBox"
+            name="name"
+            id="name"
+            autocomplete="on"
+          />
 
           <div className="text-wrapper">이름</div>
         </div>
 
-        <div className="overlap-group-wrapper">
-          <div className="overlap-group">
+        <button className="joinButton">
+          가입하기
+          {/* <div className="overlap-group">
             <div className="text-wrapper-2">가입하기</div>
-          </div>
-        </div>
+          </div> */}
+        </button>
       </div>
     </div>
   );
