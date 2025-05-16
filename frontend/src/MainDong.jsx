@@ -19,14 +19,14 @@ function MainDong() {
 
           {/* <div className="overlap-group"> */}
           <div className="hongBoButton">
-            <button className="hongBoPost" onClick={handleMainHClick}>
+            <button className="hongBoPostN" onClick={handleMainHClick}>
               홍보게시판
               {/* <div className="text-wrapper">홍보 게시판</div> */}
             </button>
           </div>
 
           <div className="clubButton">
-            <button className="clubPost">
+            <button className="clubPostY">
               동아리
               {/* <div className="text-wrapper-2">동아리</div> */}
             </button>

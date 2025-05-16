@@ -12,13 +12,13 @@
   width: 393px;
 }
 
-.screen .overlap {
+.screen .topBar {
   height: 786px;
   position: relative;
   top: 66px;
 }
 
-.screen .view {
+.screen .myPageButton {
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: inset 0px 4px 4px #00000040;
@@ -45,7 +45,7 @@
   width: 393px;
 }
 
-.screen .overlap-group-wrapper {
+.screen .hongBoButton {
   height: 59px;
   left: 131px;
   position: absolute;
@@ -53,17 +53,22 @@
   width: 123px;
 }
 
-.screen .div {
+.screen .hongBoPostY {
   background-color: #ffffff;
   border-radius: 20px 20px 0px 0px;
+  border: 0;
   box-shadow: inset 0px 4px 4px #00000040;
   height: 59px;
-  position: relative;
+  /* position: relative; */
   width: 121px;
+  color: rgba(92, 110, 247, 1);
+  font-family: "SeoulNamsan CBL-Regular", Helvetica;
+  font-size: 17px;
+  font-weight: 400;
 }
 
-.screen .text-wrapper {
-  color: var(--maincolor);
+/* .screen .text-wrapper {
+  color: rgba(92, 110, 247, 1);
   font-family: "SeoulNamsan CBL-Regular", Helvetica;
   font-size: 20px;
   font-weight: 400;
@@ -73,9 +78,9 @@
   position: absolute;
   top: 20px;
   white-space: nowrap;
-}
+} */
 
-.screen .view-2 {
+.screen .clubButton {
   height: 59px;
   left: 10px;
   position: absolute;
@@ -83,7 +88,7 @@
   width: 123px;
 }
 
-.screen .clubPost2 {
+.screen .clubPostN {
   background-color: rgba(92, 110, 247, 1);
   border: 0;
   border-radius: 20px 20px 0px 0px;
@@ -96,7 +101,7 @@
   font-weight: 400;
 }
 
-.screen .text-wrapper-2 {
+/* .screen .text-wrapper-2 {
   color: #ffffff;
   font-family: "SeoulNamsan CBL-Regular", Helvetica;
   font-size: 20px;
@@ -107,9 +112,9 @@
   position: absolute;
   top: 20px;
   white-space: nowrap;
-}
+} */
 
-.screen .view-wrapper {
+.screen .hongBoScreen {
   background-color: #ffffff;
   height: 728px;
   left: 0;
@@ -118,7 +123,7 @@
   width: 393px;
 }
 
-.screen .view-3 {
+.screen .hongBoList {
   height: 171px;
   left: 6px;
   position: relative;
@@ -126,7 +131,7 @@
   width: 385px;
 }
 
-.screen .overlap-group-2 {
+.screen .hongBo {
   background-color: #ffffff;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -136,7 +141,7 @@
   width: 381px;
 }
 
-.screen .text-wrapper-3 {
+.screen .hongBoName {
   color: #000000;
   font-family: "Inter-Bold", Helvetica;
   font-size: 17px;
@@ -149,7 +154,7 @@
   width: 244px;
 }
 
-.screen .text-wrapper-4 {
+.screen .hongBoInfo {
   color: #00000040;
   font-family: "Inter-Bold", Helvetica;
   font-size: 17px;
@@ -162,7 +167,7 @@
   width: 243px;
 }
 
-.screen .view-4 {
+.screen .hongBoImage {
   background-color: #899ec7;
   height: 89px;
   left: 279px;

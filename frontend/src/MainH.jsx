@@ -12,37 +12,36 @@ function MainH() {
   return (
     <div className="screen">
       <div className="phoneScreen">
-        <div className="overlap">
-          <div className="view">
-            <div className="user" />
+        <div className="topBar">
+          <div className="myPageButton">{/* <div className="user" /> */}</div>
+
+          {/* <div className="overlap-group"> */}
+          <div className="hongBoButton">
+            <button className="hongBoPostY">
+              홍보게시판
+              {/* <div className="text-wrapper">행사 게시판</div> */}
+            </button>
           </div>
 
-          <div className="overlap-group">
-            <div className="overlap-group-wrapper">
-              <div className="div">
-                <div className="text-wrapper">행사 게시판</div>
-              </div>
-            </div>
+          <div className="clubButton">
+            <button className="clubPostN" onClick={handleMainDongClick}>
+              동아리
+              {/* <div className="text-wrapper-2">동아리</div> */}
+            </button>
+          </div>
 
-            <div className="view-2">
-              <button className="clubPost2" onClick={handleMainDongClick}>
-                동아리
-                {/* <div className="text-wrapper-2">동아리</div> */}
-              </button>
-            </div>
+          <div className="hongBoScreen">
+            <div className="hongBoList">
+              <div className="hongBo">
+                <div className="hongBoName">홍보글01</div>
 
-            <div className="view-wrapper">
-              <div className="view-3">
-                <div className="overlap-group-2">
-                  <div className="text-wrapper-3">홍보글01</div>
+                <div className="hongBoInfo">홍보글내용</div>
 
-                  <div className="text-wrapper-4">홍보글내용</div>
-
-                  <div className="view-4" />
-                </div>
+                <div className="hongBoImage" />
               </div>
             </div>
           </div>
+          {/* </div> */}
         </div>
       </div>
     </div>
