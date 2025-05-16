@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 
 function SignUp() {
+  const navigate = useNavigate();
+
+  const handleSignUpClick = () => {
+    navigate("/");
+  };
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -70,7 +76,7 @@ function SignUp() {
           <div className="text-wrapper">이름</div>
         </div>
 
-        <button className="joinButton">
+        <button className="joinButton" onClick={handleSignUpClick}>
           가입하기
           {/* <div className="overlap-group">
             <div className="text-wrapper-2">가입하기</div>
