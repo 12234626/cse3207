@@ -6,6 +6,7 @@ import MainDong from "./MainDong";
 import MainH from "./MainH";
 import MyPage from "./MyPage";
 import RequestList from "./RequestList";
+import MyClubList from "./MyClubList";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/mainH" element={<MainH />} />
       <Route path="/mypage" element={<MyPage />} />
       <Route path="/requestlist" element={<RequestList />} />
+      <Route path="/myclublist" element={<MyClubList />} />
     </Routes>
   );
 }

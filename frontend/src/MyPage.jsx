@@ -19,6 +19,10 @@ function MyPage() {
     navigate("/RequestList");
   };
 
+  const handleJoinedClub = () => {
+    navigate("/MyClubList");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -64,7 +68,11 @@ function MyPage() {
               <div className="listBox">
                 <div className="textMyPage">내가 가입한 동아리</div>
 
-                <button className="enterButton" alt="Image" />
+                <button
+                  className="enterButton"
+                  alt="Image"
+                  onClick={handleJoinedClub}
+                />
               </div>
             </div>
 
