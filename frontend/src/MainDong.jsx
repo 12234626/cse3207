@@ -9,13 +9,19 @@ function MainDong() {
     navigate("/MainH");
   };
 
+  const handleMyPageClick = () => {
+    navigate("/MyPage");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
         <div className="topBar" />
 
         <div className="main">
-          <div className="myPageButton">{/* <div className="user" /> */}</div>
+          <button className="myPageButton" onClick={handleMyPageClick}>
+            {/* <div className="user" /> */}
+          </button>
 
           {/* <div className="overlap-group"> */}
           <div className="hongBoButton">
