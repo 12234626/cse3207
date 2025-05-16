@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./MainDong.css";
 
 function MainDong() {
+  const navigate = useNavigate();
+
+  const handleMainHClick = () => {
+    navigate("/MainH");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -12,7 +19,7 @@ function MainDong() {
 
           {/* <div className="overlap-group"> */}
           <div className="hongBoButton">
-            <button className="hongBoPost">
+            <button className="hongBoPost" onClick={handleMainHClick}>
               홍보게시판
               {/* <div className="text-wrapper">홍보 게시판</div> */}
             </button>

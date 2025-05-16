@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hongbo.css";
 
-function Hongbo(){
+function Hongbo() {
   return (
     <div className="screen">
       <div className="div">
@@ -22,11 +22,11 @@ function Hongbo(){
         </div>
 
         <div className="view-2">
-          <img className="image" alt="Image" src={image} />
+          {/* <img className="image" alt="Image" src={image} /> */}
 
           <div className="text-wrapper-3">동아리01</div>
         </div>
       </div>
     </div>
   );
-};
+}

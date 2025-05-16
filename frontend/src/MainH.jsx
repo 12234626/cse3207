@@ -7,7 +7,7 @@ function MainH() {
       <div className="overlap-wrapper">
         <div className="overlap">
           <div className="view">
-            <img className="user" alt="User" src={user} />
+            {/* <img className="user" alt="User" src={user} /> */}
           </div>
 
           <div className="overlap-group">
@@ -39,4 +39,6 @@ function MainH() {
       </div>
     </div>
   );
-};
+}
+
+export default MainH;
