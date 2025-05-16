@@ -5,13 +5,20 @@ import React from "react";
 // import image5 from "./image-5.svg";
 // import image6 from "./image-6.svg";
 // import image from "./image.svg";
+import { useNavigate } from "react-router-dom";
 import "./MyPage.css";
 
 function MyPage() {
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate("/MainDong");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
-        <div className="main">
+        <div className="myPageMain">
           <div className="myPageScreen">
             {/* <div className="overlap-group-wrapper">
               <div className="overlap-group">
@@ -74,7 +81,11 @@ function MyPage() {
             </button>
             {/* </div> */}
 
-            <button className="home" alt="Image"></button>
+            <button
+              className="home"
+              alt="Image"
+              onClick={handleHomeClick}
+            ></button>
           </div>
         </div>
       </div>
