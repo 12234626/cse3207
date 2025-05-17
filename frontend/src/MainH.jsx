@@ -16,7 +16,7 @@ function MainH() {
   return (
     <div className="screen">
       <div className="phoneScreen">
-        <div className="topBar">
+        <div className="topBar1">
           <button className="myPageButton" onClick={handleMyPageClick}>
             {/* <div className="user" /> */}
           </button>
