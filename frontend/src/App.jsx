@@ -8,6 +8,7 @@ import MyPage from "./MyPage";
 import RequestList from "./RequestList";
 import MyClubList from "./MyClubList";
 import FixMemberInfo from "./FixMemberInfo";
+import RequestStatus from "./RequestStatus";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/requestlist" element={<RequestList />} />
       <Route path="/myclublist" element={<MyClubList />} />
       <Route path="/fixmemberinfo" element={<FixMemberInfo />} />
+      <Route path="/requeststatus" element={<RequestStatus />} />
     </Routes>
   );
 }

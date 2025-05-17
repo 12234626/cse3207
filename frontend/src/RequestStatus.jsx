@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./RequestStatus.css";
 
 function RequestStatus() {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate("/MyPage");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -29,7 +36,7 @@ function RequestStatus() {
             </div>
           </div>
           <div className="view-2">
-            <div className="image"></div>
+            <button className="image" onClick={handleBackClick}></button>
             <div className="text-wrapper-4">동아리 가입 요청 현황</div>
           </div>
         </div>
@@ -37,3 +44,5 @@ function RequestStatus() {
     </div>
   );
 }
+
+export default RequestStatus;

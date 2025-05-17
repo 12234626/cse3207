@@ -23,6 +23,10 @@ function MyPage() {
     navigate("/MyClubList");
   };
 
+  const handleRequestStatus = () => {
+    navigate("/RequestStatus");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -56,7 +60,11 @@ function MyPage() {
               <div className="listBox">
                 <div className="textMyPage">동아리 가입 요청 현황</div>
 
-                <button className="enterButton" alt="Image" />
+                <button
+                  className="enterButton"
+                  alt="Image"
+                  onClick={handleRequestStatus}
+                />
               </div>
             </div>
 
