@@ -9,6 +9,7 @@ import RequestList from "./RequestList";
 import MyClubList from "./MyClubList";
 import FixMemberInfo from "./FixMemberInfo";
 import RequestStatus from "./RequestStatus";
+import CreateClub from "./CreateClub";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path="/myclublist" element={<MyClubList />} />
       <Route path="/fixmemberinfo" element={<FixMemberInfo />} />
       <Route path="/requeststatus" element={<RequestStatus />} />
+      <Route path="/createclub" element={<CreateClub />} />
     </Routes>
   );
 }
