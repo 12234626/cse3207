@@ -9,6 +9,10 @@ function CreateClub() {
     navigate("/MyPage");
   };
 
+  const handleokClick = () => {
+    navigate("/MainDong");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -51,7 +55,7 @@ function CreateClub() {
             </div>
           </div> */}
 
-          <button className="okButton">
+          <button className="okButton" onClick={handleokClick}>
             확인
             {/* <div className="overlap-4">
               <div className="text-wrapper-7">확인</div>
