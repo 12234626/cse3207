@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./FixMemberInfo.css";
 
 function FixMemberInfo() {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate("/MyPage");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -34,7 +41,7 @@ function FixMemberInfo() {
           </button>
         </div>
         <div className="topBar">
-          <button className="back"></button>
+          <button className="back" onClick={handleBackClick}></button>
           <div className="fixMemberInfoText">회원 정보 수정</div>
         </div>
       </div>
