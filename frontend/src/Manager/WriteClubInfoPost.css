@@ -191,8 +191,8 @@
   width: 170px;
 }
 
-.screen .clubInfoBlack {
-  color: #0000009c;
+.screen .clubInfoWhite {
+  color: #ffffff;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
   font-weight: 700;
@@ -213,20 +213,21 @@
   width: 86px;
 } */
 
-.screen .hongboClick {
+.screen .clubInfoClick {
   background-color: rgba(92, 110, 247, 1);
   border: 1px solid;
   border-color: #0000001c;
   border-radius: 20px 0px 0px 20px;
   height: 54px;
-  left: 0;
+  left: 83px;
   position: absolute;
   top: 0;
+  transform: rotate(180deg);
   width: 84px;
 }
 
-.screen .hongboWhite {
-  color: #ffffff;
+.screen .hongboBlack {
+  color: #0000009c;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
   font-weight: 700;
@@ -288,7 +289,7 @@
 }
 
 .screen .back {
-  background-image: url("images/backArrow.svg");
+  background-image: url("../images/backArrow.svg");
   border: 0;
   background-color: rgba(92, 110, 247, 1);
   height: 24px;

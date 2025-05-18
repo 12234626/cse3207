@@ -2,19 +2,19 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./Loginpage/Login";
 import SignUp from "./Loginpage/SignUp";
-import MainDong from "./MainDong";
-import MainH from "./MainH";
-import MyPage from "./MyPage";
-import RequestList from "./RequestList";
-import MyClubList from "./MyClubList";
-import FixMemberInfo from "./FixMemberInfo";
-import RequestStatus from "./RequestStatus";
-import CreateClub from "./CreateClub";
-import JoinedClub from "./JoinedClub";
-import Manager from "./Manager";
-import WriteHongboPost from "./WriteHongboPost";
-import WriteClubInfoPost from "./WriteClubInfoPost";
-import MemberList from "./MemberList";
+import MainDong from "./MainPage/MainDong";
+import MainH from "./PromotionalBoard/MainH";
+import MyPage from "./MyPage/MyPage";
+import RequestList from "./Manager/RequestList";
+import MyClubList from "./MyPage/MyClubList";
+import FixMemberInfo from "./MyPage/FixMemberInfo";
+import RequestStatus from "./MyPage/RequestStatus";
+import CreateClub from "./MyPage/CreateClub";
+import JoinedClub from "./MyPage/JoinedClub";
+import Manager from "./Manager/Manager";
+import WriteHongboPost from "./Manager/WriteHongboPost";
+import WriteClubInfoPost from "./Manager/WriteClubInfoPost";
+import MemberList from "./Manager/MemberList";
 
 function App() {
   return (

@@ -8,13 +8,17 @@
 
 .screen .phoneScreen {
   background-color: rgba(92, 110, 247, 1);
-  border: 1px solid black;
   height: 852px;
-  position: relative;
   width: 393px;
 }
 
-.screen .requests {
+/* .screen .overlap {
+  height: 766px;
+  position: relative;
+  top: 86px;
+} */
+
+.screen .requestStatusMain {
   background-color: #ffffff;
   height: 728px;
   left: 0;
@@ -23,15 +27,15 @@
   width: 393px;
 }
 
-/* .screen .element {
+.screen .requestedClub1Box {
   height: 54px;
   left: 5px;
-  position: relative;
+  position: absolute;
   top: 10px;
-  width: 387px;
-} */
+  width: 385px;
+}
 
-.screen .request {
+.screen .requestedClub1 {
   background-color: #ffffff;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -41,74 +45,7 @@
   width: 383px;
 }
 
-.screen .refusal {
-  background-color: #9f9f9f1c;
-  border: 1px solid #0000001c;
-  border-radius: 20px;
-  height: 40px;
-  left: 320px;
-  position: absolute;
-  top: 6px;
-  width: 57px;
-}
-
-/* .screen .overlap-group {
-  background-color: #9f9f9f1c;
-  border: 1px solid;
-  border-color: #0000001c;
-  border-radius: 20px;
-  height: 40px;
-  position: relative;
-  width: 55px;
-} */
-
-/* .screen .text-wrapper {
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 15px;
-  font-weight: 700;
-  left: 13px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 10px;
-  white-space: nowrap;
-  width: 32px;
-} */
-
-/* .screen .overlap-wrapper {
-  height: 40px;
-  left: 257px;
-  position: absolute;
-  top: 6px;
-  width: 57px;
-} */
-
-.screen .acceptance {
-  background-color: #9f9f9f1c;
-  border: 1px solid #0000001c;
-  border-radius: 20px;
-  height: 40px;
-  left: 257px;
-  position: absolute;
-  top: 6px;
-  width: 57px;
-}
-/* .screen .text-wrapper-2 {
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 15px;
-  font-weight: 700;
-  left: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 10px;
-  white-space: nowrap;
-  width: 32px;
-} */
-
-.screen .requestName {
+.screen .requestedClubName {
   color: #000000;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
@@ -121,28 +58,76 @@
   white-space: nowrap;
 }
 
-.screen .requestInfo {
-  color: #00000040;
+/* .screen .overlap-group-wrapper {
+  height: 35px;
+  left: 287px;
+  position: absolute;
+  top: 7px;
+  width: 89px;
+} */
+
+.screen .statusBox {
+  background-color: #d9d9d970;
+  border: 1px solid;
+  border-color: #6a6a6a3b;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px #00000040;
+  height: 35px;
+  left: 287px;
+  position: absolute;
+  top: 7px;
+  width: 87px;
+  color: #0000009c;
   font-family: "Inter-Bold", Helvetica;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
-  left: 92px;
+}
+
+/* .screen .text-wrapper-2 {
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 15px;
+  font-weight: 700;
+  left: 15px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 19px;
+  top: 8px;
+  white-space: nowrap;
+  width: 56px;
+} */
+
+.screen .requestedClub2Box {
+  height: 54px;
+  left: 5px;
+  position: absolute;
+  top: 75px;
+  width: 385px;
 }
 
-.screen .topBar {
-  height: 24px;
+/* .screen .text-wrapper-3 {
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 15px;
+  font-weight: 700;
+  left: 22px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 8px;
+  white-space: nowrap;
+} */
+
+.screen .topBar2 {
+  height: 42px;
   left: 16px;
   position: absolute;
   top: 86px;
-  width: 237px;
+  width: 300px;
 }
 
 .screen .back {
-  background-image: url("images/backArrow.svg");
+  background-image: url("../images/backArrow.svg");
   border: 0;
   background-color: rgba(92, 110, 247, 1);
   height: 24px;
@@ -152,15 +137,14 @@
   width: 24px;
 }
 
-.screen .requestListText {
+.screen .requestStatusText {
   color: #ffffff;
   font-family: "SeoulNamsan CBL-Regular", Helvetica;
   font-size: 20px;
   font-weight: 400;
-  left: 127px;
+  left: 85px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   top: 2px;
-  white-space: nowrap;
 }
