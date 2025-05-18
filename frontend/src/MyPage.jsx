@@ -60,7 +60,7 @@ function MyPage() {
                   className="enterButton"
                   alt="Image"
                   onClick={handleCreateClub}
-                />
+                ></button>
               </div>
             </div>
 

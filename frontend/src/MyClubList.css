@@ -101,6 +101,9 @@
 }
 
 .screen .clubCommunity {
+  background-image: url("images/arrow1.svg");
+  border: 0;
+  background-color: #ffffff;
   height: 24px;
   left: 347px;
   position: absolute;
