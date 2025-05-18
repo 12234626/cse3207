@@ -24,6 +24,7 @@ function JoinedClub() {
           <button className="back" onClick={handleBackClick}></button>
           <div className="myClubListText">가입한 동아리01</div>
         </div>
+        <button className="managerButton"></button>
       </div>
     </div>
   );
