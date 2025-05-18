@@ -67,7 +67,7 @@
 }
 
 .screen .enterButton {
-  background-image: url("images/arrow1.svg");
+  background-image: url("../images/arrow1.svg");
   border: 0;
   background-color: #ffffff;
   height: 24px;
@@ -223,7 +223,7 @@
 } */
 
 .screen .home {
-  background-image: url("images/homeButton.svg");
+  background-image: url("../images/homeButton.svg");
   border: 0;
   background-color: rgba(92, 110, 247, 1);
   height: 42px;

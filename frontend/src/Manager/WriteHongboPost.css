@@ -199,9 +199,9 @@
   width: 170px;
 }
 
-.screen .clubInfoWhite {
-  color: #ffffff;
-  font-family: "SUITE-Regular", Helvetica !important;
+.screen .clubInfoBlack {
+  color: #0000009c;
+  font-family: "SUITE-Regular", Helvetica;
   font-size: 20px;
   font-weight: 700;
   left: 103px;
@@ -221,22 +221,21 @@
   width: 86px;
 } */
 
-.screen .clubInfoClick {
+.screen .hongboClick {
   background-color: rgba(92, 110, 247, 1);
   border: 1px solid;
   border-color: #0000001c;
   border-radius: 20px 0px 0px 20px;
   height: 54px;
-  left: 83px;
+  left: 0;
   position: absolute;
   top: 0;
-  transform: rotate(180deg);
   width: 84px;
 }
 
-.screen .hongboBlack {
-  color: #0000009c;
-  font-family: "SUITE-Regular", Helvetica !important;
+.screen .hongboWhite {
+  color: #ffffff;
+  font-family: "SUITE-Regular", Helvetica;
   font-size: 20px;
   font-weight: 700;
   left: 24px;
@@ -259,7 +258,7 @@
   top: 650px;
   width: 86px;
   color: #ffffff;
-  font-family: "SUITE-Regular", Helvetica;
+  font-family: "Inter-Bold", Helvetica;
   font-size: 17px;
   font-weight: 700;
 }
@@ -297,7 +296,7 @@
 }
 
 .screen .back {
-  background-image: url("images/backArrow.svg");
+  background-image: url("../images/backArrow.svg");
   border: 0;
   background-color: rgba(92, 110, 247, 1);
   height: 24px;
@@ -309,10 +308,10 @@
 
 .screen .createClubText {
   color: #ffffff;
-  font-family: "SUITE-Regular", Helvetica;
+  font-family: "SeoulNamsan CBL-Regular", Helvetica;
   font-size: 20px;
-  font-weight: 500;
-  left: 140px;
+  font-weight: 400;
+  left: 130px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;

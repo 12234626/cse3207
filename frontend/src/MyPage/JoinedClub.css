@@ -2,7 +2,7 @@
   font-family: "SUITE-Regular";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
     format("woff2");
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -22,7 +22,7 @@
   width: 393px;
 }
 
-.screen .myClubs {
+.screen .myClubPosts {
   background-color: #ffffff;
   height: 728px;
   left: 0;
@@ -39,7 +39,7 @@
   width: 387px;
 } */
 
-.screen .myClub {
+.screen .myClubPost {
   background-color: #ffffff;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -95,7 +95,7 @@
   width: 32px;
 } */
 
-.screen .myClubName {
+.screen .myClubPostName {
   color: #000000;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
@@ -108,17 +108,6 @@
   white-space: nowrap;
 }
 
-.screen .clubCommunity {
-  background-image: url("images/arrow1.svg");
-  border: 0;
-  background-color: #ffffff;
-  height: 24px;
-  left: 347px;
-  position: absolute;
-  top: 13px;
-  width: 24px;
-}
-
 .screen .topBar {
   height: 24px;
   left: 16px;
@@ -128,7 +117,7 @@
 }
 
 .screen .back {
-  background-image: url("images/backArrow.svg");
+  background-image: url("../images/backArrow.svg");
   border: 0;
   background-color: rgba(92, 110, 247, 1);
   height: 24px;
@@ -138,15 +127,26 @@
   width: 24px;
 }
 
-.screen .myClubListText {
+.screen .joinedClubText {
   color: #ffffff;
   font-family: "SUITE-Regular", Helvetica;
   font-size: 20px;
   font-weight: 500;
-  left: 110px;
+  left: 120px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   top: 2px;
   white-space: nowrap;
+}
+
+.screen .managerButton {
+  background-image: url("../images/managerButton.svg");
+  border: 0;
+  background-color: rgba(92, 110, 247, 1);
+  height: 24px;
+  left: 350px;
+  position: absolute;
+  top: 88px;
+  width: 24px;
 }
