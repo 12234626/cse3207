@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Manager.css";
 
 function Manager() {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate("/JoinedClub");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -26,7 +33,7 @@ function Manager() {
           </div>
         </div>
         <div className="view-3">
-          <button className="back"></button>
+          <button className="back" onClick={handleBackClick}></button>
           <div className="text-wrapper-2">관리자 권한</div>
         </div>
       </div>
