@@ -3,11 +3,15 @@ import cors from "cors";
 
 import syncDB from "./db/init/init";
 import db_router from "./db/routes/index";
+import login_router from "./routes/login";
+import register_router from "./routes/register";
+import main_router from "./routes/main";
+import my_router from "./routes/my";
+import club_router from "./routes/club";
 
 const app = express();
 const HOST: string = process.env.HOST || "localhost";
 const PORT: number = Number(process.env.PORT) || 3000;
-
 
 app
 // CORS 설정
@@ -28,7 +32,12 @@ app
   next();
 })
 // 라우터 설정
-.use("/db", db_router);
+.use("/db", db_router)
+.use("/login", login_router)
+.use("/register", register_router)
+.use("/main", main_router)
+.use("/my", my_router)
+.use("/club", club_router);
 
 // 데이터베이스 동기화 및 서버 시작
 syncDB()
