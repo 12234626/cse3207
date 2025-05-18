@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "SUITE-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
 .screen {
   background-color: black;
   display: flex;
@@ -154,9 +162,9 @@
 
 .screen .requestListText {
   color: #ffffff;
-  font-family: "SeoulNamsan CBL-Regular", Helvetica;
+  font-family: "SUITE-Regular", Helvetica;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
   left: 127px;
   letter-spacing: 0;
   line-height: normal;
