@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./MemberList.css";
 
 function MemberList() {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate("/Manager");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -15,7 +22,7 @@ function MemberList() {
           </div>
         </div>
         <div className="topBar">
-          <div className="back">{"<"}</div>
+          <button className="back" onClick={handleBackClick}></button>
           <div className="memberListText">동아리 부원 명단</div>
         </div>
       </div>
