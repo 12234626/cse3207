@@ -14,7 +14,7 @@
   width: 393px;
 }
 
-.screen .myClubs {
+.screen .myClubPosts {
   background-color: #ffffff;
   height: 728px;
   left: 0;
@@ -31,7 +31,7 @@
   width: 387px;
 } */
 
-.screen .myClub {
+.screen .myClubPost {
   background-color: #ffffff;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -87,7 +87,7 @@
   width: 32px;
 } */
 
-.screen .myClubName {
+.screen .myClubPostName {
   color: #000000;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
@@ -98,14 +98,6 @@
   position: absolute;
   top: 13px;
   white-space: nowrap;
-}
-
-.screen .clubCommunity {
-  height: 24px;
-  left: 347px;
-  position: absolute;
-  top: 13px;
-  width: 24px;
 }
 
 .screen .topBar {
@@ -125,7 +117,7 @@
   width: 24px;
 }
 
-.screen .myClubListText {
+.screen .joinedClubText {
   color: #ffffff;
   font-family: "SeoulNamsan CBL-Regular", Helvetica;
   font-size: 20px;

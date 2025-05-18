@@ -12,17 +12,17 @@ function JoinedClub() {
   return (
     <div className="screen">
       <div className="phoneScreen">
-        <div className="myClubs">
+        <div className="myClubPosts">
           <div className="element">
-            <div className="myClub">
-              <div className="myClubName">게시글01</div>
+            <div className="myClubPost">
+              <div className="myClubPostName">게시글01</div>
             </div>
           </div>
         </div>
 
         <div className="topBar">
           <button className="back" onClick={handleBackClick}></button>
-          <div className="myClubListText">가입한 동아리01</div>
+          <div className="joinedClubText">가입한 동아리01</div>
         </div>
         <button className="managerButton"></button>
       </div>
