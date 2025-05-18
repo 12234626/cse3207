@@ -30,10 +30,9 @@
 }
 
 .screen .myPageButton {
-  background-color: #ffffff;
+  background-image: url("images/mypageButton.svg");
   border: 0;
-  border-radius: 20px;
-  box-shadow: inset 0px 4px 4px #00000040;
+  background-color: rgba(92, 110, 247, 1);
   height: 40px;
   left: 338px;
   position: absolute;
