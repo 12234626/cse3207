@@ -9,6 +9,9 @@ function Manager() {
     navigate("/JoinedClub");
   };
 
+  const handleRequestedClick = () => {
+    navigate("/RequestList");
+  };
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -16,7 +19,10 @@ function Manager() {
           <div className="requestsBox">
             {/* <div className="overlap-group"> */}
             <div className="managerListText">받은 가입 요청</div>
-            <button className="nextButton"></button>
+            <button
+              className="nextButton"
+              onClick={handleRequestedClick}
+            ></button>
             {/* </div> */}
           </div>
           <div className="memberListBox">
