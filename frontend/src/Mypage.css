@@ -215,7 +215,9 @@
 } */
 
 .screen .home {
-  color: white;
+  background-image: url("images/homeButton.svg");
+  border: 0;
+  background-color: rgba(92, 110, 247, 1);
   height: 42px;
   left: 327px;
   position: absolute;
