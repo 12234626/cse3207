@@ -9,6 +9,10 @@ function FixMemberInfo() {
     navigate("/MyPage");
   };
 
+  const handleFixClick = () => {
+    navigate("/MyPage");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -32,7 +36,7 @@ function FixMemberInfo() {
             </div>
           </div>
           {/* </div> */}
-          <button className="overlap-group-wrapper">
+          <button className="overlap-group-wrapper" onClick={handleFixClick}>
             수정하기
             {/* <div className="overlap-group">
               수정하기

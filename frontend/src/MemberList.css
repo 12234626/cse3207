@@ -1,6 +1,5 @@
 .screen {
-  background-color: #ffffff;
-  border: 1px solid black;
+  background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9,7 +8,6 @@
 
 .screen .phoneScreen {
   background-color: rgba(92, 110, 247, 1);
-  border: 1px solid black;
   height: 852px;
   position: relative;
   width: 393px;
@@ -105,7 +103,9 @@
 }
 
 .screen .back {
-  color: white;
+  background-image: url("images/backArrow.svg");
+  border: 0;
+  background-color: rgba(92, 110, 247, 1);
   height: 24px;
   left: 0;
   position: absolute;
