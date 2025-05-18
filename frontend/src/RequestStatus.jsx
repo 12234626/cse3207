@@ -37,7 +37,7 @@ function RequestStatus() {
             </div>
           </div>
         </div>
-        <div className="topBar">
+        <div className="topBar2">
           <button className="back" onClick={handleBackClick}></button>
           <div className="requestStatusText">동아리 가입 요청 현황</div>
         </div>
