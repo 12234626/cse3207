@@ -124,7 +124,7 @@
   font-family: "SeoulNamsan CBL-Regular", Helvetica;
   font-size: 20px;
   font-weight: 400;
-  left: 100px;
+  left: 110px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -133,9 +133,12 @@
 }
 
 .screen .managerButton {
+  background-image: url("images/managerButton.svg");
+  border: 0;
+  background-color: rgba(92, 110, 247, 1);
   height: 24px;
   left: 350px;
   position: absolute;
-  top: 86px;
+  top: 88px;
   width: 24px;
 }
