@@ -11,6 +11,7 @@ import FixMemberInfo from "./FixMemberInfo";
 import RequestStatus from "./RequestStatus";
 import CreateClub from "./CreateClub";
 import JoinedClub from "./JoinedClub";
+import Manager from "./Manager";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/requeststatus" element={<RequestStatus />} />
       <Route path="/createclub" element={<CreateClub />} />
       <Route path="/joinedclub" element={<JoinedClub />} />
+      <Route path="/manager" element={<Manager />} />
     </Routes>
   );
 }

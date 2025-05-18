@@ -9,6 +9,10 @@ function JoinedClub() {
     navigate("/MyPage");
   };
 
+  const handleManagerClick = () => {
+    navigate("/Manager");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -24,7 +28,7 @@ function JoinedClub() {
           <button className="back" onClick={handleBackClick}></button>
           <div className="joinedClubText">가입한 동아리01</div>
         </div>
-        <button className="managerButton"></button>
+        <button className="managerButton" onClick={handleManagerClick}></button>
       </div>
     </div>
   );
