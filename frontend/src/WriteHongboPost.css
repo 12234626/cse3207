@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "SUITE-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
 .screen {
   background-color: black;
   display: flex;
@@ -193,7 +201,7 @@
 
 .screen .clubInfoBlack {
   color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
+  font-family: "SUITE-Regular", Helvetica;
   font-size: 20px;
   font-weight: 700;
   left: 103px;
@@ -227,7 +235,7 @@
 
 .screen .hongboWhite {
   color: #ffffff;
-  font-family: "Inter-Bold", Helvetica;
+  font-family: "SUITE-Regular", Helvetica;
   font-size: 20px;
   font-weight: 700;
   left: 24px;
