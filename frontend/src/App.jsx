@@ -10,6 +10,7 @@ import MyClubList from "./MyClubList";
 import FixMemberInfo from "./FixMemberInfo";
 import RequestStatus from "./RequestStatus";
 import CreateClub from "./CreateClub";
+import JoinedClub from "./JoinedClub";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/fixmemberinfo" element={<FixMemberInfo />} />
       <Route path="/requeststatus" element={<RequestStatus />} />
       <Route path="/createclub" element={<CreateClub />} />
+      <Route path="/joinedclub" element={<JoinedClub />} />
     </Routes>
   );
 }
