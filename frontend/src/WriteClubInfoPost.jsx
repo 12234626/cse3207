@@ -9,8 +9,12 @@ function WriteClubInfoPost() {
     navigate("/Manager");
   };
 
-  const handleokClick = () => {
+  const handleOkClick = () => {
     navigate("/MainDong");
+  };
+
+  const handleHongboClick = () => {
+    navigate("/WriteHongboPost");
   };
 
   return (
@@ -48,14 +52,16 @@ function WriteClubInfoPost() {
           {/* <div className="view-3"> */}
           <div className="hongboOrClubInfo">
             <div className="clubInfoClick" />
-            <div className="clubInfo">정보</div>
+            <div className="clubInfoWhite">정보</div>
             {/* <div className="overlap-group-2"> */}
-            <div className="hongbo">홍보</div>
+            <div className="hongboBlack" onClick={handleHongboClick}>
+              홍보
+            </div>
             {/* </div> */}
           </div>
           {/* </div> */}
 
-          <button className="okButton" onClick={handleokClick}>
+          <button className="okButton" onClick={handleOkClick}>
             확인
             {/* <div className="overlap-4">
               <div className="text-wrapper-7">확인</div>
