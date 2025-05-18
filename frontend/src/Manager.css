@@ -13,7 +13,7 @@
   width: 393px;
 }
 
-.screen .view {
+.screen .managerMain {
   background-color: #ffffff;
   height: 728px;
   left: 0px;
@@ -22,15 +22,19 @@
   width: 393px;
 }
 
-.screen .overlap-group-wrapper {
+.screen .requestsBox {
   height: 54px;
   left: 5px;
   position: absolute;
   top: 77px;
   width: 385px;
+  background-color: #ffffff;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #0000001a;
 }
 
-.screen .overlap-group {
+/* .screen .element1 {
   background-color: #ffffff;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -38,9 +42,9 @@
   height: 54px;
   position: relative;
   width: 383px;
-}
+} */
 
-.screen .text-wrapper {
+.screen .managerListText {
   color: #000000;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
@@ -61,25 +65,33 @@
   width: 24px;
 }
 
-.screen .overlap-wrapper {
+.screen .memberListBox {
   height: 54px;
   left: 5px;
   position: absolute;
   top: 144px;
   width: 385px;
+  background-color: #ffffff;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #0000001a;
 }
 
-.screen .view-2 {
+.screen .writePostBox {
   height: 54px;
   left: 5px;
   position: absolute;
   top: 10px;
   width: 385px;
+  background-color: #ffffff;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #0000001a;
 }
 
-.screen .view-3 {
+.screen .topBar {
   height: 24px;
-  left: 0;
+  left: 16px;
   position: absolute;
   top: 86px;
   width: 226px;
@@ -93,12 +105,12 @@
   width: 24px;
 }
 
-.screen .text-wrapper-2 {
+.screen .managerText {
   color: #ffffff;
   font-family: "SeoulNamsan CBL-Regular", Helvetica;
   font-size: 20px;
   font-weight: 400;
-  left: 138px;
+  left: 130px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
