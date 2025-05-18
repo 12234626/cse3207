@@ -1,0 +1,310 @@
+.screen {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .phoneScreen {
+  background-color: rgba(92, 110, 247, 1);
+  height: 852px;
+  position: relative;
+  width: 393px;
+}
+
+.screen .createClubMain {
+  background-color: #ffffff;
+  height: 728px;
+  left: 0;
+  position: absolute;
+  top: 124px;
+  width: 393px;
+}
+
+.screen .URLBox {
+  background-color: #f5f5f5;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
+  height: 63px;
+  left: 19px;
+  position: absolute;
+  top: 563px;
+  width: 357px;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* .screen .overlap-group {
+  background-color: #f5f5f5;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
+  height: 63px;
+  position: relative;
+  width: 355px;
+}
+
+.screen .text-wrapper {
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  left: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 18px;
+  width: 237px;
+} */
+
+.screen .clubInfoInput {
+  background-color: #f5f5f5;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
+  height: 339px;
+  left: 21px;
+  position: absolute;
+  top: 210px;
+  width: 357px;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* .screen .overlap {
+  background-color: #f5f5f5;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
+  height: 339px;
+  position: relative;
+  width: 355px;
+} */
+
+/* .screen .text-wrapper-2 {
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  left: 21px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 32px;
+  white-space: nowrap;
+  width: 237px;
+} */
+
+.screen .clubImgInput {
+  background-color: #6a6a6a3b;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
+  height: 100px;
+  left: 21px;
+  position: absolute;
+  top: 96px;
+  width: 102px;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* .screen .overlap-2 {
+  background-color: #6a6a6a3b;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
+  height: 100px;
+  position: relative;
+  width: 100px;
+} */
+
+/* .screen .text-wrapper-3 {
+  color: #0000009c;
+  font-family: "Inter-Bold" Helvetica;
+  font-size: 50px;
+  font-weight: 700;
+  left: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 21px;
+  white-space: nowrap;
+  width: 39px;
+} */
+
+.screen .postNameInput {
+  background-color: #f5f5f5;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
+  height: 63px;
+  left: 19px;
+  position: absolute;
+  top: 19px;
+  width: 357px;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* .screen .text-wrapper-4 {
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  left: 21px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 23px;
+  width: 237px;
+} */
+
+/* .screen .view-3 {
+  border: 3px solid red;
+  height: 54px;
+  left: 19px;
+  position: absolute;
+  top: 651px;
+  width: 170px;
+} */
+
+.screen .hongboOrClubInfo {
+  background-color: #9f9f9f1c;
+  border: 1px solid;
+  border-color: #0000001c;
+  border-radius: 20px;
+  height: 54px;
+  position: absolute;
+  left: 19px;
+  top: 650px;
+  width: 170px;
+}
+
+.screen .clubInfo {
+  color: #ffffff;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  left: 103px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 14px;
+  white-space: nowrap;
+  width: 237px;
+}
+
+/* .screen .overlap-group-2 {
+  height: 54px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 86px;
+} */
+
+.screen .clubInfoClick {
+  background-color: rgba(92, 110, 247, 1);
+  border: 1px solid;
+  border-color: #0000001c;
+  border-radius: 20px 0px 0px 20px;
+  height: 54px;
+  left: 83px;
+  position: absolute;
+  top: 0;
+  transform: rotate(180deg);
+  width: 84px;
+}
+
+.screen .hongbo {
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  left: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 15px;
+  white-space: nowrap;
+  width: 62px;
+}
+
+.screen .okButton {
+  background-color: rgba(92, 110, 247, 1);
+  border: 1px solid;
+  border-color: #0000001c;
+  border-radius: 5px;
+  height: 54px;
+  left: 292px;
+  position: absolute;
+  top: 650px;
+  width: 86px;
+  color: #ffffff;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* .screen .overlap-4 {
+  background-color: rgba(92, 110, 247, 1);
+  border: 1px solid;
+  border-color: #0000001c;
+  border-radius: 5px;
+  height: 54px;
+  position: relative;
+  width: 84px;
+} */
+
+/* .screen .text-wrapper-7 {
+  color: #ffffff;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  left: 21px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 17px;
+  white-space: nowrap;
+  width: 62px;
+} */
+
+.screen .topBar {
+  height: 24px;
+  left: 16px;
+  position: absolute;
+  top: 86px;
+  width: 226px;
+}
+
+.screen .back {
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 24px;
+}
+
+.screen .createClubText {
+  color: #ffffff;
+  font-family: "SeoulNamsan CBL-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 130px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 2px;
+  white-space: nowrap;
+}

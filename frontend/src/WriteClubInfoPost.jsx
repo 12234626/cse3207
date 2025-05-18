@@ -1,20 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./WriteHongboPost.css";
+import "./WriteClubInfoPost.css";
 
-function WriteHongboPost() {
+function WriteClubInfoPost() {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
     navigate("/Manager");
   };
 
-  const handleOkClick = () => {
+  const handleokClick = () => {
     navigate("/MainDong");
-  };
-
-  const handleClubInfo = () => {
-    navigate("/WriteClubInfoPost");
   };
 
   return (
@@ -51,17 +47,15 @@ function WriteHongboPost() {
 
           {/* <div className="view-3"> */}
           <div className="hongboOrClubInfo">
-            <div className="clubInfo" onClick={handleClubInfo}>
-              정보
-            </div>
+            <div className="clubInfoClick" />
+            <div className="clubInfo">정보</div>
             {/* <div className="overlap-group-2"> */}
-            <div className="hongboClick" />
             <div className="hongbo">홍보</div>
             {/* </div> */}
           </div>
           {/* </div> */}
 
-          <button className="okButton" onClick={handleOkClick}>
+          <button className="okButton" onClick={handleokClick}>
             확인
             {/* <div className="overlap-4">
               <div className="text-wrapper-7">확인</div>
@@ -77,4 +71,4 @@ function WriteHongboPost() {
     </div>
   );
 }
-export default WriteHongboPost;
+export default WriteClubInfoPost;

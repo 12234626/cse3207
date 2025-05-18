@@ -13,6 +13,7 @@ import CreateClub from "./CreateClub";
 import JoinedClub from "./JoinedClub";
 import Manager from "./Manager";
 import WriteHongboPost from "./WriteHongboPost";
+import WriteClubInfoPost from "./WriteClubInfoPost";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route path="/joinedclub" element={<JoinedClub />} />
       <Route path="/manager" element={<Manager />} />
       <Route path="/writehongbopost" element={<WriteHongboPost />} />
+      <Route path="/writeclubinfopost" element={<WriteClubInfoPost />} />
     </Routes>
   );
 }
