@@ -12,6 +12,7 @@ import RequestStatus from "./RequestStatus";
 import CreateClub from "./CreateClub";
 import JoinedClub from "./JoinedClub";
 import Manager from "./Manager";
+import WriteHongboPost from "./WriteHongboPost";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route path="/createclub" element={<CreateClub />} />
       <Route path="/joinedclub" element={<JoinedClub />} />
       <Route path="/manager" element={<Manager />} />
+      <Route path="/writehongbopost" element={<WriteHongboPost />} />
     </Routes>
   );
 }

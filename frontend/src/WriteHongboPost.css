@@ -1,19 +1,19 @@
-/* .div-wrapper {
-  background-color: #5c6ef6;
+.screen {
+  background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
 }
 
-.div-wrapper .div {
+.screen .phoneScreen {
   background-color: rgba(92, 110, 247, 1);
   height: 852px;
   position: relative;
-  width: 393;
+  width: 393px;
 }
 
-.div-wrapper .view {
+.screen .createClubMain {
   background-color: #ffffff;
   height: 728px;
   left: 0;
@@ -22,15 +22,23 @@
   width: 393px;
 }
 
-.div-wrapper .URL {
+.screen .URLBox {
+  background-color: #f5f5f5;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
   height: 63px;
   left: 19px;
   position: absolute;
   top: 563px;
   width: 357px;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.div-wrapper .overlap-group {
+/* .screen .overlap-group {
   background-color: #f5f5f5;
   border: 1px solid;
   border-color: #00000040;
@@ -40,7 +48,7 @@
   width: 355px;
 }
 
-.div-wrapper .text-wrapper {
+.screen .text-wrapper {
   color: #0000009c;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
@@ -51,9 +59,25 @@
   position: absolute;
   top: 18px;
   width: 237px;
+} */
+
+.screen .clubInfoInput {
+  background-color: #f5f5f5;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
+  height: 339px;
+  left: 21px;
+  position: absolute;
+  top: 210px;
+  width: 357px;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.div-wrapper .overlap {
+/* .screen .overlap {
   background-color: #f5f5f5;
   border: 1px solid;
   border-color: #00000040;
@@ -61,9 +85,9 @@
   height: 339px;
   position: relative;
   width: 355px;
-}
+} */
 
-.div-wrapper .text-wrapper-2 {
+/* .screen .text-wrapper-2 {
   color: #0000009c;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
@@ -75,17 +99,25 @@
   top: 32px;
   white-space: nowrap;
   width: 237px;
-}
+} */
 
-.div-wrapper .overlap-group-wrapper {
+.screen .clubImgInput {
+  background-color: #6a6a6a3b;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
   height: 100px;
   left: 21px;
   position: absolute;
   top: 96px;
   width: 102px;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.div-wrapper .overlap-2 {
+/* .screen .overlap-2 {
   background-color: #6a6a6a3b;
   border: 1px solid;
   border-color: #00000040;
@@ -93,9 +125,9 @@
   height: 100px;
   position: relative;
   width: 100px;
-}
+} */
 
-.div-wrapper .text-wrapper-3 {
+/* .screen .text-wrapper-3 {
   color: #0000009c;
   font-family: "Inter-Bold" Helvetica;
   font-size: 50px;
@@ -107,17 +139,25 @@
   top: 21px;
   white-space: nowrap;
   width: 39px;
-}
+} */
 
-.div-wrapper .view-2 {
+.screen .postNameInput {
+  background-color: #f5f5f5;
+  border: 1px solid;
+  border-color: #00000040;
+  border-radius: 5px;
   height: 63px;
   left: 19px;
   position: absolute;
   top: 19px;
   width: 357px;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.div-wrapper .text-wrapper-4 {
+/* .screen .text-wrapper-4 {
   color: #0000009c;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
@@ -128,27 +168,30 @@
   position: absolute;
   top: 23px;
   width: 237px;
-}
+} */
 
-.div-wrapper .view-3 {
+/* .screen .view-3 {
+  border: 3px solid red;
   height: 54px;
   left: 19px;
   position: absolute;
   top: 651px;
   width: 170px;
-}
+} */
 
-.div-wrapper .overlap-3 {
+.screen .hongboOrClubInfo {
   background-color: #9f9f9f1c;
   border: 1px solid;
   border-color: #0000001c;
   border-radius: 20px;
   height: 54px;
-  position: relative;
-  width: 166px;
+  position: absolute;
+  left: 19px;
+  top: 650px;
+  width: 170px;
 }
 
-.div-wrapper .text-wrapper-5 {
+.screen .clubInfo {
   color: #0000009c;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
@@ -162,15 +205,15 @@
   width: 237px;
 }
 
-.div-wrapper .overlap-group-2 {
+/* .screen .overlap-group-2 {
   height: 54px;
   left: 0;
   position: absolute;
   top: 0;
   width: 86px;
-}
+} */
 
-.div-wrapper .rectangle {
+.screen .hongboClick {
   background-color: rgba(92, 110, 247, 1);
   border: 1px solid;
   border-color: #0000001c;
@@ -182,7 +225,7 @@
   width: 84px;
 }
 
-.div-wrapper .text-wrapper-6 {
+.screen .hongbo {
   color: #ffffff;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
@@ -196,15 +239,23 @@
   width: 62px;
 }
 
-.div-wrapper .view-4 {
+.screen .okButton {
+  background-color: rgba(92, 110, 247, 1);
+  border: 1px solid;
+  border-color: #0000001c;
+  border-radius: 5px;
   height: 54px;
   left: 292px;
   position: absolute;
   top: 650px;
   width: 86px;
+  color: #ffffff;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 17px;
+  font-weight: 700;
 }
 
-.div-wrapper .overlap-4 {
+/* .screen .overlap-4 {
   background-color: rgba(92, 110, 247, 1);
   border: 1px solid;
   border-color: #0000001c;
@@ -212,9 +263,9 @@
   height: 54px;
   position: relative;
   width: 84px;
-}
+} */
 
-.div-wrapper .text-wrapper-7 {
+/* .screen .text-wrapper-7 {
   color: #ffffff;
   font-family: "Inter-Bold", Helvetica;
   font-size: 20px;
@@ -226,9 +277,9 @@
   top: 17px;
   white-space: nowrap;
   width: 62px;
-}
+} */
 
-.div-wrapper .view-5 {
+.screen .topBar {
   height: 24px;
   left: 16px;
   position: absolute;
@@ -236,7 +287,7 @@
   width: 226px;
 }
 
-.div-wrapper .back {
+.screen .back {
   height: 24px;
   left: 0;
   position: absolute;
@@ -244,15 +295,15 @@
   width: 24px;
 }
 
-.div-wrapper .text-wrapper-8 {
+.screen .createClubText {
   color: #ffffff;
   font-family: "SeoulNamsan CBL-Regular", Helvetica;
   font-size: 20px;
   font-weight: 400;
-  left: 138px;
+  left: 130px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   top: 2px;
   white-space: nowrap;
-} */
+}

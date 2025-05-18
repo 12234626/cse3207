@@ -12,6 +12,11 @@ function Manager() {
   const handleRequestedClick = () => {
     navigate("/RequestList");
   };
+
+  const handleWritePostClick = () => {
+    navigate("/WriteHongboPost");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -34,7 +39,10 @@ function Manager() {
           <div className="writePostBox">
             {/* <div className="overlap-group"> */}
             <div className="managerListText">게시글 작성</div>
-            <button className="nextButton"></button>
+            <button
+              className="nextButton"
+              onClick={handleWritePostClick}
+            ></button>
             {/* </div> */}
           </div>
         </div>
