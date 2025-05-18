@@ -42,7 +42,7 @@
 }
 
 .screen .login {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #5c6ef7;
   text-align: center;
   border: 0;
   border-radius: 5px;
@@ -53,6 +53,10 @@
   position: absolute;
   top: 350px;
   width: 77px;
+}
+.screen .login:hover {
+  background-color: hsl(233, 76%, 72%); /* 호버 시 더 진한 레드 */
+  transform: scale(1.03);
 }
 
 /* .screen .overlap-group {

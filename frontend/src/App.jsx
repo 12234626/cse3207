@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./Loginpage/Login";
 import SignUp from "./Loginpage/SignUp";
 import MainDong from "./MainPage/MainDong";
-import MainH from "./PromotionalBoard/MainH";
+import MainH from "./EventBoard/MainH";
 import MyPage from "./MyPage/MyPage";
 import RequestList from "./Manager/RequestList";
 import MyClubList from "./MyPage/MyClubList";
@@ -34,6 +34,8 @@ function App() {
       <Route path="/writehongbopost" element={<WriteHongboPost />} />
       <Route path="/writeclubinfopost" element={<WriteClubInfoPost />} />
       <Route path="/memberlist" element={<MemberList />} />
+      <Route path="/Loginpage" element={<Login />} />
+
     </Routes>
   );
 }

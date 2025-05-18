@@ -31,6 +31,10 @@ function MyPage() {
     navigate("/CreateClub");
   };
 
+  const handleWithdraw = () => {
+    navigate("/");
+  }
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -100,8 +104,12 @@ function MyPage() {
 
                 <div className="name">이름</div>
               </div>
-            </div>
+              </div>
+          
+              
           </div>
+         
+        
 
           <div className="top">
             {/* <div className="view-7"> */}
@@ -117,9 +125,10 @@ function MyPage() {
               onClick={handleHomeClick}
             ></button>
           </div>
+          <button className="withdraw" onClick={handleWithdraw}>탈퇴하기</button>
+          </div>
         </div>
       </div>
-    </div>
   );
 }
 

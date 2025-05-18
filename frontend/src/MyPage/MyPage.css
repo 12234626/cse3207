@@ -209,6 +209,28 @@
   font-weight: 700;
 }
 
+.screen .withdraw {
+  position: absolute;
+  top: 678px;
+  left: 164px;
+  padding: 10px 20px; 
+  background-color: #c9bcab; /* 부드러운 레드 */
+  color: white;
+  font-family: "Inter-Bold", Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 9px;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.screen .withdraw:hover {
+  background-color: #e63946; /* 호버 시 더 진한 레드 */
+  transform: scale(1.03);
+}
 /* .screen .text-wrapper-5 {
   color: var(--maincolor);
   font-family: "SeoulNamsan CBL-Regular", Helvetica;
