@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./MainDong.css";
 import MyClubList from "../MyPage/MyClubList";
@@ -6,20 +7,13 @@ import MyClubList from "../MyPage/MyClubList";
 function MainDong() {
   const navigate = useNavigate();
 
-  const [clubs, setClubs] = useState([
-    {
-      clubName: "동아리01",
-      shortInfo: "소개1",
-    },
-    {
-      clubName: "동아리02",
-      shortInfo: "소개2",
-    },
-    {
-      clubName: "동아리03",
-      shortInfo: "소개3",
-    },
-  ]);
+  const [clubs, setClubs] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:3000/db/club").then((response) => {
+      console.debug(response);
+      setClubs([...response.data]);
+    });
+  }, []);
 
   const handleMainHClick = () => {
     navigate("/MainH");
@@ -80,8 +74,8 @@ function MainDong() {
             <div className="clubList">
               {clubs.map((club, index) => (
                 <div key={index} className="club">
-                  <div className="clubName">{club.clubName}</div>
-                  <div className="shortInfo">{club.shortInfo}</div>
+                  <div className="clubName">{club.name}</div>
+                  {/* <div className="shortInfo">{club.shortInfo}</div> */}
                   <div className="apply">
                     <button className="applyButton">신청</button>
                   </div>
