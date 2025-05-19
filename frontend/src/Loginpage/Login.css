@@ -43,17 +43,24 @@
   width: 80px;
 }
 
+.screen .loginForm {
+  left: 62px;
+  position: absolute;
+  top: 345px;
+}
+
 .screen .login {
+  border: 3px solid red;
   background-color: #5c6ef7;
   text-align: center;
-  border: 0;
+  /* border: 0; */
   border-radius: 5px;
   color: white;
   font-size: 15px;
   height: 108px;
-  left: 269px;
+  left: 220px;
   position: absolute;
-  top: 350px;
+  top: 0px;
   width: 77px;
 }
 .screen .login:hover {
@@ -78,9 +85,9 @@
 
 .screen .PWbox {
   height: 48px;
-  left: 62px;
+  /* left: 62px;
   position: absolute;
-  top: 404px;
+  top: 404px; */
   width: 193px;
 }
 
@@ -105,17 +112,17 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 5px;
+  /* top: 5px;
   white-space: nowrap;
-  width: 180px;
+  width: 180px; */
   height: 40px;
 }
 
 .screen .SIDbox {
   height: 48px;
-  left: 62px;
+  /* left: 62px;
   position: absolute;
-  top: 345px;
+  top: 345px; */
   width: 193px;
 }
 
@@ -130,9 +137,9 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 10px;
+  /* top: 10px;
   white-space: nowrap;
-  width: 180px;
+  width: 180px; */
   height: 40px;
 }
 
