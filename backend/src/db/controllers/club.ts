@@ -4,8 +4,25 @@ import sequelize from "../models";
 
 // 모든 동아리 조회
 function getAllClubs(req: Request, res: Response) {
+  const {type, field} = req.query;
+  let query = "SELECT * FROM club_table";
+  const replacements: any = {};
+  const conditions: string[] = [];
+
+  if (type) {
+    conditions.push("type = :type");
+    replacements.type = type;
+  }
+  if (field) {
+    conditions.push("field = :field");
+    replacements.field = field;
+  }
+  if (conditions.length > 0) {
+    query += " WHERE " + conditions.join(" AND ");
+  }
+
   sequelize
-  .query("SELECT * FROM club_table")
+  .query(query, {replacements})
   .then(function ([results]) {
     res
     .status(200)
