@@ -44,7 +44,7 @@ function getUserById(req: Request, res: Response) {
 }
 // 유저 아이디와 비밀번호가 일치하는지 확인
 function checkUserPassword(req: Request, res: Response) {
-  const {id, password} = req.body;
+  const {id, password} = req.query;
 
   sequelize
   .query("SELECT * FROM user_table WHERE id = :id AND password = :password", {

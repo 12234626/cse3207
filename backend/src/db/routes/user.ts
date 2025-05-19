@@ -10,7 +10,7 @@ user_router
 // 아이디로 유저 조회
 .get("/:id", getUserById)
 // 유저 아이디와 비밀번호가 일치하는지 확인
-.put("/login", checkUserPassword)
+.get("/login", checkUserPassword)
 // 유저 생성
 .post("/", createUser)
 // 유저 업데이트
