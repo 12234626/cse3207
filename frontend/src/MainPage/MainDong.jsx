@@ -23,6 +23,12 @@ function MainDong() {
     navigate("/MyPage");
   };
 
+  const handleClubClick = () => {
+    navigate("/Club");
+  };
+
+
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -74,7 +80,7 @@ function MainDong() {
             <div className="clubList">
               <pre>{JSON.stringify(clubs, null, 2)}</pre>
               {clubs.map((club, index) => (
-                <div key={index} className="club">
+                <div key={index} className="club" onClick={handleClubClick}>
                   <div className="clubName">{club.name}</div>
                   {/* <div className="shortInfo">{club.shortInfo}</div> */}
                   <div className="apply">
