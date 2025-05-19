@@ -42,6 +42,21 @@ function getPostById(req: Request, res: Response) {
     .json({message: err});
   });
 }
+// 모든 이벤트 게시글 조회
+function getAllEventPosts(req: Request, res: Response) {
+  sequelize
+  .query("SELECT * FROM post_table WHERE type = 'event'")
+  .then(function ([results]) {
+    res
+    .status(200)
+    .json(results);
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
+}
 // 게시글 생성
 function createPost(req: Request, res: Response) {
   const {id, type, title, content, club_id} = req.body;
@@ -128,6 +143,7 @@ function deletePost(req: Request, res: Response) {
 export {
   getAllPosts,
   getPostById,
+  getAllEventPosts,
   createPost,
   updatePost,
   deletePost
