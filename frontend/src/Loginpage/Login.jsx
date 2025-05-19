@@ -24,7 +24,9 @@ function Login() {
       );
       if (response.ok) {
         const data = await response.json();
+        // console.log("서버 응답 데이터: ", data);
         if (data && Object.keys(data).length > 0) {
+          localStorage.setItem("user", JSON.stringify(data));
           navigate("/MainDong");
         } else {
           alert("학번 또는 비밀번호가 틀렸습니다.");
