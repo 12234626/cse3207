@@ -10,11 +10,15 @@ import "./MyPage.css";
 
 function MyPage() {
   const [user, setUser] = useState(null);
+  const [club, setClub] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const userData = localStorage.getItem("user");
-    console.log("localStorage에서 가져온 user 데이터:", userData); // 디버깅을 위한 로그
+    const clubData = localStorage.getItem("club");
+    console.log("localStorage에서 가져온 user 데이터:", userData);
+    console.log("localStorage에서 가져온 club 데이터:", clubData);
+    
     if (userData) {
       try {
         const parsedUser = JSON.parse(userData);
@@ -23,6 +27,16 @@ function MyPage() {
         console.error("user 데이터 파싱 에러:", error);
       }
     }
+    
+    if (clubData) {
+      try {
+        const parsedClub = JSON.parse(clubData);
+        setClub(parsedClub);
+      } catch (error) {
+        console.error("club 데이터 파싱 에러:", error);
+      }
+    }
+    
     setLoading(false);
   }, []);
 
@@ -130,6 +144,14 @@ function MyPage() {
                 </div>
 
                 <div className="name">{user.name}</div>
+                
+                {club && (
+                  <div className="clubInfo">
+                    <div className="clubIntroduction">
+                      {club.introduction}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

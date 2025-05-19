@@ -1,4 +1,6 @@
 import {Request, Response} from "express";
+import * as fs from 'fs';
+import * as path from 'path';
 
 // 동아리 생성
 function create(req: Request, res: Response) {
@@ -25,6 +27,21 @@ function request(req: Request, res: Response) {
 function write(req: Request, res: Response) {
 }
 
+// 모든 동아리 정보 조회
+function getAllClubs(req: Request, res: Response) {
+  try {
+    const clubData = fs.readFileSync(
+      path.join(__dirname, '../db/init/data/club_table.json'),
+      'utf8'
+    );
+    const clubs = JSON.parse(clubData);
+    res.json(clubs);
+  } catch (error) {
+    console.error('Error reading club data:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
+
 export {
   create,
   post,
@@ -33,5 +50,6 @@ export {
   admin,
   member,
   request,
-  write
+  write,
+  getAllClubs
 };

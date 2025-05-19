@@ -24,9 +24,17 @@ function Login() {
       );
       if (response.ok) {
         const data = await response.json();
-        // console.log("서버 응답 데이터: ", data);
+        console.log("서버 응답 데이터: ", data);
+        console.log("데이터 구조: ", {
+          name: data.name,
+          id: data.id,
+          department: data.department
+        });
         if (data && Object.keys(data).length > 0) {
           localStorage.setItem("user", JSON.stringify(data));
+          if (data.club) {
+            localStorage.setItem("club", JSON.stringify(data.club));
+          }
           navigate("/MainDong");
         } else {
           alert("학번 또는 비밀번호가 틀렸습니다.");

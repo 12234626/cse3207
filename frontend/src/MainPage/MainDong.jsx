@@ -80,7 +80,7 @@ function MainDong() {
               {clubs.map((club, index) => (
                 <div key={index} className="club" onClick={handleClubClick}>
                   <div className="clubName">{club.name}</div>
-                  {/* <div className="shortInfo">{club.shortInfo}</div> */}
+                  <div className="shortInfo">한줄소개</div>
                   <div className="apply">
                     <button className="applyButton">신청</button>
                   </div>

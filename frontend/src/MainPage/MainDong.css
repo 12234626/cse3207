@@ -268,7 +268,7 @@
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #0000001a;
-  height: 54px;
+  height: 70px;
   position: relative;
   width: 387px;
 }
@@ -291,11 +291,11 @@
   font-family: "Inter-Bold", Helvetica;
   font-size: 13px;
   font-weight: 700;
-  left: 108px;
+  left: 22px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 19px;
+  top: 45px;
   width: 210px;
 }
 
@@ -312,7 +312,8 @@
   border: 1px solid;
   border-color: #6a6a6a3b;
   border-radius: 10px;
-  height: 35px;
+  height: 40px;
+  top: 5px;
   position: relative;
   width: 58px;
   color: #0000009c;
