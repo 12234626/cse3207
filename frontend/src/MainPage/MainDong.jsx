@@ -83,7 +83,7 @@ function MainDong() {
                   <div className="clubName">{club.clubName}</div>
                   <div className="shortInfo">{club.shortInfo}</div>
                   <div className="apply">
-                    <button className="applyButton">신청청</button>
+                    <button className="applyButton">신청</button>
                   </div>
                 </div>
               ))}
