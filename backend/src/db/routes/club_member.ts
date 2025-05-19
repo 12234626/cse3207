@@ -7,9 +7,9 @@ const club_member_router = Router();
 
 club_member_router
 // 동아리에 가입한 모든 유저 조회
-.get("/:club_id", getAllClubMembers)
+.get("/club/:club_id", getAllClubMembers)
 // 유저가 가입한 모든 동아리 조회
-.get("/:user_id", getAllUserClubs)
+.get("/user/:user_id", getAllUserClubs)
 // 동아리 가입
 .post("/", createClubMember)
 // 동아리 탈퇴

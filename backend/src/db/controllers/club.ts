@@ -42,33 +42,6 @@ function getClubById(req: Request, res: Response) {
     .json({message: err});
   });
 }
-// 유저가 가입한 동아리 조회
-function getUserClubs(req: Request, res: Response) {
-  const {userId} = req.params;
-
-  sequelize
-  .query("SELECT * FROM club_table WHERE id IN (SELECT club_id FROM user_club_table WHERE user_id = :userId)", {
-    replacements: {userId},
-  })
-  .then(function ([results]) {
-    if (results.length === 0) {
-      res
-      .status(404)
-      .json({message: "가입한 동아리 없음"});
-
-      return;
-    }
-
-    res
-    .status(200)
-    .json(results);
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
-}
 // 동아리 관리자 조회
 function getClubAdmin(req: Request, res: Response) {
   const {id} = req.params;
@@ -187,7 +160,6 @@ function deleteClub(req: Request, res: Response) {
 export {
   getAllClubs,
   getClubById,
-  getUserClubs,
   createClub,
   updateClub,
   deleteClub
