@@ -42,6 +42,31 @@ function getUserById(req: Request, res: Response) {
     .json({message: err});
   });
 }
+// 유저 아이디와 비밀번호가 일치하는지 확인
+function checkUserPassword(req: Request, res: Response) {
+  const {id, password} = req.query;
+
+  sequelize
+  .query("SELECT * FROM user_table WHERE id = :id AND password = :password", {
+    replacements: {id, password},
+  })
+  .then(function ([results]) {
+    if (results.length === 0) {
+      res
+      .status(404)
+      .json({message: "유저 없음"});
+
+      return;
+    }
+
+    res.json(results[0]);
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
+}
 // 유저 생성
 function createUser(req: Request, res: Response) {
   const {id, name, password, department, phone} = req.body;
@@ -129,6 +154,7 @@ function deleteUser(req: Request, res: Response) {
 export {
   getAllUsers,
   getUserById,
+  checkUserPassword,
   createUser,
   updateUser,
   deleteUser

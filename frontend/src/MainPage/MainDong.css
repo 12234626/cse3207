@@ -283,7 +283,7 @@
   line-height: normal;
   position: absolute;
   top: 13px;
-  width: 118px;
+  width: 300px;
 }
 
 .screen .shortInfo {
@@ -334,3 +334,17 @@
   white-space: nowrap;
   width: 37px;
 } */
+.clubList {
+  max-height: 669px; /* 원하는 높이로 설정 */
+  overflow-y: auto;          /* 세로 스크롤만 허용 */
+  overflow-x: hidden;        /* 가로 스크롤은 숨김 */
+  padding-right: 10px; 
+}
+.clubList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.clubList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}

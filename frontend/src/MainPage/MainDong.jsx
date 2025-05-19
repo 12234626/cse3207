@@ -11,7 +11,7 @@ function MainDong() {
   useEffect(() => {
     axios.get("http://localhost:3000/db/club").then((response) => {
       console.debug(response);
-      setClubs([...response.data]);
+      setClubs(response.data);
     });
   }, []);
 
@@ -22,6 +22,12 @@ function MainDong() {
   const handleMyPageClick = () => {
     navigate("/MyPage");
   };
+
+  const handleClubClick = () => {
+    navigate("/Club");
+  };
+
+
 
   return (
     <div className="screen">
@@ -72,8 +78,9 @@ function MainDong() {
             </div>
 
             <div className="clubList">
+              <pre>{JSON.stringify(clubs, null, 2)}</pre>
               {clubs.map((club, index) => (
-                <div key={index} className="club">
+                <div key={index} className="club" onClick={handleClubClick}>
                   <div className="clubName">{club.name}</div>
                   {/* <div className="shortInfo">{club.shortInfo}</div> */}
                   <div className="apply">
