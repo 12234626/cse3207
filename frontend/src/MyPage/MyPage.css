@@ -212,8 +212,8 @@
 .screen .withdraw {
   position: absolute;
   top: 678px;
-  left: 164px;
-  padding: 10px 20px; 
+  left: 150px;
+  padding: 10px 20px;
   background-color: #c9bcab; /* 부드러운 레드 */
   color: white;
   font-family: "Inter-Bold", Helvetica, sans-serif;
