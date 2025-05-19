@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MainDong.css";
+import MyClubList from "../MyPage/MyClubList";
 
 function MainDong() {
   const navigate = useNavigate();
+
+  const [clubs, setClubs] = useState([
+    {
+      clubName: "동아리01",
+      shortInfo: "소개1",
+    },
+    {
+      clubName: "동아리02",
+      shortInfo: "소개2",
+    },
+    {
+      clubName: "동아리03",
+      shortInfo: "소개3",
+    },
+  ]);
 
   const handleMainHClick = () => {
     navigate("/MainH");
@@ -62,7 +78,16 @@ function MainDong() {
             </div>
 
             <div className="clubList">
-              <div className="club">
+              {clubs.map((club, index) => (
+                <div key={index} className="club">
+                  <div className="clubName">{club.clubName}</div>
+                  <div className="shortInfo">{club.shortInfo}</div>
+                  <div className="apply">
+                    <button className="applyButton">신청청</button>
+                  </div>
+                </div>
+              ))}
+              {/* <div className="club">
                 <div className="clubName">동아리01</div>
 
                 <div className="shortInfo">한줄소개</div>
@@ -71,9 +96,9 @@ function MainDong() {
                   <button className="applyButton">
                     신청
                     {/* <div className="text-wrapper-9">신청</div> */}
-                  </button>
+              {/* </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           {/* </div> */}
