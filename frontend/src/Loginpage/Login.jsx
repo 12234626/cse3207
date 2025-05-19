@@ -29,8 +29,8 @@ function Login() {
             <input
               type="text"
               className="loginSid"
-              name="name"
-              id="name"
+              name="id"
+              id="id"
               autocomplete="on"
               placeholder="학번"
             />
@@ -42,8 +42,8 @@ function Login() {
             <input
               type="password"
               className="loginPW"
-              name="pw"
-              id="pw"
+              name="password"
+              id="password"
               autocomplete="on"
               placeholder="비밀번호"
             />
