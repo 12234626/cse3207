@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./MainDong.css";
-import MyClubList from "../MyPage/MyClubList";
+// import MyClubList from "../MyPage/MyClubList";
 
 function MainDong() {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ function MainDong() {
   const [clubs, setClubs] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:3000/db/club").then((response) => {
-      console.debug(response);
+      console.debug("클럽데이터: ", response.data);
       setClubs(response.data);
     });
   }, []);
@@ -76,11 +76,13 @@ function MainDong() {
             </div>
 
             <div className="clubList">
-              {/* <pre>{JSON.stringify(clubs, null, 2)}</pre> */}
+              <pre>{JSON.stringify(clubs, null, 2)}</pre>
               {clubs.map((club, index) => (
                 <div key={index} className="club" onClick={handleClubClick}>
                   <div className="clubName">{club.name}</div>
-                  <div className="shortInfo">한줄소개</div>
+                  <div className="shortInfo">
+                    {club.introduction || "소개 없음"}
+                  </div>
                   <div className="apply">
                     <button className="applyButton">신청</button>
                   </div>
