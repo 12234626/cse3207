@@ -15,6 +15,7 @@ import Manager from "./Manager/Manager";
 import WriteHongboPost from "./Manager/WriteHongboPost";
 import WriteClubInfoPost from "./Manager/WriteClubInfoPost";
 import MemberList from "./Manager/MemberList";
+import Club from "./MainPage/Club";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Route path="/writeclubinfopost" element={<WriteClubInfoPost />} />
       <Route path="/memberlist" element={<MemberList />} />
       <Route path="/Loginpage" element={<Login />} />
+      <Route path="/Club" element={<Club />} />
 
     </Routes>
   );
