@@ -96,8 +96,7 @@ function createUser(req: Request, res: Response) {
 }
 // 유저 업데이트
 function updateUser(req: Request, res: Response) {
-  const {id} = req.params;
-  const {name, password, department, phone} = req.body;
+  const {id, name, password, department, phone} = req.body;
 
   sequelize
   .query("UPDATE user_table SET name = :name, password = :password, grade = :department = :department, phone = :phone WHERE id = :id", {

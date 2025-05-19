@@ -14,7 +14,7 @@ user_router
 // 유저 생성
 .post("/", createUser)
 // 유저 업데이트
-.put("/:id", updateUser)
+.put("/", updateUser)
 // 유저 삭제
 .delete("/:id", deleteUser);
 
