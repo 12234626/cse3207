@@ -1,16 +1,828 @@
 [
   {
     "id": 1,
-    "name": "Coding Club",
+    "name": "개로",
     "type": "central",
-    "field": "Programming",
+    "field": "공연",
     "admin": 101
   },
   {
     "id": 2,
-    "name": "Music Club",
-    "type": "group",
-    "field": "Music",
+    "name": "고전기타회",
+    "type": "central",
+    "field": "공연",
     "admin": 102
+  },
+  {
+    "id": 3,
+    "name": "극단 봄",
+    "type": "central",
+    "field": "공연",
+    "admin": 103
+  },
+  {
+    "id": 4,
+    "name": "꼬망스",
+    "type": "central",
+    "field": "공연",
+    "admin": 104
+  },
+  {
+    "id": 5,
+    "name": "노래사랑",
+    "type": "central",
+    "field": "공연",
+    "admin": 105
+  },
+  {
+    "id": 6,
+    "name": "인하오케스트라",
+    "type": "central",
+    "field": "공연",
+    "admin": 106
+  },
+  {
+    "id": 7,
+    "name": "인다배소리",
+    "type": "central",
+    "field": "공연",
+    "admin": 107
+  },
+  {
+    "id": 8,
+    "name": "인하극예술연구회",
+    "type": "central",
+    "field": "공연",
+    "admin": 108
+  },
+  {
+    "id": 9,
+    "name": "인하인의 피아노 사랑",
+    "type": "central",
+    "field": "공연",
+    "admin": 109
+  },
+  {
+    "id": 10,
+    "name": "인하합창단",
+    "type": "central",
+    "field": "공연",
+    "admin": 110
+  },
+  {
+    "id": 11,
+    "name": "트리키",
+    "type": "central",
+    "field": "공연",
+    "admin": 111
+  },
+  {
+    "id": 12,
+    "name": "판타스틱스테이션",
+    "type": "central",
+    "field": "공연",
+    "admin": 112
+  },
+  {
+    "id": 13,
+    "name": "풍물사랑",
+    "type": "central",
+    "field": "공연",
+    "admin": 113
+  },
+  {
+    "id": 14,
+    "name": "F.L.EX.",
+    "type": "central",
+    "field": "공연",
+    "admin": 114
+  },
+  {
+    "id": 15,
+    "name": "FLAGON",
+    "type": "central",
+    "field": "공연",
+    "admin": 115
+  },
+  {
+    "id": 16,
+    "name": "INDKY",
+    "type": "central",
+    "field": "공연",
+    "admin": 116
+  },
+  {
+    "id": 17,
+    "name": "POP MUSIC",
+    "type": "central",
+    "field": "공연",
+    "admin": 117
+  },
+  {
+    "id": 18,
+    "name": "인성",
+    "type": "central",
+    "field": "공연",
+    "admin": 118
+  },
+  {
+    "id": 19,
+    "name": "가이와",
+    "type": "central",
+    "field": "어학",
+    "admin": 119
+  },
+  {
+    "id": 20,
+    "name": "알파카이",
+    "type": "central",
+    "field": "어학",
+    "admin": 120
+  },
+  {
+    "id": 21,
+    "name": "인하스피치",
+    "type": "central",
+    "field": "어학",
+    "admin": 121
+  },
+  {
+    "id": 22,
+    "name": "AIESEC in INHA",
+    "type": "central",
+    "field": "어학",
+    "admin" : 122
+  },
+  {
+    "id": 23,
+    "name": "A.L.A",
+    "type": "central",
+    "field": "어학",
+    "admin" : 123
+  },
+  {
+    "id": 24,
+    "name": "AZIT",
+    "type": "central",
+    "field": "어학",
+    "admin" : 124
+  },
+  {
+    "id": 25,
+    "name": "Open Seasame",
+    "type": "central",
+    "field": "어학",
+    "admin" : 125
+  },
+  {
+    "id": 26,
+    "name": "TIME 연구회회",
+    "type": "central",
+    "field": "어학",
+    "admin" : 126 
+  },
+  {
+    "id": 27,
+    "name": "나래래",
+    "type": "central",
+    "field": "연구",
+    "admin" : 127
+  },
+  {
+    "id": 28,
+    "name": "로보트연구회",
+    "type": "central",
+    "field": "연구",
+    "admin" : 128
+  },
+  {
+    "id": 29,
+    "name": "별지기",
+    "type": "central",
+    "field": "연구",
+    "admin" : 129
+  },
+  {
+    "id": 30,
+    "name": "보동보동",
+    "type": "central",
+    "field": "연구",
+    "admin" : 130
+  },
+  {
+    "id": 31,
+    "name": "산하사랑",
+    "type": "central",
+    "field": "연구",
+    "admin" : 131
+  },
+  {
+    "id": 32,
+    "name": "아이디어 뱅크",
+    "type": "central",
+    "field": "연구",
+    "admin" : 132
+  },
+  {
+    "id": 33,
+    "name": "인컴",
+    "type": "central",
+    "field": "연구",
+    "admin" : 133
+  },
+  {
+    "id": 34,
+    "name": "인하공방",
+    "type": "central",
+    "field": "연구",
+    "admin" : 134
+  },
+  {
+    "id": 35,
+    "name": "기우회",
+    "type": "central",
+    "field": "연구",
+    "admin" : 135
+  },
+  {
+    "id": 36,
+    "name": "GDSC",
+    "type": "central",
+    "field": "연구",
+    "admin" : 136
+  },
+  {
+    "id": 37,
+    "name": "I.C.C.(Inha Car & Computer research)",
+    "type": "central",
+    "field": "연구",
+    "admin" : 137
+  },
+  {
+    "id": 38,
+    "name": "IBAS",
+    "type": "central",
+    "field": "연구",
+    "admin" : 138
+  },
+  {
+    "id": 39,
+    "name": "UMC",
+    "type": "central",
+    "field": "연구",
+    "admin" : 139
+  },
+  {
+    "id": 40,
+    "name": ".NETers",
+    "type": "central",
+    "field": "연구",
+    "admin" : 140
+  },
+  {
+    "id": 41,
+    "name": "독서 삼매경",
+    "type": "central",
+    "field": "사회",
+    "admin" : 141
+  },
+  {
+    "id": 42,
+    "name": "로맨스",
+    "type": "central",
+    "field": "사회",
+    "admin" : 142
+  },
+  {
+    "id": 43,
+    "name": "소네팅",
+    "type": "central",
+    "field": "사회",
+    "admin" : 143
+  },
+  {
+    "id": 44,
+    "name": "씨앗",
+    "type": "central",
+    "field": "사회",
+    "admin" : 144
+  },
+  {
+    "id": 45,
+    "name": "인액터스",
+    "type": "central",
+    "field": "사회",
+    "admin" : 145
+  },
+  {
+    "id": 46,
+    "name": "페다고지",
+    "type": "central",
+    "field": "사회",
+    "admin" : 146
+  },
+  {
+    "id": 47,
+    "name": "TEDxInhaU",
+    "type": "central",
+    "field": "사회",
+    "admin" : 147
+  },
+  {
+    "id": 48,
+    "name": "네비게이토",
+    "type": "central",
+    "field": "종교",
+    "admin" : 148
+  },
+  {
+    "id": 49,
+    "name": "YWAM 예수전도단",
+    "type": "central",
+    "field": "종교",
+    "admin" : 149
+  },
+  {
+    "id": 50,
+    "name": "민족기독학생회",
+    "type": "central",
+    "field": "종교",
+    "admin" : 150
+  },
+  {
+    "id": 51,
+    "name": "인하대학교 불교학생회(약칭인불회)",
+    "type": "central",
+    "field": "종교",
+    "admin" : 151
+  },
+  {
+    "id": 52,
+    "name": "인하가톨릭학생회",
+    "type": "central",
+    "field": "종교",
+    "admin" : 152
+  },
+  {
+    "id": 53,
+    "name": "예수전도단",
+    "type": "central",
+    "field": "종교",
+    "admin" : 153
+  },
+  {
+    "id": 54,
+    "name": "CAM",
+    "type": "central",
+    "field": "종교",
+    "admin" : 154
+  },
+  {
+    "id": 55,
+    "name": "CCC",
+    "type": "central",
+    "field": "종교",
+    "admin" : 155
+  },
+  {
+    "id": 56,
+    "name": "CFM 수화찬양동아리",
+    "type": "central",
+    "field": "종교",
+    "admin" : 156
+  },
+  {
+    "id": 57,
+    "name": "ESF",
+    "type": "central",
+    "field": "종교",
+    "admin" : 157
+  },
+  {
+    "id": 58,
+    "name": "IVF",
+    "type": "central",
+    "field": "종교",
+    "admin" : 158
+  },
+  {
+    "id": 59,
+    "name": "JDM",
+    "type": "central",
+    "field": "종교",
+    "admin" : 159
+  },
+  {
+    "id": 60,
+    "name": "JOY선교회",
+    "type": "central",
+    "field": "종교",
+    "admin" : 160
+  },
+  {
+    "id": 61,
+    "name": "SFC",
+    "type": "central",
+    "field": "종교",
+    "admin" : 161
+  },
+  {
+    "id": 62,
+    "name": "가스콘",
+    "type": "central",
+    "field": "전시",
+    "admin" : 162
+  },
+  {
+    "id": 63,
+    "name": "메이커",
+    "type": "central",
+    "field": "전시",
+    "admin" : 163
+  },
+  {
+    "id": 64,
+    "name": "양현재",
+    "type": "central",
+    "field": "전시",
+    "admin" : 164
+  },
+  {
+    "id": 65,
+    "name": "화우회",
+    "type": "central",
+    "field": "전시",
+    "admin" : 165
+  },
+  {
+    "id": 66,
+    "name": "ADGON",
+    "type": "central",
+    "field": "전시",
+    "admin" : 166
+  },
+  {
+    "id": 67,
+    "name": "등대",
+    "type": "central",
+    "field": "전시",
+    "admin" : 167
+  },
+  {
+    "id": 68,
+    "name": "만화촌",
+    "type": "central",
+    "field": "전시",
+    "admin" : 168
+  },
+  {
+    "id": 69,
+    "name": "인하문학회",
+    "type": "central",
+    "field": "전시",
+    "admin" : 169
+  },
+  {
+    "id": 70,
+    "name": "IMAGE",
+    "type": "central",
+    "field": "전시",
+    "admin" : 170
+  },
+  {
+    "id": 71,
+    "name": "애드곤",
+    "type": "central",
+    "field": "전시",
+    "admin" : 171
+  },
+  {
+    "id": 72,
+    "name": "열린영화연구회 등대",
+    "type": "central",
+    "field": "전시",
+    "admin" : 172
+  },
+  {
+    "id": 73,
+    "name": "검도부",
+    "type": "central",
+    "field": "무예",
+    "admin" : 173
+  },
+  {
+    "id": 74,
+    "name": "바크로바틱소울즈",
+    "type": "central",
+    "field": "무예",
+    "admin" : 174
+  },
+  {
+    "id": 75,
+    "name": "인하대학교 주짓수동아리 COMBATE",
+    "type": "central",
+    "field": "무예",
+    "admin" : 175
+  },
+  {
+    "id": 76,
+    "name": "인하대학교 태권도부",
+    "type": "central",
+    "field": "무예",
+    "admin" : 176
+  },
+  {
+    "id": 77,
+    "name": "인하암즈",
+    "type": "central",
+    "field": "무예",
+    "admin" : 177
+  },
+  {
+    "id": 78,
+    "name": "인하유도회",
+    "type": "central",
+    "field": "무예",
+    "admin" : 178
+  },
+  {
+    "id": 79,
+    "name": "IBF",
+    "type": "central",
+    "field": "무예",
+    "admin" : 179
+  },
+  {
+    "id": 80,
+    "name": "라품",
+    "type": "central",
+    "field": "구기",
+    "admin" : 180
+  },
+  {
+    "id": 81,
+    "name": "러브올",
+    "type": "central",
+    "field": "구기",
+    "admin" : 181
+  },
+  {
+    "id": 82,
+    "name": "마농",
+    "type": "central",
+    "field": "구기",
+    "admin" : 182
+  },
+  {
+    "id": 83,
+    "name": "TEN-X",
+    "type": "central",
+    "field": "구기",
+    "admin" : 183
+  },
+  {
+    "id": 84,
+    "name": "비룡",
+    "type": "central",
+    "field": "구기",
+    "admin" : 184
+  },
+  {
+    "id": 85,
+    "name": "여자축구동아리 INHA-WICS",
+    "type": "central",
+    "field": "구기",
+    "admin" : 185
+  },
+  {
+    "id": 86,
+    "name": "인하fc",
+    "type": "central",
+    "field": "구기",
+    "admin" : 186
+  },
+  {
+    "id": 87,
+    "name": "Inha Teal Dragons(인하 미식축구부)",
+    "type": "central",
+    "field": "구기",
+    "admin" : 187
+  },
+  {
+    "id": 88,
+    "name": "테니스부",
+    "type": "central",
+    "field": "구기",
+    "admin" : 188
+  },
+  {
+    "id": 89,
+    "name": "인하대학교 핸드볼부",
+    "type": "central",
+    "field": "구기",
+    "admin" : 189
+  },
+  {
+    "id": 90,
+    "name": "인하라이더",
+    "type": "central",
+    "field": "레저",
+    "admin" : 190
+  },
+  {
+    "id": 91,
+    "name": "이카루스",
+    "type": "central",
+    "field": "레저",
+    "admin" : 191
+  },
+  {
+    "id": 92,
+    "name": "탈라리아",
+    "type": "central",
+    "field": "레저",
+    "admin" : 192
+  },
+  {
+    "id": 93,
+    "name": "SKIN-SCUBA",
+    "type": "central",
+    "field": "레저",
+    "admin" : 193
+  },
+  {
+    "id": 94,
+    "name": "인하대 조정부",
+    "type": "central",
+    "field": "레저",
+    "admin" : 194
+  },
+  {
+    "id": 95,
+    "name": "인하스키부",
+    "type": "central",
+    "field": "레저",
+    "admin" : 195
+  },
+  {
+    "id": 96,
+    "name": "산악부",
+    "type": "central",
+    "field": "레저",
+    "admin" : 196
+  },
+  {
+    "id": 97,
+    "name": "수영부",
+    "type": "central",
+    "field": "레저",
+    "admin" : 197
+  },
+  {
+    "id": 98,
+    "name": "스노우보드동아리",
+    "type": "central",
+    "field": "레저",
+    "admin" : 198
+  },
+  {
+    "id": 99,
+    "name": "블랙보드",
+    "type": "central",
+    "field": "레저",
+    "admin" : 199
+  },
+  {
+    "id": 100,
+    "name": "인하수중탐사반",
+    "type": "central",
+    "field": "레저",
+    "admin" : 200
+  },
+  {
+    "id": 101,
+    "name": "개구장이",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 201
+  },
+  {
+    "id": 102,
+    "name": "대우회/JOA",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 202
+  },
+  {
+    "id": 103,
+    "name": "로라랙트",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 203
+  },
+  {
+    "id": 104,
+    "name": "멍냥멍냥",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 204
+  },
+  {
+    "id": 105,
+    "name": "심성회",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 205
+  },
+  {
+    "id": 106,
+    "name": "아름회",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 206
+  },
+  {
+    "id": 107,
+    "name": "아해누리",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 207
+  },
+  {
+    "id": 108,
+    "name": "용마루",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 208
+  },
+  {
+    "id": 109,
+    "name": "인하브로드",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 209
+  },
+  {
+    "id": 110,
+    "name": "인하장학회",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 210
+  },
+  {
+    "id": 111,
+    "name": "트인",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 211
+  },
+  {
+    "id": 112,
+    "name": "파파(P.A.P.A)",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 212
+  },
+  {
+    "id": 113,
+    "name": "하룡회",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 213
+  },
+  {
+    "id": 114,
+    "name": "MRA",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 214
+  },
+  {
+    "id": 115,
+    "name": "RCY",
+    "type": "central",
+    "field": "봉사",
+    "admin" : 215
+  },
+  {
+    "id": 116,
+    "name": "인하벤처클럽",
+    "type": "central",
+    "field": "동아리연합회",
+    "admin" : 216
+  },
+  {
+    "id": 117,
+    "name": "아세스(응원단)",
+    "type": "central",
+    "field": "동아리연합회",
+    "admin" : 217
+  },
+  {
+    "id": 118,
+    "name": "풍물패",
+    "type": "central",
+    "field": "동아리연합회",
+    "admin" : 218
   }
 ]

@@ -5,14 +5,142 @@
   },
   {
     "club_id": 1,
+    "user_id": 102
+  },
+  {
+    "club_id": 1,
+    "user_id": 103
+  },
+  {
+    "club_id": 1,
+    "user_id": 104
+  },
+  {
+    "club_id": 1,
+    "user_id": 105
+  },
+  {
+    "club_id": 1,
+    "user_id": 106
+  },
+   {
+    "club_id": 2,
     "user_id": 201
   },
   {
     "club_id": 2,
-    "user_id": 102
+    "user_id": 202
   },
   {
     "club_id": 2,
-    "user_id": 202
+    "user_id": 203
+  },
+  {
+    "club_id": 2,
+    "user_id": 204
+  },
+  {
+    "club_id": 2,
+    "user_id": 205
+  },
+  {
+    "club_id": 2,
+    "user_id": 206
+  },
+   {
+    "club_id": 3,
+    "user_id": 301
+  },
+  {
+    "club_id": 3,
+    "user_id": 302
+  },
+  {
+    "club_id": 3,
+    "user_id": 303
+  },
+  {
+    "club_id": 3,
+    "user_id": 304
+  },
+  {
+    "club_id": 3,
+    "user_id": 305
+  },
+  {
+    "club_id": 3,
+    "user_id": 306
+  },
+  {
+    "club_id": 4,
+    "user_id": 401
+  },
+  {
+    "club_id": 4,
+    "user_id": 402
+  },
+  {
+    "club_id": 4,
+    "user_id": 403
+  },
+  {
+    "club_id": 4,
+    "user_id": 404
+  },
+  {
+    "club_id": 4,
+    "user_id": 405
+  },
+  {
+    "club_id": 4,
+    "user_id": 406
+  },
+  {
+    "club_id": 5,
+    "user_id": 501
+  },
+  {
+    "club_id": 5,
+    "user_id": 502
+  },
+  {
+    "club_id": 5,
+    "user_id": 503
+  },
+  {
+    "club_id": 5,
+    "user_id": 504
+  },
+  {
+    "club_id": 5,
+    "user_id": 505
+  },
+  {
+    "club_id": 5,
+    "user_id": 506
+  },
+  {
+    "club_id": 6,
+    "user_id": 601
+  },
+  {
+    "club_id": 6,
+    "user_id": 602
+  },
+  {
+    "club_id": 6,
+    "user_id": 603
+  },
+  {
+    "club_id": 6,
+    "user_id": 604
+  },
+  {
+    "club_id": 6,
+    "user_id": 605
+  },
+  {
+    "club_id": 6,
+    "user_id": 606
   }
 ]
