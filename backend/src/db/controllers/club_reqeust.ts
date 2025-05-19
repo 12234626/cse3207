@@ -4,48 +4,26 @@ import sequelize from "../models";
 
 // 동아리에 가입 신청한 모든 유저 조회
 function getAllClubRequests(req: Request, res: Response) {
-  const {club_id} = req.params;
+  const {club_id, user_id} = req.query;
+  let query = "SELECT * FROM club_table";
+  const replacements: any = {};
+  const conditions: string[] = [];
+
+  if (club_id) {
+    conditions.push("club_id = :club_id");
+    replacements.club_id = club_id;
+  }
+  if (user_id) {
+    conditions.push("user_id = :user_id");
+    replacements.user_id = user_id;
+  }
+  if (conditions.length > 0) {
+    query += " WHERE " + conditions.join(" AND ");
+  }
 
   sequelize
-  .query("SELECT * FROM club_request_table WHERE club_id = :club_id", {
-    replacements: {club_id},
-  })
+  .query(query, {replacements})
   .then(function ([results]) {
-    if (results.length === 0) {
-      res
-      .status(404)
-      .json({message: "동아리 없음"});
-
-      return;
-    }
-
-    res
-    .status(200)
-    .json(results);
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
-}
-// 유저가 가입 신청한 모든 동아리 조회
-function getAllUserRequests(req: Request, res: Response) {
-  const {user_id} = req.params;
-
-  sequelize
-  .query("SELECT * FROM club_request_table WHERE user_id = :user_id", {
-    replacements: {user_id},
-  })
-  .then(function ([results]) {
-    if (results.length === 0) {
-      res
-      .status(404)
-      .json({message: "유저 없음"});
-
-      return;
-    }
-
     res
     .status(200)
     .json(results);
@@ -140,7 +118,6 @@ function deleteClubRequest(req: Request, res: Response) {
 
 export {
   getAllClubRequests,
-  getAllUserRequests,
   createClubRequest,
   updateClubRequestStatus,
   deleteClubRequest
