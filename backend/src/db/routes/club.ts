@@ -9,7 +9,7 @@ club_router
 // 모든 동아리 조회
 .get("/", getAllClubs)
 // 아이디로 동아리 조회
-.get("/:id", getClubById)
+.get("/club/:id", getClubById)
 // 유저가 가입한 동아리 조회
 .get("/user/:id", getUserClubs)
 // 동아리 생성
