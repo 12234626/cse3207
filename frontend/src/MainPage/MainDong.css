@@ -137,7 +137,7 @@
 } */
 
 .screen .clubScreen {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   background-color: #ffffff;
   height: 728px;
   left: 0;
@@ -147,7 +147,7 @@
 }
 
 .screen .term {
-  border: 3px solid orange;
+  /* border: 3px solid orange; */
   height: 31px;
   left: 283px;
   position: absolute;
@@ -179,7 +179,7 @@
 }
 
 .screen .category {
-  border: 3px solid green;
+  /* border: 3px solid green; */
   height: 31px;
   left: 171px;
   position: absolute;
@@ -224,7 +224,7 @@
 }
 
 .screen .range {
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
   height: 31px;
   left: 17px;
   position: absolute;
@@ -256,7 +256,7 @@
 }
 
 .screen .clubList {
-  border: 3px solid purple;
+  /* border: 3px solid purple; */
   height: 669px;
   position: absolute;
   top: 54px;
@@ -336,9 +336,9 @@
 } */
 .clubList {
   max-height: 669px; /* 원하는 높이로 설정 */
-  overflow-y: auto;          /* 세로 스크롤만 허용 */
-  overflow-x: hidden;        /* 가로 스크롤은 숨김 */
-  padding-right: 10px; 
+  overflow-y: auto; /* 세로 스크롤만 허용 */
+  overflow-x: hidden; /* 가로 스크롤은 숨김 */
+  padding-right: 10px;
 }
 .clubList::-webkit-scrollbar {
   width: 6px;
