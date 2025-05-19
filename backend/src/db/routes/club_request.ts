@@ -9,9 +9,9 @@ club_request_router
 // 모든 동아리 가입 신청 조회
 .get("/", getAllClubRequests)
 // 동아리 가입 신청 생성
-.post("/:club_id/user/:user_id/", createClubRequest)
+.post("/", createClubRequest)
 // 동아리 가입 신청 상태 업데이트
-.put("/:id", updateClubRequestStatus)
+.put("/", updateClubRequestStatus)
 // 동아리 가입 신청 삭제
 .delete("/:id", deleteClubRequest);
 

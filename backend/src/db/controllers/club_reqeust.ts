@@ -36,7 +36,7 @@ function getAllClubRequests(req: Request, res: Response) {
 }
 // 동아리 가입 신청 생성
 function createClubRequest(req: Request, res: Response) {
-  const {user_id, club_id} = req.params;
+  const {user_id, club_id} = req.body;
 
   sequelize
   .query("INSERT INTO club_request_table (user_id, club_id) VALUES (:user_id, :club_id)", {
@@ -61,19 +61,19 @@ function createClubRequest(req: Request, res: Response) {
     .json({message: err});
   });
 }
-// 가입 신청 상태 업데이트
+// 동아리 가입 신청 상태 업데이트
 function updateClubRequestStatus(req: Request, res: Response) {
-  const {user_id, club_id, status} = req.body;
+  const {club_id, user_id, status} = req.body;
 
   sequelize
-  .query("UPDATE club_request_table SET status = :status WHERE user_id = :user_id AND club_id = :club_id", {
-    replacements: {user_id, club_id, status},
+  .query("UPDATE club_request_table SET status = :status WHERE AND club_id = :club_id user_id = :user_id", {
+    replacements: {club_id, user_id, status},
   })
   .then(function ([results]) {
     if (results[1] === 0) {
       res
       .status(404)
-      .json({message: "동아리 없음"});
+      .json({message: "동아리 가입 신청 없음"});
 
       return;
     }
