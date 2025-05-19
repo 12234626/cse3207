@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./MainDong.css";
+import MyClubList from "../MyPage/MyClubList";
 
 function MainDong() {
   const navigate = useNavigate();
+
+  const [clubs, setClubs] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:3000/db/club").then((response) => {
+      console.debug(response);
+      setClubs([...response.data]);
+    });
+  }, []);
 
   const handleMainHClick = () => {
     navigate("/MainH");
@@ -62,7 +72,16 @@ function MainDong() {
             </div>
 
             <div className="clubList">
-              <div className="club">
+              {clubs.map((club, index) => (
+                <div key={index} className="club">
+                  <div className="clubName">{club.name}</div>
+                  {/* <div className="shortInfo">{club.shortInfo}</div> */}
+                  <div className="apply">
+                    <button className="applyButton">신청</button>
+                  </div>
+                </div>
+              ))}
+              {/* <div className="club">
                 <div className="clubName">동아리01</div>
 
                 <div className="shortInfo">한줄소개</div>
@@ -71,9 +90,9 @@ function MainDong() {
                   <button className="applyButton">
                     신청
                     {/* <div className="text-wrapper-9">신청</div> */}
-                  </button>
+              {/* </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           {/* </div> */}
