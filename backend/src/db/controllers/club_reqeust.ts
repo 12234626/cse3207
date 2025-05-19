@@ -56,6 +56,33 @@ function getAllUserRequests(req: Request, res: Response) {
     .json({message: err});
   });
 }
+// 동아리 가입 신청 생성
+function createClubRequest(req: Request, res: Response) {
+  const {user_id, club_id} = req.params;
+
+  sequelize
+  .query("INSERT INTO club_request_table (user_id, club_id) VALUES (:user_id, :club_id)", {
+    replacements: {user_id, club_id},
+  })
+  .then(function ([results]) {
+    if (results[1] === 0) {
+      res
+      .status(404)
+      .json({message: "동아리 없음"});
+
+      return;
+    }
+
+    res
+    .status(200)
+    .json({message: "동아리 가입 신청 성공"});
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
+}
 // 가입 신청 상태 업데이트
 function updateClubRequestStatus(req: Request, res: Response) {
   const {user_id, club_id, status} = req.body;
@@ -114,6 +141,7 @@ function deleteClubRequest(req: Request, res: Response) {
 export {
   getAllClubRequests,
   getAllUserRequests,
+  createClubRequest,
   updateClubRequestStatus,
   deleteClubRequest
 };
