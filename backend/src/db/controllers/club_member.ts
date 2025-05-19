@@ -58,11 +58,11 @@ function getAllUserClubs(req: Request, res: Response) {
 }
 // 동아리 가입
 function createClubMember(req: Request, res: Response) {
-  const {user_id, club_id} = req.body;
+  const {club_id, user_id} = req.body;
 
   sequelize
-  .query("INSERT INTO club_member_table (user_id, club_id) VALUES (:user_id, :club_id)", {
-    replacements: {user_id, club_id},
+  .query("INSERT INTO club_member_table (club_id, user_id) VALUES (:club_id, :user_id)", {
+    replacements: {club_id, user_id},
   })
   .then(function ([results]) {
     if (results[1] === 0) {
