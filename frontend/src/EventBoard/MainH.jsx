@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./MainH.css";
 
 function MainH() {
   const navigate = useNavigate();
+
+  const [posts, setEventPosts] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:3000/db/post/event").then((response) => {
+      console.debug(response);
+      setEventPosts(response.data);
+    });
+  }, []);
 
   const handleMainDongClick = () => {
     navigate("/MainDong");
@@ -38,13 +47,20 @@ function MainH() {
 
           <div className="hongBoScreen">
             <div className="hongBoList">
-              <div className="hongBo">
+              {posts.map((post, index) => (
+                <div key={index} className="hongBo">
+                  <div className="hongBoName">{post.title}</div>
+                  <div className="hongBoInfo">{post.content}</div>
+                  <div className="hongBoImage"></div>
+                </div>
+              ))}
+              {/* <div className="hongBo">
                 <div className="hongBoName">홍보글01</div>
 
                 <div className="hongBoInfo">홍보글내용</div>
 
                 <div className="hongBoImage" />
-              </div>
+              </div> */}
             </div>
           </div>
           {/* </div> */}

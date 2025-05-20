@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import image2 from "./image-2.svg";
 // import image3 from "./image-3.svg";
 // import image4 from "./image-4.svg";
@@ -9,6 +9,37 @@ import { useNavigate } from "react-router-dom";
 import "./MyPage.css";
 
 function MyPage() {
+  const [user, setUser] = useState(null);
+  const [club, setClub] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    const clubData = localStorage.getItem("club");
+    console.log("localStorage에서 가져온 user 데이터:", userData);
+    console.log("localStorage에서 가져온 club 데이터:", clubData);
+    
+    if (userData) {
+      try {
+        const parsedUser = JSON.parse(userData);
+        setUser(parsedUser);
+      } catch (error) {
+        console.error("user 데이터 파싱 에러:", error);
+      }
+    }
+    
+    if (clubData) {
+      try {
+        const parsedClub = JSON.parse(clubData);
+        setClub(parsedClub);
+      } catch (error) {
+        console.error("club 데이터 파싱 에러:", error);
+      }
+    }
+    
+    setLoading(false);
+  }, []);
+
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
@@ -33,6 +64,14 @@ function MyPage() {
 
   const handleWithdraw = () => {
     navigate("/");
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!user) {
+    return <div>로그인이 필요합니다.</div>;
   }
 
   return (
@@ -100,16 +139,22 @@ function MyPage() {
 
                 <div className="profileImage" />
 
-                <div className="sidAndMajor">학번, 학과</div>
+                <div className="sidAndMajor">
+                  {user.department} {user.id}
+                </div>
 
-                <div className="name">이름</div>
+                <div className="name">{user.name}</div>
+                
+                {club && (
+                  <div className="clubInfo">
+                    <div className="clubIntroduction">
+                      {club.introduction}
+                    </div>
+                  </div>
+                )}
               </div>
-              </div>
-          
-              
+            </div>
           </div>
-         
-        
 
           <div className="top">
             {/* <div className="view-7"> */}
@@ -125,10 +170,12 @@ function MyPage() {
               onClick={handleHomeClick}
             ></button>
           </div>
-          <button className="withdraw" onClick={handleWithdraw}>탈퇴하기</button>
-          </div>
+          <button className="withdraw" onClick={handleWithdraw}>
+            탈퇴하기
+          </button>
         </div>
       </div>
+    </div>
   );
 }
 
