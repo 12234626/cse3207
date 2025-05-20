@@ -65,17 +65,9 @@ function createClubMember(req: Request, res: Response) {
     replacements: {club_id, user_id},
   })
   .then(function ([results]) {
-    if (results[1] === 0) {
-      res
-      .status(400)
-      .json({message: "동아리 가입 실패"});
-
-      return;
-    }
-
     res
     .status(201)
-    .json({message: "동아리 가입 성공"});
+    .json(results);
   })
   .catch(function (err) {
     res
@@ -92,17 +84,9 @@ function deleteClubMember(req: Request, res: Response) {
     replacements: {user_id, club_id},
   })
   .then(function ([results]) {
-    if (results[1] === 0) {
-      res
-      .status(404)
-      .json({message: "동아리 가입 정보 없음"});
-
-      return;
-    }
-
     res
     .status(200)
-    .json({message: "동아리 탈퇴 성공"});
+    .json(results);
   })
   .catch(function (err) {
     res

@@ -95,22 +95,9 @@ function createClub(req: Request, res: Response) {
     replacements: {name, type, field, admin},
   })
   .then(function ([results]) {
-    if (results[1] === 0) {
-      res
-      .status(400)
-      .json({message: "동아리 생성 실패"});
-
-      return;
-    }
-
     res
     .status(201)
-    .json({message: "동아리 생성 성공"});
-  })
-  .then(function () {
-    res
-    .status(201)
-    .json({message: "동아리 생성 성공"});
+    .json(results);
   })
   .catch(function (err) {
     res
@@ -128,17 +115,9 @@ function updateClub(req: Request, res: Response) {
     replacements: {id, name, type, field, admin},
   })
   .then(function ([results]) {
-    if (results[1] === 0) {
-      res
-      .status(404)
-      .json({message: "동아리 없음"});
-
-      return;
-    }
-
     res
     .status(200)
-    .json({message: "동아리 업데이트 성공"});
+    .json(results);
   })
   .catch(function (err) {
     res
@@ -155,17 +134,9 @@ function deleteClub(req: Request, res: Response) {
     replacements: {id},
   })
   .then(function ([results]) {
-    if (results[1] === 0) {
-      res
-      .status(404)
-      .json({message: "동아리 없음"});
-
-      return;
-    }
-
     res
     .status(200)
-    .json({message: "동아리 삭제 성공"});
+    .json(results);
   })
   .catch(function (err) {
     res

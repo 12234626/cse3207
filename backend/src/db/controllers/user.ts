@@ -76,17 +76,9 @@ function createUser(req: Request, res: Response) {
     replacements: {id, name, password, department, phone},
   })
   .then(function ([results]) {
-    if (results[1] === 0) {
-      res
-      .status(400)
-      .json({message: "유저 생성 실패"});
-
-      return;
-    }
-
     res
     .status(201)
-    .json({message: "유저 생성 성공"});
+    .json(results);
   })
   .catch(function (err) {
     res
@@ -104,17 +96,9 @@ function updateUser(req: Request, res: Response) {
     }
   )
   .then(function ([results]) {
-    if (results[1] === 0) {
-      res
-      .status(404)
-      .json({message: "유저 없음"});
-
-      return;
-    }
-
     res
     .status(200)
-    .json({message: "유저 업데이트 성공"});
+    .json(results);
   })
   .catch(function (err) {
     res
@@ -131,14 +115,6 @@ function deleteUser(req: Request, res: Response) {
     replacements: {id},
   })
   .then(function ([results]) {
-    if (results[1] === 0) {
-      res
-      .status(404)
-      .json({message: "유저 없음"});
-
-      return;
-    }
-
     res
     .status(200)
     .json({message: "유저 삭제 성공"});

@@ -50,16 +50,14 @@ function createPost(req: Request, res: Response) {
       }
     )
     .then(function ([results]) {
-      if (results[1] === 0) {
-        res.status(400).json({ message: "게시글 생성 실패" });
-
-        return;
-      }
-
-      res.status(201).json({ message: "게시글 생성 성공" });
+      res
+      .status(201)
+      .json(results);
     })
     .catch(function (err) {
-      res.status(500).json({ message: err });
+      res
+      .status(500)
+      .json({message: err});
     });
 }
 // 게시글 업데이트
@@ -75,16 +73,14 @@ function updatePost(req: Request, res: Response) {
       }
     )
     .then(function ([results]) {
-      if (results[1] === 0) {
-        res.status(404).json({ message: "게시글 없음" });
-
-        return;
-      }
-
-      res.status(200).json({ message: "게시글 업데이트 성공" });
+      res
+      .status(200)
+      .json(results);
     })
     .catch(function (err) {
-      res.status(500).json({ message: err });
+      res
+      .status(500)
+      .json({message: err});
     });
 }
 // 게시글 삭제
@@ -96,16 +92,14 @@ function deletePost(req: Request, res: Response) {
       replacements: { id },
     })
     .then(function ([results]) {
-      if (results[1] === 0) {
-        res.status(404).json({ message: "게시글 없음" });
-
-        return;
-      }
-
-      res.status(200).json({ message: "게시글 삭제 성공" });
+      res
+      .status(200)
+      .json(results);
     })
     .catch(function (err) {
-      res.status(500).json({ message: err });
+      res
+      .status(500)
+      .json({message: err});
     });
 }
 
