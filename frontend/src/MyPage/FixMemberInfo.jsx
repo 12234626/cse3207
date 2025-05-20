@@ -1,16 +1,63 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./FixMemberInfo.css";
 
 function FixMemberInfo() {
   const navigate = useNavigate();
 
+  const [form, setForm] = useState({
+    id: "",
+    name: "",
+    password: "",
+    department: "",
+    phone: "",
+  });
+
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+      const user = JSON.parse(userData);
+      setForm({
+        id: user.id,
+        name: user.name || "",
+        password: user.password,
+        department: user.department || "",
+        phone: user.phone || "",
+      });
+    }
+  }, []);
+
   const handleBackClick = () => {
     navigate("/MyPage");
   };
 
-  const handleFixClick = () => {
-    navigate("/MyPage");
+  // const handleFixClick = () => {
+  //   navigate("/MyPage");
+  // };
+
+  const handleFixClick = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/db/user`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (response.status === 200) {
+        const updateUser = await response.json();
+
+        localStorage.setItem("user", JSON.stringify(updateUser));
+
+        alert("회원 정보 수정 완료");
+        navigate("/MyPage");
+      } else {
+        const data = await response.json();
+        alert("수정 실패: " + JSON.stringify(data));
+      }
+    } catch (err) {
+      console.error(err);
+      alert("서버 오류");
+    }
   };
 
   return (
@@ -23,14 +70,38 @@ function FixMemberInfo() {
             <div className="infoBox1">
               <div className="fixNameBox">
                 <div className="fixText">이름</div>
-                <input type="text" className="fNameInput"></input>
+                <input
+                  type="text"
+                  className="fNameInput"
+                  name="name"
+                  value={form.name}
+                  onChange={(e) =>
+                    setForm({ ...form, [e.target.name]: e.target.value })
+                  }
+                ></input>
               </div>
               <div className="fixMajorBox">
                 <div className="fixText">학과</div>
-                <input type="text" className="fMajorInput"></input>
+                <input
+                  type="text"
+                  className="fMajorInput"
+                  name="department"
+                  value={form.department}
+                  onChange={(e) =>
+                    setForm({ ...form, [e.target.name]: e.target.value })
+                  }
+                ></input>
               </div>
               <div className="fixPhoneBox">
-                <input type="text" className="fPhoneInput"></input>
+                <input
+                  type="text"
+                  className="fPhoneInput"
+                  name="phone"
+                  value={form.phone}
+                  onChange={(e) =>
+                    setForm({ ...form, [e.target.name]: e.target.value })
+                  }
+                ></input>
                 <div className="fixText">전화번호</div>
               </div>
             </div>
