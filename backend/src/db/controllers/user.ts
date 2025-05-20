@@ -79,7 +79,7 @@ function updateUser(req: Request, res: Response) {
 
   sequelize
     .query(
-      "UPDATE user_table SET name = :name, password = :password, grade = :department, phone = :phone WHERE id = :id",
+      "UPDATE user_table SET name = :name, password = :password, department = :department, phone = :phone WHERE id = :id",
       {
         replacements: { id, name, password, department, phone },
       }

@@ -36,11 +36,18 @@ function FixMemberInfo() {
   // };
 
   const handleFixClick = async () => {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
     try {
       const response = await fetch(`http://localhost:3000/db/user`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          id: storedUser.id,
+          name: form.name,
+          password: storedUser.password,
+          department: form.department,
+          phone: form.phone,
+        }),
       });
 
       if (response.status === 200) {
