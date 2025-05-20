@@ -8,7 +8,7 @@ function MainH() {
 
   const [posts, setEventPosts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3000/db/post/event").then((response) => {
+    axios.get("http://localhost:3000/db/post?type=event").then((response) => {
       console.debug(response);
       setEventPosts(response.data);
     });
@@ -47,6 +47,7 @@ function MainH() {
 
           <div className="hongBoScreen">
             <div className="hongBoList">
+              <pre>{JSON.stringify(posts, null, 2)}</pre>
               {posts.map((post, index) => (
                 <div key={index} className="hongBo">
                   <div className="hongBoName">{post.title}</div>
