@@ -91,7 +91,7 @@ function updateUser(req: Request, res: Response) {
   const {id, name, password, department, phone} = req.body;
 
   sequelize
-  .query("UPDATE user_table SET name = :name, password = :password, grade = :department = :department, phone = :phone WHERE id = :id", {
+  .query("UPDATE user_table SET name = :name, password = :password, department = :department, phone = :phone WHERE id = :id", {
       replacements: {id, name, password, department, phone},
     }
   )
