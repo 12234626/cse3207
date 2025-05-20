@@ -4,41 +4,349 @@
     "name": "aaa aaa",
     "password": "bbbbb",
     "department": "ccccc",
-    "phone": "123456789"
-  },
-  {
-    "id": 2,
-    "name": "ddd ddd",
-    "password": "eeeeee",
-    "department": "fffff",
-    "phone": "987654321"
-  }
-  {
-    "id": 3,
-    "name": "12223734",
-    "password": "hhhhhh",
-    "department": "iiiii",
     "phone": "010-1234-5678"
   },
   {
-    "id": 4,
-    "name": "12223701",
-    "password": "kkkkkk",
-    "department": "lllll",
+    "id": 12223734,
+    "name": "박은경",
+    "password": "eun1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-6789-0123"
+  },
+  {
+    "id": 12223701,
+    "name": "김나현",
+    "password": "na1234", 
+    "department": "컴퓨터공학과",
+    "phone": "010-7890-1234"
+  },
+  {
+    "id": 12234626,
+    "name": "박재현",
+    "password": "jae1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-8901-2345"
+  },
+  {
+    "id": 12234218,
+    "name": "홍수진",
+    "password": "su1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-9012-3456"
+  },
+  {
+    "id": 12000006,
+    "name": "이민호",
+    "password": "leeminho1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-0123-4567"
+  },
+  {
+    "id": 12000007,
+    "name": "김지민",
+    "password" : "kimjimin1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-1234-5678"
+  },
+  {
+    "id": 12000008,
+    "name": "이서준",
+    "password" : "leeseojun1234",
+    "department": "컴퓨터공학과",
     "phone": "010-2345-6789"
   },
   {
-    "id": 5,
-    "name": "12234626",
-    "password": "nnnnnn",
-    "department": "ooooo",
+    "id": 12000009,
+    "name": "박지민",
+    "password" : "parkjimin1234",
+    "department": "컴퓨터공학과",
     "phone": "010-3456-7890"
   },
   {
-    "id": 6,
-    "name": "12234218",
-    "password": "qqqqqq",
-    "department": "rrrrr",
+    "id": 12000010,
+    "name": "최지우",
+    "password" : "choijiwoo1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-4567-8901"
+  },
+  {
+    "id": 12000011,
+    "name": "정우성",
+    "password" : "jungwoosung1234",
+    "department": "컴퓨터공학과",   
+    "phone": "010-5678-9012"
+  },
+  {
+    "id": 12000012,
+    "name": "이정재",
+    "password" : "leejeongjae1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-6789-0123"
+  },
+  {
+    "id": 12000013,
+    "name": "김태희",
+    "password" : "kimtaehee1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-7890-1234"
+  },
+  {
+    "id": 12000014,
+    "name": "이병헌",
+    "password" : "leebyunghun1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-8901-2345"
+  },
+  {
+    "id": 12000015,
+    "name": "전지현",
+    "password" : "jeonjihyun1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-9012-3456"
+  },
+  {
+    "id": 12000016,
+    "name": "송중기",
+    "password" : "songjoongki1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-0123-4567"
+  },
+  {
+    "id": 12000017,
+    "name": "박보검",
+    "password" : "parkbogum1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-1234-5678"
+  },
+  {
+    "id": 12000018,
+    "name": "김수현",
+    "password" : "kimsuhyun1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-2345-6789" 
+  },
+  {
+    "id": 12000019,
+    "name": "이민정",
+    "password" : "leeminjeong1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-3456-7890"
+  },
+  {
+    "id": 12000020,
+    "name": "정해인",
+    "password" : "jeonghaein1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-4567-8901"
+  },
+  {
+    "id": 12000021,
+    "name": "김고은",
+    "password" : "kimgoeun1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-5678-9012"
+  },
+  {
+    "id": 12000022,
+    "name": "이동욱",
+    "password" : "leedongwook1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-6789-0123"  
+  },
+  {
+    "id": 12000023,
+    "name": "박서준",
+    "password" : "parkseojun1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-7890-1234"
+  },
+  {
+    "id": 12000024,
+    "name": "김유정",
+    "password" : "kimyujeong1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-8901-2345"
+  },
+  {
+    "id": 12000025,
+    "name": "이준기",
+    "password" : "leejoongi1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-9012-3456"
+  },
+  {
+    "id": 12000026,
+    "name": "정유미",
+    "password" : "jeongyumi1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-0123-4567"
+  },
+  {
+    "id": 12000027,
+    "name": "이상윤",
+    "password" : "leessangyoon1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-1234-5678"
+  },
+  {
+    "id": 12000028,
+    "name": "김소현",
+    "password" : "kimsuhyun1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-2345-6789"
+  },
+  {
+    "id": 12000029,
+    "name": "이상엽",
+    "password" : "leessangyeob1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-3456-7890"
+  },
+  {
+    "id": 12000030,
+    "name": "정소민",
+    "password" : "jeongsomin1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-4567-8901"
+  },
+  {
+    "id": 12000031,
+    "name": "이종석",
+    "password" : "leejongsuk1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-5678-9012"
+  },
+  {
+    "id": 12000032,
+    "name": "김희선",
+    "password" : "kimheesun1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-6789-0123"
+  },
+  {
+    "id": 12000033,
+    "name": "이수지",
+    "password" : "leesooji1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-7890-1234"
+  },
+  {
+    "id": 12000034,
+    "name": "정재영",
+    "password" : "jeongjaeyoung1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-8901-2345"
+  },
+  {
+    "id": 12000035,
+    "name": "이하늬",
+    "password" : "leehaenyee1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-9012-3456"
+  },
+  {
+    "id": 12000036,
+    "name": "김지영",
+    "password" : "kimjiyoung1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-0123-4567"
+  },
+  {
+    "id": 12000037,
+    "name": "이상민",
+    "password" : "leessangmin1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-1234-5678"
+  },
+  {
+    "id": 12000038,
+    "name": "김민재",
+    "password" : "kimminjae1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-2345-6789"
+  },
+  {
+    "id": 12000039,
+    "name": "김도영",
+    "password" : "kimdoyoung1234",
+    "department": "컴퓨터공학과", 
+    "phone": "010-3456-7890"
+  },
+  {
+    "id": 12000040,
+    "name": "이유리",
+    "password" : "leeyuri1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-4567-8901"
+  },
+  {
+    "id": 12000041,
+    "name": "정해리",
+    "password" : "jeonghaeri1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-5678-9012"
+  }, 
+  {
+    "id": 12000042,
+    "name": "이상호",
+    "password" : "leessangho1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-6789-0123"
+  },
+  {
+    "id": 12000043,
+    "name": "김지훈",
+    "password" : "kimjihoon1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-7890-1234"
+  },
+  {
+    "id": 12000044,
+    "name": "이정민",
+    "password" : "leejeongmin1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-8901-2345"
+  },
+  {
+    "id": 12000045,
+    "name": "김소연",
+    "password" : "kimsoyeon1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-9012-3456"
+  },
+  {
+    "id": 12000046,
+    "name": "이상희",
+    "password" : "leessanghee1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-0123-4567"
+  },
+  {
+    "id": 12000047,
+    "name": "김민수",
+    "password" : "kimminsu1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-1234-5678"
+  },
+  {
+    "id": 12000048,
+    "name": "이수빈",
+    "password" : "leesubin1234",
+    "department": "컴퓨터공학과", 
+    "phone": "010-2345-6789"
+  },
+  {
+    "id": 12000049,
+    "name": "김지수",
+    "password" : "kimjisoo1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-3456-7890"
+  },
+  {
+    "id": 12000050,
+    "name": "이상준",
+    "password" : "leessangjun1234",
+    "department": "컴퓨터공학과",
     "phone": "010-4567-8901"
   }
 ]
