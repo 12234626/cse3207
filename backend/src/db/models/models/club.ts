@@ -18,17 +18,17 @@ class Club extends Model {
 
   // 동아리 소속
   @AllowNull(false)
-  @Column({type: DataType.ENUM("central", "group")})
+  @Column({type: DataType.ENUM("중앙 동아리", "소모임")})
   public type!: string;
 
   // 동아리 분야
   @AllowNull(false)
-  @Column({type: DataType.ENUM("performance", "language", "research", "society", "religion", "exhibition", "martialArts", "ballSport", "leisure", "service", "union")})
+  @Column({type: DataType.ENUM("공연", "어학", "연구", "사회", "종교", "전시", "무예", "구기", "레저", "봉사", "동아리연합회")})
   public field!: string;
 
   // 동아리 모집 기간
   @AllowNull(false)
-  @Column({type: DataType.ENUM("recruiting", "recruitment_end")})
+  @Column({type: DataType.ENUM("모집 중", "모집 마감")})
   public recruitment!: string;
 
   // 동아리 소개
