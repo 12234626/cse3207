@@ -72,7 +72,7 @@ function createUser(req: Request, res: Response) {
   const {id, name, password, department, phone} = req.body;
 
   sequelize
-  .query("INSERT INTO user_table (id, name, password, grade, phone) VALUES (:id, :name, :password, :department, :phone)", {
+  .query("INSERT INTO user_table (id, name, password, department, phone) VALUES (:id, :name, :password, :department, :phone)", {
     replacements: {id, name, password, department, phone},
   })
   .then(function ([results]) {
