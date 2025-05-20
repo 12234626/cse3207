@@ -18,7 +18,7 @@ class Club extends Model {
 
   // 동아리 소속
   @AllowNull(false)
-  @Column({type: DataType.ENUM("중앙 동아리", "소모임")})
+  @Column({type: DataType.ENUM("중앙 동아리", "컴퓨터공학과","생명공학과", "생명과학과", "스포츠과학과", "연극영화학과", "의류디자인학과","간호학과")})
   public type!: string;
 
   // 동아리 분야

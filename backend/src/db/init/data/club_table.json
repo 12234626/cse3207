@@ -1060,5 +1060,257 @@
     "inrecruitment" : "모집 중",
     "introduction" : "문화예술운동연합으로 문화와 예술에 관련된 운동을 목적",
     "admin" : 218
+  },
+  {
+    "id": 119,
+    "name": "땅울림림",
+    "type": "컴퓨터공학과",
+    "field": "구기",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "운동! 학업! 인맥! 까지 대학생활에 필요한 모든 토끼를 한꺼번에 잡을 수 있는 저희 컴퓨터공학과 소모임 땅울림은 여러분의 관심과 가입을 애타게 기다리고 있습니다!",
+    "admin" : 219
+  },
+  {
+    "id": 120,
+    "name": "CTP",
+    "type": "컴퓨터공학과",
+    "field": "연구",
+    "inrecruitment" : "모집 중",
+    "introduction" : "CTP(Challenge The Programming)는 국제 대학생 프로그래밍 대회 등 여러 프로그래밍 대회를 준비하며 자료구조 및 알고리즘을 연구하는 학술소모임입니다",
+    "admin" : 220
+  },
+  {
+    "id": 121,
+    "name": "SII",
+    "type": "컴퓨터공학과",
+    "field": "연구",
+    "inrecruitment" : "모집 중",
+    "introduction" : "SII(Security in inha)는 해킹에 관심있는 사람들이 모여 관련 지식들을 공유하고 함께 학습하기 위해 모인 해킹 소모임입니다.",
+    "admin" : 221
+  },
+  {
+    "id": 122,
+    "name": "버져비터",
+    "type": "생명공학과",
+    "field": "구기",
+    "inrecruitment" : "모집 중",
+    "introduction" : "농구를 좋아하는 사람들이 모여있는곳!! 이곳에 바로 버져비터입니다!!",
+    "admin" : 222
+  },
+  {
+    "id": 123,
+    "name": "징검다리",
+    "type": "생명공학과",
+    "field": "봉사",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "안녕하세요. 마음이 따뜻한 사람들의 모임, 생명공학과 봉사소모임 징검다리입니다.",
+    "admin" : 223
+  },
+  {
+    "id": 124,
+    "name": "Red Dragons",
+    "type": "생명공학과",
+    "field": "구기",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "저희 Red Dragons는 생명공학과 야구 소모임으로써 야구에 관심이 있는 생명화학공학부 학생이라면 누구든지 참여할 수 있습니다.",
+    "admin" : 224
+  },
+  {
+    "id": 125,
+    "name": "휘슬",
+    "type": "생명과학과",
+    "field": "구기",
+    "inrecruitment" : "모집 중",
+    "introduction" : "안녕하세요! 생명, 해양과학 연합 축구 소모임 휘슬입니다. 휘슬은 실력과 상관없이 축구를 즐기기 위한 소모임이며, 활발하고 즐겁게 활동하고 있습니다.",
+    "admin" : 225
+  },
+  {
+    "id": 126,
+    "name": "Double Helix",
+    "type": "생명과학과",
+    "field": "구기",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "안녕하세요! 저희는 교내 운동장을 이용해 농구를 즐기는 소모임입니다.",
+    "admin" : 226
+  },
+  {
+    "id": 127,
+    "name": "망막",
+    "type": "생명과학과",
+    "field": "전시",
+    "inrecruitment" : "모집 중",
+    "introduction" : "실력과는 관계 없이, 사진을 좋아하시거나 사진에 관심이 있는 분이시라면 ! 언제든 환영합니다~!! 망막에서 생명과학과 선후배와 함께 즐거운 추억을 만들어보아요 :)",
+    "admin" : 227
+  },
+  {
+    "id": 128,
+    "name": "Victor",
+    "type": "스포츠과학과",
+    "field": "구기",
+    "inrecruitment" : "모집 중",
+    "introduction" : "스포츠과학과 내 축구 동아리로, 재학생을 주축으로 선후배간의 친목을 도모하여 교내 대회 및 교외 대회에 참여하여 우수한 성적을 거두고 있다.",
+    "admin" : 228
+  },
+  {
+    "id": 129,
+    "name": "Spot",
+    "type": "스포츠과학과",
+    "field": "구기",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "출전하는 대회에서 좋은 성적을 거두는 최고의 농구동아리로 코트에서 서로 어깨를 맞대고 땀을 흘리며 성장해 나가는 열정적인 동아리이다.",
+    "admin" : 229
+  },
+  {
+    "id": 130,
+    "name": "Movement",
+    "type": "스포츠과학과",
+    "field": "연구",
+    "inrecruitment" : "모집 중",
+    "introduction" : "스포츠과학과 내 학술 동아리로, 해부학, 생리학, 역학을 기본으로 하여 운동처방사, 피지컬 트레이닝, 선수트레이너 등 다방면에 걸쳐 외국 논문과 각종 자격증 취득을 위하여 연구 및 토론을 하는 학술 동아리이다.",
+    "admin" : 230
+  },
+  {
+    "id": 131,
+    "name": "Cereal",
+    "type": "스포츠과학과",
+    "field": "연구",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "스포츠과학과 내 스포츠산업 동아리로 스포츠산업 현장을 체험하고, 소속 동아리부원들의 지식과 경험을 나누어 스포츠산업 현장의 진출을 돕는 동아리이다.",
+    "admin" : 231
+  },
+  {
+    "id": 132,
+    "name": "Athletic",
+    "type": "스포츠과학과",
+    "field": "무예",
+    "inrecruitment" : "모집 중",
+    "introduction" : "스포츠과학 전공 학생들이 스포츠과학의 원리와 지식을 기반으로 스포츠를 더 심도있게 탐구하고, 지속적인 모임을 통해서 육상 종목을 기반으로 달리기, 플래그 풋볼, 스포츠 영상분석, 대외 활동을 진행하고 있다.",
+    "admin" : 232
+  },
+  {
+    "id": 133,
+    "name": "극단 인연",
+    "type": "연극영화학과",
+    "field": "공연",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "인하대학교 연극영화학과 재학생 및 졸업생으로 구성된 학과 내 극단",
+    "admin" : 233
+  },
+  {
+    "id": 134,
+    "name": "뮤지컬 학회",
+    "type": "연극영화학과",
+    "field": "공연",
+    "inrecruitment" : "모집 중",
+    "introduction" : "학과 내 뮤지컬을 공연, 연구하는 학회로, 2017년 첫 동계 워크샵 진행",
+    "admin" : 234
+  },
+  {
+    "id": 135,
+    "name": "영화학회",
+    "type": "연극영화학과",
+    "field": "전시",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "정기적으로 모여 영화를 관람 및 비평, 연구하는 학회",
+    "admin" : 235
+  },
+  {
+    "id": 136,
+    "name": "IFF",
+    "type": "의류디자인학과",
+    "field": "전시",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "의류디자인학과 신입생들을 대상으로 회원을 모집하여 의류디자인학과 재학생 회원들이 기초적인 구성실습이나 드로잉 등을 가르쳐주고 학생들이 직접 창작한 의상으로 연말 IFF패션쇼를 진행한다.",
+    "admin" : 236
+  },
+  {
+    "id": 137,
+    "name": "곰국",
+    "type": "간호학과",
+    "field": "연구",
+    "inrecruitment" : "모집 중",
+    "introduction" : "매월 논문 분석 및 발표, 조별 토론, 연구 계획서 작성활동",
+    "admin" : 237
+  },
+  {
+    "id": 138,
+    "name": "손짓소리",
+    "type": "간호학과",
+    "field": "봉사",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "매주 수어 학습 활동, 매학기 손짓소리 골든벨",
+    "admin" : 238
+  },
+  {
+    "id": 139,
+    "name": "희망의 날개",
+    "type": "간호학과",
+    "field": "봉사",
+    "inrecruitment" : "모집 중",
+    "introduction" : "매월 정기 봉사",
+    "admin" : 239
+  },
+  {
+    "id": 140,
+    "name": "NR",
+    "type": "간호학과",
+    "field": "연구",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "매월 의료 관련 주제 토론",
+    "admin" : 240
+  },
+  {
+    "id": 141,
+    "name": "새날",
+    "type": "간호학과",
+    "field": "동아리연합회",
+    "inrecruitment" : "모집 중",
+    "introduction" : "새날 대공연 연습, 주 2회 정기 연습",
+    "admin" : 241
+  },
+  {
+    "id": 142,
+    "name": "메디버디",
+    "type": "간호학과",
+    "field": "봉사",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "매월 정기 봉사",
+    "admin" : 242
+  },
+  {
+    "id": 143,
+    "name": "NANDA",
+    "type": "간호학과",
+    "field": "어학",
+    "inrecruitment" : "모집 중",
+    "introduction" : "매주 영어로 ice breaking, speech, medical debate 진행",
+    "admin" : 243
+  },
+  {
+    "id": 144,
+    "name": "SBP",
+    "type": "간호학과",
+    "field": "구기",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "농구훈련",
+    "admin" : 244
+  },
+  {
+    "id": 145,
+    "name": "베리타스",
+    "type": "간호학과",
+    "field": "공연",
+    "inrecruitment" : "모집 중",
+    "introduction" : "밴드 공연 연습",
+    "admin" : 245
+  },
+  {
+    "id": 146,
+    "name": "티크",
+    "type": "간호학과",
+    "field": "공연",
+    "inrecruitment" : "모집 마감",
+    "introduction" : "댄스 공연 연습",
+    "admin" : 246
   }
 ]
