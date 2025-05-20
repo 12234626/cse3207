@@ -3,49 +3,30 @@ import {Request, Response} from "express";
 import sequelize from "../models";
 
 // 모든 게시글 조회
-function getAllPosts(req: Request, res: Response) {
-  sequelize
-  .query("SELECT * FROM post_table")
-  .then(function ([results]) {
-    res
-    .status(200)
-    .json(results);
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
-}
-// 아이디로 게시글 조회
-function getPostById(req: Request, res: Response) {
-  const {id} = req.params;
-  
-  sequelize
-  .query("SELECT * FROM post_table WHERE id = :id", {
-    replacements: {id},
-  })
-  .then(function ([results]) {
-    if (results.length === 0) {
-      res
-      .status(404)
-      .json({message: "게시글 없음"});
+function getPosts(req: Request, res: Response) {
+  const {id, type, clue_id} = req.query;
+  let query = "SELECT * FROM post_table";
+  const replacements: any = {};
+  const conditions: string[] = [];
 
-      return;
-    }
+  if (id) {
+    conditions.push("id = :id");
+    replacements.id = id;
+  }
+  if (type) {
+    conditions.push("type = :type");
+    replacements.type = type;
+  }
+  if (clue_id) {
+    conditions.push("clue_id = :clue_id");
+    replacements.clue_id = clue_id;
+  }
+  if (conditions.length > 0) {
+    query += " WHERE " + conditions.join(" AND ");
+  }
 
-    res.json(results[0]);
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
-}
-// 모든 이벤트 게시글 조회
-function getAllEventPosts(req: Request, res: Response) {
   sequelize
-  .query("SELECT * FROM post_table WHERE type = 'event'")
+  .query(query, {replacements})
   .then(function ([results]) {
     res
     .status(200)
@@ -141,9 +122,7 @@ function deletePost(req: Request, res: Response) {
 }
 
 export {
-  getAllPosts,
-  getPostById,
-  getAllEventPosts,
+  getPosts,
   createPost,
   updatePost,
   deletePost
