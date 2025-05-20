@@ -23,8 +23,18 @@ class Club extends Model {
 
   // 동아리 분야
   @AllowNull(false)
-  @Column({type: DataType.STRING(50)})
+  @Column({type: DataType.ENUM("performance", "language", "research", "society", "religion", "exhibition", "martialArts", "ballSport", "leisure", "service", "union")})
   public field!: string;
+
+  // 동아리 모집 기간
+  @AllowNull(false)
+  @Column({type: DataType.ENUM("recruiting", "recruitment_end")})
+  public recruitment!: string;
+
+  // 동아리 소개
+  @AllowNull(false)
+  @Column({type: DataType.STRING(200)})
+  public introduction!: string;
 
   // 동아리 관리자
   @ForeignKey(() => User)
