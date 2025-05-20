@@ -1,17 +1,13 @@
 import {Router} from "express";
 
-import {getAllPosts, getPostById, getAllEventPosts, createPost, updatePost, deletePost} from "../controllers/post";
+import {getPosts, createPost, updatePost, deletePost} from "../controllers/post";
 
 // 게시글 데이터베이스 라우터
 const post_router = Router();
 
 post_router
 // 모든 게시글 조회
-.get("/", getAllPosts)
-// 아이디로 게시글 조회
-.get("/:id", getPostById)
-// 모든 이벤트 게시글 조회
-.get("/event/:id", getAllEventPosts)
+.get("/", getPosts)
 // 게시글 생성
 .post("/", createPost)
 // 게시글 수정
