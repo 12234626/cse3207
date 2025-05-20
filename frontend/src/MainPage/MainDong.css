@@ -289,14 +289,14 @@
 .screen .shortInfo {
   color: #00000040;
   font-family: "Inter-Bold", Helvetica;
-  font-size: 13px;
+  font-size: 9px;
   font-weight: 700;
-  left: 22px;
+  left: 20px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   top: 45px;
-  width: 210px;
+  width: 280px;
 }
 
 .screen .apply {

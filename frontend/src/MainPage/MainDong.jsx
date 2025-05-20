@@ -76,7 +76,7 @@ function MainDong() {
             </div>
 
             <div className="clubList">
-              <pre>{JSON.stringify(clubs, null, 2)}</pre>
+              {/* <pre>{JSON.stringify(clubs, null, 2)}</pre> */}
               {clubs.map((club, index) => (
                 <div key={index} className="club" onClick={handleClubClick}>
                   <div className="clubName">{club.name}</div>

@@ -47,7 +47,7 @@ function MainH() {
 
           <div className="hongBoScreen">
             <div className="hongBoList">
-              <pre>{JSON.stringify(posts, null, 2)}</pre>
+              {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
               {posts.map((post, index) => (
                 <div key={index} className="hongBo">
                   <div className="hongBoName">{post.title}</div>
