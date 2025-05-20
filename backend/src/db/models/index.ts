@@ -6,7 +6,10 @@ import config from "../config/config";
 const env = process.env.NODE_ENV || "development";
 const sequelize = new Sequelize({
   ...config[env as keyof typeof config],
-  models: [`${__dirname}/models/*`]
+  models: [`${__dirname}/models/*`],
+  define: {
+    timestamps: false
+  }
 });
 
 export default sequelize;

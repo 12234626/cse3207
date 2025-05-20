@@ -18,8 +18,7 @@ const config = {
     // 데이터베이스 비밀번호
     password: DB_PASSWORD as string,
     // 데이터베이스 이름
-    database: DB_DATABASE as string,
-    timezone: "+09:00" as string
+    database: DB_DATABASE as string
   }
 }
 
