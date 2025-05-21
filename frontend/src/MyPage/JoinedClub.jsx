@@ -59,7 +59,7 @@ function JoinedClub() {
   // }, []);
 
   const handleBackClick = () => {
-    navigate("/MyPage");
+    navigate("/MyClubList");
   };
 
   const handleManagerClick = () => {
