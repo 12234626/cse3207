@@ -40,6 +40,7 @@ function SignUp() {
 
       if (response.status === 201) {
         //가입성공
+        alert("회원가입 성공");
         navigate("/");
       } else if (response.status === 400) {
         alert("이미 존재하는 학번입니다");

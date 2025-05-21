@@ -84,6 +84,7 @@ function MyPage() {
       if (response.ok) {
         localStorage.removeItem("user");
         localStorage.removeItem("club");
+        alert("탈퇴 완료");
         navigate("/");
       } else {
         alert("탈퇴에 실패했습니다.");
