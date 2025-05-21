@@ -64,8 +64,36 @@ function MyPage() {
     navigate("/CreateClub");
   };
 
-  const handleWithdraw = () => {
-    navigate("/");
+  // const handleWithdraw = () => {
+  //   localStorage.removeItem("user");
+  //   navigate("/");
+  // };
+
+  const handleWithdraw = async () => {
+    if (!user) return;
+
+    try {
+      const response = await fetch(
+        `http://localhost:3001/api/user?id=${user.id}`,
+        {
+          method: "DELETE",
+          // headers: {
+          //   "Content-Type": "application/json",
+          // },
+          // body: JSON.stringify({ id: user.id }),
+        }
+      );
+
+      if (response.ok) {
+        localStorage.removeItem("user");
+        localStorage.removeItem("club");
+        navigate("/");
+      } else {
+        alert("탈퇴에 실패했습니다.");
+      }
+    } catch (error) {
+      alert("탈퇴 처리 중 오류가 발생했습니다.");
+    }
   };
 
   if (loading) {
