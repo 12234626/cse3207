@@ -11,8 +11,8 @@ function MainDong() {
   const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
   const [moDropdownOpen, setMoDropdownOpen] = useState(false);
 
-  const [selectedAreas, setSelectedAreas] = useState([]);
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedAreas, setSelectedAreas] = useState(["전체"]);
+  const [selectedCategories, setSelectedCategories] = useState(["전체"]);
   const [selectedMo, setSelectedMo] = useState(["모집중"]);
 
   const areas = [
