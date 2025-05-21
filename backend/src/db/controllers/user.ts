@@ -1,129 +1,53 @@
 import {Request, Response} from "express";
 
-import sequelize from "../models";
+import {runQueryWithResponse, buildWhereClause} from "../utils/controller";
 
 // 모든 유저 조회
 function getAllUsers(req: Request, res: Response) {
-  sequelize
-  .query("SELECT * FROM user_table")
-  .then(function ([results]) {
-    res
-    .status(200)
-    .json(results);
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
+  const {where, replacements} = buildWhereClause(req.query);
+  const query = "SELECT * FROM user_table" + where;
+
+  runQueryWithResponse(req, res, query, replacements, 200);
 }
+
 // 아이디로 유저 조회
 function getUserById(req: Request, res: Response) {
   const {id} = req.params;
+  const query = "SELECT * FROM user_table WHERE id = :id";
 
-  sequelize
-  .query("SELECT * FROM user_table WHERE id = :id", {
-    replacements: {id},
-  })
-  .then(function ([results]) {
-    if (results.length === 0) {
-      res
-      .status(404)
-      .json({message: "유저 없음"});
-
-      return;
-    }
-
-    res.json(results[0]);
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
+  runQueryWithResponse(req, res, query, {id}, 200);
 }
+
 // 유저 아이디와 비밀번호가 일치하는지 확인
 function checkUserPassword(req: Request, res: Response) {
   const {id, password} = req.query;
+  const query = "SELECT * FROM user_table WHERE id = :id AND password = :password";
 
-  sequelize
-  .query("SELECT * FROM user_table WHERE id = :id AND password = :password", {
-    replacements: {id, password},
-  })
-  .then(function ([results]) {
-    if (results.length === 0) {
-      res
-      .status(404)
-      .json({message: "유저 없음"});
-
-      return;
-    }
-
-    res.json(results[0]);
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
+  runQueryWithResponse(req, res, query, {id, password}, 200);
 }
+
 // 유저 생성
 function createUser(req: Request, res: Response) {
   const {id, name, password, department, phone} = req.body;
+  const query = "INSERT INTO user_table (id, name, password, department, phone) VALUES (:id, :name, :password, :department, :phone)";
 
-  sequelize
-  .query("INSERT INTO user_table (id, name, password, department, phone) VALUES (:id, :name, :password, :department, :phone)", {
-    replacements: {id, name, password, department, phone},
-  })
-  .then(function ([results]) {
-    res
-    .status(201)
-    .json(results);
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
+  runQueryWithResponse(req, res, query, {id, name, password, department, phone}, 201);
 }
+
 // 유저 업데이트
 function updateUser(req: Request, res: Response) {
   const {id, name, password, department, phone} = req.body;
+  const query = "UPDATE user_table SET name = :name, password = :password, department = :department, phone = :phone WHERE id = :id";
 
-  sequelize
-  .query("UPDATE user_table SET name = :name, password = :password, department = :department, phone = :phone WHERE id = :id", {
-      replacements: {id, name, password, department, phone},
-    }
-  )
-  .then(function ([results]) {
-    res
-    .status(200)
-    .json(results);
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
+  runQueryWithResponse(req, res, query, {id, name, password, department, phone}, 200);
 }
+
 // 유저 삭제
 function deleteUser(req: Request, res: Response) {
   const {id} = req.params;
+  const query = "DELETE FROM user_table WHERE id = :id";
 
-  sequelize
-  .query("DELETE FROM user_table WHERE id = :id", {
-    replacements: {id},
-  })
-  .then(function ([results]) {
-    res
-    .status(200)
-    .json({message: "유저 삭제 성공"});
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
+  runQueryWithResponse(req, res, query, {id}, 200);
 }
 
 export {
