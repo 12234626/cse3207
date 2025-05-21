@@ -12,7 +12,8 @@ function MyClubList() {
     navigate("/MyPage");
   };
 
-  const handleMyClubClick = () => {
+  const handleMyClubClick = (club) => {
+    localStorage.setItem("club", JSON.stringify(club));
     navigate("/JoinedClub");
   };
 
@@ -44,7 +45,7 @@ function MyClubList() {
                 <div className="myClubName">{club.name}</div>
                 <button
                   className="clubCommunity"
-                  onClick={handleMyClubClick}
+                  onClick={() => handleMyClubClick(club)}
                 ></button>
               </div>
             </div>
