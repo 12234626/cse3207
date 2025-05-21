@@ -256,7 +256,8 @@
     "field": "어학",
     "inrecruitment" : "모집 중",
     "introduction" : "미국의 대표적 시사 주간지 TIME 연구 및 친목도모",
-    "admin" : 12000026 
+    "admin" : 12000026,
+    "info": 426
   },
   {
     "id": 27,
@@ -1305,7 +1306,8 @@
     "field": "연구",
     "inrecruitment" : "모집 마감",
     "introduction" : "스포츠과학과 내 스포츠산업 동아리로 스포츠산업 현장을 체험하고, 소속 동아리부원들의 지식과 경험을 나누어 스포츠산업 현장의 진출을 돕는 동아리이다.",
-    "admin" : 12000131
+    "admin" : 12000131,
+    "info": 531
   },
   {
     "id": 132,
@@ -1314,7 +1316,8 @@
     "field": "무예",
     "inrecruitment" : "모집 중",
     "introduction" : "스포츠과학 전공 학생들이 스포츠과학의 원리와 지식을 기반으로 스포츠를 더 심도있게 탐구하고, 지속적인 모임을 통해서 육상 종목을 기반으로 달리기, 플래그 풋볼, 스포츠 영상분석, 대외 활동을 진행하고 있다.",
-    "admin" : 12000132
+    "admin" : 12000132,
+    "info": 532
   },
   {
     "id": 133,
@@ -1323,7 +1326,8 @@
     "field": "공연",
     "inrecruitment" : "모집 마감",
     "introduction" : "인하대학교 연극영화학과 재학생 및 졸업생으로 구성된 학과 내 극단",
-    "admin" : 12000133
+    "admin" : 12000133,
+    "info": 533
   },
   {
     "id": 134,
@@ -1332,7 +1336,8 @@
     "field": "공연",
     "inrecruitment" : "모집 중",
     "introduction" : "학과 내 뮤지컬을 공연, 연구하는 학회로, 2017년 첫 동계 워크샵 진행",
-    "admin" : 12000134
+    "admin" : 12000134,
+    "info": 534
   },
   {
     "id": 135,
@@ -1341,7 +1346,8 @@
     "field": "전시",
     "inrecruitment" : "모집 마감",
     "introduction" : "정기적으로 모여 영화를 관람 및 비평, 연구하는 학회",
-    "admin" : 12000135
+    "admin" : 12000135,
+    "info": 535
   },
   {
     "id": 136,
@@ -1350,7 +1356,8 @@
     "field": "전시",
     "inrecruitment" : "모집 마감",
     "introduction" : "의류디자인학과 신입생들을 대상으로 회원을 모집하여 의류디자인학과 재학생 회원들이 기초적인 구성실습이나 드로잉 등을 가르쳐주고 학생들이 직접 창작한 의상으로 연말 IFF패션쇼를 진행한다.",
-    "admin" : 12000136
+    "admin" : 12000136,
+    "info": 536
   },
   {
     "id": 137,
@@ -1359,7 +1366,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "매월 논문 분석 및 발표, 조별 토론, 연구 계획서 작성활동",
-    "admin" : 12000137
+    "admin" : 12000137,
+    "info": 537
   },
   {
     "id": 138,
@@ -1368,7 +1376,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 마감",
     "introduction" : "매주 수어 학습 활동, 매학기 손짓소리 골든벨",
-    "admin" : 12000138
+    "admin" : 12000138,
+    "info": 538
   },
   {
     "id": 139,
@@ -1377,7 +1386,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "매월 정기 봉사",
-    "admin" : 12000139
+    "admin" : 12000139,
+    "info": 539
   },
   {
     "id": 140,
@@ -1386,7 +1396,8 @@
     "field": "연구",
     "inrecruitment" : "모집 마감",
     "introduction" : "매월 의료 관련 주제 토론",
-    "admin" : 12000140
+    "admin" : 12000140,
+    "info": 540
   },
   {
     "id": 141,
@@ -1395,7 +1406,8 @@
     "field": "동아리연합회",
     "inrecruitment" : "모집 중",
     "introduction" : "새날 대공연 연습, 주 2회 정기 연습",
-    "admin" : 12000141
+    "admin" : 12000141,
+    "info": 541
   },
   {
     "id": 142,
@@ -1404,7 +1416,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 마감",
     "introduction" : "매월 정기 봉사",
-    "admin" : 12000142
+    "admin" : 12000142,
+    "info": 542
   },
   {
     "id": 143,
@@ -1413,7 +1426,8 @@
     "field": "어학",
     "inrecruitment" : "모집 중",
     "introduction" : "매주 영어로 ice breaking, speech, medical debate 진행",
-    "admin" : 12000143
+    "admin" : 12000143,
+    "info": 543
   },
   {
     "id": 144,
@@ -1422,7 +1436,8 @@
     "field": "구기",
     "inrecruitment" : "모집 마감",
     "introduction" : "농구훈련",
-    "admin" : 12000144
+    "admin" : 12000144,
+    "info": 544
   },
   {
     "id": 145,
@@ -1431,7 +1446,8 @@
     "field": "공연",
     "inrecruitment" : "모집 중",
     "introduction" : "밴드 공연 연습",
-    "admin" : 12000145
+    "admin" : 12000145,
+    "info": 545
   },
   {
     "id": 146,
