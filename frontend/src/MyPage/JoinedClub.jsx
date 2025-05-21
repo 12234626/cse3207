@@ -7,10 +7,12 @@ function JoinedClub() {
   const navigate = useNavigate();
   const [posts, setNoticePosts] = useState([]);
   const [clubName, setClubName] = useState("");
+  const [isManager, setIsManager] = useState(false);
 
   useEffect(() => {
     // const clubData = JSON.parse(localStorage.getItem("club"));
     const clubData = localStorage.getItem("club");
+    const user = JSON.parse(localStorage.getItem("user"));
     if (!clubData) {
       // club 데이터가 없는 경우 처리
       console.error("동아리 정보를 찾을 수 없습니다.");
@@ -20,6 +22,22 @@ function JoinedClub() {
 
     const club = JSON.parse(clubData);
     // setClubName(club.name);
+
+    // 관리자 권한 확인
+    if (club.admin !== undefined) {
+      setIsManager(club.admin === user.id);
+    } else {
+      // 만약 club에 admin 정보가 없다면 백엔드에서 admin 정보 요청
+      fetch(`http://localhost:3000/db/club/admin?id=${club.id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data && data[0] && data[0].admin === user.id) {
+            setIsManager(true);
+          } else {
+            setIsManager(false);
+          }
+        });
+    }
 
     const fetchNoticePosts = async () => {
       try {
@@ -83,7 +101,12 @@ function JoinedClub() {
           <button className="back" onClick={handleBackClick}></button>
           <div className="joinedClubText">{clubName}</div>
         </div>
-        <button className="managerButton" onClick={handleManagerClick}></button>
+        {isManager && (
+          <button
+            className="managerButton"
+            onClick={handleManagerClick}
+          ></button>
+        )}
       </div>
     </div>
   );

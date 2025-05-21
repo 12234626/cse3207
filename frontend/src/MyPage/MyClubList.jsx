@@ -38,7 +38,7 @@ function MyClubList() {
   return (
     <div className="screen">
       <div className="phoneScreen">
-        <pre>{JSON.stringify(clubs, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(clubs, null, 2)}</pre> */}
         <div className="myClubs">
           {clubs.map((club) => (
             <div className="element" key={club.id || club.club_id}>
