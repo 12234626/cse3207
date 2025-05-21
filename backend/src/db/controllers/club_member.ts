@@ -13,7 +13,7 @@ function getClubMember(req: Request, res: Response) {
 // 유저 아이디로 동아리 조회
 function getClubByUserId(req: Request, res: Response) {
   const {user_id} = req.params;
-  const query = "SELECT club_table.* FROM club_table INNER JOIN club_member_table ON club_table.id = club_member_table.club_id WHERE club_member_table.user_id = :user_id";
+  const query = "SELECT club_table.* FROM club_member_table JOIN club_table ON club_member_table.club_id = club_table.id WHERE club_member_table.user_id = :user_id";
   const replacements = {user_id};
 
   runQueryWithResponse(req, res, query, replacements, 200);
