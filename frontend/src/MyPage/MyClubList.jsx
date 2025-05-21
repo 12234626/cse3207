@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./MyClubList.css";
 
 function MyClubList() {
   const navigate = useNavigate();
+
+  const [clubs, setClubs] = useState([]);
 
   const handleBackClick = () => {
     navigate("/MyPage");
@@ -13,19 +16,39 @@ function MyClubList() {
     navigate("/JoinedClub");
   };
 
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) return;
+
+    const fetchJoinedClubs = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/db/club_member/user/${user.id}`
+        );
+        const data = await response.json();
+        setClubs(data);
+      } catch (error) {
+        console.error("가입한 동아리 불러오기 실패", error);
+      }
+    };
+    fetchJoinedClubs();
+  }, []);
+
   return (
     <div className="screen">
       <div className="phoneScreen">
         <div className="myClubs">
-          <div className="element">
-            <div className="myClub">
-              <div className="myClubName">가입한 동아리01</div>
-              <button
-                className="clubCommunity"
-                onClick={handleMyClubClick}
-              ></button>
+          {clubs.map((club) => (
+            <div className="element" key={club.club_id}>
+              <div className="myClub">
+                <div className="myClubName">{club.club_name}</div>
+                <button
+                  className="clubCommunity"
+                  onClick={handleMyClubClick}
+                ></button>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
         <div className="topBar">
