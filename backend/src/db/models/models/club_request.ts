@@ -1,4 +1,4 @@
-import {Model, Table, Column, DataType, PrimaryKey, AllowNull, ForeignKey} from "sequelize-typescript";
+import {Model, Table, Column, DataType, PrimaryKey, ForeignKey, AutoIncrement, AllowNull} from "sequelize-typescript";
 
 import Club from "./club";
 import User from "./user";
@@ -8,12 +8,13 @@ import User from "./user";
 class ClubReqeust extends Model {
   // 신청 아이디
   @PrimaryKey
+  @AutoIncrement
   @Column({type: DataType.INTEGER.UNSIGNED})
   public id!: number;
   
   // 신청 상태
   @AllowNull(false)
-  @Column({type: DataType.ENUM("pending", "accepted", "rejected")})
+  @Column({type: DataType.ENUM("pending", "accepted", "rejected"), defaultValue: "pending"})
   public applicationStatus!: string;
 
   // 동아리 아이디

@@ -12,9 +12,9 @@ function getAllClubRequests(req: Request, res: Response) {
 
 // 동아리 가입 신청 생성
 function createClubRequest(req: Request, res: Response) {
-  const {user_id, club_id} = req.body;
-  const query = "INSERT INTO club_request_table (user_id, club_id) VALUES (:user_id, :club_id)";
-  const replacements = {user_id, club_id};
+  const {club_id, user_id} = req.body;
+  const query = "INSERT INTO club_request_table (club_id, user_id) VALUES (:club_id, :user_id)";
+  const replacements = {club_id, user_id};
 
   runQueryWithResponse(req, res, query, replacements, 201);
 }
