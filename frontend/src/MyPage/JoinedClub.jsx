@@ -9,24 +9,28 @@ function JoinedClub() {
   const [clubName, setClubName] = useState("");
 
   useEffect(() => {
-    const clubData = JSON.parse(localStorage.getItem("club"));
-    // if (!clubData) {
-    //   // club 데이터가 없는 경우 처리
-    //   console.error("동아리 정보를 찾을 수 없습니다.");
-    //   navigate("/MyPage"); // MyPage로 돌아가기
-    //   return;
-    // }
+    // const clubData = JSON.parse(localStorage.getItem("club"));
+    const clubData = localStorage.getItem("club");
+    if (!clubData) {
+      // club 데이터가 없는 경우 처리
+      console.error("동아리 정보를 찾을 수 없습니다.");
+      navigate("/MyPage"); // MyPage로 돌아가기
+      return;
+    }
 
     const club = JSON.parse(clubData);
-    setClubName(club.name);
+    // setClubName(club.name);
 
     const fetchNoticePosts = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/db/post?type=notice&club_id=${club.id}`
+          // `http://localhost:3000/db/post?type=notice&club_id=${club.id}`
+          `http://localhost:3000/db/club_member/post/club/${club.id}`
         );
         const data = await response.json();
         setNoticePosts(data);
+        if (data.length > 0) setClubName(data[0].club_name);
+        else setClubName(club.name);
       } catch (error) {
         console.error("가입한 동아리 불러오기 실패", error);
       }
@@ -50,7 +54,7 @@ function JoinedClub() {
     //   } catch (error) {
     //     console.error("가입한 동아리 게시글 불러오기 실패", error);
     //   }
-  }, []);
+  }, [navigate]);
   // fetchNoticePosts();
   // }, []);
 
@@ -77,7 +81,7 @@ function JoinedClub() {
 
         <div className="topBar">
           <button className="back" onClick={handleBackClick}></button>
-          <div className="joinedClubText">가입한 동아리01</div>
+          <div className="joinedClubText">{clubName}</div>
         </div>
         <button className="managerButton" onClick={handleManagerClick}></button>
       </div>
