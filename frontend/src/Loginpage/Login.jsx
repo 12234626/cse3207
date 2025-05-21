@@ -18,6 +18,12 @@ function Login() {
   const handleLoginClick = async (e) => {
     e.preventDefault();
 
+    // 입력값이 비어있으면 로그인 시도 및 이동 금지
+    if (!id || !password) {
+      alert("학번과 비밀번호를 모두 입력하세요.");
+      return;
+    }
+
     const form = { id, password };
 
     try {
@@ -26,6 +32,12 @@ function Login() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
+
+      if (!response.ok) {
+        alert("학번 또는 비밀번호가 틀렸습니다.");
+        return;
+      }
+
       if (response.ok) {
         const response = await fetch(`http://localhost:3000/db/user?id=${id}`);
         const data = (await response.json())[0];
@@ -50,10 +62,10 @@ function Login() {
             if (clubList.length > 0) {
               localStorage.setItem("club", JSON.stringify(clubList[0]));
             }
+            navigate("/MainDong");
           } else {
             localStorage.setItem("club", JSON.stringify(data.club));
           }
-          navigate("/MainDong");
         } else {
           alert("학번 또는 비밀번호가 틀렸습니다.");
         }
