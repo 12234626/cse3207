@@ -15,7 +15,7 @@ function getClubByUserId(req: Request, res: Response) {
   const {user_id} = req.params;
   const query = "SELECT club_table.* FROM club_member_table JOIN club_table ON club_member_table.club_id = club_table.id WHERE club_member_table.user_id = :user_id";
   const replacements = {user_id};
-
+  
   runQueryWithResponse(req, res, query, replacements, 200);
 }
 
@@ -24,6 +24,7 @@ function getPostsByClubId(req:Request, res: Response) {
    const {club_id} = req.params;
   const query = "SELECT * FROM post_table WHERE club_id = :club_id";
   const replacements = {club_id};
+
   runQueryWithResponse(req, res, query, replacements, 200);
 }
 
