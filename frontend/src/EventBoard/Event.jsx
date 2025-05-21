@@ -7,24 +7,28 @@ import "./Event.css";
 function MainH() {
     const navigate = useNavigate();
   
+    const handleBackClick = () => {
+        navigate("/MainH");
+      };
+
     return (
      <div className = "element">
         <div className = "div">
             <div className = "view">
                 <div className="overlap-group">
 
-                    <div className="view-2"/>
+                    <div className="imageBox"/>
                         
-                    <div className="text-wrapper-2">홍보글01</div>
+                    <div className="ex">홍보내용</div>
 
-                    <div className="text-wrapper-3">수정하기</div>
+                 
                 </div>
             </div>
 
             <div className="view-3">
     
-
-            <div className="text-wrapper-4">홍보글01</div>
+            <button className="back" onClick={handleBackClick}></button>
+            <div className="Name">홍보글01</div>
                 </div>   
             </div>
         </div>
