@@ -13,7 +13,7 @@ function MainDong() {
 
   const [selectedAreas, setSelectedAreas] = useState(["전체"]);
   const [selectedCategories, setSelectedCategories] = useState(["전체"]);
-  const [selectedMo, setSelectedMo] = useState(["모집중"]);
+  const [selectedMo, setSelectedMo] = useState(["모집 중"]);
 
   const areas = [
     "전체",
@@ -105,14 +105,39 @@ function MainDong() {
     "동아리연합회",
   ];
 
-  const mo = ["모집중", "모집 마감"];
+  const mo = ["모집 중", "모집 마감"];
 
   useEffect(() => {
-    axios.get("http://localhost:3000/db/club").then((response) => {
-      console.debug("클럽데이터: ", response.data);
+    const type =
+      selectedAreas.includes("전체") || selectedAreas.length === 0
+        ? undefined
+        : selectedAreas[0];
+    const field =
+      selectedCategories.includes("전체") || selectedCategories.length === 0
+        ? undefined
+        : selectedCategories[0];
+
+    let url = "http://localhost:3000/db/club";
+    const params = [];
+    if (type) params.push(`type=${encodeURIComponent(type)}`);
+    if (field) params.push(`field=${encodeURIComponent(field)}`);
+    if (params.length > 0) url += "?" + params.join("&");
+
+    axios.get(url).then((response) => {
       setClubs(response.data);
     });
-  }, []);
+  }, [selectedAreas, selectedCategories]);
+
+  // 모집중/마감 필터는 프론트에서 처리
+  const getFilteredClubs = () => {
+    return clubs.filter((club) => {
+      return (
+        selectedMo.includes("전체") ||
+        selectedMo.length === 0 ||
+        selectedMo.includes(club.recruitment)
+      );
+    });
+  };
 
   const handleMainHClick = () => {
     navigate("/MainH");
@@ -241,31 +266,36 @@ function MainDong() {
                   className="textMo2 clickableRange"
                   onClick={openMoDropdown}
                 >
-                  {selectedMo.includes("모집중") ? "모집중" : "모집마감"}
+                  {selectedMo.includes("모집 중") ? "모집 중" : "모집마감"}
                 </div>
               </div>
             </div>
 
             <div className="clubList">
-              {clubs.map((club, index) => (
-                <div key={index} className="club" onClick={handleClubClick}>
-                  <div className="clubName">{club.name}</div>
-                  <div className="shortInfo">
-                    {club.introduction || "소개 없음"}
+              {/* <pre>{JSON.stringify(clubs, null, 2)}</pre> */}
+              {getFilteredClubs().length === 0 ? (
+                <div>조건에 맞는 동아리가 없습니다.</div>
+              ) : (
+                getFilteredClubs().map((club, index) => (
+                  <div key={index} className="club" onClick={handleClubClick}>
+                    <div className="clubName">{club.name}</div>
+                    <div className="shortInfo">
+                      {club.introduction || "소개 없음"}
+                    </div>
+                    <div className="apply">
+                      <button
+                        className="applyButton"
+                        onClick={(e) => {
+                          e.stopPropagation(); // Prevent triggering the parent div's onClick
+                          handleApply(club);
+                        }}
+                      >
+                        신청
+                      </button>
+                    </div>
                   </div>
-                  <div className="apply">
-                    <button
-                      className="applyButton"
-                      onClick={(e) => {
-                        e.stopPropagation(); // Prevent triggering the parent div's onClick
-                        handleApply(club);
-                      }}
-                    >
-                      신청
-                    </button>
-                  </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
 
