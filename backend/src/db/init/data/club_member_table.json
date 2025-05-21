@@ -50,8 +50,8 @@
   { "club_id": 41, "user_id": 12000038 },
   { "club_id": 7, "user_id": 12000039 },
   { "club_id": 7, "user_id": 12000040 },
-  { "club_id": 41, "user_id": 12223701 },
-  { "club_id": 45, "user_id": 12223701 },
-  { "club_id": 7, "user_id": 12223701 },
-  { "club_id": 120, "user_id": 12223701 }
+  { "club_id": 1, "user_id": 12223701 },
+  { "club_id": 17, "user_id": 12223701 },
+  { "club_id": 14, "user_id": 12223701 },
+  { "club_id": 8, "user_id": 12223701 }
 ]
