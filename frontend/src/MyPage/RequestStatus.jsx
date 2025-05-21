@@ -6,7 +6,7 @@ import "./RequestStatus.css";
 function RequestStatus() {
   const navigate = useNavigate();
 
-  const [club, setClubs] = useState([]);
+  const [clubs, setClubs] = useState([]);
 
   const handleBackClick = () => {
     navigate("/MyPage");
@@ -19,12 +19,12 @@ function RequestStatus() {
     const fetchRequestState = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/db/club_request/user/${user.id}`
+          `http://localhost:3000/db/club_request?user_id=${user.id}`
         );
         const data = await response.json();
         setClubs(data);
       } catch (error) {
-        console.error("가입신청한한 동아리 불러오기 실패", error);
+        console.error("가입신청한 동아리 불러오기 실패", error);
       }
     };
     fetchRequestState();
@@ -35,7 +35,7 @@ function RequestStatus() {
       <div className="phoneScreen">
         {/* <div className="overlap"> */}
         <div className="requestStatusMain">
-          {setClubs.map((club) => (
+          {clubs.map((club) => (
             <div className="requestedClub1Box" key={club.club_id}>
               <div className="requestedClub1">
                 <div className="requestedClubName">가입요청한 동아리01</div>
