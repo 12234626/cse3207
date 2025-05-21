@@ -73,16 +73,13 @@ function MyPage() {
     if (!user) return;
 
     try {
-      const response = await fetch(
-        `http://localhost:3001/api/user?id=${user.id}`,
-        {
-          method: "DELETE",
-          // headers: {
-          //   "Content-Type": "application/json",
-          // },
-          // body: JSON.stringify({ id: user.id }),
-        }
-      );
+      const response = await fetch(`http://localhost:3000/db/user/`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: user.id }),
+      });
 
       if (response.ok) {
         localStorage.removeItem("user");
