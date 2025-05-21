@@ -13,6 +13,6 @@ club_request_router
 // 동아리 가입 신청 상태 업데이트
 .put("/", updateClubRequestStatus)
 // 동아리 가입 신청 삭제
-.delete("/:id", deleteClubRequest);
+.delete("/", deleteClubRequest);
 
 export default club_request_router;
