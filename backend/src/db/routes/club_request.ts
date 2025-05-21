@@ -6,7 +6,7 @@ import {getAllClubRequests, createClubRequest, updateClubRequestStatus, deleteCl
 const club_request_router = Router();
 
 club_request_router
-// 모든 동아리 가입 신청 조회
+// 동아리 가입 신청 조회
 .get("/", getAllClubRequests)
 // 동아리 가입 신청 생성
 .post("/", createClubRequest)
