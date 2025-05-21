@@ -18,12 +18,18 @@ function Login() {
   const handleLoginClick = async (e) => {
     e.preventDefault();
 
+    const form = { id, password };
+
     try {
-      const response = await fetch(
-        `http://localhost:3000/db/user/login?id=${id}&password=${password}`
-      );
+      const response = await fetch(`http://localhost:3000/db/user/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
       if (response.ok) {
-        const data = await response.json();
+        const response = await fetch(`http://localhost:3000/db/user?id=${id}`);
+        const data = (await response.json())[0];
+
         console.log("서버 응답 데이터: ", data);
         console.log("데이터 구조: ", {
           name: data.name,
@@ -55,7 +61,7 @@ function Login() {
           회원가입
         </button>
         <form
-          action="http://localhost:3000/db/user/login"
+          // action="http://localhost:3000/db/user/login"
           className="loginForm"
         >
           <div className="SIDbox">

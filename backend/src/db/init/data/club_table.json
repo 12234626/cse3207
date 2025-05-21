@@ -4,162 +4,180 @@
     "name": "개로",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 중",
+    "inrecruitment": "모집 중",
     "introduction": "힙합 음악을 좋아하는 사람들이 모여 자작곡을 만들며 유대감을 형성하고 공연을 하는 동아리",
-    "admin": 101
+    "admin": 12000001,
+    "info": 401
   },
   {
     "id": 2,
     "name": "고전기타회",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 마감",
+    "inrecruitment": "모집 마감",
     "introduction": "클래식기타의 기본기 교육 및 연주회 개최와 참여",
-    "admin": 102
+    "admin": 12000002,
+    "info": 402
   },
   {
     "id": 3,
     "name": "극단 봄",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 중",
+    "inrecruitment": "모집 중",
     "introduction": "교내 유일 뮤지컬 동아리로 직접 연기, 노래, 기획을 해봄으로써 뮤지컬을 쉽게 접하고 공연예술을 추구하며 회원간의 유대감을 형성함",
-    "admin": 103
+    "admin": 12000003,
+    "info": 403
   },
   {
     "id": 4,
     "name": "꼬망스",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 중",
+    "inrecruitment": "모집 중",
     "introduction": "밴드동아리로 공연을 직접 기획하고 선보이며 창작가요 동아리인 만큼 창작곡을 공연함",
-    "admin": 104
+    "admin": 12000004,
+    "info": 404
   },
   {
     "id": 5,
     "name": "노래사랑",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 마감",
+    "inrecruitment": "모집 마감",
     "introduction" : "사람을 사랑하고 사람을 노래하며, 누구든 자신만의 음악을 추구",
-    "admin": 105
+    "admin": 12000005,
+    "info": 405
   },
   {
     "id": 6,
     "name": "인하오케스트라",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 중",
+    "inrecruitment": "모집 중",
     "introduction" : "대규모 오케스트라 경험을 통한 음악적 소양의 함양과 팀워크 증진",
-    "admin": 106
+    "admin": 12000006,
+    "info": 406
   },
   {
     "id": 7,
     "name": "인다배소리",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 중",
+    "inrecruitment": "모집 중",
     "introduction" : "밴드 세션 교육을 통한 초보 부원의 무대 경험과 팬플룻과 밴드 세션의 합주",
-    "admin": 107
+    "admin": 12000007,
+    "info": 407
   },
   {
     "id": 8,
     "name": "인하극예술연구회",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 마감",
+    "inrecruitment": "모집 마감",
     "introduction" : "연극을 사랑하는 사람들이 모여, 기성 극단과는 달리 상업성이 배제된 순수한 공연 예술을 추구",
-    "admin": 108
+    "admin": 12000008,
+    "info": 408
   },
   {
     "id": 9,
     "name": "인하인의 피아노 사랑",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 중",
+    "inrecruitment": "모집 중",
     "introduction" : "자유로운 피아노 연주뿐만이 아닌 피아노를 소재로 한 분위기 있는 각종 행사 진행 및 멘토링을 통해 피아노에 대한 관심 증진",
-    "admin": 109
+    "admin": 12000009,
+    "info": 409
   },
   {
     "id": 10,
     "name": "인하합창단",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 마감",
+    "inrecruitment": "모집 마감",
     "introduction" : "노래와 음악을 사랑하는 사람들의 모임 합창을 통한 친목도모와 함께 즐거운 추억 남기기",
-   "admin": 110
+   "admin": 12000010,
+   "info": 410
   },
   {
     "id": 11,
     "name": "트리키",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 마감",
+    "inrecruitment": "모집 마감",
     "introduction" : "교내 K-pop 및 걸스힙합 커버댄스 동아리",
-    "admin": 111
+    "admin": 12000011,
+    "info": 411
   },
   {
     "id": 12,
     "name": "판타스틱스테이션",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 마감",
+    "inrecruitment": "모집 마감",
     "introduction" : "신기하고 재미있는 마술을 배우고 마술 공연을 통한 자신감 향상 및 공연 기획 경험",
-    "admin": 112
+    "admin": 12000012,
+    "info": 412
   },
   {
     "id": 13,
     "name": "풍물사랑",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 마감",
+    "inrecruitment": "모집 마감",
     "introduction" : "풍물을 배우고 즐기기 위한 동아리",
-    "admin": 113
+    "admin": 12000013,
+    "info": 413
   },
   {
     "id": 14,
     "name": "F.L.EX.",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 중",
+    "inrecruitment": "모집 중",
     "introduction" : "F.L.EX는 스트릿 댄스를 처음 접하는 사람들에겐 스트릿 댄스를 알아갈 수 있는 기회를, 이미 접해본 사람들에겐 많은 사람들과 취미를 공유할 수 있는 창구로서의 역할 수행",
-    "admin": 114
+    "admin": 12000014,
+    "info": 414
   },
   {
     "id": 15,
     "name": "FLAGON",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 마감",
+    "inrecruitment": "모집 마감",
     "introduction" : "교내 유일 락&메탈 밴드, 인하대학교 메탈헤드들의 보금자리",
-    "admin": 115
+    "admin": 12000015,
+    "info": 415
   },
   {
     "id": 16,
     "name": "INDKY",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 중",
+    "inrecruitment": "모집 중",
     "introduction" : "다양한 장르의 음악을 듣고 연주하여 음악적 소양을 기르고 부원 간의 음악적 색깔을 공유하면서 친목을 도모하는 동아리",
-    "admin": 116
+    "admin": 12000016,
+    "info": 416
   },
   {
     "id": 17,
     "name": "POP MUSIC",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 마감",
+    "inrecruitment": "모집 마감",
     "introduction" : "음악을 통한 친목 도모와 취미 공유 및 다양한 공연 활동 진행",
-    "admin": 117
+    "admin": 12000017,
+    "info": 417
   },
   {
     "id": 18,
     "name": "인성",
     "type": "중앙 동아리",
     "field": "공연",
-    "inrecruitment" : "모집 중",
+    "inrecruitment": "모집 중",
     "introduction" : "교내 유일 성우 동아리. 라이브 더빙 공연을 목표로 다양한 장르의 작품을 선정하여 발성이나 감정표현, 호흡 등의 연기연습을 진행",
-    "admin": 118
+    "admin": 12000018,
+    "info": 418
   },
   {
     "id": 19,
@@ -168,7 +186,8 @@
     "field": "어학",
     "inrecruitment" : "모집 중",
     "introduction" : "일본어 회화를 통한 일본어 연구가 목적",
-    "admin": 119
+    "admin": 12000019,
+    "info": 419
   },
   {
     "id": 20,
@@ -177,7 +196,8 @@
     "field": "어학",
     "inrecruitment" : "모집 중",
     "introduction" : "정기 영어 회화 시간을 통해 영어 말하기 연습을 할 수 있고, 평소에 몰랐던 영어 실전 표현을 배울 수 있음, 영어로 말하면서, 부원들과 친해질 수 있음, 영어를 못하더라도 다같이 배워가고 연습하면서 자신감을 얻고 성장하는 목표를 갖음",
-    "admin": 120
+    "admin": 12000020,
+    "info": 420
   },
   {
     "id": 21,
@@ -186,7 +206,8 @@
     "field": "어학",
     "inrecruitment" : "모집 중",
     "introduction" : "스피치 실력향상",
-    "admin": 121
+    "admin": 12000021,
+    "info": 421
   },
   {
     "id": 22,
@@ -195,7 +216,8 @@
     "field": "어학",
     "inrecruitment" : "모집 마감",
     "introduction" : "국제 리더십 학생 협회 AIESEC은 전 세계 126개국 네트워크를 바탕으로 청년들의 잠재력을 개발하고 글로벌 리더를 양성하는 것을 목적으로 활동하는 UN이 인정한 세계 최대 규모의 비영리 학생단체",
-    "admin" : 122
+    "admin" : 12000022,
+    "info" : 422
   },
   {
     "id": 23,
@@ -204,7 +226,8 @@
     "field": "어학",
     "inrecruitment" : "모집 중",
     "introduction" : "팝송과 만화영화 등 다양한 매체를 활용해 리스닝과 스피킹 실력을 함께 향상시킴. 영어의 악센트에 집중하여 학습해, 각 구간의 악센트를 분석하여 자연스럽게 체득하는 과정을 통해 실제 대화에서 활용할 수 있도록 하는 실질적인 훈련을 함.",
-    "admin" : 123
+    "admin" : 12000023,
+    "info": 423
   },
   {
     "id": 24,
@@ -213,7 +236,8 @@
     "field": "어학",
     "inrecruitment" : "모집 중",
     "introduction" : "외국인 교환학생 및 유학생들과의 문화국제교류",
-    "admin" : 124
+    "admin" : 12000024,
+    "info": 424
   },
   {
     "id": 25,
@@ -222,7 +246,8 @@
     "field": "어학",
     "inrecruitment" : "모집 중",
     "introduction" : "영어 스피치 스크립트를 써보고 직접 스피치 활동을 통해 영어 실력 향상,친목 도모",
-    "admin" : 125
+    "admin" : 12000025,
+    "info": 425
   },
   {
     "id": 26,
@@ -231,7 +256,8 @@
     "field": "어학",
     "inrecruitment" : "모집 중",
     "introduction" : "미국의 대표적 시사 주간지 TIME 연구 및 친목도모",
-    "admin" : 126 
+    "admin" : 12000026,
+    "info": 426
   },
   {
     "id": 27,
@@ -240,7 +266,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "다양한 프로젝트와 외부대회 출전을 통해 스펙도 챙기고, 친목도모도 하는 활동을 목적으로 함",
-    "admin" : 127
+    "admin" : 12000027,
+    "info": 427
   },
   {
     "id": 28,
@@ -249,7 +276,8 @@
     "field": "연구",
     "inrecruitment" : "모집 마감",
     "introduction" : "로봇 제작 활동을 위한 개발, 연구, 교육 등의 목적",
-    "admin" : 128
+    "admin" : 12000028,
+    "info": 428
   },
   {
     "id": 29,
@@ -258,7 +286,8 @@
     "field": "연구",
     "inrecruitment" : "모집 마감",
     "introduction" : "우주를 탐구하고 관측하는 것을 좋아하는 사람들이 모인 동아리",
-    "admin" : 129
+    "admin" : 12000029,
+    "info": 429
   },
   {
     "id": 30,
@@ -267,7 +296,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "다 같이 모여서 하는 보드게임",
-    "admin" : 130
+    "admin" : 12000030,
+    "info": 430
   },
   {
     "id": 31,
@@ -276,7 +306,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "살아있는 역사의 현장을 찾아 조국에 대한 열정을 심어가며, 구성원간의 친목을 도모하는 역사기행 동아리",
-   "admin" : 131
+   "admin" : 12000031,
+   "info": 431
   },
   {
     "id": 32,
@@ -285,7 +316,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "부원들과 함께 본인이 생각하던 아이디어들을 만들어내고, 프로젝트를 진행하며 함께 성장하는 것이 목적",
-    "admin" : 132
+    "admin" : 12000032,
+    "info": 432
   },
   {
     "id": 33,
@@ -294,7 +326,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "학술",
-    "admin" : 133
+    "admin" : 12000033,
+    "info": 433
   },
   {
     "id": 34,
@@ -303,7 +336,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "부원간 각종 공모전, 대회 출전 및 친목도모",
-    "admin" : 134
+    "admin" : 12000034,
+    "info": 434
   },
   {
     "id": 35,
@@ -312,7 +346,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "바둑 두기 및 친목 도모",
-    "admin" : 135
+    "admin" : 12000035,
+    "info": 435
   },
   {
     "id": 36,
@@ -321,7 +356,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "IT사회에서 성장하길 원하는 사람들을 연결하여 새로운 가치를 창출",
-    "admin" : 136
+    "admin" : 12000036,
+    "info": 436
   },
   {
     "id": 37,
@@ -330,7 +366,8 @@
     "field": "연구",
     "inrecruitment" : "모집 마감",
     "introduction" : "자동차 제작 및 자작 자동차 대회 출전을 목적으로 자동차에 대한 기술을 세미나, 토론 등으로 탐구 후  실습하며 역학 지식을 실증하는데 목적을 둠",
-    "admin" : 137
+    "admin" : 12000037,
+    "info": 437
   },
   {
     "id": 38,
@@ -339,7 +376,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "데이터 분석 및 웹 개발",
-    "admin" : 138
+    "admin" : 12000038,
+    "info": 438
   },
   {
     "id": 39,
@@ -348,7 +386,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "앱&웹 서비스 런칭에 도전하는 대학생 IT 연합동아리로서, 학기 중 스터디를 통해 학습하고 방학 프로젝트에 참여하여 실제 IT 서비스 개발 및 배포",
-    "admin" : 139
+    "admin" : 12000039,
+    "info": 439
   },
   {
     "id": 40,
@@ -357,16 +396,18 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "프로그래밍에 관심 있는 학생들이 함께 공부하며 실력을 향상시키고, 동시에 친목을 도모함",
-    "admin" : 140
+    "admin" : 12000040,
+    "info": 440
   },
   {
     "id": 41,
     "name": "독서 삼매경",
     "type": "중앙 동아리",
     "field": "사회",
-    "inrecruitment" : "모집 마감",
+    "inrecruitment": "모집 마감",
     "introduction" : "가치 있는 생각의 공유",
-    "admin" : 141
+    "admin" : 12000041,
+    "info": 441
   },
   {
     "id": 42,
@@ -375,7 +416,8 @@
     "field": "사회",
     "inrecruitment" : "모집 중",
     "introduction" : "삶에 필요한 법률 지식을 취득하고 논리적인 사고력과 더불어 법리적 사고 또는 법학적 지식을 얻기 위함",
-    "admin" : 142
+    "admin" : 12000042,
+    "info": 442
   },
   {
     "id": 43,
@@ -384,7 +426,8 @@
     "field": "사회",
     "inrecruitment" : "모집 중",
     "introduction" : "소네팅 동아리에서는 마케팅 이론을 학습한 뒤, 팀 별로 주어진 과제에 맞는 SNS 마케팅을 직접 제작, 현직 실무자들의 강연을 통해 부원들의 시야를 넓혀서 더 특별한 마케팅 결과물들을 제작하도록 도움",
-    "admin" : 143
+    "admin" : 12000043,
+    "info": 443
   },
   {
     "id": 44,
@@ -393,7 +436,8 @@
     "field": "사회",
     "inrecruitment" : "모집 중",
     "introduction" : "일상에서의 텃밭활동으로 기후위기 시대에 자연과 사람이 공존하는 방법을 배우고, 다양한 사회 이슈에 대한 프로젝트 형식의 탐구 활동을 통해 건강한 공동체로 함께 살아갈 수 있는 방법을 찾아나감",
-    "admin" : 144
+    "admin" : 12000044,
+    "info": 444
   },
   {
     "id": 45,
@@ -402,7 +446,8 @@
     "field": "사회",
     "inrecruitment" : "모집 중",
     "introduction" : "사회문제 해결을 위한 비즈니스 프로젝트 기획 및 실행",
-    "admin" : 145
+    "admin" : 12000045,
+    "info": 445
   },
   {
     "id": 46,
@@ -411,7 +456,8 @@
     "field": "사회",
     "inrecruitment" : "모집 마감",
     "introduction" : "다양한 주제로 사람들과 즐겁게 토론하며 여러 학과 사람들과의 친목 도모",
-    "admin" : 146
+    "admin" : 12000046,
+    "info": 446
   },
   {
     "id": 47,
@@ -420,7 +466,8 @@
     "field": "사회",
     "inrecruitment" : "모집 마감",
     "introduction" : "Ideas Worth Spreading'에 뜻을 두는 TED에 동참하여 ‘순수한 열정으로의 회귀’를 모토로 하며, 인하대, 나아가 인천의 소통의 장을 만들기 위하여 만들어짐 뜻이 있는 강연을 통하여 가슴 한 구석에 작은 공명을 일으키는것, TEDxInhaU가 택한 더 나은 세상을 만드는 방법",
-    "admin" : 147
+    "admin" : 12000047,
+    "info": 447
   },
   {
     "id": 48,
@@ -429,7 +476,8 @@
     "field": "종교",
     "inrecruitment" : "모집 중",
     "introduction" : "행복한 예수님의 제자를 양육",
-    "admin" : 148
+    "admin" : 12000048,
+    "info": 448
   },
   {
     "id": 49,
@@ -438,7 +486,8 @@
     "field": "종교",
     "inrecruitment" : "모집 마감",
     "introduction" : "예수님을 믿는 공동체로 모여서 예배드리며, 교내 뿐만 아니라 세계로 복음을 전하기 위함",
-    "admin" : 149
+    "admin" : 12000049,
+    "info": 449
   },
   {
     "id": 50,
@@ -447,7 +496,8 @@
     "field": "종교",
     "inrecruitment" : "모집 마감",
     "introduction" : "캠퍼스 복음화",
-    "admin" : 150
+    "admin" : 12000050,
+    "info": 450
   },
   {
     "id": 51,
@@ -456,7 +506,8 @@
     "field": "종교",
     "inrecruitment" : "모집 중",
     "introduction" : "회원 간 교류를 통해 이해와 친선을 도모하고 더 나아가 불타의 근본정신을 탐구하고 불타정신 체험을 통해 인격 완성을 기여하고 이 땅의 불국정토 건설에 그 목적을 둠",
-    "admin" : 151
+    "admin" : 12000051,
+    "info": 451
   },
   {
     "id": 52,
@@ -465,7 +516,8 @@
     "field": "종교",
     "inrecruitment" : "모집 중",
     "introduction" : "인하대 가톨릭 종교활동",
-    "admin" : 152
+    "admin" : 12000052,
+    "info": 452
   },
   {
     "id": 53,
@@ -474,7 +526,8 @@
     "field": "종교",
     "inrecruitment" : "모집 마감",
     "introduction" : "하나님을 알고 하나님을 알림",
-    "admin" : 153
+    "admin" : 12000053,
+    "info": 453
   },
   {
     "id": 54,
@@ -483,7 +536,8 @@
     "field": "종교",
     "inrecruitment" : "모집 중",
     "introduction" : "대학과 민족과 세계에 하나님의 나라가 임하게 하려는 목적",
-    "admin" : 154
+    "admin" : 12000054,
+    "info": 454
   },
   {
     "id": 55,
@@ -492,7 +546,8 @@
     "field": "종교",
     "inrecruitment" : "모집 마감",
     "introduction" : "예수님을 진정으로 따르는 제자가 되고, 그러한 제자를 세워 인하대와 민족과 온 세상에 영적운동을 일으킴",
-    "admin" : 155
+    "admin" : 12000055,
+    "info": 455
   },
   {
     "id": 56,
@@ -501,7 +556,8 @@
     "field": "종교",
     "inrecruitment" : "모집 중",
     "introduction" : "수어 모임을 통해 수어를 알리고 예배모임,수화찬양 등을 통해 하나님의 사랑을 전하기 위함",
-    "admin" : 156
+    "admin" : 12000056,
+    "info": 456
   },
   {
     "id": 57,
@@ -510,7 +566,8 @@
     "field": "종교",
     "inrecruitment" : "모집 중",
     "introduction" : "캠퍼스복음화를 통해 성서한국, 세계선교를 이루는 것",
-    "admin" : 157
+    "admin" : 12000057,
+    "info": 457
   },
   {
     "id": 58,
@@ -519,7 +576,8 @@
     "field": "종교",
     "inrecruitment" : "모집 중",
     "introduction" : "캠퍼스와 세상 속 하나님 나라 운동",
-    "admin" : 158
+    "admin" : 12000058,
+    "info": 458
   },
   {
     "id": 59,
@@ -528,7 +586,8 @@
     "field": "종교",
     "inrecruitment" : "모집 중",
     "introduction" : "만인을 그리스도의 제자로 삼자(마 28:19)를 비전으로 모인 작은 모임",
-    "admin" : 159
+    "admin" : 12000059,
+    "info": 459
   },
   {
     "id": 60,
@@ -537,7 +596,8 @@
     "field": "종교",
     "inrecruitment" : "모집 마감",
     "introduction" : "교내 학생들에게 복음전도와 제자훈련으로 진실한 공동체를 경험케하고, 죠이 스피릿(Jesus first, Others second, You third & spell JOY)을 기반으로 활동",
-    "admin" : 160
+    "admin" : 12000060,
+    "info": 460
   },
   {
     "id": 61,
@@ -546,7 +606,8 @@
     "field": "종교",
     "inrecruitment" : "모집 중",
     "introduction" : "교내에서 비슷한 신앙의 뜻을 가진 학생들이 만나 교회와는 또 다른 새로운 공동체를 형성하고 함께 말씀을 배우며 캠퍼스 사역의 부흥을 위해 노력하는 동아리",
-    "admin" : 161
+    "admin" : 12000061,
+    "info": 461
   },
   {
     "id": 62,
@@ -555,7 +616,8 @@
     "field": "전시",
     "inrecruitment" : "모집 중",
     "introduction" : "단편 영화 제작 및 영화제 출품",
-    "admin" : 162
+    "admin" : 12000062,
+    "info": 462
   },
   {
     "id": 63,
@@ -564,7 +626,8 @@
     "field": "전시",
     "inrecruitment" : "모집 중",
     "introduction" : "다양한 공예품 창작",
-    "admin" : 163
+    "admin" : 12000063,
+    "info": 463
   },
   {
     "id": 64,
@@ -573,7 +636,8 @@
     "field": "전시",
     "inrecruitment" : "모집 중",
     "introduction" : "기술 습득과 전문성 개발: 서예의 다양한 기술과 스타일을 배우고, 전문적인 수준의 서예 실력을 개발할 수 있음, 이는 개인의 취미 생활 뿐만 아니라 전문적인 경로로도 발전할 수 있는 기회를 제공함",
-    "admin" : 164
+    "admin" : 12000064,
+    "info": 464
   },
   {
     "id": 65,
@@ -582,7 +646,8 @@
     "field": "전시",
     "inrecruitment" : "모집 마감",
     "introduction" : "교내 순수 미술 동아리로서 유화 작품 활동을 주로하고 다양한 사람들과 교류하며, 자신의 작품 세계를 더욱 풍부하게 할 수 있는 기회를 만듦",
-    "admin" : 165
+    "admin" : 12000065,
+    "info": 465
   },
   {
     "id": 66,
@@ -591,7 +656,8 @@
     "field": "전시",
     "inrecruitment" : "모집 마감",
     "introduction" : "광고 제작 연구 및 탐색",
-    "admin" : 166
+    "admin" : 12000066,
+    "info": 466
   },
   {
     "id": 67,
@@ -600,7 +666,8 @@
     "field": "전시",
     "inrecruitment" : "모집 중",
     "introduction" : "영화 감상 및 친목도모",
-    "admin" : 167
+    "admin" : 12000067,
+    "info": 467
   },
   {
     "id": 68,
@@ -609,7 +676,8 @@
     "field": "전시",
     "inrecruitment" : "모집 중",
     "introduction" : "만화, 일러스트, 소설 등의 창작물 제작",
-    "admin" : 168
+    "admin" : 12000068,
+    "info": 468
   },
   {
     "id": 69,
@@ -618,7 +686,8 @@
     "field": "전시",
     "inrecruitment" : "모집 중",
     "introduction" : "문화 작품 탐색 및 창작",
-    "admin" : 169
+    "admin" : 12000069,
+    "info": 469
   },
   {
     "id": 70,
@@ -627,7 +696,8 @@
     "field": "전시",
     "inrecruitment" : "모집 마감",
     "introduction" : "사진 촬영 및 카메라 연구",
-    "admin" : 170
+    "admin" : 12000070,
+    "info": 470
   },
   {
     "id": 71,
@@ -636,7 +706,8 @@
     "field": "전시",
     "inrecruitment" : "모집 중",
     "introduction" : "시 창작 및 공유",
-    "admin" : 171
+    "admin" : 12000071,
+    "info": 471
   },
   {
     "id": 72,
@@ -645,7 +716,8 @@
     "field": "전시",
     "inrecruitment" : "모집 중",
     "introduction" : "모든 인하인이 모여 영화를 연구하고 직접 제작하는 중앙 동아리",
-    "admin" : 172
+    "admin" : 12000072,
+    "info": 472
   },
   {
     "id": 73,
@@ -654,7 +726,8 @@
     "field": "무예",
     "inrecruitment" : "모집 중",
     "introduction" : "검도를 통한 체력 증진 및 친목활동",
-    "admin" : 173
+    "admin" : 12000073,
+    "info": 473
   },
   {
     "id": 74,
@@ -663,7 +736,8 @@
     "field": "무예",
     "inrecruitment" : "모집 중",
     "introduction" : "맨몸운동을 이용한 근력향상 및 자기관리",
-    "admin" : 174
+    "admin" : 12000074,
+    "info": 474
   },
   {
     "id": 75,
@@ -672,7 +746,8 @@
     "field": "무예",
     "inrecruitment" : "모집 마감",
     "introduction" : "주짓수 기술공유 및 훈련",
-    "admin" : 175
+    "admin" : 12000075,
+    "info": 475
   },
   {
     "id": 76,
@@ -681,7 +756,8 @@
     "field": "무예",
     "inrecruitment" : "모집 중",
     "introduction" : "운동을 통해 체력 증진. 단합력도 기르며 대학교 생활에서 좋은 추억 쌓기",
-    "admin" : 176
+    "admin" : 12000076,
+    "info": 476
   },
   {
     "id": 77,
@@ -690,7 +766,8 @@
     "field": "무예",
     "inrecruitment" : "모집 마감",
     "introduction" : "팔씨름 실력 향상 및 친목도모활동",
-    "admin" : 177
+    "admin" : 12000077,
+    "info": 477
   },
   {
     "id": 78,
@@ -699,7 +776,8 @@
     "field": "무예",
     "inrecruitment" : "모집 중",
     "introduction" : "유도를 통한 심신의 단련과 각종 동아리 활동을 통한 친목을 도모함",
-    "admin" : 178
+    "admin" : 12000078,
+    "info": 478
   },
   {
     "id": 79,
@@ -708,7 +786,8 @@
     "field": "무예",
     "inrecruitment" : "모집 중",
     "introduction" : "복싱 실력 신장 및 기초 체력 단련",
-    "admin" : 179
+    "admin" : 12000079,
+    "info": 479
   },
   {
     "id": 80,
@@ -717,7 +796,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "테니스를 배우고 치면서 사람들과 친해지고 꾸준하게 운동할 수 있도록 도움",
-    "admin" : 180
+    "admin" : 12000080,
+    "info": 480
   },
   {
     "id": 81,
@@ -726,7 +806,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "탁구 및 친목도모",
-    "admin" : 181
+    "admin" : 12000081,
+    "info": 481
   },
   {
     "id": 82,
@@ -735,7 +816,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "농구 실력 향상, 농구 대회 출전 및 수상",
-    "admin" : 182
+    "admin" : 12000082,
+    "info": 482
   },
   {
     "id": 83,
@@ -744,7 +826,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "볼링이라는 스포츠를 함께 즐기며 친목 도모",
-    "admin" : 183
+    "admin" : 12000083,
+    "info": 483
   },
   {
     "id": 84,
@@ -753,7 +836,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "야구를 하며 팀원들의 유대감과 협동심 증진",
-    "admin" : 184
+    "admin" : 12000084,
+    "info": 484
   },
   {
     "id": 85,
@@ -762,7 +846,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "축구를 좋아하는 여성분들을 위한 동아리",
-    "admin" : 185
+    "admin" : 12000085,
+    "info": 485
   },
   {
     "id": 86,
@@ -771,7 +856,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "정기운동 축구/친목도모/대회 참가",
-    "admin" : 186
+    "admin" : 12000086,
+    "info": 486
   },
   {
     "id": 87,
@@ -780,7 +866,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "대학리그 출전, 친목도모(Team 정신 배우기), 체력증진",
-    "admin" : 187
+    "admin" : 12000087,
+    "info": 487
   },
   {
     "id": 88,
@@ -789,7 +876,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "테니스를 통해 몸과 마음을 건강히 가꾸고 좋은 인간관계를 맺음",
-    "admin" : 188
+    "admin" : 12000088,
+    "info": 488
   },
   {
     "id": 89,
@@ -798,7 +886,8 @@
     "field": "구기", 
     "inrecruitment" : "모집 중",
     "introduction" : "배구라는 스포츠 즐기기",
-    "admin" : 189
+    "admin" : 12000089,
+    "info": 489
   },
   {
     "id": 90,
@@ -807,7 +896,8 @@
     "field": "레저",
     "inrecruitment" : "모집 마감",
     "introduction" : "Inha Rider",
-    "admin" : 190
+    "admin" : 12000090,
+    "info": 490
   },
   {
     "id": 91,
@@ -816,7 +906,8 @@
     "field": "레저",
     "inrecruitment" : "모집 중",
     "introduction" : "패러글라이딩 자격증 교육을 통해 혼자서 비행하는 것을 목표로 함",
-    "admin" : 191
+    "admin" : 12000091,
+    "info": 491
   },
   {
     "id": 92,
@@ -825,7 +916,8 @@
     "field": "레저",
     "inrecruitment" : "모집 마감",
     "introduction" : "인라인스케이트의 대중화, 인라인스케이트 실력향상",
-    "admin" : 192
+    "admin" : 12000092,
+    "info": 492
   },
   {
     "id": 93,
@@ -834,7 +926,8 @@
     "field": "레저",
     "inrecruitment" : "모집 중",
     "introduction" : "젊음과 열정으로 미지의 수중세계를 탐험, 도전정신을 키우고 단체생활을 통하여 선후배간의 우의와 협조정신을 배움",
-    "admin" : 193
+    "admin" : 12000093,
+    "info": 493
   },
   {
     "id": 94,
@@ -843,7 +936,8 @@
     "field": "레저",
     "inrecruitment" : "모집 마감",
     "introduction" :"친목도모, 체력증진, 전국대학조정대회 참가",
-    "admin" : 194
+    "admin" : 12000094,
+    "info": 494
   },
   {
     "id": 95,
@@ -852,7 +946,8 @@
     "field": "레저",
     "inrecruitment" : "모집 마감",
     "introduction" : "스키 실력 증진 및 친목",
-    "admin" : 195
+    "admin" : 12000095,
+    "info": 495
   },
   {
     "id": 96,
@@ -861,7 +956,8 @@
     "field": "레저",
     "inrecruitment" : "모집 마감",
     "introduction" : "등반을 통한 체력증진과 높은 정신력 함양",
-    "admin" : 196
+    "admin" : 12000096,
+    "info": 496
   },
   {
     "id": 97,
@@ -870,7 +966,8 @@
     "field": "레저",
     "inrecruitment" : "모집 중",
     "introduction" : "친목 및 체력 단련",
-    "admin" : 197
+    "admin" : 12000097,
+    "info": 497
   },
   {
     "id": 98,
@@ -879,7 +976,8 @@
     "field": "레저",
     "inrecruitment" : "모집 마감",
     "introduction" : "스노우보드 활동",
-    "admin" : 198
+    "admin" : 12000098,
+    "info": 498
   },
   {
     "id": 99,
@@ -888,7 +986,8 @@
     "field": "레저",
     "inrecruitment" : "모집 중",
     "introduction" : "스케이트보드 활동 및 친목 도모",
-    "admin" : 199
+    "admin" : 12000099,
+    "info": 499
   },
   {
     "id": 100,
@@ -897,7 +996,8 @@
     "field": "레저",
     "inrecruitment" : "모집 중",
     "introduction" : "안전하고 재미있는 다이빙 활동",
-    "admin" : 200
+    "admin" : 12000100,
+    "info": 500
   },
   {
     "id": 101,
@@ -906,7 +1006,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 마감",
     "introduction" : "어린이 교육봉사",
-    "admin" : 201
+    "admin" : 12000101,
+    "info": 501
   },
   {
     "id": 102,
@@ -915,7 +1016,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "사회적 약자 보호 의무 실천",
-    "admin" : 202
+    "admin" : 12000102,
+    "info": 502
   },
   {
     "id": 103,
@@ -924,7 +1026,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "다양한 봉사 활동을 통해 세상에 이바지하고 발전에 도움이 되고자 함",
-    "admin" : 203
+    "admin" : 12000103,
+    "info": 503
   },
   {
     "id": 104,
@@ -933,7 +1036,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 마감",
     "introduction" : "유기동물의 더 나은 삶을 위해 고민하고, 유기동물에게 마음 쓰는 사람들이 더 많아지기를 바라는 마음으로 모인 동아리",
-    "admin" : 204
+    "admin" : 12000104,
+    "info": 504
   },
   {
     "id": 105,
@@ -942,7 +1046,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "좁게는 노년층 및 소외계층의 지역 사회 적응을 도와주는 봉사활동을 하며, 넓게는 시 전체에서 시행하는 봉사활동에 참여하여 봉사를 통한 지역 사회 활성화를 도모함",
-    "admin" : 205
+    "admin" : 12000105,
+    "info": 505
   },
   {
     "id": 106,
@@ -951,7 +1056,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "여러가지 사정으로 기초 교육을 받지 못하신 분들에게 학습의 기회를 제공",
-    "admin" : 206
+    "admin" : 12000106,
+    "info": 506
   },
   {
     "id": 107,
@@ -960,7 +1066,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "아이들의 학습, 정신적인 부분 채워주는 봉사",
-    "admin" : 207
+    "admin" : 12000107,
+    "info": 507
   },
   {
     "id": 108,
@@ -969,7 +1076,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "검정고시 교육봉사 활동",
-    "admin" : 208
+    "admin" : 12000108,
+    "info": 508
   },
   {
     "id": 109,
@@ -978,7 +1086,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "봉사활동, 친목",
-    "admin" : 209
+    "admin" : 12000109,
+    "info": 509
   },
   {
     "id": 110,
@@ -987,7 +1096,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "도움이 필요한 어린이들에게 교육적 도움 제공",
-    "admin" : 210
+    "admin" : 12000110,
+    "info": 510
   },
   {
     "id": 111,
@@ -996,7 +1106,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "주거환경 개선",
-    "admin" : 211
+    "admin" : 12000111,
+    "info": 511
   },
   {
     "id": 112,
@@ -1005,7 +1116,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "파파는 국내 아동 센터에 있는 아이들을 위해 봉사를 진행합니다. 아이들이 모두가 같은 출발선에서 시작할 수 있게 도움을 주는 것을 목표로 봉사를 진행하고 있습니다.",
-    "admin" : 212
+    "admin" : 12000112,
+    "info": 512
   },
   {
     "id": 113,
@@ -1014,7 +1126,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "교내외봉사 및 해병전우회",
-    "admin" : 213
+    "admin" : 12000113,
+    "info": 513
   },
   {
     "id": 114,
@@ -1023,7 +1136,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "어린이집, 유치원에서 아동 대상 연극 활동",
-    "admin" : 214
+    "admin" : 12000114,
+    "info": 514
   },
   {
     "id": 115,
@@ -1032,7 +1146,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "RCY는 사랑과 봉사의 인도주의 정신을 바탕으로 배우고 실천하여 우리 주위의 어려운 이웃을 위한 봉사활동을 하며 국내외 단원들과 친선활동을 통해 남을 이해하고 사랑하며, 자신과 친구, 가족, 이웃의 건강과 생명을 보호하기 위한 활동이 목적인 동아리",
-    "admin" : 215
+    "admin" : 12000115,
+    "info": 515
   },
   {
     "id": 116,
@@ -1041,7 +1156,8 @@
     "field": "동아리연합회",
     "inrecruitment" : "모집 마감",
     "introduction" : "창업에 관한 연구 및 재학중 창업활동",
-    "admin" : 216
+    "admin" : 12000116,
+    "info": 516
   },
   {
     "id": 117,
@@ -1050,7 +1166,8 @@
     "field": "동아리연합회",
     "inrecruitment" : "모집 중",
     "introduction" : "인하인의 열과 성을 응집시켜 각종대회에서 우승을 차지할 수 있도록 응원",
-    "admin" : 217
+    "admin" : 12000117,
+    "info": 517
   },
   {
     "id": 118,
@@ -1059,7 +1176,8 @@
     "field": "동아리연합회",
     "inrecruitment" : "모집 중",
     "introduction" : "문화예술운동연합으로 문화와 예술에 관련된 운동을 목적",
-    "admin" : 218
+    "admin" : 12000118,
+    "info": 518
   },
   {
     "id": 119,
@@ -1068,7 +1186,8 @@
     "field": "구기",
     "inrecruitment" : "모집 마감",
     "introduction" : "운동! 학업! 인맥! 까지 대학생활에 필요한 모든 토끼를 한꺼번에 잡을 수 있는 저희 컴퓨터공학과 소모임 땅울림은 여러분의 관심과 가입을 애타게 기다리고 있습니다!",
-    "admin" : 219
+    "admin" : 12000119,
+    "info": 519
   },
   {
     "id": 120,
@@ -1077,7 +1196,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "CTP(Challenge The Programming)는 국제 대학생 프로그래밍 대회 등 여러 프로그래밍 대회를 준비하며 자료구조 및 알고리즘을 연구하는 학술소모임입니다",
-    "admin" : 220
+    "admin" : 12000120,
+    "info": 520
   },
   {
     "id": 121,
@@ -1086,7 +1206,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "SII(Security in inha)는 해킹에 관심있는 사람들이 모여 관련 지식들을 공유하고 함께 학습하기 위해 모인 해킹 소모임입니다.",
-    "admin" : 221
+    "admin" : 12000121,
+    "info": 521
   },
   {
     "id": 122,
@@ -1095,7 +1216,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "농구를 좋아하는 사람들이 모여있는곳!! 이곳에 바로 버져비터입니다!!",
-    "admin" : 222
+    "admin" : 12000122,
+    "info": 522
   },
   {
     "id": 123,
@@ -1104,7 +1226,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 마감",
     "introduction" : "안녕하세요. 마음이 따뜻한 사람들의 모임, 생명공학과 봉사소모임 징검다리입니다.",
-    "admin" : 223
+    "admin" : 12000123,
+    "info": 523
   },
   {
     "id": 124,
@@ -1113,7 +1236,8 @@
     "field": "구기",
     "inrecruitment" : "모집 마감",
     "introduction" : "저희 Red Dragons는 생명공학과 야구 소모임으로써 야구에 관심이 있는 생명화학공학부 학생이라면 누구든지 참여할 수 있습니다.",
-    "admin" : 224
+    "admin" : 12000124,
+    "info": 524
   },
   {
     "id": 125,
@@ -1122,7 +1246,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "안녕하세요! 생명, 해양과학 연합 축구 소모임 휘슬입니다. 휘슬은 실력과 상관없이 축구를 즐기기 위한 소모임이며, 활발하고 즐겁게 활동하고 있습니다.",
-    "admin" : 225
+    "admin" : 12000125,
+    "info": 525
   },
   {
     "id": 126,
@@ -1131,7 +1256,8 @@
     "field": "구기",
     "inrecruitment" : "모집 마감",
     "introduction" : "안녕하세요! 저희는 교내 운동장을 이용해 농구를 즐기는 소모임입니다.",
-    "admin" : 226
+    "admin" : 12000126,
+    "info": 526
   },
   {
     "id": 127,
@@ -1140,7 +1266,8 @@
     "field": "전시",
     "inrecruitment" : "모집 중",
     "introduction" : "실력과는 관계 없이, 사진을 좋아하시거나 사진에 관심이 있는 분이시라면 ! 언제든 환영합니다~!! 망막에서 생명과학과 선후배와 함께 즐거운 추억을 만들어보아요 :)",
-    "admin" : 227
+    "admin" : 12000127,
+    "info": 527
   },
   {
     "id": 128,
@@ -1149,7 +1276,8 @@
     "field": "구기",
     "inrecruitment" : "모집 중",
     "introduction" : "스포츠과학과 내 축구 동아리로, 재학생을 주축으로 선후배간의 친목을 도모하여 교내 대회 및 교외 대회에 참여하여 우수한 성적을 거두고 있다.",
-    "admin" : 228
+    "admin" : 12000128,
+    "info": 528
   },
   {
     "id": 129,
@@ -1158,7 +1286,8 @@
     "field": "구기",
     "inrecruitment" : "모집 마감",
     "introduction" : "출전하는 대회에서 좋은 성적을 거두는 최고의 농구동아리로 코트에서 서로 어깨를 맞대고 땀을 흘리며 성장해 나가는 열정적인 동아리이다.",
-    "admin" : 229
+    "admin" : 12000129,
+    "info": 529
   },
   {
     "id": 130,
@@ -1167,7 +1296,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "스포츠과학과 내 학술 동아리로, 해부학, 생리학, 역학을 기본으로 하여 운동처방사, 피지컬 트레이닝, 선수트레이너 등 다방면에 걸쳐 외국 논문과 각종 자격증 취득을 위하여 연구 및 토론을 하는 학술 동아리이다.",
-    "admin" : 230
+    "admin" : 12000130,
+    "info": 530
   },
   {
     "id": 131,
@@ -1176,7 +1306,8 @@
     "field": "연구",
     "inrecruitment" : "모집 마감",
     "introduction" : "스포츠과학과 내 스포츠산업 동아리로 스포츠산업 현장을 체험하고, 소속 동아리부원들의 지식과 경험을 나누어 스포츠산업 현장의 진출을 돕는 동아리이다.",
-    "admin" : 231
+    "admin" : 12000131,
+    "info": 531
   },
   {
     "id": 132,
@@ -1185,7 +1316,8 @@
     "field": "무예",
     "inrecruitment" : "모집 중",
     "introduction" : "스포츠과학 전공 학생들이 스포츠과학의 원리와 지식을 기반으로 스포츠를 더 심도있게 탐구하고, 지속적인 모임을 통해서 육상 종목을 기반으로 달리기, 플래그 풋볼, 스포츠 영상분석, 대외 활동을 진행하고 있다.",
-    "admin" : 232
+    "admin" : 12000132,
+    "info": 532
   },
   {
     "id": 133,
@@ -1194,7 +1326,8 @@
     "field": "공연",
     "inrecruitment" : "모집 마감",
     "introduction" : "인하대학교 연극영화학과 재학생 및 졸업생으로 구성된 학과 내 극단",
-    "admin" : 233
+    "admin" : 12000133,
+    "info": 533
   },
   {
     "id": 134,
@@ -1203,7 +1336,8 @@
     "field": "공연",
     "inrecruitment" : "모집 중",
     "introduction" : "학과 내 뮤지컬을 공연, 연구하는 학회로, 2017년 첫 동계 워크샵 진행",
-    "admin" : 234
+    "admin" : 12000134,
+    "info": 534
   },
   {
     "id": 135,
@@ -1212,7 +1346,8 @@
     "field": "전시",
     "inrecruitment" : "모집 마감",
     "introduction" : "정기적으로 모여 영화를 관람 및 비평, 연구하는 학회",
-    "admin" : 235
+    "admin" : 12000135,
+    "info": 535
   },
   {
     "id": 136,
@@ -1221,7 +1356,8 @@
     "field": "전시",
     "inrecruitment" : "모집 마감",
     "introduction" : "의류디자인학과 신입생들을 대상으로 회원을 모집하여 의류디자인학과 재학생 회원들이 기초적인 구성실습이나 드로잉 등을 가르쳐주고 학생들이 직접 창작한 의상으로 연말 IFF패션쇼를 진행한다.",
-    "admin" : 236
+    "admin" : 12000136,
+    "info": 536
   },
   {
     "id": 137,
@@ -1230,7 +1366,8 @@
     "field": "연구",
     "inrecruitment" : "모집 중",
     "introduction" : "매월 논문 분석 및 발표, 조별 토론, 연구 계획서 작성활동",
-    "admin" : 237
+    "admin" : 12000137,
+    "info": 537
   },
   {
     "id": 138,
@@ -1239,7 +1376,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 마감",
     "introduction" : "매주 수어 학습 활동, 매학기 손짓소리 골든벨",
-    "admin" : 238
+    "admin" : 12000138,
+    "info": 538
   },
   {
     "id": 139,
@@ -1248,7 +1386,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 중",
     "introduction" : "매월 정기 봉사",
-    "admin" : 239
+    "admin" : 12000139,
+    "info": 539
   },
   {
     "id": 140,
@@ -1257,7 +1396,8 @@
     "field": "연구",
     "inrecruitment" : "모집 마감",
     "introduction" : "매월 의료 관련 주제 토론",
-    "admin" : 240
+    "admin" : 12000140,
+    "info": 540
   },
   {
     "id": 141,
@@ -1266,7 +1406,8 @@
     "field": "동아리연합회",
     "inrecruitment" : "모집 중",
     "introduction" : "새날 대공연 연습, 주 2회 정기 연습",
-    "admin" : 241
+    "admin" : 12000141,
+    "info": 541
   },
   {
     "id": 142,
@@ -1275,7 +1416,8 @@
     "field": "봉사",
     "inrecruitment" : "모집 마감",
     "introduction" : "매월 정기 봉사",
-    "admin" : 242
+    "admin" : 12000142,
+    "info": 542
   },
   {
     "id": 143,
@@ -1284,7 +1426,8 @@
     "field": "어학",
     "inrecruitment" : "모집 중",
     "introduction" : "매주 영어로 ice breaking, speech, medical debate 진행",
-    "admin" : 243
+    "admin" : 12000143,
+    "info": 543
   },
   {
     "id": 144,
@@ -1293,7 +1436,8 @@
     "field": "구기",
     "inrecruitment" : "모집 마감",
     "introduction" : "농구훈련",
-    "admin" : 244
+    "admin" : 12000144,
+    "info": 544
   },
   {
     "id": 145,
@@ -1302,7 +1446,8 @@
     "field": "공연",
     "inrecruitment" : "모집 중",
     "introduction" : "밴드 공연 연습",
-    "admin" : 245
+    "admin" : 12000145,
+    "info": 545
   },
   {
     "id": 146,
@@ -1311,6 +1456,7 @@
     "field": "공연",
     "inrecruitment" : "모집 마감",
     "introduction" : "댄스 공연 연습",
-    "admin" : 246
+    "admin" : 12000146,
+    "info": 546
   }
 ]

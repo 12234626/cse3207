@@ -1,110 +1,44 @@
-import { Request, Response } from "express";
+import {Request, Response} from "express";
 
-import sequelize from "../models";
+import {runQueryWithResponse, buildWhereClause} from "../utils/controller";
 
-// 모든 게시글 조회
-function getPosts(req: Request, res: Response) {
-  const {id, type, clue_id} = req.query;
-  let query = "SELECT * FROM post_table";
-  const replacements: any = {};
-  const conditions: string[] = [];
+// 게시글 조회
+function getPost(req: Request, res: Response) {
+  const {where, replacements} = buildWhereClause(req.query);
+  const query = "SELECT * FROM post_table" + where;
 
-  if (id) {
-    conditions.push("id = :id");
-    replacements.id = id;
-  }
-  if (type) {
-    conditions.push("type = :type");
-    replacements.type = type;
-  }
-  if (clue_id) {
-    conditions.push("clue_id = :clue_id");
-    replacements.clue_id = clue_id;
-  }
-  if (conditions.length > 0) {
-    query += " WHERE " + conditions.join(" AND ");
-  }
-
-  sequelize
-  .query(query, {replacements})
-  .then(function ([results]) {
-    res
-    .status(200)
-    .json(results);
-  })
-  .catch(function (err) {
-    res
-    .status(500)
-    .json({message: err});
-  });
+  runQueryWithResponse(req, res, query, replacements, 200);
 }
+
 // 게시글 생성
 function createPost(req: Request, res: Response) {
-  const { id, type, title, content, club_id } = req.body;
+  const {id, type, title, content, club_id} = req.body;
+  const query = "INSERT INTO post_table (id, type, title, content, club_id) VALUES (:id, :type, :title, :content, :club_id)";
+  const replacements = {id, type, title, content, club_id};
 
-  sequelize
-    .query(
-      "INSERT INTO post_table (id, type, title, content, club_id) VALUES (:id, :type, :title, :content, :club_id)",
-      {
-        replacements: { id, type, title, content, club_id },
-      }
-    )
-    .then(function ([results]) {
-      res
-      .status(201)
-      .json(results);
-    })
-    .catch(function (err) {
-      res
-      .status(500)
-      .json({message: err});
-    });
+  runQueryWithResponse(req, res, query, replacements, 201);
 }
+
 // 게시글 업데이트
 function updatePost(req: Request, res: Response) {
-  const { id } = req.params;
-  const { title, content } = req.body;
-
-  sequelize
-    .query(
-      "UPDATE post_table SET title = :title, content = :content WHERE id = :id",
-      {
-        replacements: { id, title, content },
-      }
-    )
-    .then(function ([results]) {
-      res
-      .status(200)
-      .json(results);
-    })
-    .catch(function (err) {
-      res
-      .status(500)
-      .json({message: err});
-    });
+  const {id, title, content} = req.body;
+  const query = "UPDATE post_table SET title = :title, content = :content WHERE id = :id";
+  const replacements = {id, title, content};
+  
+  runQueryWithResponse(req, res, query, replacements, 200);
 }
+
 // 게시글 삭제
 function deletePost(req: Request, res: Response) {
-  const { id } = req.params;
+  const {id} = req.body;
+  const query = "DELETE FROM post_table WHERE id = :id";
+  const replacements = {id};
 
-  sequelize
-    .query("DELETE FROM post_table WHERE id = :id", {
-      replacements: { id },
-    })
-    .then(function ([results]) {
-      res
-      .status(200)
-      .json(results);
-    })
-    .catch(function (err) {
-      res
-      .status(500)
-      .json({message: err});
-    });
+  runQueryWithResponse(req, res, query, replacements, 200);
 }
 
 export {
-  getPosts,
+  getPost,
   createPost,
   updatePost,
   deletePost,

@@ -23,7 +23,7 @@ function MyClubList() {
     const fetchJoinedClubs = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/db/club_member/user/${user.id}`
+          `http://localhost:3000/db/club_member/user_id/${user.id}`
         );
         const data = await response.json();
         setClubs(data);
@@ -41,7 +41,7 @@ function MyClubList() {
           {clubs.map((club) => (
             <div className="element" key={club.club_id}>
               <div className="myClub">
-                <div className="myClubName">{club.club_name}</div>
+                <div className="myClubName">{club.name}</div>
                 <button
                   className="clubCommunity"
                   onClick={handleMyClubClick}

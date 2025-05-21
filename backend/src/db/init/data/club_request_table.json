@@ -1,1 +1,25 @@
-[]
+[
+    {
+        "id": 1,
+        "applicationStatus" : "pending",
+        "club_id": 13,
+        "user_id": 12223701
+    },
+    {
+         "id": 2,
+        "applicationStatus" : "pending",
+        "club_id": 135,
+        "user_id": 12223701
+    },
+    {
+         "id": 3,
+        "applicationStatus" : "accepted",
+        "club_id": 111,
+        "user_id": 12223701
+    },
+    { "id": 4,
+        "applicationStatus" : "rejected",
+        "club_id": 28,
+        "user_id": 12223701
+    }
+]

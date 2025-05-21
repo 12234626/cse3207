@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./JoinedClub.css";
 
 function JoinedClub() {
   const navigate = useNavigate();
+
+  const [posts, setEventPosts] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:3000/db/post?type=notice").then((response) => {
+      console.debug(response);
+      setEventPosts(response.data);
+    });
+  }, []);
 
   const handleBackClick = () => {
     navigate("/MyPage");
@@ -17,11 +26,13 @@ function JoinedClub() {
     <div className="screen">
       <div className="phoneScreen">
         <div className="myClubPosts">
-          <div className="element">
-            <div className="myClubPost">
-              <div className="myClubPostName">게시글01</div>
+          {posts.map((post, index) => (
+            <div key={index} className="element">
+              <div className="myClubPost">
+                <div className="myClubPostName">{post.title}</div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
         <div className="topBar">
