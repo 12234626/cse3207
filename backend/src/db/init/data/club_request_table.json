@@ -45,5 +45,125 @@
         "applicationStatus": "accepted",
         "club_id": 88,
         "user_id": 12234218
+    },
+    {
+        "id": 9,
+        "applicationStatus": "pending",
+        "club_id": 15,
+        "user_id": 12000001
+    },
+    {
+        "id": 10,
+        "applicationStatus": "pending",
+        "club_id": 15,
+        "user_id": 12000002
+    },
+    {
+        "id": 11,
+        "applicationStatus": "pending",
+        "club_id": 15,
+        "user_id": 12000003
+    },
+    {
+        "id": 12,
+        "applicationStatus": "pending",
+        "club_id": 15,
+        "user_id": 12000004
+    },
+    {
+        "id": 13,
+        "applicationStatus": "pending",
+        "club_id": 15,
+        "user_id": 12000005
+    },
+    {
+        "id": 14,
+        "applicationStatus": "pending",
+        "club_id": 15,
+        "user_id": 12000006
+    },
+    {
+        "id": 15,
+        "applicationStatus": "pending",
+        "club_id": 15,
+        "user_id": 12000007
+    },
+    {
+        "id": 16,
+        "applicationStatus": "pending",
+        "club_id": 15,
+        "user_id": 12000008
+    },
+    {
+        "id": 17,
+        "applicationStatus": "pending",
+        "club_id": 15,
+        "user_id": 12000009
+    },
+    {
+        "id": 18,
+        "applicationStatus": "pending",
+        "club_id": 15,
+        "user_id": 120000010
+    },
+    {
+        "id": 19,
+        "applicationStatus": "pending",
+        "club_id": 16,
+        "user_id": 12000001
+    },
+    {
+        "id": 20,
+        "applicationStatus": "pending",
+        "club_id": 16,
+        "user_id": 12000002
+    },
+    {
+        "id": 21,
+        "applicationStatus": "pending",
+        "club_id": 16,
+        "user_id": 12000003
+    },
+    {
+        "id": 22,
+        "applicationStatus": "pending",
+        "club_id": 16,
+        "user_id": 12000004
+    },
+    {
+        "id": 23,
+        "applicationStatus": "pending",
+        "club_id": 16,
+        "user_id": 12000005
+    },
+    {
+        "id": 24,
+        "applicationStatus": "pending",
+        "club_id": 16,
+        "user_id": 12000006
+    },
+    {
+        "id": 25,
+        "applicationStatus": "pending",
+        "club_id": 16,
+        "user_id": 12000007
+    },
+    {
+        "id": 26,
+        "applicationStatus": "pending",
+        "club_id": 16,
+        "user_id": 12000008
+    },
+    {
+        "id": 27,
+        "applicationStatus": "pending",
+        "club_id": 16,
+        "user_id": 12000009
+    },
+    {
+        "id": 28,
+        "applicationStatus": "pending",
+        "club_id": 16,
+        "user_id": 120000010
     }
 ]
