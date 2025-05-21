@@ -41,7 +41,7 @@ function MyClubList() {
           {clubs.map((club) => (
             <div className="element" key={club.club_id}>
               <div className="myClub">
-                <div className="myClubName">{club.club_name}</div>
+                <div className="myClubName">{club.name}</div>
                 <button
                   className="clubCommunity"
                   onClick={handleMyClubClick}
