@@ -28,7 +28,7 @@ function Login() {
         console.log("데이터 구조: ", {
           name: data.name,
           id: data.id,
-          department: data.department
+          department: data.department,
         });
         if (data && Object.keys(data).length > 0) {
           localStorage.setItem("user", JSON.stringify(data));

@@ -56,7 +56,8 @@ function FixMemberInfo() {
         localStorage.setItem("user", JSON.stringify(updateUser));
 
         alert("회원 정보 수정 완료");
-        navigate("/MyPage");
+        navigate("/MyPage", { replace: true });
+        window.location.reload();
       } else {
         const data = await response.json();
         alert("수정 실패: " + JSON.stringify(data));
