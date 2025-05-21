@@ -33,10 +33,9 @@
 
 /* .screen .element {
   height: 54px;
-  left: 5px;
   position: relative;
   top: 10px;
-  width: 387px;
+  width: 400px;
 } */
 
 .screen .myClub {
@@ -46,7 +45,7 @@
   border-color: #0000001a;
   height: 54px;
   position: relative;
-  width: 383px;
+  width: 400px;
 }
 
 /* .screen .overlap-group {
