@@ -21,43 +21,31 @@
   width: 393px;
 }
 
-.screen .topBar {
-  height: 54px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 393px;
 
+.screen .filterBar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  overflow-x: auto;      /* 가로 스크롤 가능 */
-  scrollbar-width: thin; /* 파이어폭스 스크롤바 얇게 */
-  -webkit-overflow-scrolling: touch; /* 모바일 부드러운 스크롤 */
-
+  gap: 10px;
   padding: 0 10px;
   box-sizing: border-box;
-  gap: 10px; /* 아이템 간격 */
+  overflow-x: auto;       /* ✅ 수평 스크롤 활성화 */
+  white-space: nowrap;    /* ✅ 줄바꿈 방지 */
+  scrollbar-width: thin;  /* Firefox */
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 }
-.screen .topBar::-webkit-scrollbar {
-  height: 6px;
-}
-
-.screen .topBar::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
-
 /* .range, .category, .mo 절대 위치 제거, flex item으로 */
-.screen .range,
-.screen .category,
-.screen .mo {
-  flex: 0 0 auto; /* 너비 고정 안하고 콘텐츠에 맞게 */
+.screen .filterBar .range,
+.screen .filterBar .category,
+.screen .filterBar .mo {
+  flex: 0 0 auto;        /* ✅ 크기 고정, 줄바꿈 없음 */
+  min-width: 100px;
+  max-width: none;       /* 너무 작게 잘리는 것 방지 */
   height: 31px;
-  min-width: 120px; /* 필요에 따라 조절 */
-  max-width: 160px;
-  box-sizing: border-box;
+  text-align: center;
 }
+
+
 .screen .textRange2,
 .screen .textCategory2,
 .screen .textMo2 {

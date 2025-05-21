@@ -198,52 +198,57 @@ function MainDong() {
   return (
     <div className="screen">
       <div className="phoneScreen">
-        <div className="topBar" />
 
         <div className="main">
           <button className="myPageButton" onClick={handleMyPageClick} />
+               
+               <div className="hongBoButton">
+                  <button className="hongBoPostN" onClick={handleMainHClick}>
+                    홍보게시판
+                  </button>
+                </div>
 
-          <div className="hongBoButton">
-            <button className="hongBoPostN" onClick={handleMainHClick}>
-              홍보게시판
-            </button>
-          </div>
-
-          <div className="clubButton">
-            <button className="clubPostY">동아리</button>
-          </div>
-
-          <div className="clubScreen">
-            <div className="range">
-              <div
-                className="textRange2 clickableRange"
-                onClick={openAreaDropdown}
-              >
-                영역:{" "}
-                {selectedAreas.length > 0
-                  ? selectedAreas.join(", ")
-                  : "선택안됨"}
+              <div className="clubButton">
+                <button className="clubPostY">동아리</button>
               </div>
-            </div>
 
-            <div className="category">
-              <div
-                className="textCategory2 clickableRange"
-                onClick={openCategoryDropdown}
-              >
-                분야 :{" "}
-                {selectedCategories.length > 0
-                  ? selectedCategories.join(", ")
-                  : "선택 안됨"}
-              </div>
-            </div>
 
-            <div className="mo">
-              <div className="textMo2 clickableRange" onClick={openMoDropdown}>
-                {selectedMo.includes("모집중") ? "모집중" : "모집마감"}
-              </div>
-            </div>
+           <div className="clubScreen">
+                     <div className="filterBar">
+                           <div className="range">
+                          
+                              <div
+                                className="textRange2 clickableRange"
+                                onClick={openAreaDropdown}>
+                                영역: {selectedAreas.length > 0 ? selectedAreas.join(", ") : "선택안됨"}
+                              </div>
+                      
+                          </div>
 
+                           <div className="category">
+                  
+                              <div 
+                              className="textCategory2 clickableRange"
+                              onClick={openCategoryDropdown}>
+                                분야 : {selectedCategories.length > 0 ? selectedCategories.join(", ") : "선택 안됨"}
+                                </div>
+                            
+                            </div>
+
+
+                          <div className="mo">
+                            
+                              <div 
+                              className="textMo2 clickableRange"
+                              onClick={openMoDropdown}>
+                              {selectedMo.includes("모집중") ?  "모집중" :"모집마감"}
+                                </div>
+                       
+                            </div>
+                            
+                        </div>
+                      
+         
             <div className="clubList">
               {clubs.map((club, index) => (
                 <div key={index} className="club" onClick={handleClubClick}>
@@ -264,9 +269,10 @@ function MainDong() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
         </div>
+
+        </div>
+        
 
         {/* 영역 드롭다운 */}
         {areaDropdownOpen && (
@@ -351,6 +357,7 @@ function MainDong() {
             </div>
           </div>
         )}
+      </div>
       </div>
     </div>
   );
