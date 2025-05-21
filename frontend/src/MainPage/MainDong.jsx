@@ -148,7 +148,7 @@ function MainDong() {
   };
 
   const handleClubClick = () => {
-    navigate("/Club");
+    navigate(`/Club/${club.id}`, { state: { club } }); // 동아리 정보를 state로 전달
   };
 
   const handleApply = async (club) => {

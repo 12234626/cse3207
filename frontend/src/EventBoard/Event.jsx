@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Event.css";
 
 
-function MainH() {
+function Event() {
     const navigate = useNavigate();
   
     const handleBackClick = () => {
@@ -35,5 +35,5 @@ function MainH() {
     );
   }
   
-  export default MainH;
+  export default Event;
   
