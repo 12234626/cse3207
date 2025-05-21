@@ -134,17 +134,16 @@ function MainDong() {
     }
 
     try {
-      const response = await fetch(
-        `http://localhost:3000/db/clubrequest/${club.id}/user/${user.id}`,
-        {
-          method: "POST",
-          // headers: { "Content-Type": "application/json" },
-          // body: JSON.stringify({
-          //   user_id: user.id,
-          //   club_id: club.id,
-          // }),
-        }
-      );
+      const response = await fetch("http://localhost:3000/db/club_request", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          club_id: club.id,
+          user_id: user.id,
+        }),
+      });
 
       if (response.ok) {
         alert("신청되었습니다.");
@@ -198,57 +197,55 @@ function MainDong() {
   return (
     <div className="screen">
       <div className="phoneScreen">
-
         <div className="main">
           <button className="myPageButton" onClick={handleMyPageClick} />
-               
-               <div className="hongBoButton">
-                  <button className="hongBoPostN" onClick={handleMainHClick}>
-                    홍보게시판
-                  </button>
-                </div>
 
-              <div className="clubButton">
-                <button className="clubPostY">동아리</button>
+          <div className="hongBoButton">
+            <button className="hongBoPostN" onClick={handleMainHClick}>
+              홍보게시판
+            </button>
+          </div>
+
+          <div className="clubButton">
+            <button className="clubPostY">동아리</button>
+          </div>
+
+          <div className="clubScreen">
+            <div className="filterBar">
+              <div className="range">
+                <div
+                  className="textRange2 clickableRange"
+                  onClick={openAreaDropdown}
+                >
+                  영역:{" "}
+                  {selectedAreas.length > 0
+                    ? selectedAreas.join(", ")
+                    : "선택안됨"}
+                </div>
               </div>
 
+              <div className="category">
+                <div
+                  className="textCategory2 clickableRange"
+                  onClick={openCategoryDropdown}
+                >
+                  분야 :{" "}
+                  {selectedCategories.length > 0
+                    ? selectedCategories.join(", ")
+                    : "선택 안됨"}
+                </div>
+              </div>
 
-           <div className="clubScreen">
-                     <div className="filterBar">
-                           <div className="range">
-                          
-                              <div
-                                className="textRange2 clickableRange"
-                                onClick={openAreaDropdown}>
-                                영역: {selectedAreas.length > 0 ? selectedAreas.join(", ") : "선택안됨"}
-                              </div>
-                      
-                          </div>
+              <div className="mo">
+                <div
+                  className="textMo2 clickableRange"
+                  onClick={openMoDropdown}
+                >
+                  {selectedMo.includes("모집중") ? "모집중" : "모집마감"}
+                </div>
+              </div>
+            </div>
 
-                           <div className="category">
-                  
-                              <div 
-                              className="textCategory2 clickableRange"
-                              onClick={openCategoryDropdown}>
-                                분야 : {selectedCategories.length > 0 ? selectedCategories.join(", ") : "선택 안됨"}
-                                </div>
-                            
-                            </div>
-
-
-                          <div className="mo">
-                            
-                              <div 
-                              className="textMo2 clickableRange"
-                              onClick={openMoDropdown}>
-                              {selectedMo.includes("모집중") ?  "모집중" :"모집마감"}
-                                </div>
-                       
-                            </div>
-                            
-                        </div>
-                      
-         
             <div className="clubList">
               {clubs.map((club, index) => (
                 <div key={index} className="club" onClick={handleClubClick}>
@@ -269,95 +266,93 @@ function MainDong() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* 영역 드롭다운 */}
+          {areaDropdownOpen && (
+            <div className="overlay">
+              <div className="popup">
+                <h3>영역 선택</h3>
+                <div className="areaOptions">
+                  {areas.map((area) => (
+                    <button
+                      key={area}
+                      className={`areaOption ${
+                        selectedAreas.includes(area) ? "selected" : ""
+                      }`}
+                      onClick={() => toggleArea(area)}
+                    >
+                      {area}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  className="closeBtn"
+                  onClick={() => setAreaDropdownOpen(false)}
+                >
+                  닫기
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* 분야 드롭다운 */}
+          {categoryDropdownOpen && (
+            <div className="overlay">
+              <div className="popup">
+                <h3>분야 선택</h3>
+                <div className="areaOptions">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      className={`areaOption ${
+                        selectedCategories.includes(category) ? "selected" : ""
+                      }`}
+                      onClick={() => toggleCategory(category)}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  className="closeBtn"
+                  onClick={() => setCategoryDropdownOpen(false)}
+                >
+                  닫기
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* 모집중 드롭다운 */}
+          {moDropdownOpen && (
+            <div className="overlay">
+              <div className="popup">
+                <h3>모집 상태 선택</h3>
+                <div className="areaOptions">
+                  {mo.map((status) => (
+                    <button
+                      key={status}
+                      className={`areaOption ${
+                        selectedMo.includes(status) ? "selected" : ""
+                      }`}
+                      onClick={() => toggleMo(status)}
+                    >
+                      {status}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  className="closeBtn"
+                  onClick={() => setMoDropdownOpen(false)}
+                >
+                  닫기
+                </button>
+              </div>
+            </div>
+          )}
         </div>
-
-        </div>
-        
-
-        {/* 영역 드롭다운 */}
-        {areaDropdownOpen && (
-          <div className="overlay">
-            <div className="popup">
-              <h3>영역 선택</h3>
-              <div className="areaOptions">
-                {areas.map((area) => (
-                  <button
-                    key={area}
-                    className={`areaOption ${
-                      selectedAreas.includes(area) ? "selected" : ""
-                    }`}
-                    onClick={() => toggleArea(area)}
-                  >
-                    {area}
-                  </button>
-                ))}
-              </div>
-              <button
-                className="closeBtn"
-                onClick={() => setAreaDropdownOpen(false)}
-              >
-                닫기
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* 분야 드롭다운 */}
-        {categoryDropdownOpen && (
-          <div className="overlay">
-            <div className="popup">
-              <h3>분야 선택</h3>
-              <div className="areaOptions">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    className={`areaOption ${
-                      selectedCategories.includes(category) ? "selected" : ""
-                    }`}
-                    onClick={() => toggleCategory(category)}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-              <button
-                className="closeBtn"
-                onClick={() => setCategoryDropdownOpen(false)}
-              >
-                닫기
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* 모집중 드롭다운 */}
-        {moDropdownOpen && (
-          <div className="overlay">
-            <div className="popup">
-              <h3>모집 상태 선택</h3>
-              <div className="areaOptions">
-                {mo.map((status) => (
-                  <button
-                    key={status}
-                    className={`areaOption ${
-                      selectedMo.includes(status) ? "selected" : ""
-                    }`}
-                    onClick={() => toggleMo(status)}
-                  >
-                    {status}
-                  </button>
-                ))}
-              </div>
-              <button
-                className="closeBtn"
-                onClick={() => setMoDropdownOpen(false)}
-              >
-                닫기
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
       </div>
     </div>
   );

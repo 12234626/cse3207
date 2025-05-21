@@ -12,29 +12,29 @@ function RequestStatus() {
     navigate("/MyPage");
   };
 
-  // useEffect(() => {
-  //   const user = JSON.parse(localStorage.getItem("user"));
-  //   if (!user) return;
-
-  //   const fetchRequestState = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         `http://localhost:3000/db/club_request?user_id=${user.id}`
-  //       );
-  //       const data = await response.json();
-  //       setClubs(data);
-  //     } catch (error) {
-  //       console.error("가입신청한 동아리 불러오기 실패", error);
-  //     }
-  //   };
-  //   fetchRequestState();
-  // }, []);
-
   useEffect(() => {
-    // localStorage에서 신청한 동아리 목록 불러오기
-    const requests = JSON.parse(localStorage.getItem("joinRequests") || "[]");
-    setClubs(requests);
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) return;
+
+    const fetchRequestState = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/db/club_request?user_id=${user.id}`
+        );
+        const data = await response.json();
+        setClubs(data);
+      } catch (error) {
+        console.error("가입신청한 동아리 불러오기 실패", error);
+      }
+    };
+    fetchRequestState();
   }, []);
+
+  // useEffect(() => {
+  //   // localStorage에서 신청한 동아리 목록 불러오기
+  //   const requests = JSON.parse(localStorage.getItem("joinRequests") || "[]");
+  //   setClubs(requests);
+  // }, []);
 
   return (
     <div className="screen">
