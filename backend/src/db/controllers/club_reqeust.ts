@@ -5,7 +5,7 @@ import {runQueryWithResponse, buildWhereClause} from "../utils/controller";
 // 동아리 가입 신청 조회
 function getAllClubRequests(req: Request, res: Response) {
   const {where, replacements} = buildWhereClause(req.query);
-  const query = "SELECT * FROM club_table" + where;
+  const query = "SELECT * FROM club_request_table" + where;
 
   runQueryWithResponse(req, res, query, replacements, 200);
 }
