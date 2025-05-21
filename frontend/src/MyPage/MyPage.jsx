@@ -142,7 +142,8 @@ function MyPage() {
                 <div className="profileImage" />
 
                 <div className="sidAndMajor">
-                  {user.department} {user.id}
+                  {user.department} <br />
+                  {user.id}
                 </div>
 
                 <div className="name">{user.name}</div>
