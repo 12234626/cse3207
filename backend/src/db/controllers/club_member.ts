@@ -22,7 +22,12 @@ function getClubByUserId(req: Request, res: Response) {
 //동아리별 게시글 조회
 function getPostsByClubId(req: Request, res: Response) {
   const {club_id} = req.params;
-  const query = "SELECT post_table.*, club_table.name AS club_nameFROM post_table JOIN club_table ON post_table.club_id = club_table.id WHERE post_table.club_id = :club_id";
+  const query =`
+    SELECT post_table.*, club_table.name AS club_name
+    FROM post_table
+    JOIN club_table ON post_table.club_id = club_table.id
+    WHERE post_table.club_id = :club_id
+  `;
   const replacements = {club_id};
 
   runQueryWithResponse(req, res, query, replacements, 200);
