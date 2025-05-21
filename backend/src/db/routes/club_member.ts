@@ -7,7 +7,7 @@ const club_member_router = Router();
 
 club_member_router
 // 동아리 회원 조회
-.get("/club/:club_id", getClubMember)
+.get("/", getClubMember)
 // 동아리 회원 생성
 .post("/", createClubMember)
 // 동아리 회원 삭제
