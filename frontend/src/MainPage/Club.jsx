@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation} from "react-router-dom";
 import "./Club.css";
 
 
 function Club() {
     const navigate = useNavigate();
-    
-    
+    const location = useLocation();
+    const clubName = location.state?.clubName; // 전달된 동아리명 가져오기
     const handleBackClick = () => {
         navigate("/MainDong");
       };
@@ -25,7 +25,7 @@ function Club() {
 
             <div className="view-3">
             <button className="back" onClick={handleBackClick}></button>
-            <div className="ClubName">동아리01</div>
+            <div className="ClubName">{clubName || "동아리명을 불러오는 중..."}</div>
                 </div>
                 </div>   
             </div>
