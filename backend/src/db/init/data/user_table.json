@@ -3,7 +3,7 @@
     "id": 1,
     "name": "aaa aaa",
     "password": "bbbbb",
-    "department": "ccccc",
+    "department": "컴퓨터공학과",
     "phone": "010-1234-5678"
   },
   {
@@ -38,7 +38,7 @@
     "id": 12000006,
     "name": "이민호",
     "password": "leeminho1234",
-    "department": "스마트모빌리티공학과과",
+    "department": "스마트모빌리티공학과",
     "phone": "010-0123-4567"
   },
   {
@@ -52,7 +52,7 @@
     "id": 12000008,
     "name": "이서준",
     "password" : "leeseojun1234",
-    "department": "기계공학과과",
+    "department": "기계공학과",
     "phone": "010-2345-6789"
   },
   {
