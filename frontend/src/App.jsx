@@ -37,7 +37,7 @@ function App() {
       <Route path="/writeclubinfopost" element={<WriteClubInfoPost />} />
       <Route path="/memberlist" element={<MemberList />} />
       <Route path="/Loginpage" element={<Login />} />
-      <Route path="/Club:clubId" element={<Club />} />
+      <Route path="/Club" element={<Club />} />
       <Route path="/Event" element={<Event/>}/>
 
     </Routes>
