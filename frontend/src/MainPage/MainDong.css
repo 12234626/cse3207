@@ -27,21 +27,30 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  padding: 0 10px;
+  padding: 0 8px;
+  align-items: center;
   box-sizing: border-box;
-  overflow-x: auto;       /* ✅ 수평 스크롤 활성화 */
+  overflow-x: auto;  
+  overflow-y: hidden;
   white-space: nowrap;    /* ✅ 줄바꿈 방지 */
   scrollbar-width: thin;  /* Firefox */
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  height: 45px; /* 필터 바 높이 줄이기 */
+  position: relative;
+  top: 10px;
 }
+.screen .filterBar::-webkit-scrollbar {
+  height: 0px; /* 스크롤바 높이를 얇게 설정 */
+}
+
 /* .range, .category, .mo 절대 위치 제거, flex item으로 */
 .screen .filterBar .range,
 .screen .filterBar .category,
 .screen .filterBar .mo {
   flex: 0 0 auto;        /* ✅ 크기 고정, 줄바꿈 없음 */
-  min-width: 100px;
+  min-width: 80px;
   max-width: none;       /* 너무 작게 잘리는 것 방지 */
-  height: 31px;
+  height: 28px;
   text-align: center;
 }
 
@@ -140,26 +149,38 @@
 .screen .clubList {
   height: 669px;
   position: absolute;
-  top: 54px;
-  width: 387px;
+  top: 55px;
+  width: 380px;
   max-height: 669px;
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 10px;
 }
+.clubList::-webkit-scrollbar {
+  width: 6px;
+}
 
+.clubList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
 .screen .club {
   background-color: #ffffff;
   border-bottom: 1px solid #0000001a;
-  height: 70px;
+  min-height: 80px; /* 최소 높이 설정 */
   position: relative;
   width: 387px;
+  padding: 10px; /* 내부 여백 추가 */
+  display: flex;
+  flex-direction: column; /* 내부 요소를 세로로 배치 */
+  gap: 5px; /* 요소 간 간격 */
+  box-sizing: border-box;
 }
 
 .screen .clubName {
   color: #000000;
   font-family: "Inter-Bold", Helvetica;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 700;
   left: 22px;
   position: absolute;
@@ -174,7 +195,7 @@
   font-weight: 700;
   left: 20px;
   position: absolute;
-  top: 45px;
+  margin-top: 25px;
   width: 280px;
 }
 
@@ -198,15 +219,6 @@
   font-family: "Inter-Bold", Helvetica;
   font-size: 15px;
   font-weight: 700;
-}
-
-.clubList::-webkit-scrollbar {
-  width: 6px;
-}
-
-.clubList::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
 }
 
 .overlay {
@@ -257,22 +269,22 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.areaOption:hover {
+ .areaOption:hover {
   background-color: #e7f1ff;
   border-color: #007bff;
-}
+} 
 
-.areaOption.selected {
+ .areaOption.selected {
   background-color: #007bff;
   color: white;
   border-color: #0056b3;
   box-shadow: 0 0 8px #007bffaa;
   font-weight: 700;
-}
+} 
 
 .areaOptions::-webkit-scrollbar {
   width: 6px;
-}
+} 
 
 .closeBtn {
   margin-top: 20px;
@@ -293,3 +305,8 @@
   cursor: pointer;
   font-size: 13px;
 }
+
+.screen .filterBar::-webkit-scrollbar {
+  height: 1px; /* 가로 스크롤바 높이를 세로 스크롤바와 동일하게 설정 */
+}
+
