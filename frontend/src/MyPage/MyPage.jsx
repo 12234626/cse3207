@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 // import image2 from "./image-2.svg";
 // import image3 from "./image-3.svg";
 // import image4 from "./image-4.svg";
@@ -13,7 +13,7 @@ function MyPage() {
   const [user, setUser] = useState(null);
   const [club, setClub] = useState(null);
   const [loading, setLoading] = useState(true);
-  const location = useLocation();
+  // const location = useLocation();
 
   useEffect(() => {
     const userData = localStorage.getItem("user");
@@ -40,7 +40,7 @@ function MyPage() {
     }
 
     setLoading(false);
-  }, [location]);
+  }, []);
 
   const navigate = useNavigate();
 
