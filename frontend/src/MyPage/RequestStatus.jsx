@@ -56,20 +56,20 @@ function RequestStatus() {
           {clubs.length === 0 ? (
             <div className="noRequestText">신청한 동아리가 없습니다.</div>
           ) : (
+            // <div className="requestedClub1Box">
             clubs.map((club) => (
-              <div className="requestedClub1Box" key={club.id || club.club_id}>
-                <div className="requestedClub1">
-                  <div className="requestedClubName">
-                    {getClubName(club.club_id)}
-                  </div>
-                  {/* <div className="overlap-group-wrapper"> */}
-                  <button className="statusBox">
-                    {club.applicationStatus}
-                    {/* <div className="text-wrapper-2">가입완료</div> */}
-                  </button>
-                  {/* </div> */}
+              <div className="requestedClub1" key={club.id || club.club_id}>
+                <div className="requestedClubName">
+                  {getClubName(club.club_id)}
                 </div>
+                {/* <div className="overlap-group-wrapper"> */}
+                <button className="statusBox">
+                  {club.applicationStatus}
+                  {/* <div className="text-wrapper-2">가입완료</div> */}
+                </button>
+                {/* </div> */}
               </div>
+              // </div>
             ))
           )}
         </div>
