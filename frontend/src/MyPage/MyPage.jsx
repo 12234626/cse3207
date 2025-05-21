@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// import { useLocation } from "react-router-dom";
 // import image2 from "./image-2.svg";
 // import image3 from "./image-3.svg";
 // import image4 from "./image-4.svg";
@@ -12,13 +13,14 @@ function MyPage() {
   const [user, setUser] = useState(null);
   const [club, setClub] = useState(null);
   const [loading, setLoading] = useState(true);
+  // const location = useLocation();
 
   useEffect(() => {
     const userData = localStorage.getItem("user");
     const clubData = localStorage.getItem("club");
     console.log("localStorage에서 가져온 user 데이터:", userData);
     console.log("localStorage에서 가져온 club 데이터:", clubData);
-    
+
     if (userData) {
       try {
         const parsedUser = JSON.parse(userData);
@@ -27,7 +29,7 @@ function MyPage() {
         console.error("user 데이터 파싱 에러:", error);
       }
     }
-    
+
     if (clubData) {
       try {
         const parsedClub = JSON.parse(clubData);
@@ -36,7 +38,7 @@ function MyPage() {
         console.error("club 데이터 파싱 에러:", error);
       }
     }
-    
+
     setLoading(false);
   }, []);
 
@@ -140,16 +142,15 @@ function MyPage() {
                 <div className="profileImage" />
 
                 <div className="sidAndMajor">
-                  {user.department} {user.id}
+                  {user.department} <br />
+                  {user.id}
                 </div>
 
                 <div className="name">{user.name}</div>
-                
+
                 {club && (
                   <div className="clubInfo">
-                    <div className="clubIntroduction">
-                      {club.introduction}
-                    </div>
+                    <div className="clubIntroduction">{club.introduction}</div>
                   </div>
                 )}
               </div>

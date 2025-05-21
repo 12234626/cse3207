@@ -22,6 +22,10 @@ function MainH() {
     navigate("/MyPage");
   };
 
+  const handleEventClick = () => {
+    navigate("/Event");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -47,9 +51,8 @@ function MainH() {
 
           <div className="hongBoScreen">
             <div className="hongBoList">
-              {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
               {posts.map((post, index) => (
-                <div key={index} className="hongBo">
+                <div key={index} className="hongBo" onClick={handleEventClick}>
                   <div className="hongBoName">{post.title}</div>
                   <div className="hongBoInfo">{post.content}</div>
                   <div className="hongBoImage"></div>

@@ -45,7 +45,7 @@
     "id": 12000007,
     "name": "김지민",
     "password" : "kimjimin1234",
-    "department": "경영학과",
+    "department": "경영학부",
     "phone": "010-1234-5678"
   },
   {
@@ -94,7 +94,7 @@
     "id": 12000014,
     "name": "이병헌",
     "password" : "leebyunghun1234",
-    "department": "디자인테크놀로지학과",
+    "department": "경영학부",
     "phone": "010-8901-2345"
   },
   {
@@ -283,7 +283,7 @@
     "id": 12000041,
     "name": "정해리",
     "password" : "jeonghaeri1234",
-    "department": "전자전기공학부",
+    "department": "전기전자공학부",
     "phone": "010-5678-9012"
   }, 
   {

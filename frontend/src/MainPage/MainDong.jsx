@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./MainDong.css";
-// import MyClubList from "../MyPage/MyClubList";
 
 function MainDong() {
   const navigate = useNavigate();
 
   const [clubs, setClubs] = useState([]);
+  const [areaDropdownOpen, setAreaDropdownOpen] = useState(false);
+  const [selectedArea, setSelectedArea] = useState("");
+  const areas = ["전체", "중앙동아리", "학과동아리", "소모임"];
+
   useEffect(() => {
     axios.get("http://localhost:3000/db/club").then((response) => {
       console.debug("클럽데이터: ", response.data);
@@ -33,23 +36,16 @@ function MainDong() {
         <div className="topBar" />
 
         <div className="main">
-          <button className="myPageButton" onClick={handleMyPageClick}>
-            {/* <div className="user" /> */}
-          </button>
+          <button className="myPageButton" onClick={handleMyPageClick} />
 
-          {/* <div className="overlap-group"> */}
           <div className="hongBoButton">
             <button className="hongBoPostN" onClick={handleMainHClick}>
               홍보게시판
-              {/* <div className="text-wrapper">홍보 게시판</div> */}
             </button>
           </div>
 
           <div className="clubButton">
-            <button className="clubPostY">
-              동아리
-              {/* <div className="text-wrapper-2">동아리</div> */}
-            </button>
+            <button className="clubPostY">동아리</button>
           </div>
 
           <div className="clubScreen">
@@ -62,21 +58,20 @@ function MainDong() {
             <div className="category">
               <div className="category1">
                 <div className="textCategory1">분야:</div>
-
                 <div className="textCategory2">연구</div>
               </div>
             </div>
 
             <div className="range">
-              <div className="range1">
-                <div className="textRange1">영역:</div>
-
-                <div className="textRange2">중앙동아리</div>
-              </div>
+            <div className="range1">
+                <div className="textRange2 clickableRange"
+                  onClick={() => setAreaDropdownOpen(true)}>
+                    영역: {selectedArea || "선택 안됨"}
+                    </div>
+                    </div>
             </div>
-
+            
             <div className="clubList">
-              {/* <pre>{JSON.stringify(clubs, null, 2)}</pre> */}
               {clubs.map((club, index) => (
                 <div key={index} className="club" onClick={handleClubClick}>
                   <div className="clubName">{club.name}</div>
@@ -88,22 +83,40 @@ function MainDong() {
                   </div>
                 </div>
               ))}
-              {/* <div className="club">
-                <div className="clubName">동아리01</div>
-
-                <div className="shortInfo">한줄소개</div>
-
-                <div className="apply">
-                  <button className="applyButton">
-                    신청
-                    {/* <div className="text-wrapper-9">신청</div> */}
-              {/* </button>
-                </div>
-              </div> */}
             </div>
           </div>
-          {/* </div> */}
         </div>
+
+        {/* 오버레이 드롭다운 */}
+        {areaDropdownOpen && (
+          <div className="overlay">
+            <div className="popup">
+              <h3>영역 선택</h3>
+              <div className="areaOptions">
+                {areas.map((area) => (
+                  <button
+                    key={area}
+                    className={`areaOption ${
+                      selectedArea === area ? "selected" : ""
+                    }`}
+                    onClick={() => {
+                      setSelectedArea(area);
+                      setAreaDropdownOpen(false);
+                    }}
+                  >
+                    {area}
+                  </button>
+                ))}
+              </div>
+              <button
+                className="closeBtn"
+                onClick={() => setAreaDropdownOpen(false)}
+              >
+                닫기
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
