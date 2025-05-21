@@ -19,6 +19,14 @@ function getClubByUserId(req: Request, res: Response) {
   runQueryWithResponse(req, res, query, replacements, 200);
 }
 
+//동아리별 게시글 조회
+function getPostsByClubId(req:Request, res: Response) {
+   const {club_id} = req.params;
+  const query = "SELECT * FROM post_table WHERE club_id = :club_id";
+  const replacements = {club_id};
+  runQueryWithResponse(req, res, query, replacements, 200);
+}
+
 // 동아리 회원 생성
 function createClubMember(req: Request, res: Response) {
   const {club_id, user_id} = req.body;
@@ -40,6 +48,7 @@ function deleteClubMember(req: Request, res: Response) {
 export {
   getClubMember,
   getClubByUserId,
+  getPostsByClubId,
   createClubMember,
   deleteClubMember
 };
