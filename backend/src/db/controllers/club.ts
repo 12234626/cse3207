@@ -18,15 +18,6 @@ function getClubAdmin(req: Request, res: Response) {
   runQueryWithResponse(req, res, query, replacements, 200);
 }
 
-// 유저 아이디로 동아리 조회
-function getClubByUser(req: Request, res: Response) {
-  const {user_id} = req.params;
-  const query = "SELECT club_table.* FROM club_table INNER JOIN club_member_table ON club_table.id = club_member_table.club_id WHERE club_member_table.user_id = :user_id";
-  const replacements = {user_id};
-
-  runQueryWithResponse(req, res, query, replacements, 200);
-}
-
 // 동아리 생성
 function createClub(req: Request, res: Response) {
   const {name, type, field, admin} = req.body;
@@ -57,7 +48,6 @@ function deleteClub(req: Request, res: Response) {
 export {
   getClub,
   getClubAdmin,
-  getClubByUser,
   createClub,
   updateClub,
   deleteClub
