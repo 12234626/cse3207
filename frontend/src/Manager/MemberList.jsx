@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MemberList.css";
 
 function MemberList() {
   const navigate = useNavigate();
+  const [members, setMembers] = useState([]);
+
+  useEffect(() => {
+    const club = JSON.parse(localStorage.getItem("club"));
+    if (!club) return;
+    fetch(`http://localhost:3000/db/club_member/club/${club.id}`)
+      .then((res) => res.json())
+      .then((data) => setMembers(data));
+  }, []);
+
+  // const fetchMembers = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       `http://localhost:3000/db/club_member/user_id/${club.id}`
+  //     );
+  //     const data = await response.json();
+  //     setMembers(data);
+  //   } catch (error) {
+  //     console.error("부원 목록 불러오기 실패", error);
+  //   }
+  // };
+  // fetchMembers();
+  // }
 
   const handleBackClick = () => {
     navigate("/Manager");
@@ -11,15 +34,28 @@ function MemberList() {
 
   return (
     <div className="screen">
+      <pre>{JSON.stringify(members, null, 2)}</pre>
       <div className="phoneScreen">
         <div className="members">
-          <div className="element">
+          {members.map((member) => (
+            <div className="element" key={member.id || member.club_id}>
+              <div className="member">
+                <div className="memberName">{member.name}</div>
+                <div className="memberInfo">
+                  {member.major} {member.student_id}
+                </div>
+                <button className="delete">삭제</button>
+              </div>
+            </div>
+          ))}
+          {/* 예시 부원 */}
+          {/* <div className="element">
             <div className="member">
               <div className="memberName">김ㅇㅇ</div>
               <div className="memberInfo">ㅇㅇ학과 학번</div>
               <button className="delete">삭제</button>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="topBar">
           <button className="back" onClick={handleBackClick}></button>
