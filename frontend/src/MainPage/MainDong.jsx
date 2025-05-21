@@ -162,7 +162,7 @@ function MainDong() {
 
 
   const handleClubClick = (club) => {
-    navigate("/Club", { state: { clubName: club.name } }); // 동아리명을 state로 전달
+    navigate("/Club", { state: { clubName: club.name, introduction: club.introduction } }); // 동아리명과 소개글 전달
   };    
 
   const handleApply = async (club) => {

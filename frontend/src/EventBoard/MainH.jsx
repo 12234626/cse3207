@@ -23,7 +23,7 @@ function MainH() {
   };
 
   const handleEventClick = (post) => {
-    navigate("/Event", { state: { eventTitle: post.title } }); // 홍보글 제목 전달
+    navigate("/Event", { state: { eventTitle: post.title, eventContent: post.content } }); // 제목과 내용을 전달
   };
 
   return (

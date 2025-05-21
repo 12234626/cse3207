@@ -8,6 +8,9 @@ function Club() {
     const navigate = useNavigate();
     const location = useLocation();
     const clubName = location.state?.clubName; // 전달된 동아리명 가져오기
+    const introduction = location.state?.introduction || "소개글을 불러오는 중..."; // 전달된 소개글
+
+    
     const handleBackClick = () => {
         navigate("/MainDong");
       };
@@ -25,8 +28,8 @@ function Club() {
         {/* 하단 영역 */}
         <div className="view">
           <div className="overlap-group">
-            <div className="text-wrapper-2">동아리소개글</div>
-            <div className="box"></div>
+          <div className="text-wrapper-2">{introduction}</div>
+          <div className="box"></div>
             {/* view-2 아래에 텍스트 추가 */}
             <div className="text-below-view-2">/*동아리 상세 정보 추가*/</div>
           </div>
