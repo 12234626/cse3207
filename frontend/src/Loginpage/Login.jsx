@@ -38,7 +38,19 @@ function Login() {
         });
         if (data && Object.keys(data).length > 0) {
           localStorage.setItem("user", JSON.stringify(data));
-          if (data.club) {
+          // if (data.club) {
+          //   localStorage.setItem("club", JSON.stringify(data.club));
+          // }
+          // navigate("/MainDong");
+          if (!data.club) {
+            const clubRes = await fetch(
+              `http://localhost:3000/db/club_member/user_id/${data.id}`
+            );
+            const clubList = await clubRes.json();
+            if (clubList.length > 0) {
+              localStorage.setItem("club", JSON.stringify(clubList[0]));
+            }
+          } else {
             localStorage.setItem("club", JSON.stringify(data.club));
           }
           navigate("/MainDong");
