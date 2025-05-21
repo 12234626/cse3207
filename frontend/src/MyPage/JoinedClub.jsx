@@ -5,14 +5,54 @@ import "./JoinedClub.css";
 
 function JoinedClub() {
   const navigate = useNavigate();
+  const [posts, setNoticePosts] = useState([]);
+  const [clubName, setClubName] = useState("");
 
-  const [posts, setEventPosts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3000/db/post?type=notice").then((response) => {
-      console.debug(response);
-      setEventPosts(response.data);
-    });
+    const clubData = JSON.parse(localStorage.getItem("club"));
+    // if (!clubData) {
+    //   // club 데이터가 없는 경우 처리
+    //   console.error("동아리 정보를 찾을 수 없습니다.");
+    //   navigate("/MyPage"); // MyPage로 돌아가기
+    //   return;
+    // }
+
+    const club = JSON.parse(clubData);
+    setClubName(club.name);
+
+    const fetchNoticePosts = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/db/post?type=notice&club_id=${club.id}`
+        );
+        const data = await response.json();
+        setNoticePosts(data);
+      } catch (error) {
+        console.error("가입한 동아리 불러오기 실패", error);
+      }
+    };
+    fetchNoticePosts();
+    // setClubName(club.name);
+
+    // axios
+    //   .get(`http://localhost:3000/db/post?type=notice&club_id=${club.id}`)
+    //   .then((response) => {
+    //     console.debug(response);
+    //     setNoticePosts(response.data);
+    //   });
+    // const fetchNoticePosts = async () => {
+    //   try {
+    //     const response = await fetch(
+    //       `http://localhost:3000/db/post?type=notice&club_id=${club.id}`
+    //     );
+    //     const data = await response.json();
+    //     setNoticePosts(data);
+    //   } catch (error) {
+    //     console.error("가입한 동아리 게시글 불러오기 실패", error);
+    //   }
   }, []);
+  // fetchNoticePosts();
+  // }, []);
 
   const handleBackClick = () => {
     navigate("/MyPage");
