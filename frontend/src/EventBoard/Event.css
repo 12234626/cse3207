@@ -46,14 +46,7 @@
     width: 393;
 }
 
-.element .imageBox{
-    background-color: #899ec7;
-    height: 350px;
-    left: 22px;
-    position: absolute;
-    top: 56px;
-    width: 350px;
-}
+
 .element .ex{
     color: #000000;
     font-family: "SUITE-Regular", Helvetica !important;
@@ -99,4 +92,20 @@
     position: absolute;
     top: 0;
     width: 24px;
+  }
+  .element .imageBox{
+    background-color: #899ec7;
+    height: 350px;
+    left: 22px;
+    position: inherit;
+    top: 56px;
+    width: 350px;
+}
+
+  .text-below-view-2 {
+    font-size: 14px; /* 텍스트 크기 */
+    color: #333; /* 텍스트 색상 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    margin-top: 70px; /* 위쪽 간격 */
+    position: inherit;
   }

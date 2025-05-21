@@ -14,26 +14,24 @@ function Event() {
       };
 
     return (
-     <div className = "element">
-        <div className = "div">
-            <div className = "view">
-                <div className="overlap-group">
-
-                    <div className="imageBox"/>
-                        
-                    <div className="ex">홍보내용</div>
-
-                 
-                </div>
-            </div>
-
-            <div className="view-3">
-    
+        <div className="element">
+        <div className="div">
+          {/* 상단 영역 */}
+          <div className="view-3">
             <button className="back" onClick={handleBackClick}></button>
             <div className="Name">{eventTitle}</div>
-                </div>   
+          </div>
+  
+          {/* 하단 영역 */}
+          <div className="view">
+            <div className="overlap-group">
+            <div className="ex">홍보내용</div>
+              <div className="imageBox" />
+              <div className="text-below-view-2">/*홍보글내용추가*/</div>
             </div>
+          </div>
         </div>
+      </div>
     );
   }
   
