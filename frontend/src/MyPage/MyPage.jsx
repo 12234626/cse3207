@@ -24,7 +24,7 @@ function MyPage() {
     if (userData) {
       try {
         const parsedUser = JSON.parse(userData);
-        setUser(parsedUser);
+        setUser(parsedUser.user ? parsedUser.user : parsedUser);
       } catch (error) {
         console.error("user 데이터 파싱 에러:", error);
       }
@@ -148,11 +148,11 @@ function MyPage() {
 
                 <div className="name">{user.name}</div>
 
-                {club && (
+                {/* {club && (
                   <div className="clubInfo">
                     <div className="clubIntroduction">{club.introduction}</div>
                   </div>
-                )}
+                )} */}
               </div>
             </div>
           </div>
