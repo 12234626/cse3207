@@ -1,6 +1,7 @@
 import {Model, Table, Column, DataType, PrimaryKey, Unique, ForeignKey, AutoIncrement, AllowNull} from "sequelize-typescript";
 
 import User from "./user";
+import Post from "./post";
 
 // 동아리 모델
 @Table({tableName: "club_table"})
@@ -37,9 +38,16 @@ class Club extends Model {
   public introduction!: string;
 
   // 동아리 관리자
+  @AllowNull(false)
   @ForeignKey(() => User)
   @Column({type: DataType.INTEGER.UNSIGNED})
   public admin!: number;
+
+  // 동아리 상세 설명 게시글 아이디
+  @AllowNull(false)
+  @ForeignKey(() => Post)
+  @Column({type: DataType.INTEGER.UNSIGNED})
+  public info!: number;
 };
 
 export default Club;

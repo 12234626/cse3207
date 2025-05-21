@@ -27,6 +27,7 @@ class Post extends Model {
   public content!: string;
   
   // 동아리 아이디
+  @AllowNull(false)
   @ForeignKey(() => Club)
   @Column({type: DataType.INTEGER.UNSIGNED})
   public club_id!: number; 
