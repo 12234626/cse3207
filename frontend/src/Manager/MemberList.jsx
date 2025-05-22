@@ -55,7 +55,7 @@ function MemberList() {
     <div className="screen">
       <div className="phoneScreen">
         <div className="members">
-          <pre>{JSON.stringify(members, null, 2)}</pre>
+          {/* <pre>{JSON.stringify(members, null, 2)}</pre> */}
           {members.map((member, idx) => (
             <div className="element" key={idx}>
               <div className="member">
