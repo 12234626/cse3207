@@ -1,12 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "aaa aaa",
-    "password": "bbbbb",
-    "department": "컴퓨터공학과",
-    "phone": "010-1234-5678"
-  },
-  {
     "id": 12223734,
     "name": "박은경",
     "password": "eun1234",
@@ -33,6 +26,41 @@
     "password": "su1234",
     "department": "컴퓨터공학과",
     "phone": "010-9012-3456"
+  },
+  {
+    "id": 12000001,
+    "name": "홍길동",
+    "password": "hong1234",
+    "department": "컴퓨터공학과",
+    "phone": "010-1111-1111"
+  },
+  {
+    "id": 12000002,
+    "name": "김철수",
+    "password": "kim1234",
+    "department": "경영학부",
+    "phone": "010-2222-2222"
+  },
+  {
+    "id": 12000003,
+    "name": "이영희",
+    "password": "lee1234",
+    "department": "화학과",
+    "phone": "010-3333-3333"
+  },
+  {
+    "id": 12000004,
+    "name": "박민수",
+    "password": "park1234",
+    "department": "기계공학과",
+    "phone": "010-4444-4444"
+  },
+  {
+    "id": 12000005,
+    "name": "최지은",
+    "password": "choi1234",
+    "department": "철학과",
+    "phone": "010-5555-5555"
   },
   {
     "id": 12000006,
