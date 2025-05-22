@@ -64,7 +64,7 @@ function RequestStatus() {
                 </div>
                 {/* <div className="overlap-group-wrapper"> */}
                 <button className="statusBox">
-                  {club.applicationStatus}
+                  {club.status}
                   {/* <div className="text-wrapper-2">가입완료</div> */}
                 </button>
                 {/* </div> */}
