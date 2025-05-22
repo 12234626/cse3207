@@ -52,6 +52,15 @@ function Manager() {
             ></button>
             {/* </div> */}
           </div>
+          <div className="fixClubBox">
+            {/* <div className="overlap-group"> */}
+            <div className="managerListText">동아리 수정</div>
+            <button
+              className="nextButton"
+              onClick={handleWritePostClick}
+            ></button>
+            {/* </div> */}
+          </div>
         </div>
         <div className="topBar">
           <button className="back" onClick={handleBackClick}></button>
