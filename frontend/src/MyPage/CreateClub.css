@@ -12,6 +12,7 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
+
 }
 
 .screen .phoneScreen {
@@ -24,265 +25,143 @@
 .screen .createClubMain {
   background-color: #ffffff;
   height: 728px;
-  left: 0;
-  position: absolute;
-  top: 124px;
-  width: 393px;
+  width: 100%;
+  max-width: 393px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-height: 728px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.screen .URLBox {
-  background-color: #f5f5f5;
-  border: 1px solid;
-  border-color: #00000040;
+.clubNameInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  height: 63px;
-  left: 19px;
-  position: absolute;
-  top: 563px;
-  width: 357px;
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-/* .screen .overlap-group {
-  background-color: #f5f5f5;
-  border: 1px solid;
-  border-color: #00000040;
-  border-radius: 5px;
-  height: 63px;
-  position: relative;
-  width: 355px;
-}
-
-.screen .text-wrapper {
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  left: 18px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 18px;
-  width: 237px;
-} */
-
-.screen .clubInfoInput {
-  background-color: #f5f5f5;
-  border: 1px solid;
-  border-color: #00000040;
-  border-radius: 5px;
-  height: 339px;
-  left: 21px;
-  position: absolute;
-  top: 210px;
-  width: 357px;
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-/* .screen .overlap {
-  background-color: #f5f5f5;
-  border: 1px solid;
-  border-color: #00000040;
-  border-radius: 5px;
-  height: 339px;
-  position: relative;
-  width: 355px;
-} */
-
-/* .screen .text-wrapper-2 {
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  left: 21px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 32px;
-  white-space: nowrap;
-  width: 237px;
-} */
-
-.screen .clubImgInput {
-  background-color: #6a6a6a3b;
-  border: 1px solid;
-  border-color: #00000040;
-  border-radius: 5px;
-  height: 100px;
-  left: 21px;
-  position: absolute;
-  top: 96px;
-  width: 102px;
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-/* .screen .overlap-2 {
-  background-color: #6a6a6a3b;
-  border: 1px solid;
-  border-color: #00000040;
-  border-radius: 5px;
-  height: 100px;
-  position: relative;
-  width: 100px;
-} */
-
-/* .screen .text-wrapper-3 {
-  color: #0000009c;
-  font-family: "Inter-Bold" Helvetica;
-  font-size: 50px;
-  font-weight: 700;
-  left: 30px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 21px;
-  white-space: nowrap;
-  width: 39px;
-} */
-
-.screen .clubNameInput {
-  background-color: #f5f5f5;
-  border: 1px solid;
-  border-color: #00000040;
-  border-radius: 5px;
-  height: 63px;
-  left: 19px;
-  position: absolute;
-  top: 19px;
-  width: 357px;
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-/* .screen .text-wrapper-4 {
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  left: 21px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 23px;
-  width: 237px;
-} */
-
-/* .screen .view-3 {
-  height: 54px;
-  left: 19px;
-  position: absolute;
-  top: 651px;
-  width: 170px;
-} */
-
-/* .screen .overlap-3 {
-  background-color: #9f9f9f1c;
-  border: 1px solid;
-  border-color: #0000001c;
-  border-radius: 20px;
-  height: 54px;
-  position: relative;
-  width: 166px;
-} */
-
-/* .screen .text-wrapper-5 {
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  left: 103px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 14px;
-  white-space: nowrap;
-  width: 237px;
-} */
-
-/* .screen .overlap-group-2 {
-  height: 54px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 86px;
-} */
-
-/* .screen .rectangle {
-  background-color: rgba(92, 110, 247, 1);
-  border: 1px solid;
-  border-color: #0000001c;
-  border-radius: 20px 0px 0px 20px;
-  height: 54px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 84px;
-} */
-
-/* .screen .text-wrapper-6 {
-  color: #ffffff;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  left: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 15px;
-  white-space: nowrap;
-  width: 62px;
-} */
-
-.screen .okButton {
-  background-color: rgba(92, 110, 247, 1);
-  border: 1px solid;
-  border-color: #0000001c;
-  border-radius: 5px;
-  height: 54px;
-  left: 292px;
-  position: absolute;
-  top: 650px;
-  width: 86px;
-  color: #ffffff;
   font-family: "SUITE-Regular", Helvetica !important;
-  font-size: 20px !important;
-  font-weight: 400;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+}
+.hanjool {
+  display: flex; /* 가로 정렬 */
+  justify-content: flex-start; /* 요소 간 간격 균등 분배 */
+  gap: 10px; /* 두 드롭다운 사이 간격 */
+  width: 100%; /* 부모 컨테이너 너비에 맞춤 */
+  margin: 0 auto; /* 가운데 정렬 */
 }
 
-/* .screen .overlap-4 {
-  background-color: rgba(92, 110, 247, 1);
-  border: 1px solid;
-  border-color: #0000001c;
-  border-radius: 5px;
-  height: 54px;
-  position: relative;
-  width: 84px;
-} */
 
-/* .screen .text-wrapper-7 {
-  color: #ffffff;
+.areaSelect,
+.fieldSelect {
+  width: auto; /* 부모 컨테이너에 맞춤 */
+  min-width: 120px; /* 최대 너비 제한 */
+  padding: 12px; /* 내부 여백 */
+  border: 2px solid rgba(92, 110, 247, 0.8); /* 테두리 색상 */
+  border-radius: 15px; /* 모서리를 둥글게 */
+  font-family: "SUITE-Regular", Helvetica !important;
+  font-size: 16px; /* 글자 크기 */
+  background-color: #ffffff; /* 배경색 */
+  color: #333; /* 텍스트 색상 */
+  appearance: none; /* 기본 드롭다운 화살표 제거 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23999999'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center; /* 화살표 위치 */
+  background-size: 16px; /* 화살표 크기 */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.areaSelect:focus,
+.fieldSelect:focus {
+  border-color: rgba(92, 110, 247, 1); /* 포커스 시 테두리 색상 */
+  box-shadow: 0 0 8px rgba(92, 110, 247, 0.5); /* 포커스 시 그림자 효과 */
+  outline: none; /* 기본 포커스 제거 */
+}
+
+.areaSelect:hover,
+.fieldSelect:hover {
+  border-color: rgba(92, 110, 247, 1); /* 호버 시 테두리 색상 */
+}
+.URLIn {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "SUITE-Regular", Helvetica !important;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: #0000009c;
   font-family: "Inter-Bold", Helvetica;
+}
+
+.ImagePlus {
+  background-color: #6a6a6a3b;
+  border: 1px solid #00000040;
+  border-radius: 5px;
+  height: 120px;
+  width: 120px;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica !important;
   font-size: 20px;
   font-weight: 700;
-  left: 21px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 17px;
-  white-space: nowrap;
-  width: 62px;
-} */
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  align-items: flex-start; /* 상단 정렬 */
+  padding: 10px; /* 내부 여백 추가 */
+}
+
+.imageAndInputs {
+  align-items: flex-start; /* 상단 정렬 */
+  gap: 20px; /* 이미지 버튼과 입력 필드 사이 간격 */
+  width: 90%; /* 부모 컨테이너 너비에 맞춤 */
+  margin: 0 auto; /* 가운데 정렬 */
+  display: flex; /* 가로 정렬 */
+  flex-direction: column; /* 가로 방향으로 정렬 */
+
+}
+
+.StoryBoard {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "SUITE-Regular", Helvetica !important;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  height: 300px;
+  resize: none;
+
+}
+
+.okButton {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  background-color: rgba(92, 110, 247, 1);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "SUITE-Regular", Helvetica !important;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.okButton:hover {
+  background-color: #4a5ac7;
+}
 
 .screen .topBar {
   height: 24px;
