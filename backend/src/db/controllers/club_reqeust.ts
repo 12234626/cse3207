@@ -31,11 +31,10 @@ function createClubRequest(req: Request, res: Response) {
 
 // 동아리 가입 신청 상태 업데이트
 async function updateClubRequestStatus(req: Request, res: Response) {
-  const {id, status} = req.body;
-  const query = "UPDATE club_request_table SET status = :status WHERE id = :id";
-  const replacements = {id, status};
-
   try {
+    const {id, status} = req.body;
+    const query = "UPDATE club_request_table SET status = :status WHERE id = :id";
+    const replacements = {id, status};
     const results = await fetch(`http://localhost:3000/db/club_request?id=${id}`);
     const data = await results.json();
     const {club_id, user_id} = data[0];
@@ -50,7 +49,7 @@ async function updateClubRequestStatus(req: Request, res: Response) {
       });
     }
     
-    runQueryWithResponse(req, res, query, replacements, 201);
+    runQueryWithResponse(req, res, query, replacements, 200);
   } catch (err) {
     res
     .status(500)
