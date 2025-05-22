@@ -18,6 +18,30 @@ function RequestList() {
     navigate("/Manager");
   };
 
+  const handleRefuse = async (member) => {
+    if (!window.confirm(`${member.name}님의 가입 신청을 거절하시겠습니까?`))
+      return;
+    try {
+      const club = JSON.parse(localStorage.getItem("club"));
+      const response = await fetch("http://localhost:3000/db/club_request", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          club_id: club.id,
+          user_id: member.user_id,
+          status: "rejected",
+        }),
+      });
+      if (response.ok) {
+        setMembers(members.filter((m) => m.user_id !== member.user_id));
+      } else {
+        alert("거절 실패");
+      }
+    } catch (error) {
+      alert("서버 오류");
+    }
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -30,7 +54,10 @@ function RequestList() {
                 <div className="requestInfo">
                   {member.department} {member.user_id}
                 </div>
-                <button className="refusal">
+                <button
+                  className="refusal"
+                  onClick={() => handleRefuse(member)}
+                >
                   거절
                   {/* <button className="overlap-group">거절
                   <div className="text-wrapper">거절</div>
