@@ -34,15 +34,16 @@ function MemberList() {
 
   return (
     <div className="screen">
-      {/* <pre>{JSON.stringify(members, null, 2)}</pre> */}
+      <pre>{JSON.stringify(members, null, 2)}</pre>
       <div className="phoneScreen">
         <div className="members">
-          {members.map((member) => (
-            <div className="element" key={member.id || member.club_id}>
+          <pre>{JSON.stringify(members, null, 2)}</pre>
+          {members.map((member, idx) => (
+            <div className="element" key={idx}>
               <div className="member">
                 <div className="memberName">{member.name}</div>
                 <div className="memberInfo">
-                  {member.major} {member.student_id}
+                  {member.department} {member.id}
                 </div>
                 <button className="delete">삭제</button>
               </div>
