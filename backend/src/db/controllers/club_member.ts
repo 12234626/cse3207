@@ -10,7 +10,6 @@ function getClubMember(req: Request, res: Response) {
       club_member_table.club_id,
       user_table.id AS user_id,
       user_table.name,
-      user_table.student_number,
       user_table.department
     FROM club_member_table
     JOIN user_table ON club_member_table.user_id = user_table.id
