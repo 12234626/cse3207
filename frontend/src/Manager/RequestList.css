@@ -29,8 +29,23 @@
   position: absolute;
   top: 124px;
   width: 393px;
+  overflow-y: scroll; /* 세로 스크롤 항상 표시 */
+  overflow-x: hidden; /* 가로 스크롤 비활성화 */
+  scrollbar-width: thin; /* 스크롤바 두께 조정 (Firefox) */
+}
+/* 스크롤바 스타일 (Webkit 기반 브라우저) */
+.screen .requests::-webkit-scrollbar {
+  width: 4px; /* 스크롤바 너비 */
 }
 
+.screen .requests::-webkit-scrollbar-thumb {
+  background-color: #cccccc; /* 스크롤바 색상 */
+  border-radius: 4px; /* 스크롤바 모서리 둥글게 */
+}
+
+.screen .requests::-webkit-scrollbar-track {
+  background-color: #ffffff; /* 스크롤바 트랙 색상 */
+}
 /* .screen .element {
   height: 54px;
   left: 5px;
