@@ -11,7 +11,7 @@ function getAllClubRequests(req: Request, res: Response) {
       user_table.id AS user_id,
       user_table.name,
       user_table.department,
-      club_request_table.status
+      club_request_table.applicationStatus
     FROM club_request_table
     JOIN user_table ON club_request_table.user_id = user_table.id
     ${where}
