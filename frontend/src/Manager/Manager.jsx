@@ -21,6 +21,10 @@ function Manager() {
     navigate("/MemberList");
   };
 
+  const handleFixClubClick = () => {
+    navigate("/FixClub");
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -57,7 +61,7 @@ function Manager() {
             <div className="managerListText">동아리 수정</div>
             <button
               className="nextButton"
-              onClick={handleWritePostClick}
+              onClick={handleFixClubClick}
             ></button>
             {/* </div> */}
           </div>

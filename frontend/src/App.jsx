@@ -17,6 +17,7 @@ import WriteClubInfoPost from "./Manager/WriteClubInfoPost";
 import MemberList from "./Manager/MemberList";
 import Club from "./MainPage/Club";
 import Event from "./EventBoard/Event";
+import FixClub from "./Manager/FixClub";
 
 function App() {
   return (
@@ -38,8 +39,8 @@ function App() {
       <Route path="/memberlist" element={<MemberList />} />
       <Route path="/Loginpage" element={<Login />} />
       <Route path="/Club" element={<Club />} />
-      <Route path="/Event" element={<Event/>}/>
-
+      <Route path="/Event" element={<Event />} />
+      <Route path="/fixclub" element={<FixClub />} />
     </Routes>
   );
 }
