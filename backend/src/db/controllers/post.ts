@@ -4,7 +4,7 @@ import {runQueryWithResponse, buildWhereClause} from "../utils/controller";
 
 // 게시글 조회
 function getPost(req: Request, res: Response) {
-  const {where, replacements} = buildWhereClause(req.query);
+  const {where, replacements} = buildWhereClause(req.query, "post_table");
   const query = "SELECT * FROM post_table" + where;
 
   runQueryWithResponse(req, res, query, replacements, 200);

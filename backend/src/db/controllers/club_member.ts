@@ -4,7 +4,7 @@ import {buildWhereClause, runQueryWithResponse} from "../utils/controller";
 
 // 동아리 회원 조회
 function getClubMember(req: Request, res: Response) {
-  const {where, replacements} = buildWhereClause(req.query);
+  const {where, replacements} = buildWhereClause(req.query, "club_member_table");
   const query = `
     SELECT 
       club_member_table.club_id,
@@ -12,9 +12,7 @@ function getClubMember(req: Request, res: Response) {
       user_table.name,
       user_table.department
     FROM club_member_table
-    JOIN user_table ON club_member_table.user_id = user_table.id
-    ${where}
-  `;
+      JOIN user_table ON club_member_table.user_id = user_table.id` + where;
   
   runQueryWithResponse(req, res, query, replacements, 200);
 }
