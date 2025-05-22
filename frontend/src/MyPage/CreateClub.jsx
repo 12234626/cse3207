@@ -1,4 +1,4 @@
-import React ,{useState}from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CreateClub.css";
 
@@ -92,10 +92,38 @@ function CreateClub() {
     "봉사",
     "동아리연합회",
   ];
+  const statuses = ["모집중", "모집마감"];
 
-  // 키워드 선택 상태 관리
   const [selectedArea, setSelectedArea] = useState("");
   const [selectedField, setSelectedField] = useState("");
+  const [selectedStatus, setSelectedStatus] = useState("");
+
+  
+  
+  // 누락된 상태 추가
+  const [areaDropdownOpen, setAreaDropdownOpen] = useState(false);
+  const [fieldDropdownOpen, setFieldDropdownOpen] = useState(false);
+  const [statusDropdownOpen, setStatusDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        !event.target.closest(".areaSselect") &&
+        !event.target.closest(".fieldSselect") &&
+        !event.target.closest(".statusSselect")
+      ) {
+        setAreaDropdownOpen(false);
+        setFieldDropdownOpen(false);
+        setStatusDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   const handleBackClick = () => {
     navigate("/MyPage");
@@ -104,57 +132,106 @@ function CreateClub() {
   const handleokClick = () => {
     console.log("선택된 영역:", selectedArea);
     console.log("선택된 분야:", selectedField);
+    console.log("모집 상태:", selectedStatus);
     navigate("/MainDong");
   };
 
   return (
     <div className="screen">
       <div className="phoneScreen">
-
-
-
         <div className="createClubMain">
-
-        <input
+          <input
             type="text"
             className="clubNameInput"
             placeholder="동아리명을 입력하세요"
-          >
-            {/* <div className="overlap-group">
-              <div className="text-wrapper-4">동아리명을 입력하세요</div>
-            </div> */}
-          </input>
+          />
 
-          <div className="hanjool">
-
+        <div className="hanjool">
           {/* 영역 선택 */}
-          <select
-            className="areaSelect"
-            value={selectedArea}
-            onChange={(e) => setSelectedArea(e.target.value)}
-          >
-            <option value="">영역 선택</option>
-            {areas.map((area, index) => (
-              <option key={index} value={area}>
-                {area}
-              </option>
-            ))}
-          </select>
+          <div className="areaSselect">
+            <div
+              className={`dropdownSelected ${selectedArea ? "selected" : ""}`}
+              onClick={() => setAreaDropdownOpen(!areaDropdownOpen)}
+            >
+              {selectedArea || "영역 선택"}
+            </div>
+            {areaDropdownOpen && (
+              <ul className="dropdownOptions">
+                {areas.map((area, index) => (
+                  <li
+                    key={index}
+                    className={`dropdownOption ${
+                      selectedArea === area ? "selected" : ""
+                    }`}
+                    onClick={() => {
+                      setSelectedArea(area);
+                      setAreaDropdownOpen(false);
+                    }}
+                  >
+                    {area}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
 
           {/* 분야 선택 */}
-          <select
-            className="fieldSelect"
-            value={selectedField}
-            onChange={(e) => setSelectedField(e.target.value)}
-          >
-            <option value="">분야 선택</option>
-            {categories.map((category, index) => (
-              <option key={index} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
+          <div className="fieldSselect">
+            <div
+              className={`dropdownSelected ${selectedField ? "selected" : ""}`}
+              onClick={() => setFieldDropdownOpen(!fieldDropdownOpen)}
+            >
+              {selectedField || "분야 선택"}
+            </div>
+            {fieldDropdownOpen && (
+              <ul className="dropdownOptions">
+                {categories.map((category, index) => (
+                  <li
+                    key={index}
+                    className={`dropdownOption ${
+                      selectedField === category ? "selected" : ""
+                    }`}
+                    onClick={() => {
+                      setSelectedField(category);
+                      setFieldDropdownOpen(false);
+                    }}
+                  >
+                    {category}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
+
+          {/* 모집 상태 선택 */}
+          <div className="statusSselect">
+            <div
+              className={`dropdownSelected ${selectedStatus ? "selected" : "" }`}
+              onClick={() => setStatusDropdownOpen(!statusDropdownOpen)}
+            >
+              {selectedStatus || "모집 상태"}
+            </div>
+            {statusDropdownOpen && (
+              <ul className="dropdownOptions">
+                {statuses.map((status, index) => (
+                  <li
+                    key={index}
+                    className={`dropdownOption ${
+                      selectedStatus === status ? "selected" : ""
+                    }`}
+                    onClick={() => {
+                      setSelectedStatus(status);
+                      setStatusDropdownOpen(false);
+                    }}
+                  >
+                    {status}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+          
 
           <div className="imageAndInputs">
             <input
@@ -172,26 +249,13 @@ function CreateClub() {
                 className="URLIn"
                 placeholder="URL"
               />
+               
             </div>
+           
           </div>
 
-          {/* <div className="view-3">
-            <div className="overlap-3">
-              <div className="text-wrapper-5">정보</div>
-              <div className="overlap-group-2">
-                <div className="rectangle" />
-                <div className="text-wrapper-6">행사</div>
-              </div>
-            </div>
-          </div> */}
-
-            
-
-          <button className="okButton" onClick={handleokClick}>
-            확인
-            {/* <div className="overlap-4">
-              <div className="text-wrapper-7">확인</div>
-            </div> */}
+          <button className="okBButton" onClick={handleokClick}>
+            동아리 만들기
           </button>
         </div>
 
@@ -203,4 +267,5 @@ function CreateClub() {
     </div>
   );
 }
+
 export default CreateClub;

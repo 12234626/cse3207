@@ -1,196 +1,203 @@
-@font-face {
-  font-family: "SUITE-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
-    format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
+/* 전체 화면 스타일 */
 .screen {
-  background-color: black;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  width: 100%;
-
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
 }
 
-.screen .phoneScreen {
+/* 폰 화면 스타일 */
+.phoneScreen {
   background-color: rgba(92, 110, 247, 1);
   height: 852px;
-  position: relative;
   width: 393px;
 }
 
-.screen .createClubMain {
-  background-color: #ffffff;
-  height: 728px;
-  width: 100%;
-  max-width: 393px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
+/* 동아리 생성 메인 컨테이너 */
+.createClubMain {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  max-height: 728px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  gap: 20px;
+  
 }
 
-.clubNameInput {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: "SUITE-Regular", Helvetica !important;
-  font-size: 14px;
-  background-color: #f5f5f5;
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-}
-.hanjool {
-  display: flex; /* 가로 정렬 */
-  justify-content: flex-start; /* 요소 간 간격 균등 분배 */
-  gap: 10px; /* 두 드롭다운 사이 간격 */
-  width: 100%; /* 부모 컨테이너 너비에 맞춤 */
-  margin: 0 auto; /* 가운데 정렬 */
-}
-
-
-.areaSelect,
-.fieldSelect {
-  width: auto; /* 부모 컨테이너에 맞춤 */
-  min-width: 120px; /* 최대 너비 제한 */
-  padding: 12px; /* 내부 여백 */
-  border: 2px solid rgba(92, 110, 247, 0.8); /* 테두리 색상 */
-  border-radius: 15px; /* 모서리를 둥글게 */
-  font-family: "SUITE-Regular", Helvetica !important;
-  font-size: 16px; /* 글자 크기 */
-  background-color: #ffffff; /* 배경색 */
-  color: #333; /* 텍스트 색상 */
-  appearance: none; /* 기본 드롭다운 화살표 제거 */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23999999'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center; /* 화살표 위치 */
-  background-size: 16px; /* 화살표 크기 */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.areaSelect:focus,
-.fieldSelect:focus {
-  border-color: rgba(92, 110, 247, 1); /* 포커스 시 테두리 색상 */
-  box-shadow: 0 0 8px rgba(92, 110, 247, 0.5); /* 포커스 시 그림자 효과 */
-  outline: none; /* 기본 포커스 제거 */
-}
-
-.areaSelect:hover,
-.fieldSelect:hover {
-  border-color: rgba(92, 110, 247, 1); /* 호버 시 테두리 색상 */
-}
+/* 입력 필드 스타일 */
+.clubNameInput,
 .URLIn {
   width: 100%;
-  max-width: 400px;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: "SUITE-Regular", Helvetica !important;
+  border-radius: 8px;
+  font-family: "SUITE-Regular", Helvetica, Arial, sans-serif;
   font-size: 14px;
   background-color: #f5f5f5;
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.ImagePlus {
-  background-color: #6a6a6a3b;
-  border: 1px solid #00000040;
-  border-radius: 5px;
-  height: 120px;
-  width: 120px;
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica !important;
-  font-size: 20px;
-  font-weight: 700;
+.clubNameInput:focus,
+.URLIn:focus {
+  border-color: rgba(92, 110, 247, 1);
+  box-shadow: 0 0 5px rgba(92, 110, 247, 0.5);
+}
+
+/* 드롭다운 컨테이너 */
+.hanjool {
   display: flex;
-  justify-content: flex-start; /* 왼쪽 정렬 */
-  align-items: flex-start; /* 상단 정렬 */
-  padding: 10px; /* 내부 여백 추가 */
+  flex-direction: row; /* 가로 정렬 */
+  justify-content: space-between; /* 드롭다운 간 간격 균등 분배 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 20px; /* 드롭다운 간의 간격 */
+  margin-top: 20px; /* 위쪽 여백 추가 */
+  width: 100%; /* 컨테이너 전체 너비 */
+  max-width: 800px; /* 최대 너비를 600px로 설정 */
+  margin-left: auto; /* 가운데 정렬 */
+  margin-right: auto; /* 가운데 정렬 */
 }
 
-.imageAndInputs {
-  align-items: flex-start; /* 상단 정렬 */
-  gap: 20px; /* 이미지 버튼과 입력 필드 사이 간격 */
-  width: 90%; /* 부모 컨테이너 너비에 맞춤 */
-  margin: 0 auto; /* 가운데 정렬 */
-  display: flex; /* 가로 정렬 */
-  flex-direction: column; /* 가로 방향으로 정렬 */
+/* 드롭다운 스타일 */
+.areaSselect,
+.fieldSselect,
+.statusSselect {
+  position: relative;
+  flex: 2;
+  display: inline-block;
+  text-align: center;
 
 }
 
+
+.dropdownSelected {
+  display: block; /* 글자 길이에 맞게 조정 */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+  font-family: "SUITE-Regular", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.dropdownSelected:hover {
+  border-color: rgba(92, 110, 247, 1);
+}
+
+/* 선택된 상태에서 글자 색상 변경 */
+.dropdownSelected.selected {
+  color: #007bff; /* 선택된 상태에서 글자 색상 변경 (파란색) */
+  font-weight: bold; /* 선택된 상태에서 글자 강조 */
+}
+.dropdownOptions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid rgba(92, 110, 247, 0.8);
+  border-radius: 8px;
+  background-color: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none; /* 기본 다트 무늬 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+  margin: 0; /* 기본 마진 제거 */
+}
+
+.dropdownOption {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdownOption:hover {
+  background-color: #e7f1ff;
+}
+
+.dropdownOption.selected {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+/* 스크롤바 스타일 */
+.dropdownOptions::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdownOptions::-webkit-scrollbar-thumb {
+  background-color: rgba(92, 110, 247, 0.8);
+  border-radius: 10px;
+}
+
+.dropdownOptions::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+/* 글 작성 필드 */
 .StoryBoard {
   width: 100%;
-  max-width: 400px;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: "SUITE-Regular", Helvetica !important;
+  border-radius: 8px;
+  font-family: "SUITE-Regular", Helvetica, Arial, sans-serif;
   font-size: 14px;
   background-color: #f5f5f5;
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  height: 300px;
+  color: #333;
+  height: 150px;
   resize: none;
-
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.okButton {
+.StoryBoard:focus {
+  border-color: rgba(92, 110, 247, 1);
+  box-shadow: 0 0 5px rgba(92, 110, 247, 0.5);
+}
+
+/* 확인 버튼 */
+.okBButton {
   width: 100%;
-  max-width: 400px;
-  padding: 10px;
+  padding: 12px;
   background-color: rgba(92, 110, 247, 1);
   color: #fff;
   border: none;
-  border-radius: 5px;
-  font-family: "SUITE-Regular", Helvetica !important;
+  border-radius: 8px;
+  font-family: "SUITE-Bold", Helvetica, Arial, sans-serif;
   font-size: 16px;
   cursor: pointer;
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
-.okButton:hover {
+.okBButton:hover {
   background-color: #4a5ac7;
 }
 
-.screen .topBar {
-  height: 24px;
-  left: 16px;
-  position: absolute;
-  top: 86px;
-  width: 226px;
+/* 상단 바 */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.screen .back {
-  background-image: url("../images/backArrow.svg");
-  border: 0;
-  background-color: rgba(92, 110, 247, 1);
-  height: 24px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 24px;
+.back {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.screen .createClubText {
-  color: #ffffff;
-  font-family: "SUITE-Regular", Helvetica !important;
-  font-size: 20px;
-  font-weight: 500;
-  left: 127px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 2px;
-  white-space: nowrap;
+.createClubText {
+  font-family: "SUITE-Bold", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
 }
