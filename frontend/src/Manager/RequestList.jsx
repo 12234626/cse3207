@@ -22,13 +22,13 @@ function RequestList() {
     if (!window.confirm(`${member.name}님의 가입 신청을 수락하시겠습니까?`))
       return;
     try {
-      const club = JSON.parse(localStorage.getItem("club"));
+      // const club = JSON.parse(localStorage.getItem("club"));
       const response = await fetch("http://localhost:3000/db/club_request", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          club_id: club.id,
-          user_id: member.user_id,
+          id: member.id,
+          // user_id: member.user_id,
           status: "수락", // 수락
         }),
       });
@@ -46,13 +46,13 @@ function RequestList() {
     if (!window.confirm(`${member.name}님의 가입 신청을 거절하시겠습니까?`))
       return;
     try {
-      const club = JSON.parse(localStorage.getItem("club"));
+      // const club = JSON.parse(localStorage.getItem("club"));
       const response = await fetch("http://localhost:3000/db/club_request", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          club_id: club.id,
-          user_id: member.user_id,
+          id: member.id,
+          // user_id: member.user_id,
           status: "거절",
         }),
       });
