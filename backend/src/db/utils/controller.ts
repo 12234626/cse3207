@@ -27,13 +27,13 @@ function runQueryWithResponse(req: Request, res: Response, query: string, replac
 }
 
 // 객체의 모든 key-value를 WHERE 절로 변환하는 유틸리티 함수
-function buildWhereClause(params: Record<string, any>) {
+function buildWhereClause(params: Record<string, any>, prefix: string) {
   const conditions: string[] = [];
   const replacements: Record<string, any> = {};
 
   Object.entries(params).forEach(function ([key, value]) {
     if (value) {
-      conditions.push(`${key} = :${key}`);
+      conditions.push(`${prefix}.${key} = :${key}`);
       replacements[key] = value;
     }
   });
