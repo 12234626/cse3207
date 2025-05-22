@@ -9,7 +9,9 @@ function RequestList() {
   useEffect(() => {
     const club = JSON.parse(localStorage.getItem("club"));
     if (!club) return;
-    fetch(`http://localhost:3000/db/club_request?club_id=${club.id}`)
+    fetch(
+      `http://localhost:3000/db/club_request?club_id=${club.id}&status=대기`
+    )
       .then((res) => res.json())
       .then((data) => setMembers(data));
   }, []);
