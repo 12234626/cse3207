@@ -7,6 +7,7 @@ function getAllClubRequests(req: Request, res: Response) {
   const {where, replacements} = buildWhereClause(req.query);
   const query = `
     SELECT 
+      club_request_table.id,
       club_request_table.club_id,
       user_table.id AS user_id,
       user_table.name,
