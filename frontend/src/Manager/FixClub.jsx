@@ -254,13 +254,13 @@ function FixClub() {
           </div>
 
           <button className="okBButton" onClick={handleokClick}>
-            동아리 만들기
+            수정하기
           </button>
         </div>
 
         <div className="topBar">
           <button className="back" onClick={handleBackClick}></button>
-          <div className="createClubText">동아리 수정</div>
+          <div className="createClubText">동아리 소개글 수정</div>
         </div>
       </div>
     </div>
