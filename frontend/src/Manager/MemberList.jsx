@@ -14,6 +14,25 @@ function MemberList() {
       .then((data) => setMembers(Array.isArray(data) ? data : []));
   }, []);
 
+  const handleDelete = async (member) => {
+    if (!window.confirm(`${member.name} 회원을 정말 삭제하시겠습니까?`)) return;
+    try {
+      const club = JSON.parse(localStorage.getItem("club"));
+      const response = await fetch("http://localhost:3000/db/club_member", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ club_id: club.id, user_id: member.user_id }),
+      });
+      if (response.ok) {
+        setMembers(members.filter((m) => m.user_id !== member.user_id));
+      } else {
+        alert("삭제 실패");
+      }
+    } catch (error) {
+      alert("서버 오류");
+    }
+  };
+
   // const fetchMembers = async () => {
   //   try {
   //     const response = await fetch(
@@ -44,7 +63,9 @@ function MemberList() {
                 <div className="memberInfo">
                   {member.department} {member.user_id}
                 </div>
-                <button className="delete">삭제</button>
+                <button className="delete" onClick={() => handleDelete(member)}>
+                  삭제
+                </button>
               </div>
             </div>
           ))}
