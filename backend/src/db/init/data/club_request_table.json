@@ -1,168 +1,168 @@
 [
     {
         "id": 1,
-        "status" : "pending",
+        "status" : "대기",
         "club_id": 13,
         "user_id": 12223701
     },
     {
         "id": 2,
-        "status" : "pending",
+        "status" : "대기",
         "club_id": 135,
         "user_id": 12223701
     },
     {
         "id": 3,
-        "status" : "accepted",
+        "status" : "수락",
         "club_id": 111,
         "user_id": 12223701
     },
     {   "id": 4,
-        "status" : "rejected",
+        "status" : "거절",
         "club_id": 28,
         "user_id": 12223701
     },
     {
         "id": 5,
-        "status": "pending",
+        "status": "대기",
         "club_id": 19,
         "user_id": 12234218
     },
     {
         "id": 6,
-        "status": "rejected",
+        "status": "거절",
         "club_id": 55,
         "user_id": 12234218
     },
     {
         "id": 7,
-        "status": "pending",
+        "status": "대기",
         "club_id": 64,
         "user_id": 12234218
     },
     {
         "id": 8,
-        "status": "accepted",
+        "status": "수락",
         "club_id": 88,
         "user_id": 12234218
     },
     {
         "id": 9,
-        "status": "pending",
+        "status": "대기",
         "club_id": 15,
         "user_id": 12000001
     },
     {
         "id": 10,
-        "status": "pending",
+        "status": "대기",
         "club_id": 15,
         "user_id": 12000002
     },
     {
         "id": 11,
-        "status": "pending",
+        "status": "대기",
         "club_id": 15,
         "user_id": 12000003
     },
     {
         "id": 12,
-        "status": "pending",
+        "status": "대기",
         "club_id": 15,
         "user_id": 12000004
     },
     {
         "id": 13,
-        "status": "pending",
+        "status": "대기",
         "club_id": 15,
         "user_id": 12000005
     },
     {
         "id": 14,
-        "status": "pending",
+        "status": "대기",
         "club_id": 15,
         "user_id": 12000006
     },
     {
         "id": 15,
-        "status": "pending",
+        "status": "대기",
         "club_id": 15,
         "user_id": 12000007
     },
     {
         "id": 16,
-        "status": "pending",
+        "status": "대기",
         "club_id": 15,
         "user_id": 12000008
     },
     {
         "id": 17,
-        "status": "pending",
+        "status": "대기",
         "club_id": 15,
         "user_id": 12000009
     },
     {
         "id": 18,
-        "status": "pending",
+        "status": "대기",
         "club_id": 15,
         "user_id": 12000010
     },
     {
         "id": 19,
-        "status": "pending",
+        "status": "대기",
         "club_id": 16,
         "user_id": 12000001
     },
     {
         "id": 20,
-        "status": "pending",
+        "status": "대기",
         "club_id": 16,
         "user_id": 12000002
     },
     {
         "id": 21,
-        "status": "pending",
+        "status": "대기",
         "club_id": 16,
         "user_id": 12000003
     },
     {
         "id": 22,
-        "status": "pending",
+        "status": "대기",
         "club_id": 16,
         "user_id": 12000004
     },
     {
         "id": 23,
-        "status": "pending",
+        "status": "대기",
         "club_id": 16,
         "user_id": 12000005
     },
     {
         "id": 24,
-        "status": "pending",
+        "status": "대기",
         "club_id": 16,
         "user_id": 12000006
     },
     {
         "id": 25,
-        "status": "pending",
+        "status": "대기",
         "club_id": 16,
         "user_id": 12000007
     },
     {
         "id": 26,
-        "status": "pending",
+        "status": "대기",
         "club_id": 16,
         "user_id": 12000008
     },
     {
         "id": 27,
-        "status": "pending",
+        "status": "대기",
         "club_id": 16,
         "user_id": 12000009
     },
     {
         "id": 28,
-        "status": "pending",
+        "status": "대기",
         "club_id": 16,
         "user_id": 120000010
     }

@@ -8,7 +8,7 @@ function MainH() {
 
   const [posts, setEventPosts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3000/db/post?type=event").then((response) => {
+    axios.get("http://localhost:3000/db/post?type=홍보").then((response) => {
       console.debug(response);
       setEventPosts(response.data);
     });

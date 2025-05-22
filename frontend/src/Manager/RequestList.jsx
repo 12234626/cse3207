@@ -29,7 +29,7 @@ function RequestList() {
         body: JSON.stringify({
           club_id: club.id,
           user_id: member.user_id,
-          status: "accepted", // 수락
+          status: "수락", // 수락
         }),
       });
       if (response.ok) {
@@ -53,7 +53,7 @@ function RequestList() {
         body: JSON.stringify({
           club_id: club.id,
           user_id: member.user_id,
-          status: "rejected",
+          status: "거절",
         }),
       });
       if (response.ok) {
