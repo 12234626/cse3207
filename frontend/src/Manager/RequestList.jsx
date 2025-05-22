@@ -70,13 +70,14 @@ function RequestList() {
     <div className="screen">
       <div className="phoneScreen">
         <div className="requests">
-          <pre>{JSON.stringify(members, null, 2)}</pre>
+          {/* <pre>{JSON.stringify(members, null, 2)}</pre> */}
           {members.map((member, idx) => (
             <div className="element" key={idx}>
               <div className="request">
                 <div className="requestName">{member.name}</div>
                 <div className="requestInfo">
-                  {member.department} {member.user_id}
+                  {member.department} <br />
+                  {member.user_id}
                 </div>
                 <button
                   className="refusal"
