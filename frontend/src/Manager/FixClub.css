@@ -46,17 +46,18 @@
   color: #333;
   outline: none;
   transition: border-color 0.3s ease;
+  margin-top: 20px;
 }
 
 /* 드롭다운 컨테이너 */
 .hanjool {
   display: flex;
   flex-direction: row; /* 가로 정렬 */
-  justify-content: center; /* 드롭다운들이 가운데로 모이도록 설정 */
+  justify-content: space-between; /* 드롭다운 간 간격 균등 분배 */
   align-items: center; /* 세로 중앙 정렬 */
-  gap: 10px; /* 드롭다운 간의 간격을 줄임 */
+  gap: 10px; /* 드롭다운 간의 간격 */
   margin-top: 1px; /* 위쪽 여백 추가 */
-  width: 90%; /* 부모 컨테이너 너비 */
+  width: 92%; /* 부모 컨테이너에 맞춤 */
   max-width: 400px; /* 최대 너비 설정 */
   margin-left: auto; /* 가운데 정렬 */
   margin-right: auto; /* 가운데 정렬 */
@@ -121,6 +122,7 @@
   outline: none;
   text-align: center;
   cursor: pointer;
+  height: 100px;;
 }
 
 /* 글 작성 + URL */

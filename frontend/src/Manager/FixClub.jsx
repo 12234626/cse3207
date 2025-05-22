@@ -204,7 +204,8 @@ function FixClub() {
 
           {/* 모집 상태 선택 */}
           <div className="statusSselect">
-            <div className={`dropdownSelected ${selectedStatus ? "selected" : "" }`}
+            <div
+              className={`dropdownSelected ${selectedStatus ? "selected" : "" }`}
               onClick={() => setStatusDropdownOpen(!statusDropdownOpen)}
             >
               {selectedStatus || "모집 상태"}
