@@ -40,13 +40,15 @@ async function updateClubRequestStatus(req: Request, res: Response) {
     const data = await results.json();
     const {club_id, user_id} = data[0];
     
-    await fetch(`http://localhost:3000/db/club_member`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({club_id, user_id})
-    });
+    if (status === "accepted") {
+      await fetch(`http://localhost:3000/db/club_member`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({club_id, user_id})
+      });
+    }
     
     runQueryWithResponse(req, res, query, replacements, 201);
   } catch (err) {
