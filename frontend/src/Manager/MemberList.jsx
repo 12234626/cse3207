@@ -11,7 +11,7 @@ function MemberList() {
     if (!club) return;
     fetch(`http://localhost:3000/db/club_member?club_id=${club.id}`)
       .then((res) => res.json())
-      .then((data) => setMembers(data));
+      .then((data) => setMembers(Array.isArray(data) ? data : []));
   }, []);
 
   // const fetchMembers = async () => {
@@ -34,7 +34,6 @@ function MemberList() {
 
   return (
     <div className="screen">
-      <pre>{JSON.stringify(members, null, 2)}</pre>
       <div className="phoneScreen">
         <div className="members">
           <pre>{JSON.stringify(members, null, 2)}</pre>
@@ -43,7 +42,7 @@ function MemberList() {
               <div className="member">
                 <div className="memberName">{member.name}</div>
                 <div className="memberInfo">
-                  {member.department} {member.id}
+                  {member.department} {member.user_id}
                 </div>
                 <button className="delete">삭제</button>
               </div>
