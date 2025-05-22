@@ -6,7 +6,6 @@ function CreateClub() {
   const navigate = useNavigate();
 
   const areas = [
-    "전체",
     "중앙동아리",
     "자유전공융합학부",
     "공학융합학부",
@@ -81,7 +80,6 @@ function CreateClub() {
   ];
 
   const categories = [
-    "전체",
     "공연",
     "어학",
     "연구",
@@ -127,6 +125,7 @@ function CreateClub() {
             </div> */}
           </input>
 
+          <div className="hanjool">
 
           {/* 영역 선택 */}
           <select
@@ -155,22 +154,26 @@ function CreateClub() {
               </option>
             ))}
           </select>
+          </div>
 
-
-          <input type="text" className="ImagePlus" placeholder="+" />
-
-          <input type="text" className="StoryBoard" placeholder="글 작성">
-            {/* <div className="overlap">
-              <div className="text-wrapper-2">글 작성</div>
-            </div> */}
-          </input>
-
-          <input type="text" className="URLIn" placeholder="URL">
-            {/* <div className="overlap-group">
-              <div className="text-wrapper">URL</div>
-            </div> */}
-          </input>
-
+          <div className="imageAndInputs">
+            <input
+              type="text"
+              className="ImagePlus"
+              placeholder="+"
+            />
+            <div className="inputsWrapper">
+              <textarea
+                className="StoryBoard"
+                placeholder="글 작성"
+              ></textarea>
+              <input
+                type="text"
+                className="URLIn"
+                placeholder="URL"
+              />
+            </div>
+          </div>
 
           {/* <div className="view-3">
             <div className="overlap-3">

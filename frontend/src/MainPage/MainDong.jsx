@@ -17,7 +17,7 @@ function MainDong() {
 
   const areas = [
     "전체",
-    "중앙동아리",
+    "중앙 동아리",
     "자유전공융합학부",
     "공학융합학부",
     "자연과학융합학부",
@@ -147,7 +147,7 @@ function MainDong() {
     navigate("/MyPage");
   };
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchClubs = async () => {
       try {
         const response = await axios.get("http://localhost:3000/db/clubs"); // 백엔드 API 호출
@@ -160,10 +160,11 @@ function MainDong() {
     fetchClubs();
   }, []);
 
-
   const handleClubClick = (club) => {
-    navigate("/Club", { state: { clubName: club.name, introduction: club.introduction } }); // 동아리명과 소개글 전달
-  };    
+    navigate("/Club", {
+      state: { clubName: club.name, introduction: club.introduction },
+    }); // 동아리명과 소개글 전달
+  };
 
   const handleApply = async (club) => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -291,9 +292,11 @@ function MainDong() {
                 <div>조건에 맞는 동아리가 없습니다.</div>
               ) : (
                 getFilteredClubs().map((club, index) => (
-                  <div key={index}
-                  className="club"
-                  onClick={() => handleClubClick(club)}>
+                  <div
+                    key={index}
+                    className="club"
+                    onClick={() => handleClubClick(club)}
+                  >
                     <div className="clubName">{club.name}</div>
                     <div className="shortInfo">
                       {club.introduction || "소개 없음"}

@@ -9,7 +9,7 @@ function MemberList() {
   useEffect(() => {
     const club = JSON.parse(localStorage.getItem("club"));
     if (!club) return;
-    fetch(`http://localhost:3000/db/club_member/club/${club.id}`)
+    fetch(`http://localhost:3000/db/club_member?club_id=${club.id}`)
       .then((res) => res.json())
       .then((data) => setMembers(data));
   }, []);
@@ -34,7 +34,7 @@ function MemberList() {
 
   return (
     <div className="screen">
-      <pre>{JSON.stringify(members, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(members, null, 2)}</pre> */}
       <div className="phoneScreen">
         <div className="members">
           {members.map((member) => (
