@@ -18,8 +18,9 @@ function Event() {
       <div className="div">
         {/* 상단 영역 */}
         <div className="eventTop">
+          {eventTitle}
           <button className="back" onClick={handleBackClick}></button>
-          <div className="Name">{eventTitle}</div>
+          {/* <div className="Name">{eventTitle}</div> */}
         </div>
 
         {/* 하단 영역 */}
