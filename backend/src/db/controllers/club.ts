@@ -20,18 +20,18 @@ function getClubAdmin(req: Request, res: Response) {
 
 // 동아리 생성
 function createClub(req: Request, res: Response) {
-  const {name, type, field, admin} = req.body;
-  const query = "INSERT INTO club_table (name, type, field, admin) VALUES (:name, :type, :field, :admin)";
-  const replacements = {name, type, field, admin};
+  const {name, type, field, admin, is_recruiting = true} = req.body;
+  const query = "INSERT INTO club_table (name, type, field, admin, is_recruiting) VALUES (:name, :type, :field, :admin, :is_recruiting)";
+  const replacements = {name, type, field, admin, is_recruiting};
 
   runQueryWithResponse(req, res, query, replacements, 201);
 }
 
 // 동아리 업데이트
 function updateClub(req: Request, res: Response) {
-  const {id, name, type, field, admin} = req.body;
-  const query = "UPDATE club_table SET name = :name, type = :type, field = :field, admin = :admin WHERE id = :id";
-  const replacements = {id, name, type, field, admin};
+  const {id, name, type, field, admin, is_recruiting} = req.body;
+  const query = "UPDATE club_table SET name = :name, type = :type, field = :field, admin = :admin, is_recruiting = :is_recruiting WHERE id = :id";
+  const replacements = {id, name, type, field, admin, is_recruiting};
 
   runQueryWithResponse(req, res, query, replacements, 200);
 }
