@@ -22,8 +22,8 @@ function MainH() {
     navigate("/MyPage");
   };
 
-  const handleEventClick = () => {
-    navigate("/Event");
+  const handleEventClick = (post) => {
+    navigate("/Event", { state: { eventTitle: post.title, eventContent: post.content } }); // 제목과 내용을 전달
   };
 
   return (
@@ -52,7 +52,10 @@ function MainH() {
           <div className="hongBoScreen">
             <div className="hongBoList">
               {posts.map((post, index) => (
-                <div key={index} className="hongBo" onClick={handleEventClick}>
+                <div 
+                key={index}
+                className="hongBo"
+                onClick={() => handleEventClick(post)}>
                   <div className="hongBoName">{post.title}</div>
                   <div className="hongBoInfo">{post.content}</div>
                   <div className="hongBoImage"></div>

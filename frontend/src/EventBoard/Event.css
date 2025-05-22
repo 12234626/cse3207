@@ -35,6 +35,10 @@
 .element .overlap-group {
     background-color: #ffffff;
     height: 728px;
+    display: flex; /* Flexbox 활성화 */
+    flex-direction: column; /* 자식 요소를 위에서 아래로 배치 */
+   
+    align-items: center; /* 수평 가운데 정렬 */
     position: relative;
     width: 393px;
 }
@@ -46,24 +50,18 @@
     width: 393;
 }
 
-.element .imageBox{
-    background-color: #899ec7;
-    height: 350px;
-    left: 22px;
-    position: absolute;
-    top: 56px;
-    width: 350px;
-}
+
 .element .ex{
     color: #000000;
-    font-family: "SUITE-Regular", Helvetica !important;
-    font-size: 17px;
+    /*font-family: "SUITE-Regular", Helvetica !important;*/
+    font-size: 13px;
     font-weight: 700;
-    left: 31px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 25px;
+    text-align: center;
+    max-width: 300px; /* 텍스트의 최대 너비 제한 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 10px; /* 텍스트와 경계 사이 여백 */
+    line-height: 1.5; /* 줄 간격 조정 */
+    word-wrap: break-word; /* 긴 단어가 있을 경우 줄바꿈 */
 }
 
 
@@ -99,4 +97,17 @@
     position: absolute;
     top: 0;
     width: 24px;
+  }
+  .element .imageBox{
+    background-color: #899ec7;
+    height: 350px;
+    left: 22px;
+    top: 56px;
+    width: 350px;
+}
+
+  .text-below-view-2 {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
   }

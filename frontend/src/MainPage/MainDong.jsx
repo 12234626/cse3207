@@ -147,9 +147,23 @@ function MainDong() {
     navigate("/MyPage");
   };
 
-  const handleClubClick = () => {
-    navigate("/Club");
-  };
+    useEffect(() => {
+    const fetchClubs = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/db/clubs"); // 백엔드 API 호출
+        setClubs(response.data);
+      } catch (error) {
+        console.error("동아리 목록 불러오기 실패:", error);
+      }
+    };
+
+    fetchClubs();
+  }, []);
+
+
+  const handleClubClick = (club) => {
+    navigate("/Club", { state: { clubName: club.name, introduction: club.introduction } }); // 동아리명과 소개글 전달
+  };    
 
   const handleApply = async (club) => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -277,7 +291,9 @@ function MainDong() {
                 <div>조건에 맞는 동아리가 없습니다.</div>
               ) : (
                 getFilteredClubs().map((club, index) => (
-                  <div key={index} className="club" onClick={handleClubClick}>
+                  <div key={index}
+                  className="club"
+                  onClick={() => handleClubClick(club)}>
                     <div className="clubName">{club.name}</div>
                     <div className="shortInfo">
                       {club.introduction || "소개 없음"}
