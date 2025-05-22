@@ -5,25 +5,25 @@ import sequelize from "../models";
 // Sequelize 쿼리 실행 및 응답을 처리하는 유틸리티 함수
 function runQueryWithResponse(req: Request, res: Response, query: string, replacements: Record<string, any>, success_code: number) {
   sequelize
-    .query(query, {replacements})
-    .then(function ([results]) {
-      if (results.length === 0) {
-        res
-        .status(404)
-        .json({message: "No results found"});
-
-        return;
-      }
-
+  .query(query, {replacements})
+  .then(function ([results]) {
+    if (results.length === 0) {
       res
-      .status(success_code)
-      .json(results);
-    })
-    .catch(function (err) {
-      res
-      .status(500)
-      .json({message: err});
-    });
+      .status(404)
+      .json({message: "No results found"});
+
+      return;
+    }
+
+    res
+    .status(success_code)
+    .json(results);
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
 }
 
 // 객체의 모든 key-value를 WHERE 절로 변환하는 유틸리티 함수

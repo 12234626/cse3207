@@ -1,6 +1,6 @@
 import {Router} from "express";
-import {getAllClubRequests, createClubRequest, updateClubRequestStatus, deleteClubRequest} from "../controllers/club_reqeust";
 
+import {getAllClubRequests, createClubRequest, updateClubRequestStatus, deleteClubRequest} from "../controllers/club_reqeust";
 
 // 동아리 데이터베이스 라우터
 const club_request_router = Router();
