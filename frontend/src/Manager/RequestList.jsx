@@ -27,9 +27,15 @@ function RequestList() {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+<<<<<<< HEAD
           id: member.id,
 
           status: "accepted", // 수락
+=======
+          club_id: club.id,
+          user_id: member.user_id,
+          status: "수락", // 수락
+>>>>>>> d22d09840564ffe2a0de187248a4d5e247ff6f2c
         }),
       });
       if (response.ok) {
@@ -51,8 +57,14 @@ function RequestList() {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+<<<<<<< HEAD
           id: member.id,
           status: "rejected",
+=======
+          club_id: club.id,
+          user_id: member.user_id,
+          status: "거절",
+>>>>>>> d22d09840564ffe2a0de187248a4d5e247ff6f2c
         }),
       });
       if (response.ok) {

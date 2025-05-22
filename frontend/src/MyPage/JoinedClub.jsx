@@ -42,7 +42,7 @@ function JoinedClub() {
     const fetchNoticePosts = async () => {
       try {
         const response = await fetch(
-          // `http://localhost:3000/db/post?type=notice&club_id=${club.id}`
+          // `http://localhost:3000/db/post?type=공지&club_id=${club.id}`
           `http://localhost:3000/db/club_member/post/club/${club.id}`
         );
         const data = await response.json();
@@ -57,7 +57,7 @@ function JoinedClub() {
     // setClubName(club.name);
 
     // axios
-    //   .get(`http://localhost:3000/db/post?type=notice&club_id=${club.id}`)
+    //   .get(`http://localhost:3000/db/post?type=공지&club_id=${club.id}`)
     //   .then((response) => {
     //     console.debug(response);
     //     setNoticePosts(response.data);
@@ -65,7 +65,7 @@ function JoinedClub() {
     // const fetchNoticePosts = async () => {
     //   try {
     //     const response = await fetch(
-    //       `http://localhost:3000/db/post?type=notice&club_id=${club.id}`
+    //       `http://localhost:3000/db/post?type=공지&club_id=${club.id}`
     //     );
     //     const data = await response.json();
     //     setNoticePosts(data);

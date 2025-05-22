@@ -14,8 +14,8 @@ class ClubReqeust extends Model {
   
   // 신청 상태
   @AllowNull(false)
-  @Column({type: DataType.ENUM("pending", "accepted", "rejected"), defaultValue: "pending"})
-  public applicationStatus!: string;
+  @Column({type: DataType.ENUM("대기", "승인", "거절"), defaultValue: "대기"})
+  public status!: string;
 
   // 동아리 아이디
   @AllowNull(false)

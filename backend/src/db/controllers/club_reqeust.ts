@@ -11,7 +11,7 @@ function getAllClubRequests(req: Request, res: Response) {
       user_table.id AS user_id,
       user_table.name,
       user_table.department,
-      club_request_table.applicationStatus
+      club_request_table.status
       FROM club_request_table
       JOIN user_table ON club_request_table.user_id = user_table.id
     ${where}
@@ -39,7 +39,7 @@ async function updateClubRequestStatus(req: Request, res: Response) {
     const data = await results.json();
     const {club_id, user_id} = data[0];
     
-    if (status === "accepted") {
+    if (status === "수락") {
       await fetch(`http://localhost:3000/db/club_member`, {
         method: "POST",
         headers: {
