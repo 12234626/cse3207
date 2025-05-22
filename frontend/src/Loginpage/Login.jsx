@@ -18,12 +18,6 @@ function Login() {
   const handleLoginClick = async (e) => {
     e.preventDefault();
 
-    // 입력값이 비어있으면 로그인 시도 및 이동 금지
-    if (!id || !password) {
-      alert("학번과 비밀번호를 모두 입력하세요.");
-      return;
-    }
-
     const form = { id, password };
 
     try {
