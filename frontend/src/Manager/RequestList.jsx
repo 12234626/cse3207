@@ -18,6 +18,30 @@ function RequestList() {
     navigate("/Manager");
   };
 
+  const handleAccept = async (member) => {
+    if (!window.confirm(`${member.name}님의 가입 신청을 수락하시겠습니까?`))
+      return;
+    try {
+      const club = JSON.parse(localStorage.getItem("club"));
+      const response = await fetch("http://localhost:3000/db/club_request", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          club_id: club.id,
+          user_id: member.user_id,
+          status: "accepted", // 수락
+        }),
+      });
+      if (response.ok) {
+        setMembers((prev) => prev.filter((m) => m.user_id !== member.user_id));
+      } else {
+        alert("수락 실패");
+      }
+    } catch (error) {
+      alert("서버 오류");
+    }
+  };
+
   const handleRefuse = async (member) => {
     if (!window.confirm(`${member.name}님의 가입 신청을 거절하시겠습니까?`))
       return;
@@ -64,7 +88,10 @@ function RequestList() {
                 </button> */}
                 </button>
 
-                <button className="acceptance">
+                <button
+                  className="acceptance"
+                  onClick={() => handleAccept(member)}
+                >
                   수락
                   {/* <button className="overlap-group">
                   수락
