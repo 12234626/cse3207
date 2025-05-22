@@ -97,9 +97,10 @@ function JoinedClub() {
           ))}
         </div>
 
-        <div className="topBar">
+        <div className="joinedClubTop">
+          {clubName}
           <button className="back" onClick={handleBackClick}></button>
-          <div className="joinedClubText">{clubName}</div>
+          {/* <div className="joinedClubText">{clubName}</div> */}
         </div>
         {isManager && (
           <button

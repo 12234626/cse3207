@@ -108,12 +108,23 @@
   white-space: nowrap;
 }
 
-.screen .topBar {
+.screen .joinedClubTop {
   height: 24px;
   left: 16px;
   position: absolute;
   top: 86px;
-  width: 237px;
+  width: 350px;
+  color: #ffffff;
+  font-family: "SUITE-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 500;
+  /* left: 120px; */
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  /* top: 2px; */
+  white-space: nowrap;
+  text-align: center;
 }
 
 .screen .back {
