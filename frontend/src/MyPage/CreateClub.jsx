@@ -6,7 +6,7 @@ function CreateClub() {
   const navigate = useNavigate();
 
   const areas = [
-    "중앙동아리",
+    "중앙 동아리",
     "자유전공융합학부",
     "공학융합학부",
     "자연과학융합학부",
@@ -92,11 +92,15 @@ function CreateClub() {
     "봉사",
     "동아리연합회",
   ];
-  const statuses = ["모집중", "모집마감"];
+  const statuses = ["모집 중", "모집마감"];
 
   const [selectedArea, setSelectedArea] = useState("");
   const [selectedField, setSelectedField] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
+
+  const [clubName, setClubName] = useState("");
+  const [shortIntro, setShortIntro] = useState("");
+  const [story, setStory] = useState("");
 
   // 누락된 상태 추가
   const [areaDropdownOpen, setAreaDropdownOpen] = useState(false);
@@ -127,11 +131,64 @@ function CreateClub() {
     navigate("/MyPage");
   };
 
-  const handleokClick = () => {
-    console.log("선택된 영역:", selectedArea);
-    console.log("선택된 분야:", selectedField);
-    console.log("모집 상태:", selectedStatus);
-    navigate("/MainDong");
+  // const handleokClick = () => {
+  //   console.log("선택된 영역:", selectedArea);
+  //   console.log("선택된 분야:", selectedField);
+  //   console.log("모집 상태:", selectedStatus);
+  //   navigate("/MainDong");
+  // };
+  const handleokClick = async () => {
+    if (!clubName || !selectedArea || !selectedField || !selectedStatus) {
+      alert("모든 항목을 입력해 주세요.");
+      return;
+    }
+
+    try {
+      // 관리자 정보는 예시로 localStorage에서 user.id를 가져옵니다.
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (!user) {
+        alert("로그인이 필요합니다.");
+        return;
+      }
+
+      // 동아리 상세 설명 게시글 먼저 생성
+      const postRes = await fetch("http://localhost:3000/db/post", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "상세설명",
+          title: clubName + " 소개",
+          content: story,
+          club_id: null, // 동아리 생성 후 업데이트 필요
+        }),
+      });
+      const postData = await postRes.json();
+      const infoId = postData.id;
+
+      // 동아리 생성
+      const clubRes = await fetch("http://localhost:3000/db/club", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: clubName,
+          type: selectedArea,
+          field: selectedField,
+          is_recruiting: selectedStatus,
+          introduction: shortIntro,
+          admin: user.id,
+          info: infoId,
+        }),
+      });
+
+      if (clubRes.ok) {
+        alert("동아리가 생성되었습니다!");
+        navigate("/MainDong");
+      } else {
+        alert("동아리 생성에 실패했습니다.");
+      }
+    } catch (error) {
+      alert("동아리 생성 중 오류가 발생했습니다.");
+    }
   };
 
   return (
@@ -142,6 +199,8 @@ function CreateClub() {
             type="text"
             className="clubNameInput"
             placeholder="동아리명을 입력하세요"
+            value={clubName}
+            onChange={(e) => setClubName(e.target.value)}
           />
 
           <div className="hanjool">
@@ -241,8 +300,15 @@ function CreateClub() {
                 type="text"
                 className="clubShortInput"
                 placeholder="동아리 한줄소개"
+                value={shortIntro}
+                onChange={(e) => setShortIntro(e.target.value)}
               />
-              <textarea className="StoryBoard" placeholder="글 작성"></textarea>
+              <textarea
+                className="StoryBoard"
+                placeholder="글 작성"
+                value={story}
+                onChange={(e) => setStory(e.target.value)}
+              ></textarea>
               {/* <input type="text" className="URLIn" placeholder="URL" /> */}
             </div>
           </div>
