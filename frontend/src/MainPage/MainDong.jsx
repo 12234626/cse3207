@@ -181,6 +181,17 @@ function MainDong() {
     }
 
     try {
+      // 1. 이미 가입된 동아리인지 확인
+      const res = await fetch(
+        `http://localhost:3000/db/club_member?club_id=${club.id}&user_id=${user.id}`
+      );
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        alert("이미 가입된 동아리입니다.");
+        return;
+      }
+      // 2. 가입되어있지 않다면 신청절차
+      if (!window.confirm(`${club.name}에 가입하시겠습니까?`)) return;
       const response = await fetch("http://localhost:3000/db/club_request", {
         method: "POST",
         headers: {
@@ -314,6 +325,10 @@ function MainDong() {
                         className="applyButton"
                         onClick={(e) => {
                           e.stopPropagation(); // Prevent triggering the parent div's onClick
+                          if (club.inrecruitment === "모집 마감") {
+                            alert("모집이 마감된 동아리입니다.");
+                            return;
+                          }
                           handleApply(club);
                         }}
                       >
