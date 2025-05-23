@@ -83,6 +83,7 @@ function SignUp() {
             value={form.phone}
             onChange={handleChange}
             autocomplete="off"
+            placeholder="010-0000-0000"
           />
           <div className="texts">전화번호</div>
         </div>
