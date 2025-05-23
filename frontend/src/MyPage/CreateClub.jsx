@@ -98,8 +98,6 @@ function CreateClub() {
   const [selectedField, setSelectedField] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
 
-  
-  
   // 누락된 상태 추가
   const [areaDropdownOpen, setAreaDropdownOpen] = useState(false);
   const [fieldDropdownOpen, setFieldDropdownOpen] = useState(false);
@@ -146,112 +144,107 @@ function CreateClub() {
             placeholder="동아리명을 입력하세요"
           />
 
-        <div className="hanjool">
-          {/* 영역 선택 */}
-          <div className="areaSselect">
-            <div
-              className={`dropdownSelected ${selectedArea ? "selected" : ""}`}
-              onClick={() => setAreaDropdownOpen(!areaDropdownOpen)}
-            >
-              {selectedArea || "영역 선택"}
+          <div className="hanjool">
+            {/* 영역 선택 */}
+            <div className="areaSselect">
+              <div
+                className={`dropdownSelected ${selectedArea ? "selected" : ""}`}
+                onClick={() => setAreaDropdownOpen(!areaDropdownOpen)}
+              >
+                {selectedArea || "영역 선택"}
+              </div>
+              {areaDropdownOpen && (
+                <ul className="dropdownOptions">
+                  {areas.map((area, index) => (
+                    <li
+                      key={index}
+                      className={`dropdownOption ${
+                        selectedArea === area ? "selected" : ""
+                      }`}
+                      onClick={() => {
+                        setSelectedArea(area);
+                        setAreaDropdownOpen(false);
+                      }}
+                    >
+                      {area}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-            {areaDropdownOpen && (
-              <ul className="dropdownOptions">
-                {areas.map((area, index) => (
-                  <li
-                    key={index}
-                    className={`dropdownOption ${
-                      selectedArea === area ? "selected" : ""
-                    }`}
-                    onClick={() => {
-                      setSelectedArea(area);
-                      setAreaDropdownOpen(false);
-                    }}
-                  >
-                    {area}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
 
-          {/* 분야 선택 */}
-          <div className="fieldSselect">
-            <div
-              className={`dropdownSelected ${selectedField ? "selected" : ""}`}
-              onClick={() => setFieldDropdownOpen(!fieldDropdownOpen)}
-            >
-              {selectedField || "분야 선택"}
+            {/* 분야 선택 */}
+            <div className="fieldSselect">
+              <div
+                className={`dropdownSelected ${
+                  selectedField ? "selected" : ""
+                }`}
+                onClick={() => setFieldDropdownOpen(!fieldDropdownOpen)}
+              >
+                {selectedField || "분야 선택"}
+              </div>
+              {fieldDropdownOpen && (
+                <ul className="dropdownOptions">
+                  {categories.map((category, index) => (
+                    <li
+                      key={index}
+                      className={`dropdownOption ${
+                        selectedField === category ? "selected" : ""
+                      }`}
+                      onClick={() => {
+                        setSelectedField(category);
+                        setFieldDropdownOpen(false);
+                      }}
+                    >
+                      {category}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-            {fieldDropdownOpen && (
-              <ul className="dropdownOptions">
-                {categories.map((category, index) => (
-                  <li
-                    key={index}
-                    className={`dropdownOption ${
-                      selectedField === category ? "selected" : ""
-                    }`}
-                    onClick={() => {
-                      setSelectedField(category);
-                      setFieldDropdownOpen(false);
-                    }}
-                  >
-                    {category}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
 
-          {/* 모집 상태 선택 */}
-          <div className="statusSselect">
-            <div
-              className={`dropdownSelected ${selectedStatus ? "selected" : "" }`}
-              onClick={() => setStatusDropdownOpen(!statusDropdownOpen)}
-            >
-              {selectedStatus || "모집 상태"}
+            {/* 모집 상태 선택 */}
+            <div className="statusSselect">
+              <div
+                className={`dropdownSelected ${
+                  selectedStatus ? "selected" : ""
+                }`}
+                onClick={() => setStatusDropdownOpen(!statusDropdownOpen)}
+              >
+                {selectedStatus || "모집 상태"}
+              </div>
+              {statusDropdownOpen && (
+                <ul className="dropdownOptions">
+                  {statuses.map((status, index) => (
+                    <li
+                      key={index}
+                      className={`dropdownOption ${
+                        selectedStatus === status ? "selected" : ""
+                      }`}
+                      onClick={() => {
+                        setSelectedStatus(status);
+                        setStatusDropdownOpen(false);
+                      }}
+                    >
+                      {status}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-            {statusDropdownOpen && (
-              <ul className="dropdownOptions">
-                {statuses.map((status, index) => (
-                  <li
-                    key={index}
-                    className={`dropdownOption ${
-                      selectedStatus === status ? "selected" : ""
-                    }`}
-                    onClick={() => {
-                      setSelectedStatus(status);
-                      setStatusDropdownOpen(false);
-                    }}
-                  >
-                    {status}
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
-        </div>
-          
 
           <div className="imageAndInputs">
-            <input
-              type="text"
-              className="ImagePlus"
-              placeholder="+"
-            />
+            <input type="text" className="ImagePlus" placeholder="+" />
             <div className="inputsWrapper">
-              <textarea
-                className="StoryBoard"
-                placeholder="글 작성"
-              ></textarea>
               <input
                 type="text"
-                className="URLIn"
-                placeholder="URL"
+                className="clubShortInput"
+                placeholder="동아리 한줄소개"
               />
-               
+              <textarea className="StoryBoard" placeholder="글 작성"></textarea>
+              <input type="text" className="URLIn" placeholder="URL" />
             </div>
-           
           </div>
 
           <button className="okBButton" onClick={handleokClick}>
