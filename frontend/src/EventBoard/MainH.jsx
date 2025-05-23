@@ -24,8 +24,11 @@ function MainH() {
 
   const handleEventClick = (post) => {
     navigate("/Event", {
-      state: { eventTitle: post.title, eventContent: post.content },
-    }); // 제목과 내용을 전달
+      state: { 
+        eventTitle: post.title, 
+        eventContent: post.content,
+      club_id: post.club_id,},
+    }); // 제목 내용 동아리명 넘김
   };
 
   return (
