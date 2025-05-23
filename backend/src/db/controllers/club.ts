@@ -20,9 +20,9 @@ function getClubAdmin(req: Request, res: Response) {
 
 // 동아리 생성
 function createClub(req: Request, res: Response) {
-  const {name, type, field, admin, is_recruiting = true} = req.body;
-  const query = "INSERT INTO club_table (name, type, field, admin, is_recruiting) VALUES (:name, :type, :field, :admin, :is_recruiting)";
-  const replacements = {name, type, field, admin, is_recruiting};
+  const {name, type, field, admin, is_recruiting, introduction, info = true} = req.body;
+  const query = "INSERT INTO club_table (name, type, field, admin, is_recruiting, introduction, info) VALUES (:name, :type, :field, :admin, :is_recruiting, :introduction, :info)";
+  const replacements = {name, type, field, admin, is_recruiting, introduction, info};
 
   runQueryWithResponse(req, res, query, replacements, 201);
 }

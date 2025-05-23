@@ -16,7 +16,7 @@ class User extends Model {
   // 유저 비밀번호
   @AllowNull(false)
   @Column({type: DataType.STRING(50)})
-  public password!: string;
+  public password!: string; 
 
   // 유저 학과
   @AllowNull(false)
@@ -29,7 +29,7 @@ class User extends Model {
 
   // 유저 전화번호
   @AllowNull(false)
-  @Column({type: DataType.STRING(20), validate: {is: /^\d{2,3}-\d{3,4}-\d{4}$/}})
+  @Column({type: DataType.STRING(20)})
   public phone!: string;
 };
 
