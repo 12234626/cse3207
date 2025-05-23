@@ -13,6 +13,7 @@ function MyPage() {
   const [user, setUser] = useState(null);
   const [club, setClub] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [profileImage, setProfileImage] = useState(""); // 이미지 경로 상태 추가
   // const location = useLocation();
 
   useEffect(() => {
@@ -62,6 +63,7 @@ function MyPage() {
     const imageUrl = await handleImageUpload(file);
     // imageUrl을 상태로 저장하거나, 서버에 저장 등 원하는 작업 수행
     console.log("업로드된 이미지 경로:", imageUrl);
+    setProfileImage(imageUrl);
   };
 
   const navigate = useNavigate();
