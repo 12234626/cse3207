@@ -25,11 +25,6 @@ class Post extends Model {
   @AllowNull(false)
   @Column({type: DataType.TEXT})
   public content!: string;
-
-  //날짜
-  @AllowNull(false)
-  @Column({type: DataType.DATE})
-  public date!: string;
   
   // 동아리 아이디
   @AllowNull(false)
