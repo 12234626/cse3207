@@ -28,7 +28,7 @@ function Login() {
       });
 
       if (!response.ok) {
-        alert("학번 또는 비밀번호가 틀렸습니다.");
+        alert("존재하지 않는 회원입니다.");
         return;
       }
 
