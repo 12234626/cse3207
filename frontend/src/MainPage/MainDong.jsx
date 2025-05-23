@@ -289,9 +289,7 @@ function MainDong() {
                   onClick={openMoDropdown}
                 >
                   모집상태 :{" "}
-                  {selectedCategories.length > 0
-                    ? selectedCategories.join(", ")
-                    : "선택안됨"}
+                  {selectedMo.length > 0 ? selectedMo.join(", ") : "선택안됨"}
                 </div>
               </div>
             </div>
@@ -384,7 +382,7 @@ function MainDong() {
             </div>
           )}
 
-          {/* 모집중 드롭다운 */}
+          {/* 모집상태 드롭다운 */}
           {moDropdownOpen && (
             <div className="overlay">
               <div className="popup">
