@@ -137,6 +137,7 @@ function CreateClub() {
   //   console.log("모집 상태:", selectedStatus);
   //   navigate("/MainDong");
   // };
+
   const handleokClick = async () => {
     if (
       !clubName ||
@@ -149,7 +150,6 @@ function CreateClub() {
       alert("모든 항목을 입력해 주세요.");
       return;
     }
-
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       if (!user) {
@@ -157,18 +157,19 @@ function CreateClub() {
         return;
       }
 
-      // 1. 상세설명 post 생성 (textarea 입력값: story)
+      // 1. 상세설명 post 생성 (club_id 없이)
       const postRes = await fetch("http://localhost:3000/db/post", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           type: "상세 설명",
-          title: clubName + " 상세설명",
-          content: story, // textarea 입력값
+          title: clubName + " 상세 설명",
+          content: story,
         }),
       });
       const postData = await postRes.json();
       const infoId = postData.id;
+
       // 2. 동아리 생성 (info에 post id 연결)
       const clubRes = await fetch("http://localhost:3000/db/club", {
         method: "POST",
@@ -177,19 +178,26 @@ function CreateClub() {
           name: clubName,
           type: selectedArea,
           field: selectedField,
-          inrecruitment: selectedStatus,
-          introduction: shortIntro, // 한줄소개
+          is_recruiting: selectedStatus,
+          introduction: shortIntro,
           admin: user.id,
-          info: infoId, // 상세설명 post의 id
+          info: infoId,
+        }),
+      });
+      const clubData = await clubRes.json();
+      const clubId = clubData.id; // 백엔드에서 생성된 club의 id를 반환해야 함
+
+      // 3. post_table의 club_id 업데이트
+      await fetch(`http://localhost:3000/db/post/${infoId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          club_id: clubId,
         }),
       });
 
-      if (clubRes.ok) {
-        alert("동아리가 생성되었습니다!");
-        navigate("/MainDong");
-      } else {
-        alert("동아리 생성에 실패했습니다.");
-      }
+      alert("동아리가 성공적으로 생성되었습니다!");
+      navigate("/MainDong");
     } catch (error) {
       alert("동아리 생성 중 오류가 발생했습니다.");
     }
