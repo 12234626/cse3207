@@ -112,6 +112,18 @@
   border-color: #0000001a;
 }
 
+.screen .deleteClubBox {
+  height: 54px;
+  left: 5px;
+  position: absolute;
+  top: 275px;
+  width: 385px;
+  background-color: #ffffff;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #0000001a;
+}
+
 .screen .topBar {
   height: 24px;
   left: 16px;
