@@ -6,7 +6,7 @@ function FixClub() {
   const navigate = useNavigate();
 
   const areas = [
-    "중앙동아리",
+    "중앙 동아리",
     "자유전공융합학부",
     "공학융합학부",
     "자연과학융합학부",
@@ -93,7 +93,7 @@ function FixClub() {
     "동아리연합회",
   ];
 
-  const statuses = ["모집중", "모집마감"];
+  const statuses = ["모집 중", "모집 마감"];
 
   const [selectedArea, setSelectedArea] = useState("");
   const [selectedField, setSelectedField] = useState("");
