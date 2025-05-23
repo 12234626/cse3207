@@ -194,6 +194,15 @@ function MyPage() {
                   className="profileImage"
                   src={handleFileChange}
                 />
+                {/* 업로드된 이미지 미리보기 */}
+                {profileImage && (
+                  <img
+                    src={profileImage}
+                    alt="프로필"
+                    className="profileImage"
+                    style={{ width: 100, height: 100, borderRadius: "50%" }}
+                  />
+                )}
 
                 <div className="sidAndMajor">
                   {user.department} <br />
