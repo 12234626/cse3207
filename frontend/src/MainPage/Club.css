@@ -43,6 +43,19 @@
   white-space: nowrap;
 }
 
+/* .element .ClubName {
+  color: #ffffff;
+  font-family: "SUITE-Regular", Helvetica !important;
+  font-size: 20px;
+  font-weight: 400;
+  left: 45%;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: normal;
+  position: absolute;
+  top: 2px;
+  white-space: nowrap;
+} */
 
 .element .back {
   background-image: url("../images/backArrow.svg");
@@ -60,7 +73,7 @@
   left: 0;
   position: absolute;
   top: 124px;
-  width: 399;
+  width: 393;
 }
 
 .element .overlap-group {
@@ -74,16 +87,7 @@
   width: 393px;
 }
 .element .text-wrapper-2 {
-  color: #000000;
-  /*font-family: "SUITE-Regular", Helvetica !important;*/
-  font-size: 13px;
-  font-weight: 700;
-  text-align: center;
-  max-width: 300px; /* 텍스트의 최대 너비 제한 */
-  margin: 0 auto; /* 가운데 정렬 */
   padding: 10px; /* 텍스트와 경계 사이 여백 */
-  line-height: 1.5; /* 줄 간격 조정 */
-  word-wrap: break-word; /* 긴 단어가 있을 경우 줄바꿈 */
 }
 
 .element .box {
@@ -95,7 +99,15 @@
 }
 
 .text-below-view-2 {
-  font-size: 14px;
-  color: #333;
-  text-align: center;
+  font-family: "SUITE-Regular", Helvetica !important;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    text-align: left;              /* ✅ 왼쪽 정렬로 자연스럽게 읽히도록 */
+    padding: 0 30px;               /* ✅ 좌우 여백 20px */
+    line-height: 1.6;              /* ✅ 줄 간격 넉넉하게 */
+    white-space: pre-wrap;         /* ✅ 줄바꿈 유지하면서 넘치면 줄바꿈 */
+    word-break: break-word;        /* ✅ 너무 긴 단어는 강제로 줄바꿈 */
+    box-sizing: border-box; 
 }

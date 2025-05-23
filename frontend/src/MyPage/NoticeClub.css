@@ -73,7 +73,7 @@
   }
   
   .YB{
-    height: 25px;
+   padding: 10px;
   }
   .noticeClubPage .BBlueBox {
     background-color: #899ec7;
@@ -85,8 +85,9 @@
 
   .noticeClubPage .noticeContenttext {
     font-family: "SUITE-Regular", Helvetica !important;
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
+    font-weight: 700;
     text-align: center;
     text-align: left;              /* ✅ 왼쪽 정렬로 자연스럽게 읽히도록 */
     padding: 0 30px;               /* ✅ 좌우 여백 20px */
