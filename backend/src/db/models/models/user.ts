@@ -29,7 +29,7 @@ class User extends Model {
 
   // 유저 전화번호
   @AllowNull(false)
-  @Column({type: DataType.STRING(20)})
+  @Column({type: "char(13) CHECK (phone REGEXP '^[0-9]{3}-[0-9]{4}-[0-9]{4}')"})
   public phone!: string;
 };
 
