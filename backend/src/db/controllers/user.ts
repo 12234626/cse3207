@@ -13,13 +13,6 @@ function getUser(req: Request, res: Response) {
 // 유저 생성
 function createUser(req: Request, res: Response) {
   const {id, name, password, department, phone} = req.body;
-
-  // 전화번호 유효성 검사
-  const phoneRegex = /^\d{2,3}-\d{3,4}-\d{4}$/;
-  if (!phoneRegex.test(phone)) {
-    return res.status(400).json({ message: "전화번호는 반드시 하이픈(-)을 포함해야 합니다. 예: 010-1234-5678" });
-  }
-
   const query = "INSERT INTO user_table (id, name, password, department, phone) VALUES (:id, :name, :password, :department, :phone)";
   const replacements = {id, name, password, department, phone};
 
