@@ -13,7 +13,7 @@ class Post extends Model {
   
   // 게시글 유형
   @AllowNull(false)
-  @Column({type: DataType.ENUM("공지", "홍보")})
+  @Column({type: DataType.ENUM("공지", "홍보", "상세 설명")})
   public type!: string;
   
   // 제목
@@ -25,6 +25,11 @@ class Post extends Model {
   @AllowNull(false)
   @Column({type: DataType.TEXT})
   public content!: string;
+
+  //날짜
+  @AllowNull(false)
+  @Column({type: DataType.DATE})
+  public date!: string;
   
   // 동아리 아이디
   @AllowNull(false)
