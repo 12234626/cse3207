@@ -218,6 +218,16 @@ function CreateClub() {
       //   }),
       // });
 
+      // 4. 관리자(본인) 자동 가입
+      await fetch("http://localhost:3000/db/club_member", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          club_id: clubId,
+          user_id: user.id,
+        }),
+      });
+
       alert("동아리가 성공적으로 생성되었습니다!");
       navigate("/MainDong");
     } catch (error) {
