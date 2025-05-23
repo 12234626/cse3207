@@ -31,6 +31,10 @@ class Post extends Model {
   @ForeignKey(() => Club)
   @Column({type: DataType.INTEGER.UNSIGNED})
   public club_id!: number; 
+
+  // 이미지 경로
+  @Column({type: DataType.STRING(255), allowNull: true})
+  public image_url?: string;
 };  
 
 export default Post;

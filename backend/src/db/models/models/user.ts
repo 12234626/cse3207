@@ -31,6 +31,10 @@ class User extends Model {
   @AllowNull(false)
   @Column({type: "char(13) CHECK (phone REGEXP '^[0-9]{3}-[0-9]{4}-[0-9]{4}')"})
   public phone!: string;
+
+  //프로필 이미지 경로
+  @Column({type: DataType.STRING(255), allowNull: true})
+  public profile_img?: string;
 };
 
 export default User;

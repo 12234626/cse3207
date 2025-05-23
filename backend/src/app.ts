@@ -8,6 +8,7 @@ import register_router from "./routes/register";
 import main_router from "./routes/main";
 import my_router from "./routes/my";
 import club_router from "./routes/club";
+import uploadRouter from "./db/routes/upload";
 
 const app = express();
 const HOST: string = process.env.HOST || "localhost";
@@ -37,7 +38,8 @@ app
 .use("/register", register_router)
 .use("/main", main_router)
 .use("/my", my_router)
-.use("/club", club_router);
+.use("/club", club_router)
+.use("/db/upload", uploadRouter);
 
 // 데이터베이스 동기화 및 서버 시작
 syncDB()
