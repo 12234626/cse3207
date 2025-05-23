@@ -92,7 +92,7 @@ function CreateClub() {
     "봉사",
     "동아리연합회",
   ];
-  const statuses = ["모집 중", "모집마감"];
+  const statuses = ["모집 중", "모집 마감"];
 
   const [selectedArea, setSelectedArea] = useState("");
   const [selectedField, setSelectedField] = useState("");
@@ -188,10 +188,11 @@ function CreateClub() {
       const clubId = clubData.id; // 백엔드에서 생성된 club의 id를 반환해야 함
 
       // 3. post_table의 club_id 업데이트
-      await fetch(`http://localhost:3000/db/post/${infoId}`, {
+      await fetch(`http://localhost:3000/db/post`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          id: infoId,
           club_id: clubId,
         }),
       });
