@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Manager.css";
 
-function Manager() {
+function Manager({ clubId }) {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
@@ -23,6 +23,26 @@ function Manager() {
 
   const handleFixClubClick = () => {
     navigate("/FixClub");
+  };
+
+  // 동아리 삭제 핸들러
+  const handleDeleteClubClick = async () => {
+    if (!window.confirm("정말로 동아리를 삭제하시겠습니까?")) return;
+    try {
+      const response = await fetch("http://localhost:3000/db/club", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: clubId }),
+      });
+      if (response.ok) {
+        alert("동아리가 삭제되었습니다.");
+        navigate("/JoinedClub"); // 삭제 후 이동할 페이지
+      } else {
+        alert("삭제에 실패했습니다.");
+      }
+    } catch (err) {
+      alert("오류가 발생했습니다.");
+    }
   };
 
   return (
@@ -67,7 +87,9 @@ function Manager() {
           </div>
           <div className="deleteClubBox">
             {/* <div className="overlap-group"> */}
-            <div className="managerListText">동아리 삭제</div>
+            <div className="managerListText" onClick={handleDeleteClubClick}>
+              동아리 삭제
+            </div>
             <button className="nextButton"></button>
             {/* </div> */}
           </div>
