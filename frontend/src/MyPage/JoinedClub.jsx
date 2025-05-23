@@ -84,12 +84,18 @@ function JoinedClub() {
     navigate("/Manager");
   };
 
+  const handleNoticeClick = (noticeId) => {
+    navigate(`/notice-club/${noticeId}`); // 공지 ID를 URL에 포함
+  }
+
   return (
     <div className="screen">
       <div className="phoneScreen">
         <div className="myClubPosts">
           {posts.map((post, index) => (
-            <div key={index} className="element">
+            <div key={index} className="element"onClick={() => handleNoticeClick(post.id)} // 공지 클릭 시 이동
+            style={{ cursor: "pointer" }} // 클릭 가능한 스타일 추가
+          >
               <div className="myClubPost">
                 <div className="myClubPostName">{post.title}</div>
               </div>
