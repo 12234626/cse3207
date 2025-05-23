@@ -253,9 +253,10 @@ function FixClub() {
           </button>
         </div>
 
-        <div className="topBar">
+        <div className="fixClubTop">
+          동아리 소개글 수정
           <button className="back" onClick={handleBackClick}></button>
-          <div className="createClubText">동아리 소개글 수정</div>
+          {/* <div className="fixClubText">동아리 소개글 수정</div> */}
         </div>
       </div>
     </div>

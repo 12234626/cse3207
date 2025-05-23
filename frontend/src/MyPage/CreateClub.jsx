@@ -252,9 +252,10 @@ function CreateClub() {
           </button>
         </div>
 
-        <div className="topBar">
+        <div className="createClubTop">
+          동아리 생성
           <button className="back" onClick={handleBackClick}></button>
-          <div className="createClubText">동아리 생성</div>
+          {/* <div className="createClubText">동아리 생성</div> */}
         </div>
       </div>
     </div>

@@ -214,11 +214,29 @@ s .URLIn {
   cursor: pointer;
 }
 
-.createClubText {
+.fixClubTop {
+  height: 24px;
+  left: 16px;
+  position: absolute;
+  top: 86px;
+  width: 350px;
+  color: #ffffff;
+  font-family: "SUITE-Regular", Helvetica !important;
+  font-size: 20px;
+  font-weight: 400;
+  /* left: 45%; */
+  letter-spacing: 0;
+  text-align: center;
+  line-height: normal;
+  position: absolute;
+  /* top: 2px; */
+  white-space: nowrap;
+}
+/* .fixClubText {
   font-family: "SUITE-Bold", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  color: #333;
-}
+  color: white;
+} */
 
 .dropdownOptions {
   position: absolute;
