@@ -157,7 +157,7 @@ s .URLIn {
   font-size: 14px;
   background-color: #f5f5f5;
   color: #333;
-  height: 250px;
+  height: 300px;
   resize: none; /* 크기 조정 비활성화 */
   transition: border-color 0.3s ease;
   box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */

@@ -243,7 +243,7 @@ function CreateClub() {
                 placeholder="동아리 한줄소개"
               />
               <textarea className="StoryBoard" placeholder="글 작성"></textarea>
-              <input type="text" className="URLIn" placeholder="URL" />
+              {/* <input type="text" className="URLIn" placeholder="URL" /> */}
             </div>
           </div>
 
