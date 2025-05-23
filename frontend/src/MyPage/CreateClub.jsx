@@ -138,34 +138,38 @@ function CreateClub() {
   //   navigate("/MainDong");
   // };
   const handleokClick = async () => {
-    if (!clubName || !selectedArea || !selectedField || !selectedStatus) {
+    if (
+      !clubName ||
+      !selectedArea ||
+      !selectedField ||
+      !selectedStatus ||
+      !shortIntro ||
+      !story
+    ) {
       alert("모든 항목을 입력해 주세요.");
       return;
     }
 
     try {
-      // 관리자 정보는 예시로 localStorage에서 user.id를 가져옵니다.
       const user = JSON.parse(localStorage.getItem("user"));
       if (!user) {
         alert("로그인이 필요합니다.");
         return;
       }
 
-      // 동아리 상세 설명 게시글 먼저 생성
+      // 1. 상세설명 post 생성 (textarea 입력값: story)
       const postRes = await fetch("http://localhost:3000/db/post", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          type: "상세설명",
-          title: clubName + " 소개",
-          content: story,
-          club_id: null, // 동아리 생성 후 업데이트 필요
+          type: "상세 설명",
+          title: clubName + " 상세설명",
+          content: story, // textarea 입력값
         }),
       });
       const postData = await postRes.json();
       const infoId = postData.id;
-
-      // 동아리 생성
+      // 2. 동아리 생성 (info에 post id 연결)
       const clubRes = await fetch("http://localhost:3000/db/club", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -173,10 +177,10 @@ function CreateClub() {
           name: clubName,
           type: selectedArea,
           field: selectedField,
-          is_recruiting: selectedStatus,
-          introduction: shortIntro,
+          inrecruitment: selectedStatus,
+          introduction: shortIntro, // 한줄소개
           admin: user.id,
-          info: infoId,
+          info: infoId, // 상세설명 post의 id
         }),
       });
 
