@@ -1,6 +1,6 @@
 import {Router} from "express";
 
-import {getPost, createPost, updatePost, deletePost, updatePostClubId} from "../controllers/post";
+import {getPost, createPost, updatePost, deletePost} from "../controllers/post";
 
 // 게시글 데이터베이스 라우터
 const post_router = Router();
@@ -13,7 +13,5 @@ post_router
 // 게시글 수정
 .put("/", updatePost)
 // 게시글 삭제
-.delete("/", deletePost)
-// 게시글 club_id만 업데이트
-.put("/club-id", updatePostClubId);
+.delete("/", deletePost);
 export default post_router;
