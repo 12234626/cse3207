@@ -65,6 +65,12 @@ function Manager() {
             ></button>
             {/* </div> */}
           </div>
+          <div className="deleteClubBox">
+            {/* <div className="overlap-group"> */}
+            <div className="managerListText">동아리 삭제</div>
+            <button className="nextButton"></button>
+            {/* </div> */}
+          </div>
         </div>
         <div className="topBar">
           <button className="back" onClick={handleBackClick}></button>
