@@ -157,20 +157,7 @@ function CreateClub() {
         return;
       }
 
-      // 1. 상세설명 post 생성 (club_id 없이)
-      const postRes = await fetch("http://localhost:3000/db/post", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: "상세 설명",
-          title: clubName + " 상세 설명",
-          content: story,
-        }),
-      });
-      const postData = await postRes.json();
-      const infoId = postData.id;
-
-      // 2. 동아리 생성 (info에 post id 연결)
+      // 1. 동아리 생성
       const clubRes = await fetch("http://localhost:3000/db/club", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -181,21 +168,35 @@ function CreateClub() {
           inrecruitment: selectedStatus,
           introduction: shortIntro,
           admin: user.id,
-          info: infoId,
+          // info는 일단 null 또는 0 등으로 넣어도 됨 (나중에 업데이트)
         }),
       });
       const clubData = await clubRes.json();
-      const clubId = clubData.id; // 백엔드에서 생성된 club의 id를 반환해야 함
+      const clubId = clubData.id;
 
-      // 3. post_table의 club_id 업데이트
-      await fetch(`http://localhost:3000/db/post`, {
-        method: "PUT",
+      // 2. 게시글 생성 (club_id 포함)
+      const postRes = await fetch("http://localhost:3000/db/post", {
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          id: infoId,
-          club_id: clubId,
+          type: "상세 설명",
+          title: clubName + " 상세 설명",
+          content: story,
+          club_id: clubId, // ← 바로 연결!
         }),
       });
+      // const postData = await postRes.json();
+      // const infoId = postData.id;
+
+      // 3. club_table의 info 컬럼을 post의 id로 업데이트 (선택)
+      // await fetch("http://localhost:3000/db/club", {
+      //   method: "PUT",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({
+      //     id: clubId,
+      //     info: infoId,
+      //   }),
+      // });
 
       alert("동아리가 성공적으로 생성되었습니다!");
       navigate("/MainDong");
