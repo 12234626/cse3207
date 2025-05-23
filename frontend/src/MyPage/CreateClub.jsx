@@ -178,7 +178,7 @@ function CreateClub() {
       const clubId = clubData[0].id;
 
       // 2. 게시글 생성 (club_id 포함)
-      const postRes = await fetch("http://localhost:3000/db/post", {
+      await fetch("http://localhost:3000/db/post", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -188,7 +188,12 @@ function CreateClub() {
           club_id: clubId,
         }),
       });
-      const postData = (await postRes.json())[0];
+      // 2-1. 게시글 id 조회 (title로 조회, title이 유일하다는 가정)
+      const postRes = await fetch(
+        "http://localhost:3000/db/post?title=" +
+          encodeURIComponent(clubName + " 상세 설명")
+      );
+      const postData = await postRes.json();
       const infoId = postData[0].id;
 
       // 3. club_table의 info 컬럼만 별도로 업데이트
@@ -212,6 +217,16 @@ function CreateClub() {
       //     info: infoId,
       //   }),
       // });
+
+      // 4. 관리자(본인) 자동 가입
+      await fetch("http://localhost:3000/db/club_member", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          club_id: clubId,
+          user_id: user.id,
+        }),
+      });
 
       alert("동아리가 성공적으로 생성되었습니다!");
       navigate("/MainDong");

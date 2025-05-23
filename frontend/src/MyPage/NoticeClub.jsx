@@ -1,43 +1,70 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import "./NoticeClub.css";
 
 function NoticeClub() {
-  const { noticeId } = useParams(); // URL에서 공지 ID 가져오기
-  const [noticeTitle, setNoticeTitle] = useState(""); // 공지 제목 상태
+  const { noticeId } = useParams();
+  const navigate = useNavigate();
+  const [noticeTitle, setNoticeTitle] = useState("");
+  const [noticeContent, setNoticeContent] = useState("");
+
+  const handleBackClick = () => {
+    navigate("/JoinedClub"); // 이전 페이지로 이동
+  };
 
   useEffect(() => {
-    const fetchNoticeTitle = async () => {
+    const fetchNotice = async () => {
       try {
-        console.log("Notice ID:", noticeId); // 디버깅 로그
-        const response = await fetch(`http://localhost:3000/db/notice`); // 모든 데이터 요청
-
+        // 'notice' 대신 'post'로, id를 쿼리파라미터로 보냄
+        const response = await fetch(`http://localhost:3000/db/post?id=${noticeId}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log("Fetched Data:", data); // 응답 데이터 확인
 
-        // type이 "공지"인 데이터 중 ID가 일치하는 항목 찾기
-        const filteredNotice = data.find(
-          (notice) => notice.type === "공지" && notice.id === parseInt(noticeId)
-        );
-
-        if (filteredNotice) {
-          setNoticeTitle(filteredNotice.title); // 공지 제목 상태 업데이트
+        // 백엔드에서 배열 형태로 반환할 가능성 있으니 첫 번째 요소를 사용
+        if (Array.isArray(data) && data.length > 0) {
+          setNoticeTitle(data[0].title || "");
+          setNoticeContent(data[0].content || "");
+        } else {
+          setNoticeTitle("");
+          setNoticeContent("해당 공지를 찾을 수 없습니다.");
         }
       } catch (error) {
-        console.error("공지 제목을 불러오는 중 오류 발생:", error);
+        console.error("공지 데이터를 불러오는 중 오류 발생:", error);
+        setNoticeTitle("");
+        setNoticeContent("공지 데이터를 불러오는데 실패했습니다.");
       }
     };
 
-    fetchNoticeTitle();
+    fetchNotice();
   }, [noticeId]);
 
   return (
-    <div>
-      <h1>공지 제목</h1>
-      <p>{noticeTitle}</p>
+    <div className="noticeClubPage">
+      <div className="noticePhoneScreen">
+        <div className="noticetop">
+        <div className="noticeTitletext">{noticeTitle}</div>
+        <button className="backButton" onClick={handleBackClick}></button>
+        </div>
+
+
+
+        <div className="noticeBody">
+            <div className="noticeGroup">
+                
+                <div className="YB"></div>
+                <div className="BBlueBox"></div>
+                <div className="YB"></div>
+                <div className="noticeContenttext" style={{ whiteSpace: "pre-wrap" }}>
+                  {noticeContent}
+                </div>
+
+            </div>
+
+        </div>
+      </div>
     </div>
   );
 }
