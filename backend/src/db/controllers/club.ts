@@ -22,10 +22,6 @@ function getClubAdmin(req: Request, res: Response) {
 function createClub(req: Request, res: Response) {
   const {name, type, field, admin, inrecruitment, introduction, info} = req.body;
 
-  if (!name || !type || !field || !admin || !inrecruitment || !introduction || !info) {
-    return res.status(400).json({ message: "필수값이 누락되었습니다." });
-  }
-
   const query = "INSERT INTO club_table (name, type, field, admin, inrecruitment, introduction, info) VALUES (:name, :type, :field, :admin, :inrecruitment, :introduction, :info)";
   const replacements = {name, type, field, admin, inrecruitment, introduction, info};
 
