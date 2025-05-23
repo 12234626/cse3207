@@ -44,7 +44,6 @@ class Club extends Model {
   public admin!: number;
 
   // 동아리 상세 설명 게시글 아이디
-  @AllowNull(false)
   @ForeignKey(() => Post)
   @Column({type: DataType.INTEGER.UNSIGNED})
   public info!: number;
