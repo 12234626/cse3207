@@ -52,7 +52,7 @@ function WriteHongboPost() {
           {/* <div className="view-3"> */}
           <div className="hongboOrClubInfo">
             <div className="clubInfoBlack" onClick={handleClubInfo}>
-              정보
+              공지
             </div>
             {/* <div className="overlap-group-2"> */}
             <div className="hongboClick" />
