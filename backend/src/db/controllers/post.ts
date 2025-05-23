@@ -37,9 +37,19 @@ function deletePost(req: Request, res: Response) {
   runQueryWithResponse(req, res, query, replacements, 200);
 }
 
+// 게시글 club_id만 업데이트
+function updatePostClubId(req: Request, res: Response) {
+  const {id, club_id} = req.body;
+  const query = "UPDATE post_table SET club_id = :club_id WHERE id = :id";
+  const replacements = {id, club_id};
+
+  runQueryWithResponse(req, res, query, replacements, 200);
+}
+
 export {
   getPost,
   createPost,
   updatePost,
   deletePost,
+  updatePostClubId
 };
