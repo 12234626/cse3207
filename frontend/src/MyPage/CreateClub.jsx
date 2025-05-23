@@ -168,7 +168,7 @@ function CreateClub() {
           inrecruitment: selectedStatus,
           introduction: shortIntro,
           admin: user.id,
-          // info는 일단 null 또는 0 등으로 넣어도 됨 (나중에 업데이트)
+          // info는 일단 null 또는 0 등으로 넣어도 됨
         }),
       });
       const clubData = await clubRes.json();
@@ -182,7 +182,19 @@ function CreateClub() {
           type: "상세 설명",
           title: clubName + " 상세 설명",
           content: story,
-          club_id: clubId, // ← 바로 연결!
+          club_id: clubId,
+        }),
+      });
+      const postData = await postRes.json();
+      const infoId = postData.id;
+
+      // 3. club_table의 info 컬럼만 별도로 업데이트
+      await fetch("http://localhost:3000/db/club/info", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          club_id: clubId,
+          info_id: infoId,
         }),
       });
       // const postData = await postRes.json();
