@@ -13,7 +13,7 @@ function MainDong() {
 
   const [selectedAreas, setSelectedAreas] = useState(["전체"]);
   const [selectedCategories, setSelectedCategories] = useState(["전체"]);
-  const [selectedMo, setSelectedMo] = useState(["모집 중"]);
+  const [selectedMo, setSelectedMo] = useState(["전체"]);
 
   const areas = [
     "전체",
@@ -105,7 +105,7 @@ function MainDong() {
     "동아리연합회",
   ];
 
-  const mo = ["모집 중", "모집 마감"];
+  const mo = ["전체", "모집 중", "모집 마감"];
 
   useEffect(() => {
     const type =
@@ -116,28 +116,35 @@ function MainDong() {
       selectedCategories.includes("전체") || selectedCategories.length === 0
         ? undefined
         : selectedCategories[0];
+    const recruitment =
+      selectedMo.includes("전체") || selectedMo.length === 0
+        ? undefined
+        : selectedMo[0];
 
     let url = "http://localhost:3000/db/club";
     const params = [];
     if (type) params.push(`type=${encodeURIComponent(type)}`);
     if (field) params.push(`field=${encodeURIComponent(field)}`);
+    if (recruitment)
+      params.push(`inrecruitment=${encodeURIComponent(recruitment)}`);
     if (params.length > 0) url += "?" + params.join("&");
 
     axios.get(url).then((response) => {
       setClubs(response.data);
     });
-  }, [selectedAreas, selectedCategories]);
+  }, [selectedAreas, selectedCategories, selectedMo]);
 
   // 모집중/마감 필터는 프론트에서 처리
-  const getFilteredClubs = () => {
-    return clubs.filter((club) => {
-      return (
-        selectedMo.includes("전체") ||
-        selectedMo.length === 0 ||
-        selectedMo.includes(club.recruitment)
-      );
-    });
-  };
+  // function getFilteredClubs() {
+  //   return clubs.filter((club) => {
+  //     // 영역, 분야 필터는 이미 적용되어 있다고 가정
+  //     // 모집상태 필터
+  //     if (!selectedMo.includes("전체")) {
+  //       return selectedMo.includes(club.inrecruitment);
+  //     }
+  //     return true;
+  //   });
+  // }
 
   const handleMainHClick = () => {
     navigate("/MainH");
@@ -147,18 +154,18 @@ function MainDong() {
     navigate("/MyPage");
   };
 
-  useEffect(() => {
-    const fetchClubs = async () => {
-      try {
-        const response = await axios.get("http://localhost:3000/db/clubs"); // 백엔드 API 호출
-        setClubs(response.data);
-      } catch (error) {
-        console.error("동아리 목록 불러오기 실패:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchClubs = async () => {
+  //     try {
+  //       const response = await axios.get("http://localhost:3000/db/clubs"); // 백엔드 API 호출
+  //       setClubs(response.data);
+  //     } catch (error) {
+  //       console.error("동아리 목록 불러오기 실패:", error);
+  //     }
+  //   };
 
-    fetchClubs();
-  }, []);
+  //   fetchClubs();
+  // }, []);
 
   const handleClubClick = (club) => {
     navigate("/Club", {
@@ -272,7 +279,7 @@ function MainDong() {
                   분야 :{" "}
                   {selectedCategories.length > 0
                     ? selectedCategories.join(", ")
-                    : "선택 안됨"}
+                    : "선택안됨"}
                 </div>
               </div>
 
@@ -281,17 +288,20 @@ function MainDong() {
                   className="textMo2 clickableRange"
                   onClick={openMoDropdown}
                 >
-                  {selectedMo.includes("모집 중") ? "모집 중" : "모집마감"}
+                  모집상태 :{" "}
+                  {selectedCategories.length > 0
+                    ? selectedCategories.join(", ")
+                    : "선택안됨"}
                 </div>
               </div>
             </div>
 
             <div className="clubList">
               {/* <pre>{JSON.stringify(clubs, null, 2)}</pre> */}
-              {getFilteredClubs().length === 0 ? (
+              {clubs.length === 0 ? (
                 <div>조건에 맞는 동아리가 없습니다.</div>
               ) : (
-                getFilteredClubs().map((club, index) => (
+                clubs.map((club, index) => (
                   <div
                     key={index}
                     className="club"
