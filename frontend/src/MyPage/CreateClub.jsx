@@ -178,7 +178,7 @@ function CreateClub() {
           name: clubName,
           type: selectedArea,
           field: selectedField,
-          is_recruiting: selectedStatus,
+          inrecruitment: selectedStatus,
           introduction: shortIntro,
           admin: user.id,
           info: infoId,
