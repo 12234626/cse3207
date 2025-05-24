@@ -10,7 +10,7 @@ function RequestList() {
     const club = JSON.parse(localStorage.getItem("club"));
     if (!club) return;
     fetch(
-      `http://localhost:3000/api/update_club_request?club_id=${club.id}&status=대기`
+      `http://localhost:3000/db/club_request?club_id=${club.id}&status=대기`
     )
       .then((res) => res.json())
       .then((data) => setMembers(data));
@@ -25,15 +25,18 @@ function RequestList() {
       return;
     try {
       // const club = JSON.parse(localStorage.getItem("club"));
-      const response = await fetch(`http://localhost:3000/api/update_club_request`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id: member.id,
-          // user_id: member.user_id,
-          status: "수락", // 수락
-        }),
-      });
+      const response = await fetch(
+        "http://localhost:3000/api/update_club_request",
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: member.id,
+            // user_id: member.user_id,
+            status: "수락", // 수락
+          }),
+        }
+      );
       if (response.ok) {
         setMembers((prev) => prev.filter((m) => m.id !== member.id));
       } else {
@@ -49,15 +52,18 @@ function RequestList() {
       return;
     try {
       // const club = JSON.parse(localStorage.getItem("club"));
-      const response = await fetch(`http://localhost:3000/api/update_club_request`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id: member.id,
-          // user_id: member.user_id,
-          status: "거절",
-        }),
-      });
+      const response = await fetch(
+        "http://localhost:3000/api/update_club_request",
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: member.id,
+            // user_id: member.user_id,
+            status: "거절",
+          }),
+        }
+      );
       if (response.ok) {
         setMembers(members.filter((m) => m.id !== member.id));
       } else {
