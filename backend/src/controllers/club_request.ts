@@ -5,17 +5,16 @@ import {runQueryWithResponse, buildWhereClause} from "../utils/controller";
 // 동아리 가입 신청 조회
 function getAllClubRequests(req: Request, res: Response) {
   const {where, replacements} = buildWhereClause(req.query, "club_request_table");
-  // const query = `
-  //   SELECT 
-  //     club_request_table.id,
-  //     club_request_table.club_id,
-  //     user_table.id AS user_id,
-  //     user_table.name,
-  //     user_table.department,
-  //     club_request_table.status
-  //   FROM club_request_table
-  //     JOIN user_table ON club_request_table.user_id = user_table.id` + where;
-  const query = `SELECT * FROM club_request_table`;
+  const query = `
+    SELECT 
+      club_request_table.id,
+      club_request_table.club_id,
+      user_table.id AS user_id,
+      user_table.name,
+      user_table.department,
+      club_request_table.status
+    FROM club_request_table
+      JOIN user_table ON club_request_table.user_id = user_table.id` + where;
 
   runQueryWithResponse(req, res, query, replacements, 200);
 }
