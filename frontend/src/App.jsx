@@ -19,6 +19,7 @@ import Club from "./MainPage/Club";
 import Event from "./EventBoard/Event";
 import FixClub from "./Manager/FixClub";
 import NoticeClub from "./MyPage/NoticeClub";
+import ImageTest from "./Loginpage/ImageTest";  
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
       <Route path="/Event" element={<Event />} />
       <Route path="/fixclub" element={<FixClub />} />
       <Route path="/notice-club/:noticeId" element={<NoticeClub />} />
+      <Route path="/ImageTest" element={<ImageTest />} />
     </Routes>
   );
 }

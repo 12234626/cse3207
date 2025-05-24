@@ -13,6 +13,17 @@
   width: 393px;
 }
 
+.screen .imageButton{
+  background-color: #f5f5f5;
+  border: 1px solid #00000040;
+  border-radius: 5px;
+  height: 48px;
+  left: 62px;
+  position: absolute;
+  top: 404px;
+  width: 193px;
+}
+
 /* .screen .findPW {
   color: #0000009c;
   font-family: "Inter-Bold";
