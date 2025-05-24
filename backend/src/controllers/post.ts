@@ -15,15 +15,16 @@ function createPost(req: Request, res: Response) {
   const {type, title, content, club_id} = req.body;
   const query = "INSERT INTO post_table (type, title, content, club_id) VALUES (:type, :title, :content, :club_id)";
   const replacements = {type, title, content, club_id};
-
+  const imageFile = req.file; 
+  
   runQueryWithResponse(req, res, query, replacements, 201);
 }
 
 // 게시글 업데이트
 function updatePost(req: Request, res: Response) {
-  const {id, title, content, image_set_id} = req.body;
-  const query = "UPDATE post_table SET title = :title, content = :content, image_set_id = :image_set_id WHERE id = :id";
-  const replacements = {id, title, content, image_set_id};
+  const {id, title, content} = req.body;
+  const query = "UPDATE post_table SET title = :title, content = :content WHERE id = :id";
+  const replacements = {id, title, content};
   
   runQueryWithResponse(req, res, query, replacements, 200);
 }
