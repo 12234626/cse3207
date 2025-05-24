@@ -43,29 +43,6 @@ function MyPage() {
     setLoading(false);
   }, []);
 
-  // 이미지 업로드 함수
-  async function handleImageUpload(file) {
-    const formData = new FormData();
-    formData.append("image", file);
-
-    const res = await fetch("/db/upload", {
-      method: "POST",
-      body: formData,
-    });
-    const data = await res.json();
-    return data.imageUrl; // "/uploads/xxxx.jpg"
-  }
-
-  // 예시: 파일 선택 핸들러
-  const handleFileChange = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const imageUrl = await handleImageUpload(file);
-    // imageUrl을 상태로 저장하거나, 서버에 저장 등 원하는 작업 수행
-    console.log("업로드된 이미지 경로:", imageUrl);
-    setProfileImage(imageUrl);
-  };
-
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
@@ -189,20 +166,7 @@ function MyPage() {
                   회원 정보 수정
                 </div>
 
-                <input
-                  tyle="file"
-                  className="profileImage"
-                  src={handleFileChange}
-                />
-                {/* 업로드된 이미지 미리보기 */}
-                {profileImage && (
-                  <img
-                    src={profileImage}
-                    alt="프로필"
-                    className="profileImage"
-                    style={{ width: 100, height: 100, borderRadius: "50%" }}
-                  />
-                )}
+                <input tyle="file" className="profileImage" />
 
                 <div className="sidAndMajor">
                   {user.department} <br />
