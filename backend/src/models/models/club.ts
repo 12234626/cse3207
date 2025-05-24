@@ -42,11 +42,6 @@ class Club extends Model {
   @AllowNull(false)
   @Column({type: DataType.INTEGER.UNSIGNED})
   public admin_user_id!: number;
-
-  // 동아리 상세 설명 게시글 아이디
-  @BelongsTo(() => Post, {foreignKey: "info_post_id", as: "info_post", onDelete: "CASCADE"})
-  @Column({type: DataType.INTEGER.UNSIGNED})
-  public info_post_id?: number;
 };
 
 export default Club;
