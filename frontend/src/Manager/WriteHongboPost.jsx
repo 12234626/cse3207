@@ -1,33 +1,53 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./WriteHongboPost.css";
 
 function WriteHongboPost() {
   const navigate = useNavigate();
 
-  const handleBackClick = () => {
-    navigate("/Manager");
-  };
   const [title, setTitle] = useState("");     // 제목 상태
   const [content, setContent] = useState(""); // 내용 상태
+  const [clubName, setClubName] = useState("");
+  const [clubId, setClubId] = useState(null);
 
-  const handleOkClick = async() => {
+
+  useEffect(() => {
+    const clubData = JSON.parse(localStorage.getItem("club"));
+    if (clubData) {
+      setClubName(clubData.name);
+      setClubId(clubData.id);
+    } else {
+      console.error("동아리 정보가 없습니다.");
+      navigate("/MyClubList");
+    }
+  }, [navigate]);
+
+  const handleOkClick = async () => {
+    if (!title || !content) {
+      alert("제목과 내용을 모두 입력해주세요.");
+      return;
+    }
+
     try {
       await axios.post("http://localhost:3000/db/post", {
-        title: title,
-        content: content,
-        type: "홍보", // 서버가 홍보 글만 필터링할 수 있게
-        club_id: 1,   // 예시: 동아리 ID가 있다면 여기에 사용
+        title,
+        content,
+        type: "홍보",
+        club_id: clubId, // ✅ 실제 동아리 ID 사용
       });
-      navigate("/MainH"); // 글 등록 후 홍보 리스트 페이지로 이동
+      navigate("/MainH");
     } catch (error) {
       console.error("글 등록 실패:", error);
+      alert("글 등록에 실패했습니다.");
     }
   };
 
   
+  const handleBackClick = () => {
+    navigate("/Manager");
+  };
 
   const handleClubInfo = () => {
     navigate("/WriteClubInfoPost");
