@@ -13,8 +13,8 @@ function getUser(req: Request, res: Response) {
 // 유저 생성
 function createUser(req: Request, res: Response) {
   const {id, name, password, department, phone} = req.body;
-  const query = "INSERT INTO user_table (id, name, password, department, phone, profile_img) VALUES (:id, :name, :password, :department, :phone, :profile_img)";
-  const replacements = {id, name, password, department, phone, profile_img: "/uploads/default.png"};
+  const query = "INSERT INTO user_table (id, name, password, department, phone) VALUES (:id, :name, :password, :department, :phone)";
+  const replacements = {id, name, password, department, phone};
 
   runQueryWithResponse(req, res, query, replacements, 201);
 }
@@ -30,13 +30,12 @@ function checkUserPassword(req: Request, res: Response) {
 
 // 유저 업데이트
 function updateUser(req: Request, res: Response) {
-  const {id, name, password, department, phone, profile_img} = req.body;
-  const query = "UPDATE user_table SET name = :name, password = :password, department = :department, phone = :phone,, profile_img = :profile_img WHERE id = :id";
-  const replacements = {id, name, password, department, phone, profile_img};
+  const {id, name, password, department, phone, image_set_id} = req.body;
+  const query = "UPDATE user_table SET name = :name, password = :password, department = :department, phone = :phone, image_set_id = :image_set_id WHERE id = :id";
+  const replacements = {id, name, password, department, phone, image_set_id};
 
   runQueryWithResponse(req, res, query, replacements, 200);
 }
-
 
 // 유저 삭제
 function deleteUser(req: Request, res: Response) {

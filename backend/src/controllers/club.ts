@@ -13,25 +13,47 @@ function getClub(req: Request, res: Response) {
 // 동아리 관리자 조회
 function getClubAdmin(req: Request, res: Response) {
   const {where, replacements} = buildWhereClause(req.query, "club_table");
-  const query = "SELECT admin FROM club_table" + where;
+  const query = "SELECT admin_user_id FROM club_table" + where;
+
+  runQueryWithResponse(req, res, query, replacements, 200);
+}
+
+// 동아리 게시글 조회
+function getPost(req: Request, res: Response) {
+  const {where, replacements} = buildWhereClause(req.query, "post_table");
+  const query = `
+    SELECT
+      post_table.*,
+      club_table.name AS club_name
+    FROM club_table
+      JOIN post_table ON club_table.id = post_table.club_id` + where;
 
   runQueryWithResponse(req, res, query, replacements, 200);
 }
 
 // 동아리 생성
 function createClub(req: Request, res: Response) {
-  const {name, type, field, admin, inrecruitment, introduction} = req.body;
-  const query = "INSERT INTO club_table (name, type, field, admin, inrecruitment, introduction) VALUES (:name, :type, :field, :admin, :inrecruitment, :introduction)";
-  const replacements = {name, type, field, admin, inrecruitment, introduction};
+  const {name, type, field, admin_user_id, recruitment, introduction} = req.body;
+  const query = "INSERT INTO club_table (name, type, field, recruitment, introduction, admin_user_id) VALUES (:name, :type, :field, :recruitment, :introduction, :admin_user_id)";
+  const replacements = {name, type, field, admin_user_id, recruitment, introduction};
 
   runQueryWithResponse(req, res, query, replacements, 201);
 }
 
 // 동아리 업데이트
 function updateClub(req: Request, res: Response) {
-  const {id, name, type, field, admin, inrecruitment} = req.body;
-  const query = "UPDATE club_table SET name = :name, type = :type, field = :field, admin = :admin,inrecruitment = :inrecruitment WHERE id = :id";
-  const replacements = {id, name, type, field, admin, inrecruitment};
+  const {id, name, type, field, admin_user_id, recruitment} = req.body;
+  const query = "UPDATE club_table SET name = :name, type = :type, field = :field, admin_user_id = :admin_user_id, recruitment = :recruitment WHERE id = :id";
+  const replacements = {id, name, type, field, admin_user_id, recruitment};
+
+  runQueryWithResponse(req, res, query, replacements, 200);
+}
+
+// 동아리 상세 정보 게시글 업데이트
+function updateClubInfoPostId(req: Request, res: Response) {
+  const {id, info_post_id} = req.body;
+  const query = "UPDATE club_table SET info_post_id = :info_post_id WHERE id = :id";
+  const replacements = {id, info_post_id};
 
   runQueryWithResponse(req, res, query, replacements, 200);
 }
@@ -45,20 +67,12 @@ function deleteClub(req: Request, res: Response) {
   runQueryWithResponse(req, res, query, replacements, 200);
 }
 
-//동아리 info 컬럼 업데이트
-function updateClubInfo(req: Request, res: Response) {
-  const {club_id, info_id} = req.body;
-  const query = "UPDATE club_table SET info = :info_id WHERE id = :club_id";
-  const replacements = {club_id, info_id};
-
-  runQueryWithResponse(req, res, query, replacements, 200);
-}
-
 export {
   getClub,
   getClubAdmin,
+  getPost,
   createClub,
   updateClub,
-  deleteClub,
-  updateClubInfo
+  updateClubInfoPostId,
+  deleteClub
 };

@@ -2,8 +2,8 @@ import express from "express";
 import cors from "cors";
 
 import syncDB from "./init/init";
-import db_router from "./routes/index";
-import uploadRouter from "./routes/upload";
+import db_router from "./routes/db";
+import api_router from "./routes/api";
 
 const app = express();
 const HOST: string = process.env.HOST || "localhost";
@@ -27,9 +27,10 @@ app
   });
   next();
 })
-// 라우터 설정
+// 데이터베이스 라우터 설정
 .use("/db", db_router)
-.use("/upload", uploadRouter);
+// API 라우터 설정
+.use("/api", api_router);
 
 // 데이터베이스 동기화 및 서버 시작
 syncDB()

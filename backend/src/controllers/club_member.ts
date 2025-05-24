@@ -20,23 +20,13 @@ function getClubMember(req: Request, res: Response) {
 // 유저 아이디로 동아리 조회
 function getClubByUserId(req: Request, res: Response) {
   const {user_id} = req.params;
-  const query = "SELECT club_table.* FROM club_member_table JOIN club_table ON club_member_table.club_id = club_table.id WHERE club_member_table.user_id = :user_id";
+  const query = `
+    SELECT club_table.*
+    FROM club_member_table
+      JOIN club_table ON club_member_table.club_id = club_table.id
+    WHERE club_member_table.user_id = :user_id`;
   const replacements = {user_id};
   
-  runQueryWithResponse(req, res, query, replacements, 200);
-}
-
-//동아리별 게시글 조회
-function getPostsByClubId(req: Request, res: Response) {
-  const {club_id} = req.params;
-  const query =`
-    SELECT post_table.*, club_table.name AS club_name
-    FROM post_table
-    JOIN club_table ON post_table.club_id = club_table.id
-    WHERE post_table.club_id = :club_id
-  `;
-  const replacements = {club_id};
-
   runQueryWithResponse(req, res, query, replacements, 200);
 }
 
@@ -61,7 +51,6 @@ function deleteClubMember(req: Request, res: Response) {
 export {
   getClubMember,
   getClubByUserId,
-  getPostsByClubId,
   createClubMember,
   deleteClubMember
 };

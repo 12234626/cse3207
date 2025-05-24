@@ -12,18 +12,18 @@ function getPost(req: Request, res: Response) {
 
 // 게시글 생성
 function createPost(req: Request, res: Response) {
-  const {type, title, content, club_id, image_url} = req.body;
-  const query = "INSERT INTO post_table (type, title, content, club_id, image_url) VALUES (:type, :title, :content, :club_id, :image_url)";
-  const replacements = {type, title, content, club_id, image_url};
+  const {type, title, content, club_id} = req.body;
+  const query = "INSERT INTO post_table (type, title, content, club_id) VALUES (:type, :title, :content, :club_id)";
+  const replacements = {type, title, content, club_id};
 
   runQueryWithResponse(req, res, query, replacements, 201);
 }
 
 // 게시글 업데이트
 function updatePost(req: Request, res: Response) {
-  const {id, title, content, image_url} = req.body;
-  const query = "UPDATE post_table SET title = :title, content = :content, image_url = :image_url WHERE id = :id";
-  const replacements = {id, title, content, image_url};
+  const {id, title, content, image_set_id} = req.body;
+  const query = "UPDATE post_table SET title = :title, content = :content, image_set_id = :image_set_id WHERE id = :id";
+  const replacements = {id, title, content, image_set_id};
   
   runQueryWithResponse(req, res, query, replacements, 200);
 }

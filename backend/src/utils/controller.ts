@@ -7,19 +7,12 @@ function runQueryWithResponse(req: Request, res: Response, query: string, replac
   sequelize
   .query(query, {replacements})
   .then(function ([results]) {
-    if (results.length === 0) {
-      res
-      .status(404)
-      .json({message: "No results found"});
-
-      return;
-    }
-
     res
     .status(success_code)
     .json(results);
   })
   .catch(function (err) {
+    console.error(err);
     res
     .status(500)
     .json({message: err});
