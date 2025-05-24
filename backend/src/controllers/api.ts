@@ -69,7 +69,7 @@ async function createClub(req: Request, res: Response) {
 
 // 동아리 + 상세 설명 게시글 동시 수정
 async function updateClubWithInfoPost(req: Request, res: Response) {
-  const {club_id, recruitment, introduction, info_post_id, title, content} = req.body;
+  const {club_id, recruitment, introduction, info_post_id, content} = req.body;
 
   try {
     // 1. 동아리 정보 수정
