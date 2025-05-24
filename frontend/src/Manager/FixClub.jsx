@@ -8,8 +8,10 @@ function FixClub() {
   // 기존 club 정보 불러오기
   const clubData = localStorage.getItem("club");
   const userData = localStorage.getItem("user");
+  const postData = localStorage.getItem("post");
   const club = clubData ? JSON.parse(clubData) : {};
   const user = userData ? JSON.parse(userData) : {};
+  const post = postData ? JSON.parse(postData) : {};
 
   // input 상태를 useState로 관리 (초기값: 기존 데이터)
   const [clubName, setClubName] = useState(club.name || "");
@@ -17,7 +19,7 @@ function FixClub() {
   const [selectedField, setSelectedField] = useState(club.field || "");
   const [selectedStatus, setSelectedStatus] = useState(club.recruitment || "");
   const [shortIntro, setShortIntro] = useState(club.introduction || "");
-  const [story, setStory] = useState(club.story || "");
+  const [story, setStory] = useState(post.content || "");
 
   const areas = [
     "중앙 동아리",
@@ -147,6 +149,7 @@ function FixClub() {
 
   const handleokClick = async () => {
     const clubId = club.id;
+    const infoPostId = post.id;
 
     if (!clubId || !user) {
       alert("동아리 정보 또는 로그인 정보가 없습니다.");
@@ -155,18 +158,23 @@ function FixClub() {
 
     try {
       // 동아리 정보 수정 요청
-      await fetch("http://localhost:3000/db/club", {
+      await fetch("http://localhost:3000/db/api/club_with_info_post", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          id: clubId,
-          name: clubName,
-          type: selectedArea,
-          field: selectedField,
-          admin_user_id: user.id,
+          // id: clubId,
+          // // name: clubName,
+          // // type: selectedArea,
+          // // field: selectedField,
+          // // admin_user_id: user.id,
+          // recruitment: selectedStatus,
+          // introduction: shortIntro,
+          // story: story,
+          club_id: clubId,
           recruitment: selectedStatus,
           introduction: shortIntro,
-          story: story,
+          info_post_id: infoPostId,
+          content: story,
         }),
       });
 

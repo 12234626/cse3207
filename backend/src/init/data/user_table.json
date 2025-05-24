@@ -5,7 +5,7 @@
     "password": "eun1234",
     "department": "컴퓨터공학과",
     "phone": "010-6789-0123",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12223701,
@@ -13,7 +13,7 @@
     "password": "na1234", 
     "department": "컴퓨터공학과",
     "phone": "010-7890-1234",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12234626,
@@ -21,7 +21,7 @@
     "password": "jae1234",
     "department": "컴퓨터공학과",
     "phone": "010-8901-2345",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12234218,
@@ -29,7 +29,7 @@
     "password": "su1234",
     "department": "컴퓨터공학과",
     "phone": "010-9012-3456",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000001,
@@ -37,7 +37,7 @@
     "password": "hong1234",
     "department": "컴퓨터공학과",
     "phone": "010-1111-1111",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000002,
@@ -45,7 +45,7 @@
     "password": "kim1234",
     "department": "경영학부",
     "phone": "010-2222-2222",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000003,
@@ -53,7 +53,7 @@
     "password": "lee1234",
     "department": "화학과",
     "phone": "010-3333-3333",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000004,
@@ -61,7 +61,7 @@
     "password": "park1234",
     "department": "기계공학과",
     "phone": "010-4444-4444",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000005,
@@ -69,7 +69,7 @@
     "password": "choi1234",
     "department": "철학과",
     "phone": "010-5555-5555",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000006,
@@ -77,7 +77,7 @@
     "password": "leeminho1234",
     "department": "스마트모빌리티공학과",
     "phone": "010-0123-4567",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000007,
@@ -85,7 +85,7 @@
     "password" : "kimjimin1234",
     "department": "경영학부",
     "phone": "010-1234-5678",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000008,
@@ -93,7 +93,7 @@
     "password" : "leeseojun1234",
     "department": "기계공학과",
     "phone": "010-2345-6789",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000009,
@@ -101,7 +101,7 @@
     "password" : "parkjimin1234",
     "department": "화학과",
     "phone": "010-3456-7890",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000010,
@@ -109,7 +109,7 @@
     "password" : "choijiwoo1234",
     "department": "철학과",
     "phone": "010-4567-8901",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000011,
@@ -117,7 +117,7 @@
     "password" : "jungwoosung1234",
     "department": "물리학과",   
     "phone": "010-5678-9012",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000012,
@@ -125,7 +125,7 @@
     "password" : "leejeongjae1234",
     "department": "공간정보공학과",
     "phone": "010-6789-0123",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000013,
@@ -133,7 +133,7 @@
     "password" : "kimtaehee1234",
     "department": "환경공학과",
     "phone": "010-7890-1234",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000014,
@@ -141,7 +141,7 @@
     "password" : "leebyunghun1234",
     "department": "경영학부",
     "phone": "010-8901-2345",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000015,
@@ -149,7 +149,7 @@
     "password" : "jeonjihyun1234",
     "department": "사회교육과",
     "phone": "010-9012-3456",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000016,
@@ -157,7 +157,7 @@
     "password" : "songjoongki1234",
     "department": "해양과학과",
     "phone": "010-0123-4567",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000017,
@@ -165,7 +165,7 @@
     "password" : "parkbogum1234",
     "department": "연극영화학과",
     "phone": "010-1234-5678",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000018,
@@ -173,7 +173,7 @@
     "password" : "kimsuhyun1234",
     "department": "조형예술학과",
     "phone": "010-2345-6789",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000019,
@@ -181,7 +181,7 @@
     "password" : "leeminjeong1234",
     "department": "사회복지학과",
     "phone": "010-3456-7890",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000020,
@@ -189,7 +189,7 @@
     "password" : "jeonghaein1234",
     "department": "통계학과",
     "phone": "010-4567-8901",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000021,
@@ -197,7 +197,7 @@
     "password" : "kimgoeun1234",
     "department": "행정학과",
     "phone": "010-5678-9012",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000022,
@@ -205,7 +205,7 @@
     "password" : "leedongwook1234",
     "department": "산업경영공학과",
     "phone": "010-6789-0123",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000023,
@@ -213,7 +213,7 @@
     "password" : "parkseojun1234",
     "department": "식품영양학과",
     "phone": "010-7890-1234",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000024,
@@ -221,7 +221,7 @@
     "password" : "kimyujeong1234",
     "department": "교육학과",
     "phone": "010-8901-2345",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000025,
@@ -229,7 +229,7 @@
     "password" : "leejoongi1234",
     "department": "항공우주공학과",
     "phone": "010-9012-3456",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000026,
@@ -237,7 +237,7 @@
     "password" : "jeongyumi1234",
     "department": "에너지자원공학과",
     "phone": "010-0123-4567",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000027,
@@ -245,7 +245,7 @@
     "password" : "leessangyoon1234",
     "department": "철학과",
     "phone": "010-1234-5678",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000028,
@@ -253,7 +253,7 @@
     "password" : "kimsuhyun1234",
     "department": "수학교육과",
     "phone": "010-2345-6789",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000029,
@@ -261,7 +261,7 @@
     "password" : "leessangyeob1234",
     "department": "사학과",
     "phone": "010-3456-7890",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000030,
@@ -269,7 +269,7 @@
     "password" : "jeongsomin1234",
     "department": "고분자공학과",
     "phone": "010-4567-8901",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000031,
@@ -277,7 +277,7 @@
     "password" : "leejongsuk1234",
     "department": "신소재공학과",
     "phone": "010-5678-9012",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000032,
@@ -285,7 +285,7 @@
     "password" : "kimheesun1234",
     "department": "미디어커뮤니케이션학과",
     "phone": "010-6789-0123",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000033,
@@ -293,7 +293,7 @@
     "password" : "leesooji1234",
     "department": "IBT학과",
     "phone": "010-7890-1234",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000034,
@@ -301,7 +301,7 @@
     "password" : "jeongjaeyoung1234",
     "department": "ISE학과",
     "phone": "010-8901-2345",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000035,
@@ -309,7 +309,7 @@
     "password" : "leehaenyee1234",
     "department": "일본언어문학과",
     "phone": "010-9012-3456",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000036,
@@ -317,7 +317,7 @@
     "password" : "kimjiyoung1234",
     "department": "생명공학과",
     "phone": "010-0123-4567",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000037,
@@ -325,7 +325,7 @@
     "password" : "leessangmin1234",
     "department": "바이오제약공학과",
     "phone": "010-1234-5678",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000038,
@@ -333,7 +333,7 @@
     "password" : "kimminjae1234",
     "department": "스포츠과학과",
     "phone": "010-2345-6789",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000039,
@@ -341,7 +341,7 @@
     "password" : "kimdoyoung1234",
     "department": "컴퓨터공학과", 
     "phone": "010-3456-7890",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000040,
@@ -349,7 +349,7 @@
     "password" : "leeyuri1234",
     "department": "경제학과",
     "phone": "010-4567-8901",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000041,
@@ -357,7 +357,7 @@
     "password" : "jeonghaeri1234",
     "department": "전기전자공학부",
     "phone": "010-5678-9012",
-    "image_set_id": 0
+    "image_id": 0
   }, 
   {
     "id": 12000042,
@@ -365,7 +365,7 @@
     "password" : "leessangho1234",
     "department": "아태물류학부",
     "phone": "010-6789-0123",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000043,
@@ -373,7 +373,7 @@
     "password" : "kimjihoon1234",
     "department": "경영학부",
     "phone": "010-7890-1234",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000044,
@@ -381,7 +381,7 @@
     "password" : "leejeongmin1234",
     "department": "정치외교학과",
     "phone": "010-8901-2345",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000045,
@@ -389,7 +389,7 @@
     "password" : "kimsoyeon1234",
     "department": "국제통상학과",
     "phone": "010-9012-3456",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000046,
@@ -397,7 +397,7 @@
     "password" : "leessanghee1234",
     "department": "영미유럽인문융합학부",
     "phone": "010-0123-4567",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000047,
@@ -405,7 +405,7 @@
     "password" : "kimminsu1234",
     "department": "의류디자인학과",
     "phone": "010-1234-5678",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000048,
@@ -413,7 +413,7 @@
     "password" : "leesubin1234",
     "department": "국어교육과", 
     "phone": "010-2345-6789",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000049,
@@ -421,7 +421,7 @@
     "password" : "kimjisoo1234",
     "department": "의예과",
     "phone": "010-3456-7890",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000050,
@@ -429,7 +429,7 @@
     "password" : "leessangjun1234",
     "department": "간호학과",
     "phone": "010-4567-8901",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000051,
@@ -437,7 +437,7 @@
     "password": "ohsejin1234",
     "department": "자유전공융합학부",
     "phone": "010-1234-0051",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000052,
@@ -445,7 +445,7 @@
     "password": "yunhaneul1234",
     "department": "공학융합학부",
     "phone": "010-1234-0052",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000053,
@@ -453,7 +453,7 @@
     "password": "jangminho1234",
     "department": "자연과학융합학부",
     "phone": "010-1234-0053",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000054,
@@ -461,7 +461,7 @@
     "password": "baekjieun1234",
     "department": "경영융합학부",
     "phone": "010-1234-0054",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000055,
@@ -469,7 +469,7 @@
     "password": "shimwoojin1234",
     "department": "사회과학융합학부",
     "phone": "010-1234-0055",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000056,
@@ -477,7 +477,7 @@
     "password": "moonjisu1234",
     "department": "인문융합학부",
     "phone": "010-1234-0056",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000057,
@@ -485,7 +485,7 @@
     "password": "johyounwoo1234",
     "department": "기계공학과",
     "phone": "010-1234-0057",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000058,
@@ -493,7 +493,7 @@
     "password": "hanyujin1234",
     "department": "항공우주공학과",
     "phone": "010-1234-0058",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000059,
@@ -501,7 +501,7 @@
     "password": "jeongdaeun1234",
     "department": "조선해양공학과",
     "phone": "010-1234-0059",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000060,
@@ -509,7 +509,7 @@
     "password": "choiyuri1234",
     "department": "산업경영공학과",
     "phone": "010-1234-0060",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000061,
@@ -517,7 +517,7 @@
     "password": "leeseoyeon1234",
     "department": "화학공학과",
     "phone": "010-1234-0061",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000062,
@@ -525,7 +525,7 @@
     "password": "parkjihoon1234",
     "department": "고분자공학과",
     "phone": "010-1234-0062",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000063,
@@ -533,7 +533,7 @@
     "password": "kimhaneul1234",
     "department": "신소재공학과",
     "phone": "010-1234-0063",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000064,
@@ -541,7 +541,7 @@
     "password": "songjimin1234",
     "department": "사회인프라공학과",
     "phone": "010-1234-0064",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000065,
@@ -549,7 +549,7 @@
     "password": "baesoobin1234",
     "department": "환경공학과",
     "phone": "010-1234-0065",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000066,
@@ -557,7 +557,7 @@
     "password": "imjiho1234",
     "department": "공간정보공학과",
     "phone": "010-1234-0066",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000067,
@@ -565,7 +565,7 @@
     "password": "kangminjae1234",
     "department": "건축학부",
     "phone": "010-1234-0067",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000068,
@@ -573,7 +573,7 @@
     "password": "yujieun1234",
     "department": "에너지자원공학과",
     "phone": "010-1234-0068",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000069,
@@ -581,7 +581,7 @@
     "password": "seojihu1234",
     "department": "융합기술경영학부",
     "phone": "010-1234-0069",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000070,
@@ -589,7 +589,7 @@
     "password": "nohjihyun1234",
     "department": "전기전자공학부",
     "phone": "010-1234-0070",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000071,
@@ -597,7 +597,7 @@
     "password": "shinyujin1234",
     "department": "반도체시스템공학과",
     "phone": "010-1234-0071",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000072,
@@ -605,7 +605,7 @@
     "password": "jeongminsu1234",
     "department": "이차전지융합학과",
     "phone": "010-1234-0072",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000073,
@@ -613,7 +613,7 @@
     "password": "ohjihyun1234",
     "department": "수학과",
     "phone": "010-1234-0073",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000074,
@@ -621,7 +621,7 @@
     "password": "leeseunghyun1234",
     "department": "물리학과",
     "phone": "010-1234-0074",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000075,
@@ -629,7 +629,7 @@
     "password": "parkjiyoon1234",
     "department": "화학과",
     "phone": "010-1234-0075",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000076,
@@ -637,7 +637,7 @@
     "password": "kimdohyun1234",
     "department": "해양과학과",
     "phone": "010-1234-0076",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000077,
@@ -645,7 +645,7 @@
     "password": "choisoobin1234",
     "department": "통계학과",
     "phone": "010-1234-0077",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000078,
@@ -653,7 +653,7 @@
     "password": "leehaneul1234",
     "department": "식품영양학과",
     "phone": "010-1234-0078",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000079,
@@ -661,7 +661,7 @@
     "password": "parkjisu1234",
     "department": "경영학부",
     "phone": "010-1234-0079",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000080,
@@ -669,7 +669,7 @@
     "password": "kimyuna1234",
     "department": "아태물류학부",
     "phone": "010-1234-0080",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000081,
@@ -677,7 +677,7 @@
     "password": "yunseojin1234",
     "department": "국제통상학과",
     "phone": "010-1234-0081",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000082,
@@ -685,7 +685,7 @@
     "password": "baejihoon1234",
     "department": "국어교육과",
     "phone": "010-1234-0082",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000083,
@@ -693,7 +693,7 @@
     "password": "imsooyeon1234",
     "department": "영어교육과",
     "phone": "010-1234-0083",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000084,
@@ -701,7 +701,7 @@
     "password": "kangjiho1234",
     "department": "사회교육과",
     "phone": "010-1234-0084",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000085,
@@ -709,7 +709,7 @@
     "password": "jeongjiyoon1234",
     "department": "교육학과",
     "phone": "010-1234-0085",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000086,
@@ -717,7 +717,7 @@
     "password": "leeharin1234",
     "department": "체육교육과",
     "phone": "010-1234-0086",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000087,
@@ -725,7 +725,7 @@
     "password": "moonjihyun1234",
     "department": "수학교육과",
     "phone": "010-1234-0087",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000088,
@@ -733,7 +733,7 @@
     "password": "seojimin1234",
     "department": "행정학과",
     "phone": "010-1234-0088",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000089,
@@ -741,7 +741,7 @@
     "password": "jominjae1234",
     "department": "정치외교학과",
     "phone": "010-1234-0089",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000090,
@@ -749,7 +749,7 @@
     "password": "shinjisu1234",
     "department": "미디어커뮤니케이션학과",
     "phone": "010-1234-0090",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000091,
@@ -757,7 +757,7 @@
     "password": "hongjiyoon1234",
     "department": "경제학과",
     "phone": "010-1234-0091",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000092,
@@ -765,7 +765,7 @@
     "password": "namjiho1234",
     "department": "소비자학과",
     "phone": "010-1234-0092",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000093,
@@ -773,7 +773,7 @@
     "password": "yujio1234",
     "department": "아동심리학과",
     "phone": "010-1234-0093",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000094,
@@ -781,7 +781,7 @@
     "password": "kwonjimin1234",
     "department": "사회복지학과",
     "phone": "010-1234-0094",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000095,
@@ -789,7 +789,7 @@
     "password": "baekjiwoo1234",
     "department": "한국어문학과",
     "phone": "010-1234-0095",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000096,
@@ -797,7 +797,7 @@
     "password": "choihaneul1234",
     "department": "사학과",
     "phone": "010-1234-0096",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000097,
@@ -805,7 +805,7 @@
     "password": "yangjihu1234",
     "department": "철학과",
     "phone": "010-1234-0097",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000098,
@@ -813,7 +813,7 @@
     "password": "pyojimin1234",
     "department": "중국학과",
     "phone": "010-1234-0098",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000099,
@@ -821,7 +821,7 @@
     "password": "shimjiyoon1234",
     "department": "일본언어문학과",
     "phone": "010-1234-0099",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000100,
@@ -829,7 +829,7 @@
     "password": "gujiho1234",
     "department": "영미유럽인문융합학부",
     "phone": "010-1234-0100",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000101,
@@ -837,7 +837,7 @@
     "password": "janghaneul1234",
     "department": "국제통상학과",
     "phone": "010-1234-0101",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000102,
@@ -845,7 +845,7 @@
     "password": "yoonjiho1234",
     "department": "국어교육과",
     "phone": "010-1234-0102",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000103,
@@ -853,7 +853,7 @@
     "password": "baeksooyeon1234",
     "department": "영어교육과",
     "phone": "010-1234-0103",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000104,
@@ -861,7 +861,7 @@
     "password": "imjimin1234",
     "department": "사회교육과",
     "phone": "010-1234-0104",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000105,
@@ -869,7 +869,7 @@
     "password": "kangjiyoon1234",
     "department": "교육학과",
     "phone": "010-1234-0105",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000106,
@@ -877,7 +877,7 @@
     "password": "jeongharin1234",
     "department": "체육교육과",
     "phone": "010-1234-0106",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000107,
@@ -885,7 +885,7 @@
     "password": "leeminjae1234",
     "department": "수학교육과",
     "phone": "010-1234-0107",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000108,
@@ -893,7 +893,7 @@
     "password": "moonjihu1234",
     "department": "행정학과",
     "phone": "010-1234-0108",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000109,
@@ -901,7 +901,7 @@
     "password": "seojisu1234",
     "department": "정치외교학과",
     "phone": "010-1234-0109",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000110,
@@ -909,7 +909,7 @@
     "password": "jominsoo1234",
     "department": "미디어커뮤니케이션학과",
     "phone": "010-1234-0110",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000111,
@@ -917,7 +917,7 @@
     "password": "shinjihoon1234",
     "department": "경제학과",
     "phone": "010-1234-0111",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000112,
@@ -925,7 +925,7 @@
     "password": "hongjimin1234",
     "department": "소비자학과",
     "phone": "010-1234-0112",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000113,
@@ -933,7 +933,7 @@
     "password": "namjiyoon1234",
     "department": "아동심리학과",
     "phone": "010-1234-0113",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000114,
@@ -941,7 +941,7 @@
     "password": "yujisu1234",
     "department": "사회복지학과",
     "phone": "010-1234-0114",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000115,
@@ -949,7 +949,7 @@
     "password": "kwonjihu1234",
     "department": "한국어문학과",
     "phone": "010-1234-0115",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000116,
@@ -957,7 +957,7 @@
     "password": "baekjimin1234",
     "department": "사학과",
     "phone": "010-1234-0116",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000117,
@@ -965,7 +965,7 @@
     "password": "choiharin1234",
     "department": "철학과",
     "phone": "010-1234-0117",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000118,
@@ -973,7 +973,7 @@
     "password": "yangjimin1234",
     "department": "중국학과",
     "phone": "010-1234-0118",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000119,
@@ -981,7 +981,7 @@
     "password": "leedohyun1234",
     "department": "컴퓨터공학과",
     "phone": "010-1234-0119",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000120,
@@ -989,7 +989,7 @@
     "password": "parkjihwan1234",
     "department": "컴퓨터공학과",
     "phone": "010-1234-0120",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000121,
@@ -997,7 +997,7 @@
     "password": "kimharin1234",
     "department": "컴퓨터공학과",
     "phone": "010-1234-0121",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000122,
@@ -1005,7 +1005,7 @@
     "password": "jeongyujin1234",
     "department": "생명공학과",
     "phone": "010-1234-0122",
-    "image_set_id": 0
+    "image_id": 0
     },
     {
     "id": 12000123,
@@ -1013,7 +1013,7 @@
     "password": "ohjihu1234",
     "department": "생명공학과",
     "phone": "010-1234-0123",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000124,
@@ -1021,7 +1021,7 @@
     "password": "yoonjimin1234",
     "department": "생명공학과",
     "phone": "010-1234-0124",
-    "image_set_id": 0
+    "image_id": 0
   },  
   {
     "id": 12000125,
@@ -1029,7 +1029,7 @@
     "password": "baejiwoo1234",
     "department": "생명과학과",
     "phone": "010-1234-0125",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000126,
@@ -1037,7 +1037,7 @@
     "password": "imjiyoon1234",
     "department": "생명과학과",
     "phone": "010-1234-0126",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000127,
@@ -1045,7 +1045,7 @@
     "password": "kangminji1234",
     "department": "생명과학과",
     "phone": "010-1234-0127",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000128,
@@ -1053,7 +1053,7 @@
     "password": "choijihoon1234",
     "department": "스포츠과학과",
     "phone": "010-1234-0128",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000129,
@@ -1061,7 +1061,7 @@
     "password": "leesubin1234",
     "department": "스포츠과학과",
     "phone": "010-1234-0129",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000130,
@@ -1069,7 +1069,7 @@
     "password": "parkjiho1234",
     "department": "스포츠과학과",
     "phone": "010-1234-0130",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000131,
@@ -1077,7 +1077,7 @@
     "password": "moonjihyun1235",
     "department": "스포츠과학과",
     "phone": "010-1234-0131",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000132,
@@ -1085,7 +1085,7 @@
     "password": "seojihu1235",
     "department": "스포츠과학과",
     "phone": "010-1234-0132",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000133,
@@ -1093,7 +1093,7 @@
     "password": "jominjae1234",
     "department": "연극영화학과",
     "phone": "010-1234-0133",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000134,
@@ -1101,7 +1101,7 @@
     "password": "shinjisu1235",
     "department": "연극영화학과",
     "phone": "010-1234-0134",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000135,
@@ -1109,7 +1109,7 @@
     "password": "hongjiyoon1235",
     "department": "연극영화학과",
     "phone": "010-1234-0135",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000136,
@@ -1117,7 +1117,7 @@
     "password": "namjiho1234",
     "department": "의류디자인학과",
     "phone": "010-1234-0136",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000137,
@@ -1125,7 +1125,7 @@
     "password": "yujio1235",
     "department": "간호학과",
     "phone": "010-1234-0137",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000138,
@@ -1133,7 +1133,7 @@
     "password": "kwonjimin1235",
     "department": "간호학과",
     "phone": "010-1234-0138",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000139,
@@ -1141,7 +1141,7 @@
     "password": "baekjiwoo1235",
     "department": "간호학과",
     "phone": "010-1234-0139",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000140,
@@ -1149,7 +1149,7 @@
     "password": "choihaneul1235",
     "department": "간호학과",
     "phone": "010-1234-0140",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000141,
@@ -1157,7 +1157,7 @@
     "password": "yangjihu1235",
     "department": "간호학과",
     "phone": "010-1234-0141",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000142,
@@ -1165,7 +1165,7 @@
     "password": "pyojimin1235",
     "department": "간호학과",
     "phone": "010-1234-0142",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000143,
@@ -1173,7 +1173,7 @@
     "password": "shimjiyoon1235",
     "department": "간호학과",
     "phone": "010-1234-0143",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000144,
@@ -1181,7 +1181,7 @@
     "password": "gujiho1235",
     "department": "간호학과",
     "phone": "010-1234-0144",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000145,
@@ -1189,7 +1189,7 @@
     "password": "hwangjisu1234",
     "department": "간호학과",
     "phone": "010-1234-0145",
-    "image_set_id": 0
+    "image_id": 0
   },
   {
     "id": 12000146,
@@ -1197,6 +1197,6 @@
     "password": "ohjiyoon1234",
     "department": "간호학과",
     "phone": "010-1234-0146",
-    "image_set_id": 0
+    "image_id": 0
   }
 ]

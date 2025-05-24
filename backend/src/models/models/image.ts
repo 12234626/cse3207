@@ -9,11 +9,6 @@ class Image extends Model {
   @Column({type: DataType.INTEGER.UNSIGNED})
   public id!: number;
 
-  // 이미지 세트 아이디
-  @AllowNull(false)
-  @Column({type: DataType.INTEGER.UNSIGNED})
-  public set_id!: number;
-
   // 이미지 파일 경로
   @AllowNull(false)
   @Column({type: DataType.STRING(255)})

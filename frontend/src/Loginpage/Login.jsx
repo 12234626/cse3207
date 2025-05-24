@@ -8,7 +8,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const handleSignUpClick = () => {
-    navigate("/SignUp");
+    navigate("/MainDong");
   };
 
   const handleImageClick = () => {
@@ -20,7 +20,6 @@ function Login() {
 
   const handleLoginClick = async (e) => {
     e.preventDefault();
-
 
     const form = { id, password };
 
@@ -114,7 +113,9 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-                        <button className="imageButton" onClick={handleImageClick}>/</button>
+            <button className="imageButton" onClick={handleImageClick}>
+              /
+            </button>
 
             <input
               type="submit"
