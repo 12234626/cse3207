@@ -126,7 +126,7 @@ function MainDong() {
     if (type) params.push(`type=${encodeURIComponent(type)}`);
     if (field) params.push(`field=${encodeURIComponent(field)}`);
     if (recruitment)
-      params.push(`inrecruitment=${encodeURIComponent(recruitment)}`);
+      params.push(`recruitment=${encodeURIComponent(recruitment)}`);
     if (params.length > 0) url += "?" + params.join("&");
 
     axios.get(url).then((response) => {
@@ -169,7 +169,11 @@ function MainDong() {
 
   const handleClubClick = (club) => {
     navigate("/Club", {
-      state: { clubName: club.name, introduction: club.introduction ,  clubId: club.id,},
+      state: {
+        clubName: club.name,
+        introduction: club.introduction,
+        clubId: club.id,
+      },
     }); // 동아리명과 소개글 전달
   };
 
