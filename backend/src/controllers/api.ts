@@ -1,5 +1,36 @@
 import {Request, Response} from "express";
 
+// 유저 로그인
+async function login(req: Request, res: Response) {
+  const {id, password} = req.body;
+
+  try {
+    const is_valid = (await (await fetch(`http://localhost:3000/db/user?id=${id}&password=${password}`)).json()).length !== 0;
+    
+    if (!is_valid) {
+      res
+      .status(404)
+      .json({message: "존재하지 않는 유저 아이디 또는 틀린 비밀번호"});
+
+      return;
+    }
+    
+    fetch(`http://localhost:3000/db/user?id=${id}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(200)
+      .json(data[0]);
+    })
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  };
+}
+
 // 동아리 생성
 async function createClub(req: Request, res: Response) {
   const {name, type, field, recruitment, introduction, admin_user_id, title, content} = req.body;
@@ -37,5 +68,6 @@ async function createClub(req: Request, res: Response) {
 }
 
 export {
+  login,
   createClub
 };
