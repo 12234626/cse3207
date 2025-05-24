@@ -1,6 +1,6 @@
 import {Router} from "express";
 
-import {getClub, getClubAdmin, getPost, createClub, updateClub, updateClubInfoPostId, deleteClub} from "../controllers/club";
+import {getClub, getClubAdmin, getPost, createClub, updateClub, deleteClub} from "../controllers/club";
 
 // 동아리 데이터베이스 라우터
 const club_router = Router();
@@ -16,8 +16,6 @@ club_router
 .post("/", createClub)
 // 동아리 업데이트
 .put("/", updateClub)
-// 동아리 상세 정보 게시글 업데이트
-.put("/info_post_id", updateClubInfoPostId)
 // 동아리 삭제
 .delete("/", deleteClub);
 

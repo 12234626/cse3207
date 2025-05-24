@@ -46,7 +46,7 @@ async function createClub(req: Request, res: Response) {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({type: "상세 설명", title, content, club_id})
     })).json();
-    fetch(`http://localhost:3000/db/club/info_post_id`, {
+    fetch(`http://localhost:3000/db/club_info_post`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({id: club_id, info_post_id: info_post_id})

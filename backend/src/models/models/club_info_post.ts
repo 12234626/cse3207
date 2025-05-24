@@ -1,4 +1,4 @@
-import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AutoIncrement, AllowNull} from "sequelize-typescript";
+import {Model, Table, Column, DataType, PrimaryKey, Unique, BelongsTo, AutoIncrement} from "sequelize-typescript";
 
 import Club from "./club";
 import Post from "./post";
@@ -13,14 +13,14 @@ class ClubInfoPost extends Model {
   public id!: number;
 
   // 동아리 아이디
+  @Unique
   @BelongsTo(() => Club, {foreignKey: "club_id", as: "club", onDelete: "CASCADE"})
-  @AllowNull(false)
   @Column({type: DataType.INTEGER.UNSIGNED})
   public club_id!: number;
 
   // 게시글 아이디
+  @Unique
   @BelongsTo(() => Post, {foreignKey: "info_post_id", as: "info_post", onDelete: "CASCADE"})
-  @AllowNull(false)
   @Column({type: DataType.INTEGER.UNSIGNED})
   public info_post_id!: number;
 }
