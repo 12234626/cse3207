@@ -5,6 +5,20 @@ import "./FixClub.css";
 function FixClub() {
   const navigate = useNavigate();
 
+  // 기존 club 정보 불러오기
+  const clubData = localStorage.getItem("club");
+  const userData = localStorage.getItem("user");
+  const club = clubData ? JSON.parse(clubData) : {};
+  const user = userData ? JSON.parse(userData) : {};
+
+  // input 상태를 useState로 관리 (초기값: 기존 데이터)
+  const [clubName, setClubName] = useState(club.name || "");
+  const [selectedArea, setSelectedArea] = useState(club.type || "");
+  const [selectedField, setSelectedField] = useState(club.field || "");
+  const [selectedStatus, setSelectedStatus] = useState(club.recruitment || "");
+  const [shortIntro, setShortIntro] = useState(club.introduction || "");
+  const [story, setStory] = useState(club.story || "");
+
   const areas = [
     "중앙 동아리",
     "자유전공융합학부",
@@ -95,10 +109,6 @@ function FixClub() {
 
   const statuses = ["모집 중", "모집 마감"];
 
-  const [selectedArea, setSelectedArea] = useState("");
-  const [selectedField, setSelectedField] = useState("");
-  const [selectedStatus, setSelectedStatus] = useState("");
-
   // 누락된 상태 추가
   const [areaDropdownOpen, setAreaDropdownOpen] = useState(false);
   const [fieldDropdownOpen, setFieldDropdownOpen] = useState(false);
@@ -128,11 +138,43 @@ function FixClub() {
     navigate("/Manager");
   };
 
-  const handleokClick = () => {
-    console.log("선택된 영역:", selectedArea);
-    console.log("선택된 분야:", selectedField);
-    console.log("모집 상태:", selectedStatus);
-    navigate("/MainDong");
+  // const handleokClick = () => {
+  //   console.log("선택된 영역:", selectedArea);
+  //   console.log("선택된 분야:", selectedField);
+  //   console.log("모집 상태:", selectedStatus);
+  //   navigate("/MainDong");
+  // };
+
+  const handleokClick = async () => {
+    const clubId = club.id;
+
+    if (!clubId || !user) {
+      alert("동아리 정보 또는 로그인 정보가 없습니다.");
+      return;
+    }
+
+    try {
+      // 동아리 정보 수정 요청
+      await fetch("http://localhost:3000/db/club", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: clubId,
+          name: clubName,
+          type: selectedArea,
+          field: selectedField,
+          admin_user_id: user.id,
+          recruitment: selectedStatus,
+          introduction: shortIntro,
+          story: story,
+        }),
+      });
+
+      alert("동아리 정보가 수정되었습니다!");
+      navigate("/MainDong");
+    } catch (error) {
+      alert("수정 중 오류가 발생했습니다.");
+    }
   };
 
   return (
@@ -143,6 +185,8 @@ function FixClub() {
             type="text"
             className="clubNameInput"
             placeholder="동아리명을 입력하세요"
+            value={clubName}
+            onChange={(e) => setClubName(e.target.value)}
           />
 
           <div className="hanjool">
@@ -242,8 +286,15 @@ function FixClub() {
                 type="text"
                 className="clubShortInput"
                 placeholder="동아리 한줄소개"
+                value={shortIntro}
+                onChange={(e) => setShortIntro(e.target.value)}
               />
-              <textarea className="StoryBoard" placeholder="글 작성"></textarea>
+              <textarea
+                className="StoryBoard"
+                placeholder="글 작성"
+                value={story}
+                onChange={(e) => setStory(e.target.value)}
+              ></textarea>
               {/* <input type="text" className="URLIn" placeholder="URL" /> */}
             </div>
           </div>

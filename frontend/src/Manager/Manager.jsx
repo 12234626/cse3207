@@ -2,8 +2,22 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Manager.css";
 
-function Manager({ clubId }) {
+function Manager() {
   const navigate = useNavigate();
+  const [clubId, setClubId] = React.useState(null);
+
+  React.useEffect(() => {
+    // club 정보를 localStorage에서 읽어옴
+    const clubData = localStorage.getItem("club");
+    if (clubData) {
+      try {
+        const parsed = JSON.parse(clubData);
+        setClubId(parsed.id); // clubData에 id가 있다고 가정
+      } catch (e) {
+        setClubId(null);
+      }
+    }
+  }, []); // clubId는 의존성에 넣지 않아야 무한루프가 안 생깁니다.
 
   const handleBackClick = () => {
     navigate("/JoinedClub");
@@ -36,7 +50,7 @@ function Manager({ clubId }) {
       });
       if (response.ok) {
         alert("동아리가 삭제되었습니다.");
-        navigate("/JoinedClub"); // 삭제 후 이동할 페이지
+        navigate("/MyClubList"); // 삭제 후 이동할 페이지
       } else {
         alert("삭제에 실패했습니다.");
       }
