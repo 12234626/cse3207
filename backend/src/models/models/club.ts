@@ -27,10 +27,10 @@ class Club extends Model {
   @Column({type: DataType.ENUM("공연", "어학", "연구", "사회", "종교", "전시", "무예", "구기", "레저", "봉사", "동아리연합회")})
   public field!: string;
 
-  // 동아리 모집 기간
+  // 동아리 모집 여부
   @AllowNull(false)
   @Column({type: DataType.ENUM("모집 중", "모집 마감")})
-  public inrecruitment!: string;
+  public recruitment!: string;
 
   // 동아리 소개
   @AllowNull(false)
@@ -41,12 +41,12 @@ class Club extends Model {
   @AllowNull(false)
   @ForeignKey(() => User)
   @Column({type: DataType.INTEGER.UNSIGNED})
-  public admin!: number;
+  public admin_user_id!: number;
 
   // 동아리 상세 설명 게시글 아이디
   @ForeignKey(() => Post)
   @Column({type: DataType.INTEGER.UNSIGNED})
-  public info!: number;
+  public info_post_id?: number;
 };
 
 export default Club;

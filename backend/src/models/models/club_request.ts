@@ -11,7 +11,7 @@ class ClubReqeust extends Model {
   @AutoIncrement
   @Column({type: DataType.INTEGER.UNSIGNED})
   public id!: number;
-  
+
   // 신청 상태
   @AllowNull(false)
   @Column({type: DataType.ENUM("대기", "수락", "거절"), defaultValue: "대기"})
