@@ -49,15 +49,6 @@ function updateClub(req: Request, res: Response) {
   runQueryWithResponse(req, res, query, replacements, 200);
 }
 
-// 동아리 상세 정보 게시글 업데이트
-function updateClubInfoPostId(req: Request, res: Response) {
-  const {id, info_post_id} = req.body;
-  const query = "UPDATE club_table SET info_post_id = :info_post_id WHERE id = :id";
-  const replacements = {id, info_post_id};
-
-  runQueryWithResponse(req, res, query, replacements, 200);
-}
-
 // 동아리 삭제
 function deleteClub(req: Request, res: Response) {
   const {id} = req.body;
@@ -73,6 +64,5 @@ export {
   getPost,
   createClub,
   updateClub,
-  updateClubInfoPostId,
   deleteClub
 };
