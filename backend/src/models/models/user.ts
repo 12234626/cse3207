@@ -1,4 +1,4 @@
-import {Model, Table, Column, DataType, PrimaryKey, ForeignKey, AllowNull} from "sequelize-typescript";
+import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AllowNull} from "sequelize-typescript";
 
 import Image from "./image";
 
@@ -35,7 +35,7 @@ class User extends Model {
   public phone!: string;
 
   // 이미지 세트 (프로필)
-  @ForeignKey(() => Image)
+  // @BelongsTo(() => Image, {foreignKey: "image_set_id", targetKey: "set_id", as: "image_set", onDelete: "CASCADE"})
   @Column({type: DataType.INTEGER.UNSIGNED, defaultValue: 0})
   public image_set_id?: number;
 };

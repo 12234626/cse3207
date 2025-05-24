@@ -1,4 +1,4 @@
-import {Model, Table, Column, DataType, PrimaryKey, ForeignKey, AutoIncrement, AllowNull} from "sequelize-typescript";
+import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AutoIncrement, AllowNull} from "sequelize-typescript";
 
 import Club from "./club";
 import Image from "./image";
@@ -28,13 +28,13 @@ class Post extends Model {
   public content!: string;
 
   // 동아리 아이디
+  @BelongsTo(() => Club, {foreignKey: "club_id", as: "club", onDelete: "CASCADE"})
   @AllowNull(false)
-  @ForeignKey(() => Club)
-  @Column({type: "INTEGER UNSIGNED ON DELETE CASCADE"})
+  @Column({type: DataType.INTEGER.UNSIGNED})
   public club_id!: number;
 
   // 이미지 세트
-  @ForeignKey(() => Image)
+  // @BelongsTo(() => Image, {foreignKey: "image_set_id", as: "image_set", onDelete: "CASCADE"})
   @Column({type: DataType.INTEGER.UNSIGNED})
   public image_set_id?: number;
 };

@@ -27,7 +27,7 @@ async function initDB() {
 
 // 테이블 데이터 초기화
 async function initTable() {
-  for (const model_index in sequelize.models) {
+  for (const model_index of ["Image", "User", "Club", "Post", "ClubRequest", "ClubMember"]) {
     try {
       // 더미 데이터 불러오기
       const model = sequelize.models[model_index];

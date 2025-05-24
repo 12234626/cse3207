@@ -1,4 +1,4 @@
-import {Model, Table, Column, DataType, PrimaryKey, ForeignKey} from "sequelize-typescript";
+import {Model, Table, Column, DataType, PrimaryKey, BelongsTo} from "sequelize-typescript";
 
 import Club from "./club";
 import User from "./user";
@@ -8,14 +8,14 @@ import User from "./user";
 class ClubMember extends Model {
   // 동아리 아이디
   @PrimaryKey
-  @ForeignKey(() => Club)
-  @Column({type: "INTEGER UNSIGNED ON DELETE CASCADE"})
+  @BelongsTo(() => Club, {foreignKey: "club_id", as: "club", onDelete: "CASCADE"})
+  @Column({type: DataType.INTEGER.UNSIGNED})
   public club_id!: number;
 
   // 유저 아이디
   @PrimaryKey
-  @ForeignKey(() => User)
-  @Column({type: "INTEGER UNSIGNED ON DELETE CASCADE"})
+  @BelongsTo(() => User, {foreignKey: "user_id", as: "user", onDelete: "CASCADE"})
+  @Column({type: DataType.INTEGER.UNSIGNED})
   public user_id!: number;
 };
 
