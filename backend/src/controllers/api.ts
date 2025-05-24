@@ -83,7 +83,7 @@ async function updateClubWithInfoPost(req: Request, res: Response) {
     await fetch(`http://localhost:3000/db/post`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id: info_post_id, title, content})
+      body: JSON.stringify({id: info_post_id, content})
     });
 
     res.status(200).json({message: "동아리 및 상세 설명 게시글 수정 성공"});
