@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 import "./WriteClubInfoPost.css";
 
 function WriteClubInfoPost() {
@@ -21,11 +23,7 @@ function WriteClubInfoPost() {
     <div className="screen">
       <div className="phoneScreen">
         <div className="createClubMain">
-          <input type="text" className="URLBox" placeholder="URL">
-            {/* <div className="overlap-group">
-              <div className="text-wrapper">URL</div>
-            </div> */}
-          </input>
+          
 
           <input type="text" className="clubInfoInput" placeholder="글 작성">
             {/* <div className="overlap">

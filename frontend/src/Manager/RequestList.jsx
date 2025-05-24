@@ -10,7 +10,7 @@ function RequestList() {
     const club = JSON.parse(localStorage.getItem("club"));
     if (!club) return;
     fetch(
-      `http://localhost:3000/db/club_request?club_id=${club.id}&status=대기`
+      `http://localhost:3000/api/update_club_request?club_id=${club.id}&status=대기`
     )
       .then((res) => res.json())
       .then((data) => setMembers(data));
@@ -25,7 +25,7 @@ function RequestList() {
       return;
     try {
       // const club = JSON.parse(localStorage.getItem("club"));
-      const response = await fetch("http://localhost:3000/db/club_request", {
+      const response = await fetch(`http://localhost:3000/api/update_club_request`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -49,7 +49,7 @@ function RequestList() {
       return;
     try {
       // const club = JSON.parse(localStorage.getItem("club"));
-      const response = await fetch("http://localhost:3000/db/club_request", {
+      const response = await fetch(`http://localhost:3000/api/update_club_request`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
