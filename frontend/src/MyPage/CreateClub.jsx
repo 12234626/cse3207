@@ -157,74 +157,18 @@ function CreateClub() {
         return;
       }
 
-      // 1. 동아리 생성
-      await fetch("http://localhost:3000/db/club", {
+      await fetch("http://localhost:3000/api/create_club", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: clubName,
           type: selectedArea,
           field: selectedField,
-          inrecruitment: selectedStatus,
+          recruitment: selectedStatus,
           introduction: shortIntro,
-          admin: user.id,
-          // info는 일단 null 또는 0 등으로 넣어도 됨
-        }),
-      });
-      const clubRes = await fetch(
-        "http://localhost:3000/db/club?name=" + clubName
-      );
-      const clubData = await clubRes.json();
-      const clubId = clubData[0].id;
-
-      // 2. 게시글 생성 (club_id 포함)
-      await fetch("http://localhost:3000/db/post", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: "상세 설명",
+          admin_user_id: user.id,
           title: clubName + " 상세 설명",
           content: story,
-          club_id: clubId,
-        }),
-      });
-      // 2-1. 게시글 id 조회 (title로 조회, title이 유일하다는 가정)
-      const postRes = await fetch(
-        "http://localhost:3000/db/post?title=" +
-          encodeURIComponent(clubName + " 상세 설명")
-      );
-      const postData = await postRes.json();
-      const infoId = postData[0].id;
-
-      // 3. club_table의 info 컬럼만 별도로 업데이트
-      await fetch("http://localhost:3000/db/club/info", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          club_id: clubId,
-          info_id: infoId,
-        }),
-      });
-      // const postData = await postRes.json();
-      // const infoId = postData.id;
-
-      // 3. club_table의 info 컬럼을 post의 id로 업데이트 (선택)
-      // await fetch("http://localhost:3000/db/club", {
-      //   method: "PUT",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({
-      //     id: clubId,
-      //     info: infoId,
-      //   }),
-      // });
-
-      // 4. 관리자(본인) 자동 가입
-      await fetch("http://localhost:3000/db/club_member", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          club_id: clubId,
-          user_id: user.id,
         }),
       });
 
