@@ -67,7 +67,35 @@ async function createClub(req: Request, res: Response) {
   }
 }
 
+// 동아리 가입 신청 업데이트
+async function updateClubRequest(req: Request, res: Response) {
+  const {id, status} = req.body;
+
+  try {
+    await fetch(`http://localhost:3000/db/club_request`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({id, status})
+    });
+
+    if (status === "수락") {
+      const {club_id, user_id} = (await (await fetch(`http://localhost:3000/db/club_request?id=${id}`)).json())[0];
+
+      await fetch(`http://localhost:3000/db/club_member`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({club_id, user_id})
+      });
+    }
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
+
 export {
   login,
-  createClub
+  createClub,
+  updateClubRequest
 };
