@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 import "./WriteHongboPost.css";
 
 function WriteHongboPost() {
@@ -8,10 +10,24 @@ function WriteHongboPost() {
   const handleBackClick = () => {
     navigate("/Manager");
   };
+  const [title, setTitle] = useState("");     // 제목 상태
+  const [content, setContent] = useState(""); // 내용 상태
 
-  const handleOkClick = () => {
-    navigate("/MainDong");
+  const handleOkClick = async() => {
+    try {
+      await axios.post("http://localhost:3000/db/post", {
+        title: title,
+        content: content,
+        type: "홍보", // 서버가 홍보 글만 필터링할 수 있게
+        club_id: 1,   // 예시: 동아리 ID가 있다면 여기에 사용
+      });
+      navigate("/MainH"); // 글 등록 후 홍보 리스트 페이지로 이동
+    } catch (error) {
+      console.error("글 등록 실패:", error);
+    }
   };
+
+  
 
   const handleClubInfo = () => {
     navigate("/WriteClubInfoPost");
@@ -23,27 +39,28 @@ function WriteHongboPost() {
         <div className="createClubMain">
         
 
-          <input type="text" className="clubInfoInput" placeholder="글 작성">
-            {/* <div className="overlap">
-              <div className="text-wrapper-2">글 작성</div>
-            </div> */}
-          </input>
+          <textarea
+              className="clubInfoInput"
+              placeholder="글 작성"
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+            />
 
-          <input type="text" className="clubImgInput" placeholder="+">
-            {/* <div className="overlap-2">
-              <div className="text-wrapper-3">+</div>
-            </div> */}
-          </input>
+            <input
+              type="text"
+              className="clubImgInput"
+              placeholder="+"
+              disabled
+            />  
 
-          <input
-            type="text"
-            className="postNameInput"
-            placeholder="제목을 입력하세요"
-          >
-            {/* <div className="overlap-group">
-              <div className="text-wrapper-4">동아리명을 입력하세요</div>
-            </div> */}
-          </input>
+            <input
+              type="text"
+              className="postNameInput"
+              placeholder="제목을 입력하세요"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            
 
           {/* <div className="view-3"> */}
           <div className="hongboOrClubInfo">

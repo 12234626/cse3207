@@ -1,7 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { useState } from "react";
 import "./WriteClubInfoPost.css";
 
 function WriteClubInfoPost() {
