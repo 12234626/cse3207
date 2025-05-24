@@ -9,17 +9,29 @@ function FixClub() {
   const clubData = localStorage.getItem("club");
   const userData = localStorage.getItem("user");
   const postData = localStorage.getItem("post");
+  let post = postData ? JSON.parse(postData) : {};
+  let storyInit = "";
+  if (Array.isArray(post)) {
+    storyInit = post[0]?.content || "";
+  } else {
+    storyInit = post.content || "";
+  }
+  const [story, setStory] = useState(storyInit);
   const club = clubData ? JSON.parse(clubData) : {};
   const user = userData ? JSON.parse(userData) : {};
-  const post = postData ? JSON.parse(postData) : {};
 
   // input 상태를 useState로 관리 (초기값: 기존 데이터)
-  const [clubName, setClubName] = useState(club.name || "");
-  const [selectedArea, setSelectedArea] = useState(club.type || "");
-  const [selectedField, setSelectedField] = useState(club.field || "");
   const [selectedStatus, setSelectedStatus] = useState(club.recruitment || "");
   const [shortIntro, setShortIntro] = useState(club.introduction || "");
-  const [story, setStory] = useState(post.content || "");
+
+  // console.log("postData(raw):", postData);
+  // console.log("post(parsed):", post);
+  // // input 상태를 useState로 관리 (초기값: 기존 데이터)
+  // const [clubName, setClubName] = useState(club.name || "");
+  // const [selectedArea, setSelectedArea] = useState(club.type || "");
+  // const [selectedField, setSelectedField] = useState(club.field || "");
+  // const [selectedStatus, setSelectedStatus] = useState(club.recruitment || "");
+  // const [shortIntro, setShortIntro] = useState(club.introduction || "");
 
   const areas = [
     "중앙 동아리",
@@ -193,18 +205,19 @@ function FixClub() {
             type="text"
             className="clubNameInput"
             placeholder="동아리명을 입력하세요"
-            value={clubName}
-            onChange={(e) => setClubName(e.target.value)}
+            value={club.name || ""}
+            readOnly
+            // onChange={(e) => setClubName(e.target.value)}
           />
 
           <div className="hanjool">
             {/* 영역 선택 */}
-            <div className="areaSselect">
+            {/* <div className="areaSselect">
               <div
                 className={`dropdownSelected ${selectedArea ? "selected" : ""}`}
                 onClick={() => setAreaDropdownOpen(!areaDropdownOpen)}
               >
-                {selectedArea || "영역 선택"}
+                {club.type || "영역 선택"}
               </div>
               {areaDropdownOpen && (
                 <ul className="dropdownOptions">
@@ -224,10 +237,22 @@ function FixClub() {
                   ))}
                 </ul>
               )}
+            </div> */}
+            <div className="areaSselect">
+              <div
+                className="dropdownSelected selected"
+                style={{
+                  background: "#f5f5f5",
+                  color: "#888",
+                  cursor: "not-allowed",
+                }}
+              >
+                {club.type || "영역 없음"}
+              </div>
             </div>
 
             {/* 분야 선택 */}
-            <div className="fieldSselect">
+            {/* <div className="fieldSselect">
               <div
                 className={`dropdownSelected ${
                   selectedField ? "selected" : ""
@@ -254,6 +279,18 @@ function FixClub() {
                   ))}
                 </ul>
               )}
+            </div> */}
+            <div className="fieldSselect">
+              <div
+                className="dropdownSelected selected"
+                style={{
+                  background: "#f5f5f5",
+                  color: "#888",
+                  cursor: "not-allowed",
+                }}
+              >
+                {club.field || "분야 없음"}
+              </div>
             </div>
 
             {/* 모집 상태 선택 */}
