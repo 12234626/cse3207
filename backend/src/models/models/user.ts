@@ -35,9 +35,10 @@ class User extends Model {
   public phone!: string;
 
   // 이미지 세트 (프로필)
-  // @BelongsTo(() => Image, {foreignKey: "image_set_id", targetKey: "set_id", as: "image_set", onDelete: "CASCADE"})
+  // @BelongsTo(() => Image, {foreignKey: "image_id", as: "image", onDelete: "SET NULL"})
+  @AllowNull(true)
   @Column({type: DataType.INTEGER.UNSIGNED, defaultValue: 0})
-  public image_set_id?: number;
+  public image_id?: number;
 };
 
 export default User;

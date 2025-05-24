@@ -23,8 +23,8 @@ db_router
 // /club_request 경로에 동아리 가입 신청 데이터베이스 라우터 연결
 .use("/club_request", club_request_router)
 // /club_info_post 경로에 동아리 상세 설명 게시글 데이터베이스 라우터 연결
-.use("/club_info_post", club_info_post_router);
+.use("/club_info_post", club_info_post_router)
 // /image 경로에 이미지 데이터베이스 라우터 연결
-// .use("/image", image_router);
+.use("/image", image_router);
 
 export default db_router;

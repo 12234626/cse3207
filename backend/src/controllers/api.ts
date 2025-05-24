@@ -123,9 +123,35 @@ async function updateClubRequest(req: Request, res: Response) {
   }
 }
 
+// 이미지 업로드
+async function uploadImage(req: Request, res: Response) {
+  try {
+    const {path} = req.file as any;
+
+    fetch(`http://localhost:3000/db/image`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({url: path})
+    })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(201)
+      .json(data);
+    });
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
+
 export {
   login,
   createClub,
   updateClubRequest,
-  updateClubWithInfoPost
+  updateClubWithInfoPost,
+  uploadImage
 };
