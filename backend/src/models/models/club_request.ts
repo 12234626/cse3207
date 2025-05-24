@@ -5,7 +5,7 @@ import User from "./user";
 
 // 동아리 가입 신청 테이블
 @Table({tableName: "club_request_table"})
-class ClubReqeust extends Model {
+class ClubRequest extends Model {
   // 신청 아이디
   @PrimaryKey
   @AutoIncrement
@@ -30,4 +30,4 @@ class ClubReqeust extends Model {
   public user_id!: number;
 };
 
-export default ClubReqeust;
+export default ClubRequest;
