@@ -87,6 +87,10 @@ async function updateClubRequest(req: Request, res: Response) {
         body: JSON.stringify({club_id, user_id})
       });
     }
+
+    res
+    .status(200)
+    .json({message: "동아리 가입 신청 상태 업데이트 성공"});
   } catch (err) {
     res
     .status(500)
