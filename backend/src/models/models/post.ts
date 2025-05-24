@@ -30,7 +30,7 @@ class Post extends Model {
   // 동아리 아이디
   @AllowNull(false)
   @ForeignKey(() => Club)
-  @Column({type: DataType.INTEGER.UNSIGNED})
+  @Column({type: "INTEGER UNSIGNED ON DELETE CASCADE"})
   public club_id!: number;
 
   // 이미지 세트

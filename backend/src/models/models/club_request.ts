@@ -20,13 +20,13 @@ class ClubReqeust extends Model {
   // 동아리 아이디
   @AllowNull(false)
   @ForeignKey(() => Club)
-  @Column({type: DataType.INTEGER.UNSIGNED})
+  @Column({type: "INTEGER UNSIGNED ON DELETE CASCADE"})
   public club_id!: number;
 
   // 유저 아이디
   @AllowNull(false)
   @ForeignKey(() => User)
-  @Column({type: DataType.INTEGER.UNSIGNED})
+  @Column({type: "INTEGER UNSIGNED ON DELETE CASCADE"})
   public user_id!: number;
 };
 

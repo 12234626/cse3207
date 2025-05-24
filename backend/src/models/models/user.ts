@@ -36,7 +36,7 @@ class User extends Model {
 
   // 이미지 세트 (프로필)
   @ForeignKey(() => Image)
-  @Column({type: DataType.INTEGER.UNSIGNED})
+  @Column({type: DataType.INTEGER.UNSIGNED, defaultValue: 0})
   public image_set_id?: number;
 };
 

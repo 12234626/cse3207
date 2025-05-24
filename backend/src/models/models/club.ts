@@ -40,12 +40,12 @@ class Club extends Model {
   // 동아리 관리자
   @AllowNull(false)
   @ForeignKey(() => User)
-  @Column({type: DataType.INTEGER.UNSIGNED})
+  @Column({type: "INTEGER UNSIGNED ON DELETE CASCADE"})
   public admin_user_id!: number;
 
   // 동아리 상세 설명 게시글 아이디
   @ForeignKey(() => Post)
-  @Column({type: DataType.INTEGER.UNSIGNED})
+  @Column({type: "INTEGER UNSIGNED ON DELETE CASCADE"})
   public info_post_id?: number;
 };
 
