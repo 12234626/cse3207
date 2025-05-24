@@ -101,10 +101,11 @@ function Manager() {
           </div>
           <div className="deleteClubBox">
             {/* <div className="overlap-group"> */}
-            <div className="managerListText" onClick={handleDeleteClubClick}>
-              동아리 삭제
-            </div>
-            <button className="nextButton"></button>
+            <div className="managerListText">동아리 삭제</div>
+            <button
+              className="nextButton"
+              onClick={handleDeleteClubClick}
+            ></button>
             {/* </div> */}
           </div>
         </div>
