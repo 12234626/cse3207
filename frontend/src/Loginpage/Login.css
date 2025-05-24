@@ -154,10 +154,13 @@
 }
 
 .screen .logo {
-  background-color: #899ec7;
-  height: 63px;
-  left: 137px;
+  background-image: url("../images/inhaclubLogo.svg");
+  background-size: contain; /* 로고 크기를 컨테이너에 맞게 조정 */
+  background-repeat: no-repeat; /* 로고가 반복되지 않도록 설정 */
+  height: 200px; /* 로고 높이 설정 */
+  width: 200px; /* 로고 너비 설정 */
   position: absolute;
-  top: 246px;
-  width: 119px;
+  top: 230px; /* 로고의 세로 위치 조정 */
+  left: 50%; /* 가로 중앙 정렬 */
+  transform: translateX(-50%);
 }
