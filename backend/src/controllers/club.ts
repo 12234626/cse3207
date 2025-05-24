@@ -1,55 +1,64 @@
 import {Request, Response} from "express";
-import * as fs from 'fs';
-import * as path from 'path';
+
+import {runQueryWithResponse, buildWhereClause} from "../utils/controller";
+
+// 동아리 조회
+function getClub(req: Request, res: Response) {
+  const {where, replacements} = buildWhereClause(req.query, "club_table");
+  const query = "SELECT * FROM club_table" + where;
+
+  runQueryWithResponse(req, res, query, replacements, 200);
+}
+
+// 동아리 관리자 조회
+function getClubAdmin(req: Request, res: Response) {
+  const {where, replacements} = buildWhereClause(req.query, "club_table");
+  const query = "SELECT admin FROM club_table" + where;
+
+  runQueryWithResponse(req, res, query, replacements, 200);
+}
 
 // 동아리 생성
-function create(req: Request, res: Response) {
-}
-// 동아리 게시글 조회
-function post(req: Request, res: Response) {
-}
-// 동아리 정보 조회
-function info(req: Request, res: Response) {
-}
-// 동아리 페이지 조회
-function page(req: Request, res: Response) {
-}
-// 동아리 관리자 페이지
-function admin(req: Request, res: Response) {
-}
-// 동아리 멤버 정보 조회
-function member(req: Request, res: Response) {
-}
-// 동아리 가입 요청 조회
-function request(req: Request, res: Response) {
-}
-// 동아리 글쓰기
-function write(req: Request, res: Response) {
+function createClub(req: Request, res: Response) {
+  const {name, type, field, admin, inrecruitment, introduction} = req.body;
+  const query = "INSERT INTO club_table (name, type, field, admin, inrecruitment, introduction) VALUES (:name, :type, :field, :admin, :inrecruitment, :introduction)";
+  const replacements = {name, type, field, admin, inrecruitment, introduction};
+
+  runQueryWithResponse(req, res, query, replacements, 201);
 }
 
-// 모든 동아리 정보 조회
-function getAllClubs(req: Request, res: Response) {
-  try {
-    const clubData = fs.readFileSync(
-      path.join(__dirname, '../db/init/data/club_table.json'),
-      'utf8'
-    );
-    const clubs = JSON.parse(clubData);
-    res.json(clubs);
-  } catch (error) {
-    console.error('Error reading club data:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+// 동아리 업데이트
+function updateClub(req: Request, res: Response) {
+  const {id, name, type, field, admin, inrecruitment} = req.body;
+  const query = "UPDATE club_table SET name = :name, type = :type, field = :field, admin = :admin,inrecruitment = :inrecruitment WHERE id = :id";
+  const replacements = {id, name, type, field, admin, inrecruitment};
+
+  runQueryWithResponse(req, res, query, replacements, 200);
+}
+
+// 동아리 삭제
+function deleteClub(req: Request, res: Response) {
+  const {id} = req.body;
+  const query = "DELETE FROM club_table WHERE id = :id";
+  const replacements = {id};
+
+  runQueryWithResponse(req, res, query, replacements, 200);
+}
+
+//동아리 info 컬럼 업데이트
+function updateClubInfo(req: Request, res: Response) {
+  const {club_id, info_id} = req.body;
+  const query = "UPDATE club_table SET info = :info_id WHERE id = :club_id";
+  const replacements = {club_id, info_id};
+
+  runQueryWithResponse(req, res, query, replacements, 200);
 }
 
 export {
-  create,
-  post,
-  info,
-  page,
-  admin,
-  member,
-  request,
-  write,
-  getAllClubs
+  getClub,
+  getClubAdmin,
+  createClub,
+  updateClub,
+  deleteClub,
+  updateClubInfo
 };

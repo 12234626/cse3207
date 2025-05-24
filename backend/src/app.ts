@@ -1,14 +1,9 @@
 import express from "express";
 import cors from "cors";
 
-import syncDB from "./db/init/init";
-import db_router from "./db/routes/index";
-import login_router from "./routes/login";
-import register_router from "./routes/register";
-import main_router from "./routes/main";
-import my_router from "./routes/my";
-import club_router from "./routes/club";
-import uploadRouter from "./db/routes/upload";
+import syncDB from "./init/init";
+import db_router from "./routes/index";
+import uploadRouter from "./routes/upload";
 
 const app = express();
 const HOST: string = process.env.HOST || "localhost";
@@ -34,12 +29,7 @@ app
 })
 // 라우터 설정
 .use("/db", db_router)
-.use("/login", login_router)
-.use("/register", register_router)
-.use("/main", main_router)
-.use("/my", my_router)
-.use("/club", club_router)
-.use("/db/upload", uploadRouter);
+.use("/upload", uploadRouter);
 
 // 데이터베이스 동기화 및 서버 시작
 syncDB()
