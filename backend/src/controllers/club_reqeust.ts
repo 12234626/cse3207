@@ -30,30 +30,11 @@ function createClubRequest(req: Request, res: Response) {
 
 // 동아리 가입 신청 상태 업데이트
 async function updateClubRequestStatus(req: Request, res: Response) {
-  try {
-    const {id, status} = req.body;
-    const query = "UPDATE club_request_table SET status = :status WHERE id = :id";
-    const replacements = {id, status};
-    const results = await fetch(`http://localhost:3000/db/club_request?id=${id}`);
-    const data = await results.json();
-    const {club_id, user_id} = data[0];
-    
-    if (status === "수락") {
-      await fetch(`http://localhost:3000/db/club_member`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({club_id, user_id})
-      });
-    }
-    
-    runQueryWithResponse(req, res, query, replacements, 200);
-  } catch (err) {
-    res
-    .status(500)
-    .json({message: err});
-  }
+  const {id, status} = req.body;
+  const query = "UPDATE club_request_table SET status = :status WHERE id = :id";
+  const replacements = {id, status};
+
+  runQueryWithResponse(req, res, query, replacements, 200);
 }
 
 // 동아리 가입 신청 삭제
