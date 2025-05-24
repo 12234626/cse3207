@@ -7,7 +7,7 @@ async function login(req: Request, res: Response) {
   try {
     const is_valid = (await (await fetch(`http://localhost:3000/db/user?id=${id}&password=${password}`)).json()).length !== 0;
     
-    if (!is_valid) {
+    if (!id || !password || !is_valid) {
       res
       .status(404)
       .json({message: "존재하지 않는 유저 아이디 또는 틀린 비밀번호"});
