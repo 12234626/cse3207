@@ -10,14 +10,19 @@ function FixClub() {
   const userData = localStorage.getItem("user");
   const postData = localStorage.getItem("post");
   let post = postData ? JSON.parse(postData) : {};
-  if (Array.isArray(post)) post = post[0] || {};
+  let storyInit = "";
+  if (Array.isArray(post)) {
+    storyInit = post[0]?.content || "";
+  } else {
+    storyInit = post.content || "";
+  }
+  const [story, setStory] = useState(storyInit);
   const club = clubData ? JSON.parse(clubData) : {};
   const user = userData ? JSON.parse(userData) : {};
 
   // input 상태를 useState로 관리 (초기값: 기존 데이터)
   const [selectedStatus, setSelectedStatus] = useState(club.recruitment || "");
   const [shortIntro, setShortIntro] = useState(club.introduction || "");
-  const [story, setStory] = useState(post.content || "");
 
   // console.log("postData(raw):", postData);
   // console.log("post(parsed):", post);
