@@ -15,17 +15,31 @@ function Event() {
   const [clubName, setClubName] = useState("동아리명을 불러오는 중...");
 
   useEffect(() => {
-    console.log("club_id:", club_id);  // 디버깅용
-    if (!club_id) return;
+    // console.log("club_id:", club_id); // 디버깅용
+    // if (!club_id) return;
 
-    console.log("axios 요청 보냄");  // 디버깅용
-    axios.get(`http://localhost:3000/club/${club_id}/info`) // API 주소를 실제로 바꿔주세요
-      .then(res => {
-        console.log("API 응답:", res.data);  // 이 줄 추가
-        const club = res.data;
+    // console.log("axios 요청 보냄"); // 디버깅용
+    // axios
+    //   .get(`http://localhost:3000/club/${club_id}/info`) // API 주소를 실제로 바꿔주세요
+    //   .then((res) => {
+    //     console.log("API 응답:", res.data); // 이 줄 추가
+    //     const club = res.data;
+    //     setClubName(club.name);
+    //   })
+    //   .catch((err) => {
+    //     console.error("동아리 정보 불러오기 실패:", err);
+    //     // setClubName("동아리명 불러오기 실패");
+    //   });
+
+    console.log("axios 요청 보냄"); // 디버깅용
+    axios
+      .get(`http://localhost:3000/db/club?id=${club_id}`)
+      .then((res) => {
+        console.log("API 응답:", res.data); // 이 줄 추가가
+        const club = res.data[0];
         setClubName(club.name);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("동아리 정보 불러오기 실패:", err);
         setClubName("동아리명 불러오기 실패");
       });
@@ -49,7 +63,8 @@ function Event() {
           <div className="overlap-group">
             <div className="ex">{eventTitle}</div> {/* 홍보글 제목 */}
             <div className="imageBox" />
-            <div className="text-below-view-2">{eventContent}</div> {/* 홍보글 내용 */}
+            <div className="text-below-view-2">{eventContent}</div>{" "}
+            {/* 홍보글 내용 */}
           </div>
         </div>
       </div>
