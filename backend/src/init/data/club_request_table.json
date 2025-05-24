@@ -13,12 +13,12 @@
     },
     {
         "id": 3,
-        "status" : "수락",
+        "status" : "대기",
         "club_id": 111,
         "user_id": 12223701
     },
     {   "id": 4,
-        "status" : "거절",
+        "status" : "대기",
         "club_id": 28,
         "user_id": 12223701
     },
@@ -30,7 +30,7 @@
     },
     {
         "id": 6,
-        "status": "거절",
+        "status": "대기",
         "club_id": 55,
         "user_id": 12234218
     },
@@ -42,7 +42,7 @@
     },
     {
         "id": 8,
-        "status": "수락",
+        "status": "대기",
         "club_id": 88,
         "user_id": 12234218
     },
