@@ -22,9 +22,9 @@ function createPost(req: Request, res: Response) {
 
 // 게시글 업데이트
 function updatePost(req: Request, res: Response) {
-  const {id, title, content, image_set_id} = req.body;
-  const query = "UPDATE post_table SET title = :title, content = :content, image_set_id = :image_set_id WHERE id = :id";
-  const replacements = {id, title, content, image_set_id};
+  const {id, title, content} = req.body;
+  const query = "UPDATE post_table SET title = :title, content = :content WHERE id = :id";
+  const replacements = {id, title, content};
   
   runQueryWithResponse(req, res, query, replacements, 200);
 }
