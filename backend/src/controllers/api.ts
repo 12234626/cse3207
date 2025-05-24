@@ -67,27 +67,6 @@ async function createClub(req: Request, res: Response) {
   }
 }
 
-//동아리 수정
-async function updateClub(req: Request, res: Response) {
-  const {id, recruitment, introduction} = req.body;
-
-  try {
-    await fetch(`http://localhost:3000/db/club`, {
-      method: "PUT",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id, recruitment, introduction})
-    });
-
-    res
-      .status(200)
-      .json({message: "동아리 수정 성공"});
-  } catch (err) {
-    res
-      .status(500)
-      .json({message: err});
-  }
-}
-
 // 동아리 가입 신청 업데이트
 async function updateClubRequest(req: Request, res: Response) {
   const {id, status} = req.body;
