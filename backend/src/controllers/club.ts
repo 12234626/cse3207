@@ -42,9 +42,9 @@ function createClub(req: Request, res: Response) {
 
 // 동아리 업데이트
 function updateClub(req: Request, res: Response) {
-  const {id, name, type, field, admin_user_id, recruitment} = req.body;
-  const query = "UPDATE club_table SET name = :name, type = :type, field = :field, admin_user_id = :admin_user_id, recruitment = :recruitment WHERE id = :id";
-  const replacements = {id, name, type, field, admin_user_id, recruitment};
+  const {id, recruitment, introduction} = req.body;
+  const query = "UPDATE club_table SET recruitment = :recruitment, introduction = :introduction WHERE id = :id";
+  const replacements = {id,recruitment, introduction};
 
   runQueryWithResponse(req, res, query, replacements, 200);
 }
