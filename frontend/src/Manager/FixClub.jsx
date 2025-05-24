@@ -170,30 +170,38 @@ function FixClub() {
 
     try {
       // 동아리 정보 수정 요청
-      await fetch("http://localhost:3000/db/api/club_with_info_post", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          // id: clubId,
-          // // name: clubName,
-          // // type: selectedArea,
-          // // field: selectedField,
-          // // admin_user_id: user.id,
-          // recruitment: selectedStatus,
-          // introduction: shortIntro,
-          // story: story,
-          club_id: clubId,
-          recruitment: selectedStatus,
-          introduction: shortIntro,
-          info_post_id: infoPostId,
-          content: story,
-        }),
-      });
+      const response = await fetch(
+        "http://localhost:3000/api/club_with_info_post",
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            // id: clubId,
+            // // name: clubName,
+            // // type: selectedArea,
+            // // field: selectedField,
+            // // admin_user_id: user.id,
+            // recruitment: selectedStatus,
+            // introduction: shortIntro,
+            // story: story,
+            club_id: clubId,
+            recruitment: selectedStatus,
+            introduction: shortIntro,
+            info_post_id: infoPostId,
+            content: story,
+          }),
+        }
+      );
 
-      alert("동아리 정보가 수정되었습니다!");
-      navigate("/MainDong");
-    } catch (error) {
-      alert("수정 중 오류가 발생했습니다.");
+      if (response.status === 200) {
+        alert("동아리 정보가 수정되었습니다!");
+        navigate("/MainDong");
+      } else {
+        const data = await response.json();
+        alert("수정 실패: " + JSON.stringify(data));
+      }
+    } catch (err) {
+      alert("서버 오류");
     }
   };
 
