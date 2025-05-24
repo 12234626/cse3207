@@ -11,12 +11,16 @@ function Login() {
     navigate("/SignUp");
   };
 
+  const handleImageClick = () => {
+    navigate("/ImageTest");
+  };
   // const handleLoginClick = () => {
   //   navigate("/MainDong");
   // };
 
   const handleLoginClick = async (e) => {
     e.preventDefault();
+
 
     const form = { id, password };
 
@@ -110,6 +114,8 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+                        <button className="imageButton" onClick={handleImageClick}>/</button>
+
             <input
               type="submit"
               className="login"

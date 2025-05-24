@@ -1,0 +1,21 @@
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 300px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ddd;
+  }
+  
+  .preview {
+    width: 80px; /* 👈 더 작게 설정 */
+    height: 80px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid #aaa;
+  }
+  
