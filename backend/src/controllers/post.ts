@@ -7,7 +7,7 @@ import Image from "../models/models/image";
 // 게시글 조회
 function getPost(req: Request, res: Response) {
   Post
-  .findAll({where: req.query, include: [{model: Club}, {model: Image}]})
+  .findAll({where: req.query, include: [{model: Club, as: "club"}, {model: Image, as: "image"}]})
   .then(function (data) {
     res
     .status(200)
@@ -31,7 +31,7 @@ function getPostByClub(req: Request, res: Response) {
   })
   .then(function (data) {
     Post
-    .findAll({where: {club_id: data}, include: [{model: Club}, {model: Image}]})
+    .findAll({where: {club_id: data}, include: [{model: Club, as: "club"}, {model: Image, as: "image"}]})
     .then(function (data) {
       res
       .status(200)
@@ -49,6 +49,8 @@ function getPostByClub(req: Request, res: Response) {
 function createPost(req: Request, res: Response) {
   const {type, title, content, club_id, image_id} = req.body;
   
+  console.log(req.body);
+
   Post
   .create({type, title, content, club_id, image_id})
   .then(function (data) {

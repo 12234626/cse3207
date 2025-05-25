@@ -7,7 +7,7 @@ import Club from "../models/models/club";
 // 동아리 회원 조회
 function getClubMember(req: Request, res: Response) {
   ClubMember
-  .findAll({where: req.query, include: [{model: User}, {model: Club}]})
+  .findAll({where: req.query, include: [{model: User, as: "user"}, {model: Club, as: "club"}]})
   .then(function (data) {
     res
     .status(200)
@@ -31,7 +31,7 @@ function getClubMemberByUser(req: Request, res: Response) {
   })
   .then(function (data) {
     ClubMember
-    .findAll({where: {user_id: data}, include: [{model: User}, {model: Club}]})
+    .findAll({where: {user_id: data}, include: [{model: User, as: "user"}, {model: Club, as: "club"}]})
     .then(function (data) {
       res
       .status(200)

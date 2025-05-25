@@ -7,7 +7,7 @@ import Club from "../models/models/club";
 // 동아리 가입 신청 조회
 function getClubRequest(req: Request, res: Response) {
   ClubRequest
-  .findAll({where: req.query, include: [{model: User}, {model: Club}]})
+  .findAll({where: req.query, include: [{model: User, as: "user"}, {model: Club, as: "club"}]})
   .then(function (data) {
     res
     .status(200)

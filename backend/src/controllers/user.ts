@@ -6,7 +6,7 @@ import Image from "../models/models/image";
 // 유저 조회
 function getUser(req: Request, res: Response) {
   User
-  .findAll({where: req.query, include: [{model: Image}]})
+  .findAll({where: req.query, include: [{model: Image, as: "image"}]})
   .then(function (data) {
     res
     .status(200)
