@@ -17,7 +17,7 @@ function MainH() {
         postsData.map(async (post) => {
           if (post.image_id) {
             try {
-              const imgRes = await axios.get(`http://localhost:3000/api/image_url?id=${post.image_id}`);
+              const imgRes = await axios.get(`http://localhost:3000/api/image?id=${post.image_id}`);
               const imageUrl = imgRes.data[0]; // 응답이 배열이므로 첫 번째 URL 꺼내기
       
               console.log("이미지 URL:", imageUrl);
