@@ -1,4 +1,6 @@
-import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AllowNull} from "sequelize-typescript";
+import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AllowNull, BeforeCreate, BeforeUpdate} from "sequelize-typescript";
+import crypto from "crypto";
+import dotenv from "dotenv";
 
 import Image from "./image";
 
@@ -17,7 +19,7 @@ class User extends Model {
 
   // 유저 비밀번호
   @AllowNull(false)
-  @Column({type: DataType.STRING(50)})
+  @Column({type: DataType.STRING(128)})
   public password!: string;
 
   // 유저 학과
@@ -35,10 +37,19 @@ class User extends Model {
   public phone!: string;
 
   // 이미지 세트 (프로필)
-  // @BelongsTo(() => Image, {foreignKey: "image_id", as: "image", onDelete: "SET NULL"})
+  @BelongsTo(() => Image, {foreignKey: "image_id", as: "image", onDelete: "SET NULL"})
   @AllowNull(true)
-  @Column({type: DataType.INTEGER.UNSIGNED, defaultValue: 0})
+  @Column({type: DataType.INTEGER.UNSIGNED, defaultValue: null})
   public image_id?: number;
+
+  // // 비밀번호 암호화
+  // @BeforeCreate
+  // @BeforeUpdate
+  // static hashPassword(instance: User) {
+  //   if (instance.changed("password")) {
+  //     instance.password = crypto.createHash("sha512").update(instance.password).digest("hex");
+  //   }
+  // }
 };
 
 export default User;
