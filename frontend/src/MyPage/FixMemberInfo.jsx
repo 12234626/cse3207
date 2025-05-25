@@ -44,7 +44,7 @@ function FixMemberInfo() {
     const formData = new FormData();
     formData.append("image", file);
 
-    const res = await fetch("http://localhost:3000/db/image", {
+    const res = await fetch("http://localhost:3000/db/upload", {
       method: "POST",
       body: formData,
     });
@@ -70,9 +70,7 @@ function FixMemberInfo() {
     // setProfileImage(imageUrl);
     const uploaded = await handleImageUpload(file);
     if (uploaded) {
-      setProfileImage(
-        `http://localhost:3000${uploaded.imageUrl}?t=${new Date().getTime()}`
-      );
+      setProfileImage(`http://localhost:3000${uploaded.imageUrl}`);
       setImageId(uploaded.imageId);
     }
   };
