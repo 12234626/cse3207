@@ -30,9 +30,9 @@ function checkUserPassword(req: Request, res: Response) {
 
 // 유저 업데이트
 function updateUser(req: Request, res: Response) {
-  const {id, name, password, department, phone} = req.body;
-  const query = "UPDATE user_table SET name = :name, password = :password, department = :department, phone = :phone WHERE id = :id";
-  const replacements = {id, name, password, department, phone};
+  const {id, name, password, department, phone, image_id} = req.body;
+  const query = "UPDATE user_table SET name = :name, password = :password, department = :department, phone = :phone, image_id = :image_id WHERE id = :id";
+  const replacements = {id, name, password, department, phone, image_id};
 
   runQueryWithResponse(req, res, query, replacements, 200);
 }

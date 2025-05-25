@@ -141,8 +141,8 @@ async function getImageUrl(req: Request, res: Response) {
     .then(function (data) {
       res
       .status(200)
-      .json(data.map(function (path: string) {
-        return `http://localhost:3000/${path}`;
+      .json(data.map(function (image: {path: string}) {
+        return `http://localhost:3000/${image.path}`;
       }));
     });
   } catch (err) {
@@ -169,6 +169,40 @@ async function createImage(req: Request, res: Response) {
       res
       .status(201)
       .json(data);
+    });
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
+
+// 유저 업데이트
+async function updateUser(req: Request, res: Response) {
+  try {
+    const {id, name, password, department, phone} = req.body;
+    const {path} = req.file as any;
+
+    const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({path})
+    })).json();
+
+    await fetch(`http://localhost:3000/db/user`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({id, name, password, department, phone, image_id})
+    });
+
+    fetch(`http://localhost:3000/db/user?id=${id}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(200)
+      .json(data[0]);
     });
   } catch (err) {
     res
@@ -212,9 +246,10 @@ async function createPost(req: Request, res: Response) {
 export {
   login,
   createClub,
-  updateClubRequest,
   updateClubWithInfoPost,
+  updateClubRequest,
   getImageUrl,
   createImage,
+  updateUser,
   createPost
 };
