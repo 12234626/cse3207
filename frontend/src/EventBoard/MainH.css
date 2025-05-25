@@ -60,7 +60,6 @@
   position: absolute;
   top: 0;
   width: 123px;
-  
 }
 
 .screen .hongBoPostY {
@@ -96,7 +95,6 @@
   position: absolute;
   top: 0;
   width: 123px;
-
 }
 
 .screen .clubPostN {
@@ -136,7 +134,7 @@
 }
 
 .screen .hongBoList {
-  height: 728px;
+  height: 722px;
   left: 6px;
   position: relative;
   top: 6px;
