@@ -107,6 +107,17 @@ function CreateClub() {
   const [fieldDropdownOpen, setFieldDropdownOpen] = useState(false);
   const [statusDropdownOpen, setStatusDropdownOpen] = useState(false);
 
+  const [image, setImage] = useState(null);
+const [previewUrl, setPreviewUrl] = useState(null);
+
+const handleImageChange = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    setImage(file);
+    setPreviewUrl(URL.createObjectURL(file));
+  }
+};
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -156,26 +167,45 @@ function CreateClub() {
         alert("로그인이 필요합니다.");
         return;
       }
-
-      await fetch("http://localhost:3000/api/create_club", {
+      const formData = new FormData();
+      formData.append("title", clubName + " 상세 설명");
+      formData.append("content", story);
+      if (image) {
+        formData.append("image", image);
+      }
+      const postResponse = await fetch("http://localhost:3000/api/post", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: clubName,
-          type: selectedArea,
-          field: selectedField,
-          recruitment: selectedStatus,
-          introduction: shortIntro,
-          admin_user_id: user.id,
-          title: clubName + " 상세 설명",
-          content: story,
-        }),
+        body: formData,
       });
+      if (!postResponse.ok) {
+        throw new Error("상세 설명 생성 실패");
+      }
+
+      const postResult = await postResponse.json();
+    // postResult에서 id(post_id)와 image_id를 받아야 함
+    const postId = postResult.id;  // 서버가 반환하는 값 확인 필요
+    const imageId = postResult.image_id; // 예시
+
+
+    const clubResponse = await fetch("http://localhost:3000/api/create_club", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: clubName,
+        type: selectedArea,
+        field: selectedField,
+        recruitment: selectedStatus,
+        introduction: shortIntro,
+        admin_user_id: user.id,
+        info_post_id: postId,  // post id 넣어주기
+      }),
+    });
 
       alert("동아리가 성공적으로 생성되었습니다!");
       navigate("/MainDong");
     } catch (error) {
       alert("동아리 생성 중 오류가 발생했습니다.");
+      console.error(error);
     }
   };
 
@@ -282,7 +312,23 @@ function CreateClub() {
           </div>
 
           <div className="imageAndInputs">
-            <input type="text" className="ImagePlus" placeholder="+" />
+  
+          <input
+            type="file"
+            accept="image/*"
+            id="imageInput"
+            onChange={handleImageChange}
+            style={{ display: "none" }}
+          />
+         <label htmlFor="imageInput" className="ImagePlus">
+          {previewUrl ? (
+            <img src={previewUrl} alt="미리보기" className="imagePreview" />
+          ) : (
+            "+"
+          )}
+        </label>
+        
+
             <div className="inputsWrapper">
               <input
                 type="text"
