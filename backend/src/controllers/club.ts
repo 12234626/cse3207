@@ -6,7 +6,7 @@ import User from "../models/models/user";
 // 동아리 조회
 function getClub(req: Request, res: Response) {
   Club
-  .findAll({where: req.query, include: [{model: User, as: "user"}]})
+  .findAll({where: req.query, include: [{model: User}]})
   .then(function (data) {
     res
     .status(200)

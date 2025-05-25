@@ -7,7 +7,7 @@ import Post from "../models/models/post";
 // 동아리 상세 설명 게시글 조회
 function getClubInfoPost(req: Request, res: Response) {
   ClubInfoPost
-  .findAll({where: req.query, include: [{model: Club, as: "club"}, {model: Post, as: "post"}]})
+  .findAll({where: req.query, include: [{model: Club}, {model: Post}]})
   .then(function (data) {
     res
     .status(200)
