@@ -1,11 +1,12 @@
 import {Request, Response} from "express";
 
 import User from "../models/models/user";
+import Image from "../models/models/image";
 
 // 유저 조회
 function getUser(req: Request, res: Response) {
   User
-  .findAll({where: req.query})
+  .findAll({where: req.query, include: [{model: Image}]})
   .then(function (data) {
     res
     .status(200)

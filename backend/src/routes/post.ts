@@ -1,6 +1,6 @@
 import {Router} from "express";
 
-import {getPost, createPost, updatePost, deletePost} from "../controllers/post";
+import {getPost, getPostByClub, createPost, updatePost, deletePost} from "../controllers/post";
 
 // 게시글 데이터베이스 라우터
 const post_router = Router();
@@ -8,6 +8,8 @@ const post_router = Router();
 post_router
 // 게시글 조회
 .get("/", getPost)
+// 동아리 게시글 조회
+.get("/club", getPostByClub)
 // 게시글 생성
 .post("/", createPost)
 // 게시글 수정

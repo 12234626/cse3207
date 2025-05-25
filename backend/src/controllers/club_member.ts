@@ -1,56 +1,89 @@
 import {Request, Response} from "express";
 
-import {buildWhereClause, runQueryWithResponse} from "../utils/controller";
+import ClubMember from "../models/models/club_member";
+import User from "../models/models/user";
+import Club from "../models/models/club";
 
 // 동아리 회원 조회
 function getClubMember(req: Request, res: Response) {
-  const {where, replacements} = buildWhereClause(req.query, "club_member_table");
-  const query = `
-    SELECT 
-      club_member_table.club_id,
-      user_table.id AS user_id,
-      user_table.name,
-      user_table.department
-    FROM club_member_table
-      JOIN user_table ON club_member_table.user_id = user_table.id` + where;
-  
-  runQueryWithResponse(req, res, query, replacements, 200);
+  ClubMember
+  .findAll({where: req.query, include: [{model: User}, {model: Club}]})
+  .then(function (data) {
+    res
+    .status(200)
+    .json(data);
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
 }
 
-// 유저 아이디로 동아리 조회
-function getClubByUserId(req: Request, res: Response) {
-  const {user_id} = req.params;
-  const query = `
-    SELECT club_table.*
-    FROM club_member_table
-      JOIN club_table ON club_member_table.club_id = club_table.id
-    WHERE club_member_table.user_id = :user_id`;
-  const replacements = {user_id};
-  
-  runQueryWithResponse(req, res, query, replacements, 200);
+// 유저로 동아리 회원 조회
+function getClubMemberByUser(req: Request, res: Response) {
+  User
+  .findAll({where: req.query})
+  .then(function (data) {
+    return data.map(function (data) {
+      return data.id;
+    });
+  })
+  .then(function (data) {
+    ClubMember
+    .findAll({where: {user_id: data}, include: [{model: User}, {model: Club}]})
+    .then(function (data) {
+      res
+      .status(200)
+      .json(data);
+    });
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
 }
 
 // 동아리 회원 생성
 function createClubMember(req: Request, res: Response) {
   const {club_id, user_id} = req.body;
-  const query = "INSERT INTO club_member_table (club_id, user_id) VALUES (:club_id, :user_id)";
-  const replacements = {club_id, user_id};
-
-  runQueryWithResponse(req, res, query, replacements, 201);
+  
+  ClubMember
+  .create({club_id, user_id})
+  .then(function (data) {
+    res
+    .status(201)
+    .json(data);
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
 }
 
 // 동아리 회원 삭제
 function deleteClubMember(req: Request, res: Response) {
   const {user_id, club_id} = req.body;
-  const query = "DELETE FROM club_member_table WHERE user_id = :user_id AND club_id = :club_id";
-  const replacements = {user_id, club_id};
-
-  runQueryWithResponse(req, res, query, replacements, 200);
+  
+  ClubMember
+  .destroy({where: {user_id, club_id}})
+  .then(function (data) {
+    res
+    .status(200)
+    .json(data);
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
 }
 
 export {
   getClubMember,
-  getClubByUserId,
+  getClubMemberByUser,
   createClubMember,
   deleteClubMember
 };

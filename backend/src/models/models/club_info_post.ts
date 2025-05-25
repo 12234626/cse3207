@@ -20,7 +20,7 @@ class ClubInfoPost extends Model {
 
   // 게시글 아이디
   @Unique
-  @BelongsTo(() => Post, {foreignKey: "info_post_id", as: "info_post", onDelete: "CASCADE"})
+  @BelongsTo(() => Post, {foreignKey: "info_post_id", as: "post", onDelete: "CASCADE"})
   @Column({type: DataType.INTEGER.UNSIGNED})
   public info_post_id!: number;
 }

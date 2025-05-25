@@ -1,49 +1,77 @@
 import {Request, Response} from "express";
 
-import {buildWhereClause, runQueryWithResponse} from "../utils/controller";
+import ClubInfoPost from "../models/models/club_info_post";
+import Club from "../models/models/club";
+import Post from "../models/models/post";
 
 // 동아리 상세 설명 게시글 조회
 function getClubInfoPost(req: Request, res: Response) {
-  const {where, replacements} = buildWhereClause(req.query, "club_info_post_table");
-  const query = `
-    SELECT *
-    FROM club_info_post_table` + where;
-
-  runQueryWithResponse(req, res, query, replacements, 200);
+  ClubInfoPost
+  .findAll({where: req.query, include: [{model: Club}, {model: Post}]})
+  .then(function (data) {
+    res
+    .status(200)
+    .json(data);
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
 }
 
 // 동아리 상세 설명 게시글 생성
 function createClubInfoPost(req: Request, res: Response) {
   const {club_id, info_post_id} = req.body;
-  const query = `
-    INSERT INTO club_info_post_table (club_id, info_post_id)
-    VALUES (:club_id, :info_post_id)`;
-  const replacements = {club_id, info_post_id};
-
-  runQueryWithResponse(req, res, query, replacements, 201);
+  
+  ClubInfoPost
+  .create({club_id, info_post_id})
+  .then(function (data) {
+    res
+    .status(201)
+    .json(data);
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
 }
 
 // 동아리 상세 설명 게시글 업데이트
 function updateClubInfoPost(req: Request, res: Response) {
   const {id, club_id, info_post_id} = req.body;
-  const query = `
-    UPDATE club_info_post_table
-    SET club_id = :club_id, info_post_id = :info_post_id
-    WHERE id = :id`;
-  const replacements = {id, club_id, info_post_id};
-
-  runQueryWithResponse(req, res, query, replacements, 200);
+  
+  ClubInfoPost
+  .update({club_id, info_post_id}, {where: {id}})
+  .then(function (data) {
+    res
+    .status(200)
+    .json(data);
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
 }
 
 // 동아리 상세 설명 게시글 삭제
 function deleteClubInfoPost(req: Request, res: Response) {
   const {id} = req.body;
-  const query = `
-    DELETE FROM club_info_post_table
-    WHERE id = :id`;
-  const replacements = {id};
-
-  runQueryWithResponse(req, res, query, replacements, 200);
+  
+  ClubInfoPost
+  .destroy({where: {id}})
+  .then(function (data) {
+    res
+    .status(200)
+    .json(data);
+  })
+  .catch(function (err) {
+    res
+    .status(500)
+    .json({message: err});
+  });
 }
 
 

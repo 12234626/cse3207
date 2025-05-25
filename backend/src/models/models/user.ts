@@ -1,4 +1,4 @@
-import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AllowNull, BeforeCreate, BeforeUpdate, BeforeBulkCreate, BeforeBulkUpdate} from "sequelize-typescript";
+import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AllowNull, BeforeCreate, BeforeUpdate} from "sequelize-typescript";
 import crypto from "crypto";
 
 import Image from "./image";
