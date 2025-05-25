@@ -118,6 +118,7 @@
   left: 22px;
   top: 56px;
   width: 350px;
+  border-radius: 8px; 
 }
 
 .text-below-view-2 {
@@ -133,9 +134,9 @@
   border-radius: 10px;
 }
 
-.eventImage {
+.imageBox .eventImage {
   width: 100%;       /* 부모 크기에 맞게 */
-  height: auto;      /* 비율 유지 */
+  height: 100%;      /* 비율 유지 */
   border-radius: 8px; /* 예쁜 둥근 테두리 */
   object-fit: cover; /* 이미지 자르기 조절 */
 }
