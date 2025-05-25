@@ -3,5 +3,25 @@
     "id": 0,
     "set_id": 0,
     "path": "public/images/default_profile.jpg"
+  },
+  {
+    "id": 1,
+    "set_id": 1,
+    "path": "garo_info.jpg"
+  },
+  {
+    "id": 2,
+    "set_id": 2,
+    "path": "event_test.jpg"
+  },
+  {
+    "id": 3,
+    "set_id": 3,
+    "path": "notice_test.jpg"
+  },
+  {
+    "id": 4,
+    "set_id": 4,
+    "path": "info_test.jpg"
   }
 ]

@@ -195,19 +195,25 @@
   width: 243px;
   height: 100px;
 }
-
-.screen .hongBoImage {
+.hongBoImage {
   background-color: #899ec7;
   height: 89px;
-  left: 279px;
+  width: 89px;
   position: absolute;
   top: 45px;
-  width: 89px;
+  left: 279px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
+.hongBoImage.hasImage {
+  background-color: transparent;
+}
 
-.thumbnail {
-  width: 100px;
-  height: auto;
+.hongBoImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 8px;
+  display: block;
 }
