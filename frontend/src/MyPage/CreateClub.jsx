@@ -177,17 +177,31 @@ const handleImageChange = (e) => {
         method: "POST",
         body: formData,
       });
+
       if (!postResponse.ok) {
-        throw new Error("상세 설명 생성 실패");
+      // 서버가 404 등 실패 응답을 줄 때
+      if (postResponse.status === 404) {
+        alert("상세 설명 API를 찾을 수 없습니다. (404)");
+      } else {
+        alert("상세 설명 생성 실패: " + postResponse.statusText);
       }
+      return;
+    }
+    
 
       const postResult = await postResponse.json();
     // postResult에서 id(post_id)와 image_id를 받아야 함
+
+    if (!postResult || postResult.id === 404) {
+      alert("상세 설명 생성에 실패했습니다. (id가 404임)");
+      return;
+    }
+    
     const postId = postResult.id;  // 서버가 반환하는 값 확인 필요
     const imageId = postResult.image_id; // 예시
 
 
-    const clubResponse = await fetch("http://localhost:3000/api/create_club", {
+    const clubResponse = await fetch("http://localhost:3000/api/club", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
