@@ -141,8 +141,8 @@ async function getImageUrl(req: Request, res: Response) {
     .then(function (data) {
       res
       .status(200)
-      .json(data.map(function (path: string) {
-        return `http://localhost:3000/${path}`;
+      .json(data.map(function (image: {path: string}) {
+        return `http://localhost:3000/${image.path}`;
       }));
     });
   } catch (err) {
@@ -176,6 +176,11 @@ async function createImage(req: Request, res: Response) {
     .json({message: err});
   }
 }
+
+// // 게시글 조회
+// async function getPost(req: Request, res: Response) {
+//   try {
+//     const posts 
 
 // 게시글 생성
 async function createPost(req: Request, res: Response) {
