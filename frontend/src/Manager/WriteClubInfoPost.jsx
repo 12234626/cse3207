@@ -9,9 +9,10 @@ function WriteClubInfoPost({ initialPostId = null, initialTitle = "", initialCon
   const [title, setTitle] = useState(initialTitle);
   const [content, setContent] = useState(initialContent);
   const [postId, setPostId] = useState(initialPostId);
+  const [image, setImage] = useState(null); // 이미지 파일
+  const [preview, setPreview] = useState(null); // 이미지 미리보기
 
   useEffect(() => {
-    // 편집 모드라면 초기값 세팅 (필요 시)
     if (initialPostId) {
       setPostId(initialPostId);
       setTitle(initialTitle);
@@ -37,49 +38,21 @@ function WriteClubInfoPost({ initialPostId = null, initialTitle = "", initialCon
         return;
       }
 
-      if (postId) {
-        // 수정 모드
-        await axios.put(
-          "http://localhost:3000/db/post",
-          {
-            id: postId,
-            title,
-            content,
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        alert("게시글이 수정되었습니다.");
-        navigate("/JoinedClub");
-        return;
+      const formData = new FormData();
+      formData.append("type", "공지");
+      formData.append("title", title);
+      formData.append("content", content);
+      formData.append("club_id", club.id);
+
+      if (image) {
+        formData.append("image", image);
       }
 
-      // 새 글 작성
-      const postResponse = await axios.post(
-        "http://localhost:3000/db/post",
-        {
-          type: "공지",
-          title,
-          content,
-          club_id: club.id,
+      await axios.post("http://localhost:3000/api/post", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-
-      const newPostId = postResponse.data;
-      
-      if (!newPostId) {
-        alert("게시글 생성 실패: postId가 없습니다.");
-        return;
-      }
+      });
 
       alert("글 작성이 완료되었습니다!");
       navigate("/JoinedClub");
@@ -93,6 +66,14 @@ function WriteClubInfoPost({ initialPostId = null, initialTitle = "", initialCon
     navigate("/WriteHongboPost");
   };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+      setPreview(URL.createObjectURL(file));
+    }
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -103,7 +84,22 @@ function WriteClubInfoPost({ initialPostId = null, initialTitle = "", initialCon
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />
-          <input type="text" className="clubImgInput" placeholder="+" disabled />
+
+          <label htmlFor="imageUpload" className="clubImgInput">
+            {preview ? (
+              <img src={preview} alt="미리보기" className="previewImage" />
+            ) : (
+              "+"
+            )}
+          </label>
+          <input
+            id="imageUpload"
+            type="file"
+            accept="image/*"
+            style={{ display: "none" }}
+            onChange={handleImageChange}
+          />
+
           <input
             type="text"
             className="postNameInput"
