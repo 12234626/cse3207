@@ -211,6 +211,34 @@ async function updateUser(req: Request, res: Response) {
   }
 }
 
+// 게시글 조회
+async function getPost(req: Request, res: Response) {
+  try {
+    const params = new URLSearchParams(req.query as any).toString();
+    
+    fetch(`http://localhost:3000/db/post${params ? "?" + params : ""}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(200)
+      .json(data.map(async function (post: {image_id: number}) {
+        return {
+          ...post,
+          image_url: await fetch(`http://localhost:3000/api/image_url?id=${post.image_id}`)
+            .then(function (response) {
+              return response.json();
+            })
+          }
+        }))
+      }
+    );
+  } catch (err) {
+    res.status(500).json({message: err});
+  }
+}
+
 // 게시글 생성
 async function createPost(req: Request, res: Response) {
   try {
@@ -251,5 +279,6 @@ export {
   getImageUrl,
   createImage,
   updateUser,
-  createPost
+  createPost,
+  getPost
 };

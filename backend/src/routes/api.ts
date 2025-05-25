@@ -2,8 +2,7 @@ import {Router} from "express";
 import multer from "multer";
 import {v4} from "uuid";
 
-import {createClub, createImage, createPost, getImageUrl, login, updateClubRequest, updateClubWithInfoPost, updateUser} from "../controllers/api.js";
-
+import {login, createClub, updateClubRequest, updateClubWithInfoPost, getImageUrl, createImage, updateUser, getPost, createPost} from "../controllers/api";
 const api_router = Router();
 const image = multer({
   storage: multer.diskStorage({
@@ -32,6 +31,8 @@ api_router
 .post("/image", createImage)
 // 유저 업데이트
 .put("/user", updateUser)
+// 게시글 조회
+.get("/post", getPost)
 // 게시글 생성
 .post("/post", image.single("image"), createPost);
 
