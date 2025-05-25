@@ -24,7 +24,7 @@ function MyClubList() {
     const fetchJoinedClubs = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/db/club_member/user_id/${user.id}`
+          `http://localhost:3000/db/club_member/user?id=${user.id}`
         );
         const data = await response.json();
         setClubs(data);

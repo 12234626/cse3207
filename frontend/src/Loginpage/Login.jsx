@@ -53,7 +53,7 @@ function Login() {
           // navigate("/MainDong");
           if (!data.club) {
             const clubRes = await fetch(
-              `http://localhost:3000/db/club_member/user_id/${data.id}`
+              `http://localhost:3000/db/club_member/user?id=${data.id}`
             );
             const clubList = await clubRes.json();
             if (clubList.length > 0) {

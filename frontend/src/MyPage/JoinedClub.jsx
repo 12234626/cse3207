@@ -50,7 +50,7 @@ function JoinedClub() {
 
         const detailPost = data.find((post) => post.type === "상세 설명");
         if (detailPost) {
-          setClubName(detailPost.club_name);
+          setClubName(detailPost.club.name);
           localStorage.setItem("post", JSON.stringify(detailPost));
         } else {
           setClubName(club.name);

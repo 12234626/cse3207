@@ -85,7 +85,7 @@ function RequestList() {
                 <div className="requestName">{member.name}</div>
                 <div className="requestInfo">
                   {member.department} <br />
-                  {member.user_id}
+                  {member.user.id}
                 </div>
                 <button
                   className="refusal"

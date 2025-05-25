@@ -21,10 +21,10 @@ function MemberList() {
       const response = await fetch("http://localhost:3000/db/club_member", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ club_id: club.id, user_id: member.user_id }),
+        body: JSON.stringify({ club_id: club.id, user_id: member.user.id }),
       });
       if (response.ok) {
-        setMembers(members.filter((m) => m.user_id !== member.user_id));
+        setMembers(members.filter((m) => m.user.id !== member.user.id));
       } else {
         alert("삭제 실패");
       }
@@ -61,7 +61,7 @@ function MemberList() {
               <div className="member">
                 <div className="memberName">{member.name}</div>
                 <div className="memberInfo">
-                  {member.department} {member.user_id}
+                  {member.department} {member.user.id}
                 </div>
                 <button className="delete" onClick={() => handleDelete(member)}>
                   삭제
