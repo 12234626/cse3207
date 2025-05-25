@@ -177,6 +177,31 @@ async function createImage(req: Request, res: Response) {
   }
 }
 
+// 유저 조회
+async function getUser(req: Request, res: Response) {
+  try {
+    const params = new URLSearchParams(req.query as any).toString();
+    
+    fetch(`http://localhost:3000/db/user${params ? "?" + params : ""}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(async function (data) {
+      res
+      .status(200)
+      .json(await Promise.all(data.map(async function (user: {image_id: number}) {
+        const image_url = (await (await fetch(`http://localhost:3000/api/image_url?id=${user.image_id}`)).json())[0];
+
+        return {...user, image_url};
+      })));
+    });
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
+
 // 유저 업데이트
 async function updateUser(req: Request, res: Response) {
   try {
@@ -275,7 +300,8 @@ export {
   updateClubRequest,
   getImageUrl,
   createImage,
+  getUser,
   updateUser,
-  createPost,
-  getPost
+  getPost,
+  createPost
 };
