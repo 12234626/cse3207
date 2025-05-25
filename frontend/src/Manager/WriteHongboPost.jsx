@@ -42,7 +42,7 @@ function WriteHongboPost() {
         const formData = new FormData();
         formData.append("image", image);
 
-        const imageRes = await axios.post("http://localhost:3000/upload", formData, {
+        const imageRes = await axios.post("http://localhost:3000/api/create_post", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
 
