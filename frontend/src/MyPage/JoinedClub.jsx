@@ -47,8 +47,15 @@ function JoinedClub() {
         );
         const data = await response.json();
         setNoticePosts(data);
-        if (data.length > 0) setClubName(data[0].club_name);
-        else setClubName(club.name);
+
+        const detailPost = data.find((post) => post.type === "상세 설명");
+        if (detailPost) {
+          setClubName(detailPost.club_name);
+          localStorage.setItem("post", JSON.stringify(detailPost));
+        } else {
+          setClubName(club.name);
+          localStorage.removeItem("post");
+        }
       } catch (error) {
         console.error("가입한 동아리 불러오기 실패", error);
       }
@@ -86,16 +93,19 @@ function JoinedClub() {
 
   const handleNoticeClick = (noticeId) => {
     navigate(`/notice-club/${noticeId}`); // 공지 ID를 URL에 포함
-  }
+  };
 
   return (
     <div className="screen">
       <div className="phoneScreen">
         <div className="myClubPosts">
           {posts.map((post, index) => (
-            <div key={index} className="element"onClick={() => handleNoticeClick(post.id)} // 공지 클릭 시 이동
-            style={{ cursor: "pointer" }} // 클릭 가능한 스타일 추가
-          >
+            <div
+              key={index}
+              className="element"
+              onClick={() => handleNoticeClick(post.id)} // 공지 클릭 시 이동
+              style={{ cursor: "pointer" }} // 클릭 가능한 스타일 추가
+            >
               <div className="myClubPost">
                 <div className="myClubPostName">{post.title}</div>
               </div>

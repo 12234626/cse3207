@@ -9,13 +9,38 @@ function FixClub() {
   const clubData = localStorage.getItem("club");
   const userData = localStorage.getItem("user");
   const postData = localStorage.getItem("post");
-  let post = postData ? JSON.parse(postData) : {};
+  let infoPostId = "";
   let storyInit = "";
-  if (Array.isArray(post)) {
-    storyInit = post[0]?.content || "";
-  } else {
-    storyInit = post.content || "";
+  // if (postData) {
+  //   try {
+  //     const parsed = JSON.parse(postData);
+  //     if (Array.isArray(parsed)) {
+  //       infoPostId = parsed[0]?.id || "";
+  //       storyInit = parsed[0]?.content || "";
+  //     } else if (parsed && typeof parsed === "object") {
+  //       infoPostId = parsed.id || "";
+  //       storyInit = parsed.content || "";
+  //     }
+  //   } catch (e) {
+  //     infoPostId = "";
+  //     storyInit = "";
+  //   }
+  // }
+
+  console.log("postData(raw):", postData);
+  if (postData) {
+    try {
+      const parsed = JSON.parse(postData);
+      infoPostId = parsed.id || "";
+      storyInit = parsed.content || "";
+    } catch (e) {
+      infoPostId = "";
+      storyInit = "";
+    }
   }
+  console.log("infoPostId:", infoPostId);
+  console.log("storyInit:", storyInit);
+
   const [story, setStory] = useState(storyInit);
   const club = clubData ? JSON.parse(clubData) : {};
   const user = userData ? JSON.parse(userData) : {};
@@ -161,8 +186,19 @@ function FixClub() {
 
   const handleokClick = async () => {
     const clubId = club.id;
-    const infoPostId = post.id;
+    // const infoPostId = post.id;
 
+    // alert("infoPostId:", infoPostId);
+    // alert("story:", story);
+
+    const requestBody = {
+      club_id: clubId,
+      recruitment: selectedStatus,
+      introduction: shortIntro,
+      info_post_id: infoPostId,
+      content: story,
+    };
+    alert("요청 body:\n" + JSON.stringify(requestBody, null, 2));
     if (!clubId || !user) {
       alert("동아리 정보 또는 로그인 정보가 없습니다.");
       return;
@@ -194,6 +230,14 @@ function FixClub() {
       );
 
       if (response.status === 200) {
+        const detailRes = await fetch(
+          `http://localhost:3000/db/club/post?club_id=${clubId}`
+        );
+        const detailData = await detailRes.json();
+        const detailPost = detailData.find((post) => post.type === "상세 설명");
+        if (detailPost) {
+          localStorage.setItem("post", JSON.stringify(detailPost));
+        }
         alert("동아리 정보가 수정되었습니다!");
         navigate("/MainDong");
       } else {
