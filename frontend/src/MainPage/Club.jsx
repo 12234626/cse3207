@@ -28,7 +28,7 @@ function Club() {
 
           if (detailPost.image_id) {
             try {
-              const imgRes = await axios.get(`http://localhost:3000/api/image_url?id=${detailPost.image_id}`);
+              const imgRes = await axios.get(`http://localhost:3000/api/image?id=${detailPost.image_id}`);
               const imageUrl = imgRes.data[0]; // 응답이 배열이라면
               setDetailImageUrl(imageUrl);
               console.log("상세 설명 이미지 URL:", imageUrl);

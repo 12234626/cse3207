@@ -35,7 +35,7 @@ function NoticeClub() {
 
           if (notice.image_id) {
             try {
-              const imgRes = await fetch(`http://localhost:3000/api/image_url?id=${notice.image_id}`);
+              const imgRes = await fetch(`http://localhost:3000/api/image?id=${notice.image_id}`);
               const imgData = await imgRes.json();
               const imageUrl = imgData[0]; // 배열에서 첫 번째 URL 사용
               setNoticeImageUrl(imageUrl);

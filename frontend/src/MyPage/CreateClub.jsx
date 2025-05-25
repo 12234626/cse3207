@@ -161,6 +161,12 @@ const handleImageChange = (e) => {
       alert("모든 항목을 입력해 주세요.");
       return;
     }
+
+    if (!image) {
+      alert("동아리 이미지를 업로드해 주세요.");
+      return;
+    }
+
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       if (!user) {
@@ -168,52 +174,30 @@ const handleImageChange = (e) => {
         return;
       }
       const formData = new FormData();
+      formData.append("name", clubName);
+      formData.append("type", selectedArea);
+      formData.append("field", selectedField);
+      formData.append("recruitment", selectedStatus);
+      formData.append("introduction", shortIntro);
+      formData.append("admin_user_id", user.id);
       formData.append("title", clubName + " 상세 설명");
       formData.append("content", story);
       if (image) {
         formData.append("image", image);
       }
-      const postResponse = await fetch("http://localhost:3000/api/post", {
+      
+      const response = await fetch("http://localhost:3000/api/club", {
         method: "POST",
         body: formData,
       });
 
-      if (!postResponse.ok) {
-      // 서버가 404 등 실패 응답을 줄 때
-      if (postResponse.status === 404) {
-        alert("상세 설명 API를 찾을 수 없습니다. (404)");
-      } else {
-        alert("상세 설명 생성 실패: " + postResponse.statusText);
+      if (!response.ok) {
+        const errorText = await response.text(); // 응답 내용 확인
+        console.error("서버 응답 상태:", response.status);
+        console.error("서버 응답 내용:", errorText);
+        alert("동아리 생성 실패: " + response.statusText);
+        return;
       }
-      return;
-    }
-    
-
-      const postResult = await postResponse.json();
-    // postResult에서 id(post_id)와 image_id를 받아야 함
-
-    if (!postResult || postResult.id === 404) {
-      alert("상세 설명 생성에 실패했습니다. (id가 404임)");
-      return;
-    }
-    
-    const postId = postResult.id;  // 서버가 반환하는 값 확인 필요
-    const imageId = postResult.image_id; // 예시
-
-
-    const clubResponse = await fetch("http://localhost:3000/api/club", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: clubName,
-        type: selectedArea,
-        field: selectedField,
-        recruitment: selectedStatus,
-        introduction: shortIntro,
-        admin_user_id: user.id,
-        info_post_id: postId,  // post id 넣어주기
-      }),
-    });
 
       alert("동아리가 성공적으로 생성되었습니다!");
       navigate("/MainDong");
