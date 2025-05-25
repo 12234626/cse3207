@@ -129,6 +129,27 @@ async function updateClubRequest(req: Request, res: Response) {
   }
 }
 
+// 이미저 조회
+async function getImageUrl(req: Request, res: Response) {
+  try {
+    const {id} = req.query;
+
+    fetch(`http://localhost:3000/db/image?id=${id}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(200)
+      .json(`http://localhost:3000/public/images${data[0].url}`);
+    });
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
+
 // 이미지 업로드
 async function uploadImage(req: Request, res: Response) {
   try {
@@ -159,5 +180,6 @@ export {
   createClub,
   updateClubRequest,
   updateClubWithInfoPost,
+  getImageUrl,
   uploadImage
 };

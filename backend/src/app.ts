@@ -15,7 +15,7 @@ app
 // JSON 파싱 설정
 .use(express.json())
 // /public 경로에 있는 정적 파일 제공
-.use(express.static("../public"))
+.use("/public", express.static("public"))
 // 요청 및 응답 로그
 .use((req, res, next) => {
   const startTime = Date.now();
