@@ -92,7 +92,7 @@ function Manager() {
           </div>
           <div className="fixClubBox">
             {/* <div className="overlap-group"> */}
-            <div className="managerListText">동아리 수정</div>
+            <div className="managerListText">동아리 정보 수정</div>
             <button
               className="nextButton"
               onClick={handleFixClubClick}
