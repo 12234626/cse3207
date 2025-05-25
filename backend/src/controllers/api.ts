@@ -141,7 +141,9 @@ async function getImageUrl(req: Request, res: Response) {
     .then(function (data) {
       res
       .status(200)
-      .json(`http://localhost:3000/public/images${data[0].url}`);
+      .json(data.map(function (url : string) {
+        return `http://localhost:3000/public/images${url}`
+      }));
     });
   } catch (err) {
     res
