@@ -31,31 +31,23 @@ function WriteHongboPost() {
       alert("제목과 내용을 모두 입력해주세요.");
       return;
     }
-
+  
     try {
-
-      //이미지
-      let imageUrl = null;
-
-      // 이미지가 있을 경우 서버에 업로드
+      const formData = new FormData();
+      formData.append("type", "홍보");
+      formData.append("title", title);
+      formData.append("content", content);
+      formData.append("club_id", clubId);
       if (image) {
-        const formData = new FormData();
         formData.append("image", image);
-
-        const imageRes = await axios.post("http://localhost:3000/api/create_post", formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
-
-        imageUrl = imageRes.data.url; // 서버에서 반환된 이미지 경로
       }
-
-      await axios.post("http://localhost:3000/db/post", {
-        title,
-        content,
-        image_url: imageUrl,
-        type: "홍보",
-        club_id: clubId, // ✅ 실제 동아리 ID 사용
+  
+      await axios.post("http://localhost:3000/api/post", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
+  
       navigate("/MainH");
     } catch (error) {
       console.error("글 등록 실패:", error);
