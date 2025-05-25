@@ -1,68 +1,6 @@
 import {Request, Response} from "express";
 import crypto from "crypto";
 
-// 유저 로그인
-async function login(req: Request, res: Response) {
-  try {
-    const {id, password} = req.body;
-    const password_hash = crypto.createHash("sha512").update(password).digest("hex");
-    const is_valid = (await (await fetch(`http://localhost:3000/db/user?id=${id}&password=${password_hash}`)).json()).length !== 0;
-    
-    if (!id || !password || !is_valid) {
-      res
-      .status(404)
-      .json({message: "존재하지 않는 유저 아이디 또는 틀린 비밀번호"});
-
-      return;
-    }
-    
-    fetch(`http://localhost:3000/db/user?id=${id}`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      res
-      .status(200)
-      .json(data[0]);
-    })
-  } catch (err) {
-    res
-    .status(500)
-    .json({message: err});
-  };
-}
-
-// 동아리 가입 신청 업데이트
-async function updateClubRequest(req: Request, res: Response) {
-  const {id, status} = req.body;
-
-  try {
-    await fetch(`http://localhost:3000/db/club_request`, {
-      method: "PUT",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id, status})
-    });
-
-    if (status === "수락") {
-      const {club_id, user_id} = (await (await fetch(`http://localhost:3000/db/club_request?id=${id}`)).json())[0];
-
-      await fetch(`http://localhost:3000/db/club_member`, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({club_id, user_id})
-      });
-    }
-
-    res
-    .status(200)
-    .json({message: "동아리 가입 신청 상태 업데이트 성공"});
-  } catch (err) {
-    res
-    .status(500)
-    .json({message: err});
-  }
-}
-
 // 이미지 조회
 async function getImageUrl(req: Request, res: Response) {
   try {
@@ -226,6 +164,37 @@ async function getUser(req: Request, res: Response) {
   }
 }
 
+// 유저 로그인
+async function login(req: Request, res: Response) {
+  try {
+    const {id, password} = req.body;
+    const password_hash = crypto.createHash("sha512").update(password).digest("hex");
+    const is_valid = (await (await fetch(`http://localhost:3000/db/user?id=${id}&password=${password_hash}`)).json()).length !== 0;
+    
+    if (!id || !password || !is_valid) {
+      res
+      .status(404)
+      .json({message: "존재하지 않는 유저 아이디 또는 틀린 비밀번호"});
+
+      return;
+    }
+    
+    fetch(`http://localhost:3000/db/user?id=${id}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(200)
+      .json(data[0]);
+    })
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  };
+}
+
 // 유저 업데이트
 async function updateUser(req: Request, res: Response) {
   try {
@@ -317,15 +286,46 @@ async function createPost(req: Request, res: Response) {
   }
 }
 
+// 동아리 가입 신청 업데이트
+async function updateClubRequest(req: Request, res: Response) {
+  const {id, status} = req.body;
+
+  try {
+    await fetch(`http://localhost:3000/db/club_request`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({id, status})
+    });
+
+    if (status === "수락") {
+      const {club_id, user_id} = (await (await fetch(`http://localhost:3000/db/club_request?id=${id}`)).json())[0];
+
+      await fetch(`http://localhost:3000/db/club_member`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({club_id, user_id})
+      });
+    }
+
+    res
+    .status(200)
+    .json({message: "동아리 가입 신청 상태 업데이트 성공"});
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
+
 export {
-  login,
-  updateClubRequest,
   getImageUrl,
+  createImage,
   createClub,
   updateClub,
-  createImage,
   getUser,
+  login,
   updateUser,
   getPost,
-  createPost
+  createPost,
+  updateClubRequest
 };
