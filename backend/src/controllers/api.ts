@@ -152,7 +152,7 @@ async function getUser(req: Request, res: Response) {
       res
       .status(200)
       .json(await Promise.all(data.map(async function (user: {image_id: number}) {
-        const image_url = (await (await fetch(`http://localhost:3000/api/image_url?id=${user.image_id}`)).json())[0];
+        const image_url = (await (await fetch(`http://localhost:3000/api/image?id=${user.image_id}`)).json())[0];
 
         return {...user, image_url};
       })));
@@ -242,7 +242,7 @@ async function getPost(req: Request, res: Response) {
       res
       .status(200)
       .json(await Promise.all(data.map(async function (post: {image_id: number}) {
-        const image_url = (await (await fetch(`http://localhost:3000/api/image_url?id=${post.image_id}`)).json())[0];
+        const image_url = (await (await fetch(`http://localhost:3000/api/image?id=${post.image_id}`)).json())[0];
 
         return {...post, image_url};
       })));
