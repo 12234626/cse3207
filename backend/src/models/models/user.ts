@@ -1,6 +1,5 @@
-import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AllowNull, BeforeCreate, BeforeUpdate} from "sequelize-typescript";
+import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AllowNull, BeforeCreate, BeforeUpdate, BeforeBulkCreate, BeforeBulkUpdate} from "sequelize-typescript";
 import crypto from "crypto";
-import dotenv from "dotenv";
 
 import Image from "./image";
 
@@ -42,14 +41,12 @@ class User extends Model {
   @Column({type: DataType.INTEGER.UNSIGNED, defaultValue: null})
   public image_id?: number;
 
-  // // 비밀번호 암호화
-  // @BeforeCreate
-  // @BeforeUpdate
-  // static hashPassword(instance: User) {
-  //   if (instance.changed("password")) {
-  //     instance.password = crypto.createHash("sha512").update(instance.password).digest("hex");
-  //   }
-  // }
+  // 비밀번호 암호화
+  @BeforeCreate
+  @BeforeUpdate
+  static hashPassword(instance: User) {
+    instance.password = crypto.createHash("sha512").update(instance.password).digest("hex");
+  }
 };
 
 export default User;

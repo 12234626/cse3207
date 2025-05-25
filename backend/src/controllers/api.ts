@@ -1,11 +1,12 @@
 import {Request, Response} from "express";
+import crypto from "crypto";
 
 // 유저 로그인
 async function login(req: Request, res: Response) {
-  const {id, password} = req.body;
-
   try {
-    const is_valid = (await (await fetch(`http://localhost:3000/db/user?id=${id}&password=${password}`)).json()).length !== 0;
+    const {id, password} = req.body;
+    const password_hash = crypto.createHash("sha512").update(password).digest("hex");
+    const is_valid = (await (await fetch(`http://localhost:3000/db/user?id=${id}&password=${password_hash}`)).json()).length !== 0;
     
     if (!id || !password || !is_valid) {
       res
