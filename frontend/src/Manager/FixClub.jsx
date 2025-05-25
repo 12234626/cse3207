@@ -191,19 +191,6 @@ function FixClub() {
     // alert("infoPostId:", infoPostId);
     // alert("story:", story);
 
-    const requestBody = {
-      club_id: clubId,
-      recruitment: selectedStatus,
-      introduction: shortIntro,
-      info_post_id: infoPostId,
-      content: story,
-    };
-    alert("요청 body:\n" + JSON.stringify(requestBody, null, 2));
-    if (!clubId || !user) {
-      alert("동아리 정보 또는 로그인 정보가 없습니다.");
-      return;
-    }
-
     try {
       // 동아리 정보 수정 요청
       const response = await fetch(

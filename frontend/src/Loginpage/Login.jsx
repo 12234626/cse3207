@@ -8,7 +8,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const handleSignUpClick = () => {
-    navigate("/MainDong");
+    navigate("/SignUp");
   };
 
   const handleImageClick = () => {
