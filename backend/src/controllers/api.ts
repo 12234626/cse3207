@@ -220,22 +220,19 @@ async function getPost(req: Request, res: Response) {
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
+    .then(async function (data) {
       res
       .status(200)
-      .json(data.map(async function (post: {image_id: number}) {
-        return {
-          ...post,
-          image_url: await fetch(`http://localhost:3000/api/image_url?id=${post.image_id}`)
-            .then(function (response) {
-              return response.json();
-            })
-          }
-        }))
-      }
-    );
+      .json(await Promise.all(data.map(async function (post: {image_id: number}) {
+        const image_url = (await (await fetch(`http://localhost:3000/api/image_url?id=${post.image_id}`)).json())[0];
+
+        return {...post, image_url};
+      })));
+    });
   } catch (err) {
-    res.status(500).json({message: err});
+    res
+    .status(500)
+    .json({message: err});
   }
 }
 
