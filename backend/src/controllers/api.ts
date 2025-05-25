@@ -246,9 +246,10 @@ async function createPost(req: Request, res: Response) {
 export {
   login,
   createClub,
-  updateClubRequest,
   updateClubWithInfoPost,
+  updateClubRequest,
   getImageUrl,
   createImage,
+  updateUser,
   createPost
 };
