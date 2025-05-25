@@ -5,8 +5,11 @@ import "./NoticeClub.css";
 function NoticeClub() {
   const { noticeId } = useParams();
   const navigate = useNavigate();
+
   const [noticeTitle, setNoticeTitle] = useState("");
   const [noticeContent, setNoticeContent] = useState("");
+  const [noticeImageUrl, setNoticeImageUrl] = useState(null); // 이미지 URL 상태
+
 
   const handleBackClick = () => {
     navigate("/JoinedClub"); // 이전 페이지로 이동
@@ -25,8 +28,23 @@ function NoticeClub() {
 
         // 백엔드에서 배열 형태로 반환할 가능성 있으니 첫 번째 요소를 사용
         if (Array.isArray(data) && data.length > 0) {
-          setNoticeTitle(data[0].title || "");
-          setNoticeContent(data[0].content || "");
+          const notice = data[0];
+
+          setNoticeTitle(notice.title || "");
+          setNoticeContent(notice.content || "");
+
+          if (notice.image_id) {
+            try {
+              const imgRes = await fetch(`http://localhost:3000/api/image_url?id=${notice.image_id}`);
+              const imgData = await imgRes.json();
+              const imageUrl = imgData[0]; // 배열에서 첫 번째 URL 사용
+              setNoticeImageUrl(imageUrl);
+              console.log("공지 이미지 URL:", imageUrl);
+            } catch (imgError) {
+              console.error("이미지 URL 요청 실패:", imgError);
+              setNoticeImageUrl(null);
+            }
+          }
         } else {
           setNoticeTitle("");
           setNoticeContent("해당 공지를 찾을 수 없습니다.");
@@ -55,7 +73,18 @@ function NoticeClub() {
             <div className="noticeGroup">
                 
                 <div className="YB"></div>
-                <div className="BBlueBox"></div>
+                <div
+              className="BBlueBox"
+              style={
+                noticeImageUrl
+                  ? {
+                      backgroundImage: `url(${noticeImageUrl})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }
+                  : {}
+              }
+            ></div>
                 <div className="YB"></div>
                 <div className="noticeContenttext" style={{ whiteSpace: "pre-wrap" }}>
                   {noticeContent}
