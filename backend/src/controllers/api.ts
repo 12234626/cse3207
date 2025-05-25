@@ -32,73 +32,6 @@ async function login(req: Request, res: Response) {
   };
 }
 
-// 동아리 생성
-async function createClub(req: Request, res: Response) {
-  const {name, type, field, recruitment, introduction, admin_user_id, title, content} = req.body;
-
-  try {
-    const club_id = await (await fetch(`http://localhost:3000/db/club`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({name, type, field, recruitment, introduction, admin_user_id})
-    })).json();
-    const info_post_id = await (await fetch(`http://localhost:3000/db/post`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({type: "상세 설명", title, content, club_id})
-    })).json();
-    fetch(`http://localhost:3000/db/club_info_post`, {
-      method: "PUT",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id: club_id, info_post_id: info_post_id})
-    });
-    fetch(`http://localhost:3000/db/club_member`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({club_id, user_id: admin_user_id})
-    });
-
-    res
-    .status(201)
-    .json({message: "동아리 생성 성공"});
-  } catch (err) {
-    res
-    .status(500)
-    .json({message: err});
-  }
-}
-
-// 동아리 정보 및 상세 설명 게시글 수정
-async function updateClubWithInfoPost(req: Request, res: Response) {
-  const {club_id, recruitment, introduction, info_post_id, content} = req.body;
-
-  try {
-    await fetch(`http://localhost:3000/db/club`, {
-      method: "PUT",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id: club_id, recruitment, introduction})
-    });
-    await fetch(`http://localhost:3000/db/post`, {
-      method: "PUT",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id: info_post_id, content})
-    });
-    fetch(`http://localhost:3000/db/club/post?id=${club_id}`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      res
-      .status(200)
-      .json(data[0]);
-    });
-  } catch (err) {
-    res
-    .status(500)
-    .json({message: err});
-  }
-}
-
 // 동아리 가입 신청 업데이트
 async function updateClubRequest(req: Request, res: Response) {
   const {id, status} = req.body;
@@ -178,6 +111,96 @@ async function createImage(req: Request, res: Response) {
   }
 }
 
+// 동아리 및 상세 설명 게시글 생성
+async function createClub(req: Request, res: Response) {
+  try {
+    const {name, type, field, recruitment, introduction, admin_user_id, title, content} = req.body;
+    // const {path} = req.file as any;
+    
+    // const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+    //   method: "POST",
+    //   headers: {"Content-Type": "application/json"},
+    //   body: JSON.stringify({path})
+    // })).json();
+    const image_id = null;
+    const club_id = await (await fetch(`http://localhost:3000/db/club`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({name, type, field, recruitment, introduction, admin_user_id})
+    })).json();
+    const info_post_id = await (await fetch(`http://localhost:3000/db/post`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({type: "상세 설명", title, content, club_id, image_id})
+    })).json();
+
+    await fetch(`http://localhost:3000/db/club_info_post`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({club_id, info_post_id})
+    });
+    await fetch(`http://localhost:3000/db/club_member`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({club_id, user_id: admin_user_id})
+    });
+
+    fetch(`http://localhost:3000/db/club?id=${club_id}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(201)
+      .json(data[0]);
+    });
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
+
+// 동아리 및 상세 설명 게시글 수정
+async function updateClub(req: Request, res: Response) {
+  try {
+    const {club_id, recruitment, introduction, info_post_id, content} = req.body;
+    // const {path} = req.file as any;
+    
+    // const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+    //   method: "POST",
+    //   headers: {"Content-Type": "application/json"},
+    //   body: JSON.stringify({path})
+    // })).json();
+    const image_id = null;
+
+    await fetch(`http://localhost:3000/db/club`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({id: club_id, recruitment, introduction})
+    });
+    await fetch(`http://localhost:3000/db/post`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({id: info_post_id, content, image_id})
+    });
+
+    fetch(`http://localhost:3000/db/club/post?id=${club_id}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(200)
+      .json(data[0]);
+    });
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
+
 // 유저 조회
 async function getUser(req: Request, res: Response) {
   try {
@@ -214,7 +237,7 @@ async function updateUser(req: Request, res: Response) {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({path})
     })).json();
-
+    
     await fetch(`http://localhost:3000/db/user`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
@@ -296,10 +319,10 @@ async function createPost(req: Request, res: Response) {
 
 export {
   login,
-  createClub,
-  updateClubWithInfoPost,
   updateClubRequest,
   getImageUrl,
+  createClub,
+  updateClub,
   createImage,
   getUser,
   updateUser,

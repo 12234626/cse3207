@@ -1,7 +1,6 @@
 import {Model, Table, Column, DataType, PrimaryKey, Unique, BelongsTo, AutoIncrement, AllowNull} from "sequelize-typescript";
 
 import User from "./user";
-import Post from "./post";
 
 // 동아리 모델
 @Table({tableName: "club_table"})

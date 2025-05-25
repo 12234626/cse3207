@@ -33,9 +33,11 @@ function getPost(req: Request, res: Response) {
 
 // 동아리 생성
 function createClub(req: Request, res: Response) {
-  const {name, type, field, admin_user_id, recruitment, introduction} = req.body;
-  const query = "INSERT INTO club_table (name, type, field, recruitment, introduction, admin_user_id) VALUES (:name, :type, :field, :recruitment, :introduction, :admin_user_id)";
-  const replacements = {name, type, field, admin_user_id, recruitment, introduction};
+  const {name, type, field, admin_user_id, recruitment, introduction, image_id} = req.body;
+  const query = `
+    INSERT INTO club_table (name, type, field, recruitment, introduction, admin_user_id)
+    VALUES (:name, :type, :field, :recruitment, :introduction, :admin_user_id)`;
+  const replacements = {name, type, field, recruitment, introduction, admin_user_id};
 
   runQueryWithResponse(req, res, query, replacements, 201);
 }
@@ -43,8 +45,11 @@ function createClub(req: Request, res: Response) {
 // 동아리 업데이트
 function updateClub(req: Request, res: Response) {
   const {id, recruitment, introduction} = req.body;
-  const query = "UPDATE club_table SET recruitment = :recruitment, introduction = :introduction WHERE id = :id";
-  const replacements = {id,recruitment, introduction};
+  const query = `
+    UPDATE club_table
+    SET recruitment = :recruitment, introduction = :introduction
+    WHERE id = :id`;
+  const replacements = {id, recruitment, introduction};
 
   runQueryWithResponse(req, res, query, replacements, 200);
 }
