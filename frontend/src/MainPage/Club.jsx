@@ -6,11 +6,13 @@ import "./Club.css";
 function Club() {
   const navigate = useNavigate();
   const location = useLocation();
-  const clubName = location.state?.clubName;
+
+  const clubName = location.state?.clubName || "동아리명을 불러오는 중...";
   const introduction = location.state?.introduction || "소개글을 불러오는 중...";
-  const clubId = location.state?.clubId; // clubId도 같이 넘겨줘야 함
+  const clubId = location.state?.clubId;
 
   const [detailContent, setDetailContent] = useState("");
+  const [detailImageUrl, setDetailImageUrl] = useState(null);
 
   const handleBackClick = () => {
     navigate("/MainDong");
@@ -21,7 +23,20 @@ function Club() {
       try {
         const res = await axios.get(`http://localhost:3000/db/post?type=상세 설명&club_id=${clubId}`);
         if (Array.isArray(res.data) && res.data.length > 0) {
-          setDetailContent(res.data[0].content); // 첫 번째 상세 설명 사용
+          const detailPost = res.data[0];
+          setDetailContent(detailPost.content);
+
+          if (detailPost.image_id) {
+            try {
+              const imgRes = await axios.get(`http://localhost:3000/api/image_url?id=${detailPost.image_id}`);
+              const imageUrl = imgRes.data[0]; // 응답이 배열이라면
+              setDetailImageUrl(imageUrl);
+              console.log("상세 설명 이미지 URL:", imageUrl);
+            } catch (imgError) {
+              console.error("이미지 URL 요청 실패:", imgError);
+              setDetailImageUrl(null);
+            }
+          }
         } else {
           setDetailContent("상세 설명이 존재하지 않습니다.");
         }
@@ -41,7 +56,7 @@ function Club() {
       <div className="div">
         {/* 상단 영역 */}
         <div className="clubTop">
-          {clubName || "동아리명을 불러오는 중..."}
+          {clubName}
           <button className="back" onClick={handleBackClick}></button>
         </div>
 
@@ -49,10 +64,24 @@ function Club() {
         <div className="view">
           <div className="overlap-group">
             <div className="text-wrapper-2"></div>
-            <div className="box"></div>
+
+            {/* 이미지가 있다면 배경 이미지로 표시 */}
+            <div
+              className="box"
+              style={
+                detailImageUrl
+                  ? {
+                      backgroundImage: `url(${detailImageUrl})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }
+                  : {}
+              }
+            />
 
             <div className="YB"></div>
-            {/* 상세 설명 영역 */}
+
+            {/* 상세 설명 텍스트 */}
             <div className="text-below-view-2" style={{ whiteSpace: "pre-wrap" }}>
               {detailContent}
             </div>
