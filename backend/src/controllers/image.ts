@@ -12,18 +12,18 @@ function getImage(req: Request, res: Response) {
 
 // 이미지 생성
 function createImage(req: Request, res: Response) {
-  const {url} = req.body;
-  const query = "INSERT INTO image_table (url) VALUES (:url)";
-  const replacements = {url};
+  const {path} = req.body;
+  const query = "INSERT INTO image_table (path) VALUES (:path)";
+  const replacements = {path};
 
   runQueryWithResponse(req, res, query, replacements, 201);
 }
 
 // 이미지 업데이트
 function updateImage(req: Request, res: Response) {
-  const {id, url} = req.body;
-  const query = "UPDATE image_table SET url = :url WHERE id = :id";
-  const replacements = {id, url};
+  const {id, path} = req.body;
+  const query = "UPDATE image_table SET path = :path WHERE id = :id";
+  const replacements = {id, path};
 
   runQueryWithResponse(req, res, query, replacements, 200);
 }

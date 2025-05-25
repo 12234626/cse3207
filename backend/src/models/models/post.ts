@@ -33,10 +33,9 @@ class Post extends Model {
   @Column({type: DataType.INTEGER.UNSIGNED})
   public club_id!: number;
 
-  // 이미지 세트
+  // 이미지
   // @BelongsTo(() => Image, {foreignKey: "image_id", as: "image", onDelete: "SET NULL"})
-  @AllowNull(true)
-  @Column({type: DataType.INTEGER.UNSIGNED})
+  @Column({type: DataType.INTEGER.UNSIGNED, defaultValue: null})
   public image_id?: number;
 };
 

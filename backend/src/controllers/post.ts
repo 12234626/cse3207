@@ -12,10 +12,9 @@ function getPost(req: Request, res: Response) {
 
 // 게시글 생성
 function createPost(req: Request, res: Response) {
-  const {type, title, content, club_id} = req.body;
-  const query = "INSERT INTO post_table (type, title, content, club_id) VALUES (:type, :title, :content, :club_id)";
-  const replacements = {type, title, content, club_id};
-  const imageFile = req.file; 
+  const {type, title, content, club_id, image_id} = req.body;
+  const query = "INSERT INTO post_table (type, title, content, club_id, image_id) VALUES (:type, :title, :content, :club_id, :image_id)";
+  const replacements = {type, title, content, club_id, image_id};
   
   runQueryWithResponse(req, res, query, replacements, 201);
 }

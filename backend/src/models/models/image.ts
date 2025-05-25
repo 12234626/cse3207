@@ -12,7 +12,7 @@ class Image extends Model {
   // 이미지 파일 경로
   @AllowNull(false)
   @Column({type: DataType.STRING(255)})
-  public url!: string;
+  public path!: string;
 }
 
 export default Image;

@@ -129,7 +129,7 @@ async function updateClubRequest(req: Request, res: Response) {
   }
 }
 
-// 이미저 조회
+// 이미지 조회
 async function getImageUrl(req: Request, res: Response) {
   try {
     const {id} = req.query;
@@ -141,9 +141,7 @@ async function getImageUrl(req: Request, res: Response) {
     .then(function (data) {
       res
       .status(200)
-      .json(data.map(function (url : string) {
-        return `http://localhost:3000/public/images${url}`
-      }));
+      .json(data);
     });
   } catch (err) {
     res
@@ -152,15 +150,47 @@ async function getImageUrl(req: Request, res: Response) {
   }
 }
 
-// 이미지 업로드
-async function uploadImage(req: Request, res: Response) {
+// 이미지 생성
+async function createImage(req: Request, res: Response) {
   try {
-    const {path} = req.file as any;
+    const {path} = req.body;
 
     fetch(`http://localhost:3000/db/image`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({url: path})
+      body: JSON.stringify({path})
+    })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(201)
+      .json(data);
+    });
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
+
+// 게시글 생성
+async function createPost(req: Request, res: Response) {
+  try {
+    const {type, title, content, club_id} = req.body;
+    const {path} = req.file as any;
+
+    const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({path})
+    })).json();
+    
+    fetch(`http://localhost:3000/db/post`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({type, title, content, club_id, image_id})
     })
     .then(function (response) {
       return response.json();
@@ -183,5 +213,6 @@ export {
   updateClubRequest,
   updateClubWithInfoPost,
   getImageUrl,
-  uploadImage
+  createImage,
+  createPost
 };
