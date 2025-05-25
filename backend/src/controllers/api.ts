@@ -1,5 +1,6 @@
 import {Request, Response} from "express";
 import crypto from "crypto";
+import {join} from "path";
 
 // 이미지 조회
 async function getImageUrl(req: Request, res: Response) {
@@ -14,7 +15,7 @@ async function getImageUrl(req: Request, res: Response) {
       res
       .status(200)
       .json(data.map(function (image: {path: string}) {
-        return `http://localhost:3000/${image.path}`;
+        return join("http://localhost:3000", image.path);
       }));
     });
   } catch (err) {
@@ -53,14 +54,13 @@ async function createImage(req: Request, res: Response) {
 async function createClub(req: Request, res: Response) {
   try {
     const {name, type, field, recruitment, introduction, admin_user_id, title, content} = req.body;
-    // const {path} = req.file as any;
+    const {path} = req.file as any;
     
-    // const image_id = await (await fetch(`http://localhost:3000/api/image`, {
-    //   method: "POST",
-    //   headers: {"Content-Type": "application/json"},
-    //   body: JSON.stringify({path})
-    // })).json();
-    const image_id = null;
+    const image = await (await fetch(`http://localhost:3000/api/image`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({path})
+    })).json();
     const club_id = await (await fetch(`http://localhost:3000/db/club`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -69,7 +69,7 @@ async function createClub(req: Request, res: Response) {
     const info_post_id = await (await fetch(`http://localhost:3000/db/post`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({type: "상세 설명", title, content, club_id, image_id})
+      body: JSON.stringify({type: "상세 설명", title, content, club_id, image_id: image.id})
     })).json();
 
     await fetch(`http://localhost:3000/db/club_info_post`, {
@@ -103,14 +103,13 @@ async function createClub(req: Request, res: Response) {
 async function updateClub(req: Request, res: Response) {
   try {
     const {club_id, recruitment, introduction, info_post_id, content} = req.body;
-    // const {path} = req.file as any;
+    const {path} = req.file as any;
     
-    // const image_id = await (await fetch(`http://localhost:3000/api/image`, {
-    //   method: "POST",
-    //   headers: {"Content-Type": "application/json"},
-    //   body: JSON.stringify({path})
-    // })).json();
-    const image_id = null;
+    const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({path})
+    })).json();
 
     await fetch(`http://localhost:3000/db/club`, {
       method: "PUT",

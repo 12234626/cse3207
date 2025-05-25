@@ -21,15 +21,15 @@ api_router
 // 이미지 생성
 .post("/image", createImage)
 // 동아리 및 상세 설명 게시글 생성
-.post("/club", createClub)
+.post("/club", image.single("image"), createClub)
 // 동아리 및 상세 설명 게시글 수정
-.put("/club", updateClub)
+.put("/club", image.single("image"), updateClub)
 // 유저 조회
 .get("/user", getUser)
 // 로그인
 .post("/login", login)
 // 유저 업데이트
-.put("/user", updateUser)
+.put("/user", image.single("image"), updateUser)
 // 게시글 조회
 .get("/post", getPost)
 // 게시글 생성
