@@ -11,6 +11,7 @@ function Event() {
   const eventTitle = location.state?.eventTitle || "홍보글을 불러오는 중...";
   const eventContent = location.state?.eventContent || "내용을 불러오는 중...";
   const club_id = location.state?.club_id;
+  const imageUrl = location.state?.imageUrl;// 이미지 URL
 
   const [clubName, setClubName] = useState("동아리명을 불러오는 중...");
 
@@ -62,7 +63,9 @@ function Event() {
         <div className="view">
           <div className="overlap-group">
             <div className="ex">{eventTitle}</div> {/* 홍보글 제목 */}
-            <div className="imageBox" />
+            <div className="imageBox">
+              {imageUrl && <img src={imageUrl} alt="홍보 이미지" className="eventImage" />}
+            </div>
             <div className="text-below-view-2">{eventContent}</div>{" "}
             {/* 홍보글 내용 */}
           </div>

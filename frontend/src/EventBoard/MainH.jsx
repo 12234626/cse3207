@@ -64,7 +64,11 @@ function MainH() {
                 >
                   <div className="hongBoName">{post.title}</div>
                   <div className="hongBoInfo">{post.content}</div>
-                  <div className="hongBoImage"></div>
+                  <div className="hongBoImage">
+                    {post.image_url && (
+                      <img src={post.image_url} alt="홍보 이미지" className="thumbnail" />
+                    )}
+                  </div>
                 </div>
               ))}
               {/* <div className="hongBo">
