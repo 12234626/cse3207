@@ -24,14 +24,14 @@ function JoinedClub() {
     // setClubName(club.name);
 
     // 관리자 권한 확인
-    if (club.admin_user_id !== undefined) {
-      setIsManager(club.admin_user_id === user.id);
+    if (club.club.admin_user_id !== undefined) {
+      setIsManager(club.club.admin_user_id === user.id);
     } else {
       // 만약 club에 admin 정보가 없다면 백엔드에서 admin 정보 요청
-      fetch(`http://localhost:3000/db/club/admin?id=${club.id}`)
+      fetch(`http://localhost:3000/db/club?id=${club.id}`)
         .then((res) => res.json())
         .then((data) => {
-          if (data && data[0] && data[0].admin_user_id === user.id) {
+          if (data && data[0] && data[0].club.admin_user_id === user.id) {
             setIsManager(true);
           } else {
             setIsManager(false);
@@ -43,7 +43,7 @@ function JoinedClub() {
       try {
         const response = await fetch(
           // `http://localhost:3000/db/post?type=공지&club_id=${club.id}`
-          `http://localhost:3000/db/club/post?club_id=${club.id}`
+          `http://localhost:3000/db/post/club?id=${club.club_id}`
         );
         const data = await response.json();
         setNoticePosts(data);
@@ -53,7 +53,7 @@ function JoinedClub() {
           setClubName(detailPost.club.name);
           localStorage.setItem("post", JSON.stringify(detailPost));
         } else {
-          setClubName(club.name);
+          setClubName(club.club.name);
           localStorage.removeItem("post");
         }
       } catch (error) {

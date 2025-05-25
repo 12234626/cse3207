@@ -41,9 +41,9 @@ function MyClubList() {
         {/* <pre>{JSON.stringify(clubs, null, 2)}</pre> */}
         <div className="myClubs">
           {clubs.map((club) => (
-            <div className="element" key={club.id || club.club_id}>
+            <div className="element" key={club.club_id}>
               <div className="myClub">
-                <div className="myClubName">{club.name}</div>
+                <div className="myClubName">{club.club.name}</div>
                 <button
                   className="clubCommunity"
                   onClick={() => handleMyClubClick(club)}
