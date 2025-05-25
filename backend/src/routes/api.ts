@@ -24,7 +24,7 @@ api_router
 .post("/create_club", createClub)
 // 동아리 가입 신청 업데이트
 .put("/update_club_request", updateClubRequest)
-// 동아리 + 상세 설명 게시글 동시 수정
+// 동아리 정보 및 상세 설명 게시글 수정
 .put("/club_with_info_post", updateClubWithInfoPost)
 // 이미지 업로드
 .post("/image_upload", image.single("image"), uploadImage)

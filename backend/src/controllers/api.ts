@@ -67,28 +67,34 @@ async function createClub(req: Request, res: Response) {
   }
 }
 
-// 동아리 + 상세 설명 게시글 동시 수정
+// 동아리 정보 및 상세 설명 게시글 수정
 async function updateClubWithInfoPost(req: Request, res: Response) {
   const {club_id, recruitment, introduction, info_post_id, content} = req.body;
 
   try {
-    // 1. 동아리 정보 수정
     await fetch(`http://localhost:3000/db/club`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({id: club_id, recruitment, introduction})
     });
-
-    // 2. 상세 설명 게시글 수정
     await fetch(`http://localhost:3000/db/post`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({id: info_post_id, content})
     });
-
-    res.status(200).json({message: "동아리 및 상세 설명 게시글 수정 성공"});
+    fetch(`http://localhost:3000/db/club/post?id=${club_id}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(200)
+      .json(data[0]);
+    });
   } catch (err) {
-    res.status(500).json({message: err});
+    res
+    .status(500)
+    .json({message: err});
   }
 }
 
