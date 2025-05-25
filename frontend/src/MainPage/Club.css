@@ -100,17 +100,14 @@
 
 .text-below-view-2 {
   font-family: "SUITE-Regular", Helvetica !important;
-    font-size: 18px;
-    font-weight: 700;
-    color: #333;
-    text-align: center;
-    text-align: left;              /* ✅ 왼쪽 정렬로 자연스럽게 읽히도록 */
-    padding: 0 30px;               /* ✅ 좌우 여백 20px */
-    line-height: 1.6;              /* ✅ 줄 간격 넉넉하게 */
-    white-space: pre-wrap;         /* ✅ 줄바꿈 유지하면서 넘치면 줄바꿈 */
-    word-break: break-word;        /* ✅ 너무 긴 단어는 강제로 줄바꿈 */
-    box-sizing: border-box; 
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  text-align: left; /* ✅ 왼쪽 정렬로 자연스럽게 읽히도록 */
+  padding: 10px 30px; /* ✅ 좌우 여백 20px */
+  line-height: 1.6; /* ✅ 줄 간격 넉넉하게 */
+  white-space: pre-wrap; /* ✅ 줄바꿈 유지하면서 넘치면 줄바꿈 */
+  word-break: break-word; /* ✅ 너무 긴 단어는 강제로 줄바꿈 */
+  box-sizing: border-box;
 }
-
-
-

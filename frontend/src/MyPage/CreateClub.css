@@ -14,9 +14,8 @@
 }
 
 .clubNameInput,
-.ImagePlus,
 .clubShortInput .StoryBoard,
-s .URLIn {
+.URLIn {
   width: 90%; /* 또는 100% */
   max-width: 340px; /* 약간 여백 주려면 */
   display: block;
@@ -106,22 +105,7 @@ s .URLIn {
   gap: 10px;
 }
 
-/* 이미지 + 버튼처럼 보이는 인풋 */
-.imageAndInputs .ImagePlus {
-  width: 100%; /* 부모 컨테이너에 맞춤 */
-  max-width: 370px; /* 최대 너비 설정 */
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: "SUITE-Regular", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  background-color: #f5f5f5;
-  color: #333;
-  outline: none;
-  text-align: center;
-  cursor: pointer;
-  height: 100px;
-}
+
 
 /* 글 작성 + URL */
 .phoneScreen .inputsWrapper {
@@ -289,4 +273,51 @@ s .URLIn {
 .clubNameInput:focus {
   border-color: rgba(92, 110, 247, 1);
   box-shadow: 0 0 5px rgba(92, 110, 247, 0.5);
+}
+
+
+/* .imageUploadWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 12px;
+} */
+/* 
+.≈ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  width: 64px;
+  height: 64px;
+  background-color: #eee;
+  border: 2px dashed #aaa;
+  border-radius: 10px;
+  cursor: pointer;
+} */
+
+.imageAndInputs .ImagePlus {
+  width: 100%; /* 부모 컨테이너에 맞춤 */
+  max-width: 370px; /* 최대 너비 설정 */
+  height: 200px; /* 원하는 높이 설정 */
+  border: none; /* 테두리 제거 */
+  border-radius: 8px; /* 둥근 테두리 */
+  background-color: transparent; /* 배경색 제거 */
+  display: flex; /* Flexbox로 내부 요소 정렬 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  overflow: hidden; /* 부모 요소를 벗어나는 이미지 숨김 */
+  position: relative;
+  margin: 0; /* 여백 제거 */
+  padding: 0; /* 내부 여백 제거 */
+  
+}
+.imageAndInputs .imagePreview {
+  width: 100%; /* 부모 요소의 너비에 맞춤 */
+  height: 100%; /* 부모 요소의 높이에 맞춤 */
+  object-fit: cover; /* 이미지 비율 유지하며 부모 요소 크기에 맞게 자르기 */
+  border-radius: 8px; /* 둥근 테두리 유지 */
+  margin: 0; /* 여백 제거 */
+  padding: 0; /* 내부 여백 제거 */
+
 }
