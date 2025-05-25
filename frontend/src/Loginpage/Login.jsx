@@ -113,9 +113,9 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="imageButton" onClick={handleImageClick}>
+            {/* <button className="imageButton" onClick={handleImageClick}>
               /
-            </button>
+            </button> */}
 
             <input
               type="submit"
