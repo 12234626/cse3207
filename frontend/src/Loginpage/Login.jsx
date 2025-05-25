@@ -11,9 +11,9 @@ function Login() {
     navigate("/MainDong");
   };
 
-  const handleImageClick = () => {
-    navigate("/ImageTest");
-  };
+  // const handleImageClick = () => {
+  //   navigate("/ImageTest");
+  // };
   // const handleLoginClick = () => {
   //   navigate("/MainDong");
   // };
