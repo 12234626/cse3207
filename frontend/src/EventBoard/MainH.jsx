@@ -7,10 +7,35 @@ function MainH() {
   const navigate = useNavigate();
 
   const [posts, setEventPosts] = useState([]);
+
   useEffect(() => {
-    axios.get("http://localhost:3000/db/post?type=홍보").then((response) => {
-      console.debug(response);
-      setEventPosts(response.data);
+    axios.get("http://localhost:3000/db/post?type=홍보").then(async (response) => {
+      const postsData = response.data;
+
+      // 게시글 각각에 대해 image_url(id)로 실제 URL 요청
+      const postsWithImages = await Promise.all(
+        postsData.map(async (post) => {
+          if (post.image_id) {
+            try {
+              const imgRes = await axios.get(`http://localhost:3000/api/image_url?id=${post.image_id}`);
+              const baseUrl = "http://localhost:3000";
+            const imageUrl = imgRes.data.url.startsWith("http") ? imgRes.data.url : baseUrl + imgRes.data.url;
+            console.log("이미지 URL:", imageUrl);
+              return {
+                ...post,
+                image_url: imageUrl, 
+              };
+            } catch (error) {
+              
+              console.error("이미지 URL 요청 실패:", error);
+              return { ...post, image_url: null };
+            }
+          }
+          return post;
+        })
+      );
+
+      setEventPosts(postsWithImages);
     });
   }, []);
 
@@ -27,7 +52,8 @@ function MainH() {
       state: { 
         eventTitle: post.title, 
         eventContent: post.content,
-      club_id: post.club_id,},
+      club_id: post.club_id,
+      imageUrl: post.image_url},
     }); // 제목 내용 동아리명 넘김
   };
 
@@ -64,9 +90,12 @@ function MainH() {
                 >
                   <div className="hongBoName">{post.title}</div>
                   <div className="hongBoInfo">{post.content}</div>
-                  <div className="hongBoImage">
+                  <div className={`hongBoImage ${post.image_url ? "hasImage" : ""}`}>
                     {post.image_url && (
-                      <img src={post.image_url} alt="홍보 이미지" className="thumbnail" />
+                      <img
+                        src={post.image_url}
+                        alt="홍보 이미지"
+                      />
                     )}
                   </div>
                 </div>
