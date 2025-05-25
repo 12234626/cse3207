@@ -30,6 +30,11 @@ function SignUp() {
   const handleSignUpClick = async (e) => {
     e.preventDefault();
     // setError("");
+    const { name, id, password, department, phone } = form;
+    if (!name || !id || !password || !department || !phone) {
+      alert("모든 항목을 입력해주세요.");
+      return;
+    }
 
     try {
       const response = await fetch(`http://localhost:3000/db/user`, {
