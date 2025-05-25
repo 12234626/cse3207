@@ -177,10 +177,39 @@ async function createImage(req: Request, res: Response) {
   }
 }
 
-// // 게시글 조회
-// async function getPost(req: Request, res: Response) {
-//   try {
-//     const posts 
+// 유저 업데이트
+async function updateUser(req: Request, res: Response) {
+  try {
+    const {id, name, password, department, phone} = req.body;
+    const {path} = req.file as any;
+
+    const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({path})
+    })).json();
+
+    await fetch(`http://localhost:3000/db/user`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({id, name, password, department, phone, image_id})
+    });
+
+    fetch(`http://localhost:3000/db/user?id=${id}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      res
+      .status(200)
+      .json(data[0]);
+    });
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
 
 // 게시글 생성
 async function createPost(req: Request, res: Response) {
