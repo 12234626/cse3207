@@ -11,6 +11,8 @@ function WriteHongboPost() {
   const [content, setContent] = useState(""); // 내용 상태
   const [clubName, setClubName] = useState("");
   const [clubId, setClubId] = useState(null);
+  const [image, setImage] = useState(null); //이미지
+  const [preview, setPreview] = useState(null); //이미지
 
 
   useEffect(() => {
@@ -31,9 +33,26 @@ function WriteHongboPost() {
     }
 
     try {
+
+      //이미지
+      let imageUrl = null;
+
+      // 이미지가 있을 경우 서버에 업로드
+      if (image) {
+        const formData = new FormData();
+        formData.append("image", image);
+
+        const imageRes = await axios.post("http://localhost:3000/upload", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+
+        imageUrl = imageRes.data.url; // 서버에서 반환된 이미지 경로
+      }
+
       await axios.post("http://localhost:3000/db/post", {
         title,
         content,
+        image_url: imageUrl,
         type: "홍보",
         club_id: clubId, // ✅ 실제 동아리 ID 사용
       });
@@ -53,6 +72,16 @@ function WriteHongboPost() {
     navigate("/WriteClubInfoPost");
   };
 
+
+  // 이미지 업로드 핸들러
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+      setPreview(URL.createObjectURL(file));
+    }
+  };
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -66,12 +95,21 @@ function WriteHongboPost() {
               onChange={(e) => setContent(e.target.value)}
             />
 
-            <input
-              type="text"
-              className="clubImgInput"
-              placeholder="+"
-              disabled
-            />  
+            <label htmlFor="imageUpload" className="clubImgInput">
+                {preview ? (
+                  <img src={preview} alt="미리보기" className="previewImage" />
+                ) : (
+                  "+"
+                )}
+              </label>
+              <input
+                id="imageUpload"
+                type="file"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={handleImageChange}
+              />
+
 
             <input
               type="text"
