@@ -47,9 +47,8 @@ function MyPage() {
         setUser(finalUser);
 
         // 임시 기본 프로필 이미지 경로 설정
-        setProfileImage(
-          "http://localhost:3000/public/images/default_profile.jpg"
-        );
+        const imageUrl = `http://localhost:3000/public/images/default_profile.jpg`; // 추후 image_id별 URL 매핑 가능
+        setProfileImage(imageUrl);
       } catch (error) {
         console.error("user 데이터 파싱 에러:", error);
       }
