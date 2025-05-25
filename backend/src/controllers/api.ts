@@ -198,18 +198,19 @@ async function login(req: Request, res: Response) {
 async function updateUser(req: Request, res: Response) {
   try {
     const {id, name, password, department, phone} = req.body;
-    const {path} = req.file as any;
+    // const {path} = req.file as any;
 
-    const image_id = await (await fetch(`http://localhost:3000/api/image`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({path})
-    })).json();
+    // const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+    //   method: "POST",
+    //   headers: {"Content-Type": "application/json"},
+    //   body: JSON.stringify({path})
+    // })).json();
+    const image_id = null;
     
     await fetch(`http://localhost:3000/db/user`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id, name, password, department, phone, image_id})
+      body: JSON.stringify({id, name, password, department, phone})
     });
 
     fetch(`http://localhost:3000/db/user?id=${id}`)
