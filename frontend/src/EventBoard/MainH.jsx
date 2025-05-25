@@ -18,20 +18,28 @@ function MainH() {
           if (post.image_id) {
             try {
               const imgRes = await axios.get(`http://localhost:3000/api/image_url?id=${post.image_id}`);
+             
+              console.log("image_id:", post.image_id);
+              console.log("백엔드 응답:", imgRes.data);
+
+              const urlFromServer = imgRes.data?.url;
+              if (!urlFromServer) {
+                throw new Error("이미지 URL이 응답에 없음");
+              }
+              
               const baseUrl = "http://localhost:3000";
             const imageUrl = imgRes.data.url.startsWith("http") ? imgRes.data.url : baseUrl + imgRes.data.url;
-            console.log("이미지 URL:", imageUrl);
+           
+
               return {
                 ...post,
                 image_url: imageUrl, 
               };
             } catch (error) {
-              
               console.error("이미지 URL 요청 실패:", error);
               return { ...post, image_url: null };
             }
           }
-          return post;
         })
       );
 
