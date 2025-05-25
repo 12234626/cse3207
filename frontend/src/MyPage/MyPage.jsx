@@ -19,13 +19,37 @@ function MyPage() {
   useEffect(() => {
     const userData = localStorage.getItem("user");
     const clubData = localStorage.getItem("club");
-    console.log("localStorage에서 가져온 user 데이터:", userData);
-    console.log("localStorage에서 가져온 club 데이터:", clubData);
 
     if (userData) {
+      // try {
+      //   const parsedUser = JSON.parse(userData);
+      //   const finalUser = parsedUser.user ? parsedUser.user : parsedUser;
+      //   setUser(finalUser);
+
+      //   // 이미지 불러오기
+      //   fetch(`http://localhost:3000/api/image_url?id={finalUser.id}`)
+      //     .then((res) => res.json())
+      //     .then((data) => {
+      //       if (data && data.length > 0) {
+      //         setProfileImage(data[0].url); // 첫 번째 이미지 URL 사용
+      //       }
+      //     })
+      //     .catch((error) => {
+      //       console.error("이미지 불러오기 실패:", error);
+      //     });
+      // } catch (error) {
+      //   console.error("user 데이터 파싱 에러:", error);
+      // }
+
       try {
         const parsedUser = JSON.parse(userData);
-        setUser(parsedUser.user ? parsedUser.user : parsedUser);
+        const finalUser = parsedUser.user ? parsedUser.user : parsedUser;
+        setUser(finalUser);
+
+        // 임시 기본 프로필 이미지 경로 설정
+        setProfileImage(
+          "http://localhost:3000/public/images/default_profile.jpg"
+        );
       } catch (error) {
         console.error("user 데이터 파싱 에러:", error);
       }
@@ -165,16 +189,18 @@ function MyPage() {
                 <div className="fixInfoButton" onClick={handleFixInfoButton}>
                   회원 정보 수정
                 </div>
-
-                <input tyle="file" className="profileImage" />
-
+                {profileImage && (
+                  <img
+                    src={profileImage}
+                    alt="프로필 이미지"
+                    className="profileImage"
+                  />
+                )}
                 <div className="sidAndMajor">
                   {user.department} <br />
                   {user.id}
                 </div>
-
                 <div className="name">{user.name}</div>
-
                 {/* {club && (
                   <div className="clubInfo">
                     <div className="clubIntroduction">{club.introduction}</div>
