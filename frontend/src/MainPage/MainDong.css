@@ -15,12 +15,11 @@
 }
 
 .screen .phoneScreen {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 852px;
   position: relative;
   width: 393px;
 }
-
 
 .screen .filterBar {
   display: flex;
@@ -30,10 +29,10 @@
   padding: 0 8px;
   align-items: center;
   box-sizing: border-box;
-  overflow-x: auto;  
+  overflow-x: auto;
   overflow-y: hidden;
-  white-space: nowrap;    /* ✅ 줄바꿈 방지 */
-  scrollbar-width: thin;  /* Firefox */
+  white-space: nowrap; /* ✅ 줄바꿈 방지 */
+  scrollbar-width: thin; /* Firefox */
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
   height: 45px; /* 필터 바 높이 줄이기 */
   position: relative;
@@ -47,13 +46,12 @@
 .screen .filterBar .range,
 .screen .filterBar .category,
 .screen .filterBar .mo {
-  flex: 0 0 auto;        /* ✅ 크기 고정, 줄바꿈 없음 */
+  flex: 0 0 auto; /* ✅ 크기 고정, 줄바꿈 없음 */
   min-width: 80px;
-  max-width: none;       /* 너무 작게 잘리는 것 방지 */
+  max-width: none; /* 너무 작게 잘리는 것 방지 */
   height: 28px;
   text-align: center;
 }
-
 
 .screen .textRange2,
 .screen .textCategory2,
@@ -61,7 +59,7 @@
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  color: rgba(92, 110, 247, 1);
+  color: #85aadb;
   padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
@@ -79,7 +77,7 @@
 .screen .myPageButton {
   background-image: url("../images/mypageButton.svg");
   border: 0;
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 40px;
   left: 338px;
   position: absolute;
@@ -94,11 +92,10 @@
   position: absolute;
   top: 0;
   width: 123px;
-  
 }
 
 .screen .hongBoPostN {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   border: 0;
   color: #ffffff;
   font-family: "SUITE-Regular", Helvetica;
@@ -126,7 +123,7 @@
   box-shadow: inset 0px 4px 4px #00000040;
   height: 59px;
   width: 121px;
-  color: rgba(92, 110, 247, 1);
+  color: #85aadb;
   font-family: "SUITE-Regular", Helvetica;
   font-size: 20px;
   font-weight: 700;
@@ -270,25 +267,25 @@
   user-select: none;
   font-family: "SUITE-Regular", Helvetica, Arial, sans-serif;
   color: #333;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
- .areaOption:hover {
+.areaOption:hover {
   background-color: #e7f1ff;
   border-color: #007bff;
-} 
+}
 
- .areaOption.selected {
+.areaOption.selected {
   background-color: #007bff;
   color: white;
   border-color: #0056b3;
   box-shadow: 0 0 8px #007bffaa;
   font-weight: 700;
-} 
+}
 
 .areaOptions::-webkit-scrollbar {
   width: 6px;
-} 
+}
 
 .closeBtn {
   margin-top: 20px;
@@ -313,4 +310,3 @@
 .screen .filterBar::-webkit-scrollbar {
   height: 1px; /* 가로 스크롤바 높이를 세로 스크롤바와 동일하게 설정 */
 }
-
