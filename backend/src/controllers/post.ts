@@ -48,8 +48,6 @@ function getPostByClub(req: Request, res: Response) {
 // 게시글 생성
 function createPost(req: Request, res: Response) {
   const {type, title, content, club_id, image_id} = req.body;
-  
-  console.log(req.body);
 
   Post
   .create({type, title, content, club_id, image_id})

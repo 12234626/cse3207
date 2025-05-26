@@ -61,29 +61,29 @@ async function createClub(req: Request, res: Response) {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({path})
     })).json();
-    const club_id = await (await fetch(`http://localhost:3000/db/club`, {
+    const club = await (await fetch(`http://localhost:3000/db/club`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({name, type, field, recruitment, introduction, admin_user_id})
     })).json();
-    const info_post_id = await (await fetch(`http://localhost:3000/db/post`, {
+    const info_post = await (await fetch(`http://localhost:3000/db/post`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({type: "상세 설명", title, content, club_id, image_id: image.id})
+      body: JSON.stringify({type: "상세 설명", title, content, club_id: club.id, image_id: image.id})
     })).json();
 
     await fetch(`http://localhost:3000/db/club_info_post`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({club_id, info_post_id})
+      body: JSON.stringify({club_id: club.id, info_post: info_post})
     });
     await fetch(`http://localhost:3000/db/club_member`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({club_id, user_id: admin_user_id})
+      body: JSON.stringify({club_id: club.id, user_id: admin_user_id})
     });
 
-    fetch(`http://localhost:3000/db/club?id=${club_id}`)
+    fetch(`http://localhost:3000/db/club?id=${club.id}`)
     .then(function (response) {
       return response.json();
     })
@@ -210,7 +210,7 @@ async function updateUser(req: Request, res: Response) {
     await fetch(`http://localhost:3000/db/user`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id, name, password, department, phone})
+      body: JSON.stringify({id, name, password, department, phone, image_id})
     });
 
     fetch(`http://localhost:3000/db/user?id=${id}`)
