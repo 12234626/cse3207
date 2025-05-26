@@ -8,7 +8,15 @@ import Image from "./image";
 class User extends Model {
   // 유저 아이디 (학번)
   @PrimaryKey
-  @Column({type: DataType.INTEGER.UNSIGNED})
+  @Column({
+    type: DataType.INTEGER.UNSIGNED,
+    validate: {
+      is: {
+        args: /^12\d{6}$/,
+        msg: "유저 아이디는 12로 시작하는 8자리 숫자"
+      }
+    }
+  })
   public id!: number;
 
   // 유저 이름
@@ -32,7 +40,15 @@ class User extends Model {
 
   // 유저 전화번호
   @AllowNull(false)
-  @Column({type: "char(13) CHECK (phone REGEXP '^[0-9]{3}-[0-9]{4}-[0-9]{4}')"})
+  @Column({
+    type: DataType.STRING(13),
+    validate: {
+      is: {
+        args: /^\d{3}-\d{4}-\d{4}$/,
+        msg: "유저 전화번호는 000-0000-0000 형식"
+      }
+    }
+  })
   public phone!: string;
 
   // 이미지 세트 (프로필)

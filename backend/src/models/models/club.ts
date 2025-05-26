@@ -43,7 +43,15 @@ class Club extends Model {
   // 동아리 관리자
   @BelongsTo(() => User, {foreignKey: "admin_user_id", as: "admin_user", onDelete: "CASCADE"})
   @AllowNull(false)
-  @Column({type: DataType.INTEGER.UNSIGNED})
+  @Column({
+    type: DataType.INTEGER.UNSIGNED,
+    validate: {
+      is: {
+        args: /^12\d{6}$/,
+        msg: "유저 아이디는 12로 시작하는 8자리 숫자"
+      }
+    }
+  })
   public admin_user_id!: number;
 };
 
