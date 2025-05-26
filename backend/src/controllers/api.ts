@@ -1,6 +1,5 @@
 import {Request, Response} from "express";
 import crypto from "crypto";
-import {join} from "path";
 
 // 이미지 조회
 async function getImageUrl(req: Request, res: Response) {
@@ -15,7 +14,7 @@ async function getImageUrl(req: Request, res: Response) {
       res
       .status(200)
       .json(data.map(function (image: {path: string}) {
-        return join("http://localhost:3000", image.path);
+        return `http://localhost:3000/${image.path}`;
       }));
     });
   } catch (err) {
