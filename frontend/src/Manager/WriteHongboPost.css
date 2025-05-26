@@ -15,7 +15,7 @@
 }
 
 .screen .phoneScreen {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 852px;
   position: relative;
   width: 393px;
@@ -240,7 +240,7 @@
 } */
 
 .screen .hongboClick {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   border: 1px solid;
   border-color: #0000001c;
   border-radius: 20px 0px 0px 20px;
@@ -266,7 +266,7 @@
 }
 
 .screen .okButton {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   border: 1px solid;
   border-color: #0000001c;
   border-radius: 5px;
@@ -316,7 +316,7 @@
 .screen .back {
   background-image: url("../images/backArrow.svg");
   border: 0;
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 24px;
   left: 0;
   position: absolute;
