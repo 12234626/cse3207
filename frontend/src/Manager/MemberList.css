@@ -15,7 +15,7 @@
 }
 
 .screen .phoneScreen {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 852px;
   position: relative;
   width: 393px;
@@ -31,7 +31,6 @@
   overflow-y: scroll; /* 세로 스크롤 활성화  auto !!! */
   overflow-x: hidden; /* 가로 스크롤 비활성화 */
   scrollbar-width: thin; /* 스크롤바 두께 조정 (Firefox) */
-
 }
 /* 스크롤바 스타일 (Webkit 기반 브라우저) */
 .screen .members::-webkit-scrollbar {
@@ -130,7 +129,7 @@
 .screen .back {
   background-image: url("../images/backArrow.svg");
   border: 0;
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 24px;
   left: 0;
   position: absolute;
