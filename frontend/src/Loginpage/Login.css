@@ -13,7 +13,7 @@
   width: 393px;
 }
 
-.screen .imageButton{
+.screen .imageButton {
   background-color: #f5f5f5;
   border: 1px solid #00000040;
   border-radius: 5px;
@@ -61,7 +61,7 @@
 }
 
 .screen .login {
-  background-color: #5c6ef7;
+  background-color: #85aadb;
   text-align: center;
   /* border: 0; */
   border-radius: 5px;
