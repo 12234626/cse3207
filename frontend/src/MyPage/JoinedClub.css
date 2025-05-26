@@ -15,7 +15,7 @@
 }
 
 .screen .phoneScreen {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   border: 1px solid black;
   height: 852px;
   position: relative;
@@ -130,7 +130,7 @@
 .screen .back {
   background-image: url("../images/backArrow.svg");
   border: 0;
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 24px;
   left: 0;
   position: absolute;
@@ -154,7 +154,7 @@
 .screen .managerButton {
   background-image: url("../images/managerButton.svg");
   border: 0;
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 24px;
   left: 350px;
   position: absolute;
