@@ -33,6 +33,8 @@ function WriteClubInfoPost({ initialPostId = null, initialTitle = "", initialCon
       }
       const club = JSON.parse(clubData);
 
+      console.log(clubData)
+
       if (!title.trim() || !content.trim()) {
         alert("제목과 내용을 입력해주세요.");
         return;

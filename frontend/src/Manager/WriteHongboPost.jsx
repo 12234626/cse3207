@@ -18,8 +18,8 @@ function WriteHongboPost() {
   useEffect(() => {
     const clubData = JSON.parse(localStorage.getItem("club"));
     if (clubData) {
-      setClubName(clubData.name);
-      setClubId(clubData.id);
+      setClubName(clubData.club.name);
+      setClubId(clubData.club.id);
     } else {
       console.error("동아리 정보가 없습니다.");
       navigate("/MyClubList");

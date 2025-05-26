@@ -260,16 +260,18 @@ async function createPost(req: Request, res: Response) {
     const {type, title, content, club_id} = req.body;
     const {path} = req.file as any;
 
-    const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+    const image = await (await fetch(`http://localhost:3000/api/image`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({path})
     })).json();
+
+    console.log({type, title, content, club_id, image});
     
     fetch(`http://localhost:3000/db/post`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({type, title, content, club_id, image_id})
+      body: JSON.stringify({type, title, content, club_id, image_id: image.id})
     })
     .then(function (response) {
       return response.json();
