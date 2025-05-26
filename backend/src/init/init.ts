@@ -7,9 +7,8 @@ import fs from "fs";
 // 데이터베이스 초기화
 async function initDB() {
   // 데이터베이스 연결 없이 Sequelize 인스턴스 생성
-  const env = process.env.NODE_ENV || "development";
   const sequelize = new Sequelize({
-    ...config[env as keyof typeof config],
+    ...config,
     database: ""
   });
   
