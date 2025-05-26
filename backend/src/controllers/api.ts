@@ -103,13 +103,14 @@ async function createClub(req: Request, res: Response) {
 async function updateClub(req: Request, res: Response) {
   try {
     const {club_id, recruitment, introduction, info_post_id, content} = req.body;
-    const {path} = req.file as any;
+    // const {path} = req.file as any;
     
-    const image_id = await (await fetch(`http://localhost:3000/api/image`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({path})
-    })).json();
+    // const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+    //   method: "POST",
+    //   headers: {"Content-Type": "application/json"},
+    //   body: JSON.stringify({path})
+    // })).json();
+    const image_id = null;
 
     await fetch(`http://localhost:3000/db/club`, {
       method: "PUT",
@@ -122,7 +123,7 @@ async function updateClub(req: Request, res: Response) {
       body: JSON.stringify({id: info_post_id, content, image_id})
     });
 
-    fetch(`http://localhost:3000/db/club/post?id=${club_id}`)
+    fetch(`http://localhost:3000/db/post/club?id=${club_id}`)
     .then(function (response) {
       return response.json();
     })

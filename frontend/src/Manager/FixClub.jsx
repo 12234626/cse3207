@@ -46,8 +46,8 @@ function FixClub() {
   const user = userData ? JSON.parse(userData) : {};
 
   // input 상태를 useState로 관리 (초기값: 기존 데이터)
-  const [selectedStatus, setSelectedStatus] = useState(club.recruitment || "");
-  const [shortIntro, setShortIntro] = useState(club.introduction || "");
+  const [selectedStatus, setSelectedStatus] = useState(club.club.recruitment || "");
+  const [shortIntro, setShortIntro] = useState(club.club.introduction || "");
 
   // console.log("postData(raw):", postData);
   // console.log("post(parsed):", post);
@@ -194,7 +194,7 @@ function FixClub() {
     try {
       // 동아리 정보 수정 요청
       const response = await fetch(
-        "http://localhost:3000/api/club_with_info_post",
+        "http://localhost:3000/api/club",
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -218,7 +218,7 @@ function FixClub() {
 
       if (response.status === 200) {
         const detailRes = await fetch(
-          `http://localhost:3000/db/club/post?club_id=${clubId}`
+          `http://localhost:3000/db/post/club?id=${clubId}`
         );
         const detailData = await detailRes.json();
         const detailPost = detailData.find((post) => post.type === "상세 설명");
@@ -244,7 +244,7 @@ function FixClub() {
             type="text"
             className="clubNameInput"
             placeholder="동아리명을 입력하세요"
-            value={club.name || ""}
+            value={club.club.name || ""}
             readOnly
             // onChange={(e) => setClubName(e.target.value)}
           />
