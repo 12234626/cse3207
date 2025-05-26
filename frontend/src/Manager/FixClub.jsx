@@ -185,7 +185,7 @@ function FixClub() {
   // };
 
   const handleokClick = async () => {
-    const clubId = club.id;
+    const clubId = club.club.id;
     // const infoPostId = post.id;
 
     // alert("infoPostId:", infoPostId);
@@ -222,6 +222,7 @@ function FixClub() {
         );
         const detailData = await detailRes.json();
         const detailPost = detailData.find((post) => post.type === "상세 설명");
+        console.log("asdadas", detailPost)
         if (detailPost) {
           localStorage.setItem("post", JSON.stringify(detailPost));
         }
