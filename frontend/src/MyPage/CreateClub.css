@@ -8,7 +8,7 @@
 }
 /* 폰 화면 스타일 */
 .phoneScreen {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 852px;
   width: 393px;
 }
@@ -88,7 +88,7 @@
 }
 
 .dropdownSelected:hover {
-  border-color: rgba(92, 110, 247, 1);
+  border-color: #85aadb;
 }
 
 .dropdownSelected.selected {
@@ -104,8 +104,6 @@
   width: 340px;
   gap: 10px;
 }
-
-
 
 /* 글 작성 + URL */
 .phoneScreen .inputsWrapper {
@@ -178,7 +176,7 @@
 .okBButton {
   width: 90%;
   padding: 12px;
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -275,7 +273,6 @@
   box-shadow: 0 0 5px rgba(92, 110, 247, 0.5);
 }
 
-
 /* .imageUploadWrapper {
   display: flex;
   flex-direction: column;
@@ -310,7 +307,6 @@
   position: relative;
   margin: 0; /* 여백 제거 */
   padding: 0; /* 내부 여백 제거 */
-  
 }
 .imageAndInputs .imagePreview {
   width: 100%; /* 부모 요소의 너비에 맞춤 */
@@ -319,5 +315,4 @@
   border-radius: 8px; /* 둥근 테두리 유지 */
   margin: 0; /* 여백 제거 */
   padding: 0; /* 내부 여백 제거 */
-
 }
