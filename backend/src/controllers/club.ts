@@ -57,8 +57,10 @@ function updateClub(req: Request, res: Response) {
 
 // 동아리 삭제
 function deleteClub(req: Request, res: Response) {
+  const {id} = req.body;
+
   Club
-  .destroy({where: req.query})
+  .destroy({where: {id}})
   .then(function (data) {
     res
     .status(200)

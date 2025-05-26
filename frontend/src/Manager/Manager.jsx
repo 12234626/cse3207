@@ -12,7 +12,7 @@ function Manager() {
     if (clubData) {
       try {
         const parsed = JSON.parse(clubData);
-        setClubId(parsed.id); // clubData에 id가 있다고 가정
+        setClubId(parsed.club_id); // clubData에 id가 있다고 가정
       } catch (e) {
         setClubId(null);
       }
