@@ -15,7 +15,7 @@
 }
 
 .element .div {
-  background-color: #85AADB;
+  background-color: #85aadb;
   height: 852px;
   overflow: hidden햐;
   position: relative;
@@ -105,7 +105,7 @@
 .element .back {
   background-image: url("../images/backArrow.svg");
   border: 0;
-  background-color: #85AADB
+  background-color: #85aadb;
   height: 24px;
   left: 0;
   position: absolute;
