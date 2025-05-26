@@ -286,7 +286,7 @@ function FixClub() {
                   cursor: "not-allowed",
                 }}
               >
-                {club.type || "영역 없음"}
+                {club.club.type || "영역 없음"}
               </div>
             </div>
 
@@ -328,7 +328,7 @@ function FixClub() {
                   cursor: "not-allowed",
                 }}
               >
-                {club.field || "분야 없음"}
+                {club.club.field || "분야 없음"}
               </div>
             </div>
 
