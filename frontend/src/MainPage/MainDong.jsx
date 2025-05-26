@@ -260,7 +260,7 @@ function MainDong() {
     <div className="screen">
       <div className="phoneScreen">
         <div className="main">
-          <button className="myPageButton" onClick={handleMyPageClick} />
+          <button className="ClubMyPageButton" onClick={handleMyPageClick} />
 
           <div className="hongBoButton">
             <button className="hongBoPostN" onClick={handleMainHClick}>
