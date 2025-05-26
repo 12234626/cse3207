@@ -89,7 +89,7 @@ s .URLIn {
 }
 
 .dropdownSelected:hover {
-  border-color: rgba(92, 110, 247, 1);
+  border-color: #85aadb;
 }
 
 .dropdownSelected.selected {
@@ -194,7 +194,7 @@ s .URLIn {
 .okBButton {
   width: 90%;
   padding: 12px;
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   color: #fff;
   border: none;
   border-radius: 8px;
