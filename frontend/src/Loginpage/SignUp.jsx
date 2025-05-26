@@ -61,6 +61,33 @@ function SignUp() {
   return (
     <div className="screen">
       <form className="SignUpScreen" onSubmit={handleSignUpClick}>
+        <div className="inputName">
+          {/* <div className="rectangle" /> */}
+          <input
+            type="text"
+            className="inputBox"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            autocomplete="off"
+          />
+
+          <div className="texts">이름</div>
+        </div>
+
+        <div className="inputSid">
+          {/* <div className="rectangle" /> */}
+          <input
+            type="text"
+            className="inputBox"
+            name="id"
+            value={form.id}
+            onChange={handleChange}
+            autocomplete="off"
+          />
+
+          <div className="texts">학번</div>
+        </div>
         <div className="inputPW">
           {/* <div className="rectangle" /> */}
           <input
@@ -78,21 +105,6 @@ function SignUp() {
           <div className="texts">비밀번호</div>
         </div>
 
-        <div className="inputPhone">
-          {/* <div className="rectangle" /> */}
-
-          <input
-            type="text"
-            className="inputBox"
-            name="phone"
-            value={form.phone}
-            onChange={handleChange}
-            autocomplete="off"
-            placeholder="010-0000-0000"
-          />
-          <div className="texts">전화번호</div>
-        </div>
-
         <div className="inputMajor">
           {/* <div className="rectangle" /> */}
 
@@ -107,32 +119,19 @@ function SignUp() {
           <div className="texts">학과</div>
         </div>
 
-        <div className="inputSid">
+        <div className="inputPhone">
           {/* <div className="rectangle" /> */}
+
           <input
             type="text"
             className="inputBox"
-            name="id"
-            value={form.id}
+            name="phone"
+            value={form.phone}
             onChange={handleChange}
             autocomplete="off"
+            placeholder="010-0000-0000"
           />
-
-          <div className="texts">학번</div>
-        </div>
-
-        <div className="inputName">
-          {/* <div className="rectangle" /> */}
-          <input
-            type="text"
-            className="inputBox"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            autocomplete="off"
-          />
-
-          <div className="texts">이름</div>
+          <div className="texts">전화번호</div>
         </div>
 
         <button className="joinButton" onClick={handleSignUpClick}>
