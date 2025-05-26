@@ -9,19 +9,19 @@ function MemberList() {
   useEffect(() => {
     const club = JSON.parse(localStorage.getItem("club"));
     if (!club) return;
-    fetch(`http://localhost:3000/db/club_member?club_id=${club.id}`)
+    fetch(`http://localhost:3000/db/club_member?club_id=${club.club.id}`)
       .then((res) => res.json())
       .then((data) => setMembers(Array.isArray(data) ? data : []));
   }, []);
 
   const handleDelete = async (member) => {
-    if (!window.confirm(`${member.name} 회원을 정말 삭제하시겠습니까?`)) return;
+    if (!window.confirm(`${member.user.name} 회원을 정말 삭제하시겠습니까?`)) return;
     try {
       const club = JSON.parse(localStorage.getItem("club"));
       const response = await fetch("http://localhost:3000/db/club_member", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ club_id: club.id, user_id: member.user.id }),
+        body: JSON.stringify({ club_id: club.club.id, user_id: member.user.id }),
       });
       if (response.ok) {
         setMembers(members.filter((m) => m.user.id !== member.user.id));
@@ -59,9 +59,9 @@ function MemberList() {
           {members.map((member, idx) => (
             <div className="element" key={idx}>
               <div className="member">
-                <div className="memberName">{member.name}</div>
+                <div className="memberName">{member.user.name}</div>
                 <div className="memberInfo">
-                  {member.department} {member.user.id}
+                  {member.user.department} {member.user.id}
                 </div>
                 <button className="delete" onClick={() => handleDelete(member)}>
                   삭제

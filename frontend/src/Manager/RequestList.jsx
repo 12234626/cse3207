@@ -10,10 +10,10 @@ function RequestList() {
     const club = JSON.parse(localStorage.getItem("club"));
     if (!club) return;
     fetch(
-      `http://localhost:3000/db/club_request?club_id=${club.id}&status=대기`
+      `http://localhost:3000/db/club_request?club_id=${club.club.id}&status=대기`
     )
       .then((res) => res.json())
-      .then((data) => setMembers(data));
+      .then((data) => {setMembers(data); console.log(data);});
   }, []);
 
   const handleBackClick = () => {
@@ -21,12 +21,12 @@ function RequestList() {
   };
 
   const handleAccept = async (member) => {
-    if (!window.confirm(`${member.name}님의 가입 신청을 수락하시겠습니까?`))
+    if (!window.confirm(`${member.user.name}님의 가입 신청을 수락하시겠습니까?`))
       return;
     try {
       // const club = JSON.parse(localStorage.getItem("club"));
       const response = await fetch(
-        "http://localhost:3000/api/update_club_request",
+        "http://localhost:3000/api/club_request",
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -48,12 +48,12 @@ function RequestList() {
   };
 
   const handleRefuse = async (member) => {
-    if (!window.confirm(`${member.name}님의 가입 신청을 거절하시겠습니까?`))
+    if (!window.confirm(`${member.user.name}님의 가입 신청을 거절하시겠습니까?`))
       return;
     try {
       // const club = JSON.parse(localStorage.getItem("club"));
       const response = await fetch(
-        "http://localhost:3000/api/update_club_request",
+        "http://localhost:3000/api/club_request",
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -82,9 +82,9 @@ function RequestList() {
           {members.map((member, idx) => (
             <div className="element" key={idx}>
               <div className="request">
-                <div className="requestName">{member.name}</div>
+                <div className="requestName">{member.user.name}</div>
                 <div className="requestInfo">
-                  {member.department} <br />
+                  {member.user.department} <br />
                   {member.user.id}
                 </div>
                 <button
