@@ -15,7 +15,7 @@
 }
 
 .screen .phoneScreen {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 852px;
   width: 393px;
 }
@@ -203,7 +203,7 @@
   position: absolute;
   top: 0;
   width: 121px;
-  color: rgba(92, 110, 247, 1);
+  color: #85aadb;
   font-family: "SUITE-Regular", Helvetica;
   font-size: 20px;
   font-weight: 700;
@@ -247,7 +247,7 @@
 .screen .home {
   background-image: url("../images/homeButton.svg");
   border: 0;
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
   height: 42px;
   left: 327px;
   position: absolute;
