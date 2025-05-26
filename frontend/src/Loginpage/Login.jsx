@@ -31,7 +31,7 @@ function Login() {
       });
 
       if (!response.ok) {
-        alert("존재하지 않는 회원입니다.");
+        alert("로그인 실패!");
         return;
       }
 

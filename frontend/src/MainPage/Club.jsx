@@ -8,7 +8,8 @@ function Club() {
   const location = useLocation();
 
   const clubName = location.state?.clubName || "동아리명을 불러오는 중...";
-  const introduction = location.state?.introduction || "소개글을 불러오는 중...";
+  const introduction =
+    location.state?.introduction || "소개글을 불러오는 중...";
   const clubId = location.state?.clubId;
 
   const [detailContent, setDetailContent] = useState("");
@@ -21,14 +22,18 @@ function Club() {
   useEffect(() => {
     const fetchClubDetail = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/db/post?type=상세 설명&club_id=${clubId}`);
+        const res = await axios.get(
+          `http://localhost:3000/db/post?type=상세 설명&club_id=${clubId}`
+        );
         if (Array.isArray(res.data) && res.data.length > 0) {
           const detailPost = res.data[0];
           setDetailContent(detailPost.content);
 
           if (detailPost.image_id) {
             try {
-              const imgRes = await axios.get(`http://localhost:3000/api/image?id=${detailPost.image_id}`);
+              const imgRes = await axios.get(
+                `http://localhost:3000/api/image?id=${detailPost.image_id}`
+              );
               const imageUrl = imgRes.data[0]; // 응답이 배열이라면
               setDetailImageUrl(imageUrl);
               console.log("상세 설명 이미지 URL:", imageUrl);
@@ -82,7 +87,10 @@ function Club() {
             <div className="YB"></div>
 
             {/* 상세 설명 텍스트 */}
-            <div className="text-below-view-2" style={{ whiteSpace: "pre-wrap" }}>
+            <div
+              className="text-below-view-2"
+              style={{ whiteSpace: "pre-wrap" }}
+            >
               {detailContent}
             </div>
           </div>
