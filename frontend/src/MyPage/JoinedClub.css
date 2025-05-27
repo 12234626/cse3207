@@ -23,7 +23,7 @@
 }
 
 .screen .myClubPosts {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   border-radius: 0px 0px 40px 40px;
   height: 728px;
   left: 0;
@@ -42,12 +42,15 @@
 
 .screen .myClubPost {
   background-color: #ffffff;
+  border-radius: 10px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #0000001a;
-  height: 54px;
+  box-shadow: inset 0px 0px 2px #00000040;
+  height: 64px;
   position: relative;
-  width: 400px;
+  width: 390px;
+  margin: 3px;
 }
 
 /* .screen .overlap-group {
@@ -105,7 +108,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 13px;
+  top: 15px;
   white-space: nowrap;
 }
 
