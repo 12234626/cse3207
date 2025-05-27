@@ -50,20 +50,20 @@
   line-height: normal;
   position: absolute;
   text-decoration: underline;
-  top: 480px;
+  top: 460px;
   width: 80px;
 }
 
 .screen .loginForm {
   left: 62px;
   position: absolute;
-  top: 345px;
+  top: 340px;
 }
 
 .screen .login {
   background-color: #85aadb;
   text-align: center;
-  /* border: 0; */
+  border: 0;
   border-radius: 5px;
   color: white;
   font-size: 15px;
@@ -122,8 +122,8 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  /* top: 5px;
-  white-space: nowrap;
+  top: 57px;
+  /* white-space: nowrap;
   width: 180px; */
   height: 40px;
 }
@@ -147,20 +147,20 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  /* top: 10px;
-  white-space: nowrap;
+  top: 7px;
+  /* white-space: nowrap;
   width: 180px; */
   height: 40px;
 }
 
 .screen .logo {
-  background-image: url("../images/inhaclubLogo.svg");
+  background-image: url("../images/logo.svg");
   background-size: contain; /* 로고 크기를 컨테이너에 맞게 조정 */
   background-repeat: no-repeat; /* 로고가 반복되지 않도록 설정 */
-  height: 200px; /* 로고 높이 설정 */
-  width: 200px; /* 로고 너비 설정 */
+  height: 220px; /* 로고 높이 설정 */
+  width: 220px; /* 로고 너비 설정 */
   position: absolute;
-  top: 230px; /* 로고의 세로 위치 조정 */
+  top: 250px; /* 로고의 세로 위치 조정 */
   left: 50%; /* 가로 중앙 정렬 */
   transform: translateX(-50%);
 }
