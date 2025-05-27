@@ -16,6 +16,7 @@
 
 .screen .phoneScreen {
   background-color: #85aadb;
+  border-radius: 40px;
   height: 852px;
   width: 393px;
 }

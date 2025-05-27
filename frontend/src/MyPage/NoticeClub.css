@@ -17,6 +17,7 @@
 
 .noticeClubPage .noticePhoneScreen {
   background-color: #85aadb;
+  border-radius: 40px;
   height: 852px;
   overflow: hidden;
   position: relative;

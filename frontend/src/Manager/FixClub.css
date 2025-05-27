@@ -8,7 +8,8 @@
 }
 /* 폰 화면 스타일 */
 .phoneScreen {
-  background-color: rgba(92, 110, 247, 1);
+  background-color: #85aadb;
+  border-radius: 40px;
   height: 852px;
   width: 393px;
 }
