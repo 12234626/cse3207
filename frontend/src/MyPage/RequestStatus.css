@@ -28,7 +28,7 @@
 } */
 
 .screen .requestStatusMain {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   border-radius: 0px 0px 40px 40px;
   height: 728px;
   left: 0;
@@ -50,9 +50,13 @@
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #0000001a;
-  height: 54px;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 2px #00000040;
+  height: 64px;
+  left: 2px;
   position: relative;
   width: 383px;
+  margin: 3px;
 }
 
 .screen .requestedClubName {
@@ -64,7 +68,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 13px;
+  top: 17px;
   white-space: nowrap;
 }
 
@@ -83,9 +87,9 @@
   border-radius: 10px;
   box-shadow: 0px 0px 2px #00000040;
   height: 35px;
-  left: 287px;
+  left: 285px;
   position: absolute;
-  top: 7px;
+  top: 13px;
   width: 87px;
   color: #0000009c;
   font-family: "Inter-Bold", Helvetica;
