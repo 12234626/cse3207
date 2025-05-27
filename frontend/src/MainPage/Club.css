@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column; /* 위에서 아래로 배치 */
   align-items: center;
+  border-radius: 40px;
 }
 .element .clubTop {
   height: 24px;

@@ -85,7 +85,9 @@ function Login() {
           // action="http://localhost:3000/db/user/login"
           className="loginForm"
         >
+    
           <div className="SIDbox">
+            <div className="fixText">학번</div>
             {/* <div className="overlap-group"> */}
             {/* <div className="text-wrapper-3">비밀번호</div> */}
             <input
@@ -93,14 +95,17 @@ function Login() {
               className="loginSid"
               name="id"
               id="id"
-              autocomplete="on"
               placeholder="학번"
+              autocomplete="on"
+          
               value={id}
               onChange={(e) => setId(e.target.value)}
             />
             {/* </div> */}
           </div>
           <div className="PWbox">
+
+
             {/* <div className="overlap-group"> */}
             {/* <div className="text-wrapper-4">학번</div> */}
             <input

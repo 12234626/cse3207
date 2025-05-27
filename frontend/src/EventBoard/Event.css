@@ -12,6 +12,7 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  
 }
 
 .element .div {
@@ -20,6 +21,10 @@
   overflow: hidden;
   position: relative;
   width: 393px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+  
 }
 
 .element .view {
@@ -28,6 +33,7 @@
   position: absolute;
   top: 124px;
   width: 399;
+  
 }
 
 .element .overlap-group {
@@ -39,6 +45,7 @@
   align-items: center; /* 수평 가운데 정렬 */
   position: relative;
   width: 393px;
+  
 }
 
 .element .text-wrapper {
@@ -46,6 +53,7 @@
   height: 728px;
   position: relative;
   width: 393;
+  
 }
 
 .element .ex {
@@ -59,6 +67,7 @@
   padding: 20px; /* 텍스트와 경계 사이 여백 */
   line-height: 1.5; /* 줄 간격 조정 */
   word-wrap: break-word; /* 긴 단어가 있을 경우 줄바꿈 */
+  
 }
 
 /* .element .eventTop {
@@ -86,6 +95,7 @@
   position: absolute;
   /* top: 2px; */
   white-space: nowrap;
+  
 }
 
 /* .element .Name {
