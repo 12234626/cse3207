@@ -85,11 +85,6 @@ function Login() {
           // action="http://localhost:3000/db/user/login"
           className="loginForm"
         >
-    
-          <div className="SIDbox">
-            <div className="fixText">학번</div>
-            {/* <div className="overlap-group"> */}
-            {/* <div className="text-wrapper-3">비밀번호</div> */}
             <input
               type="text"
               className="loginSid"
@@ -102,11 +97,9 @@ function Login() {
               onChange={(e) => setId(e.target.value)}
             />
             {/* </div> */}
-          </div>
-          <div className="PWbox">
-
-
+        
             {/* <div className="overlap-group"> */}
+            {/* <div className="text-wrapper-3">비밀번호</div> */}
             {/* <div className="text-wrapper-4">학번</div> */}
             <input
               type="password"
@@ -121,7 +114,7 @@ function Login() {
             {/* <button className="imageButton" onClick={handleImageClick}>
               /
             </button> */}
-
+          
             <input
               type="submit"
               className="login"
@@ -129,7 +122,7 @@ function Login() {
               onClick={handleLoginClick}
             ></input>
             {/* </div> */}
-          </div>
+      
         </form>
         <div className="logo" />
       </div>

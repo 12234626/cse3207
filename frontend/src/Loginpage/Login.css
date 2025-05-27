@@ -54,6 +54,7 @@
   text-decoration: underline;
   top: 460px;
   width: 80px;
+  cursor: pointer;
 }
 
 .screen .loginForm {
@@ -62,81 +63,6 @@
   top: 340px;
 }
 
-.screen .login {
-  background-color: #85aadb;
-  text-align: center;
-  border: 0;
-  border-radius: 5px;
-  color: white;
-  font-size: 15px;
-  height: 108px;
-  left: 220px;
-  position: absolute;
-  top: 0px;
-  width: 77px;
-}
-.screen .login:hover {
-  background-color: hsl(233, 76%, 72%); /* 호버 시 더 진한 레드 */
-  transform: scale(1.03);
-}
-
-/* .screen .overlap-group {
-  border-radius: 5px;
-  height: 108px;
-  position: absolute;
-  width: 72px;
-} */
-
-/* .screen .login {
-  height: 23px;
-  left: 8px;
-  position: absolute;
-  top: 45px;
-  width: 56px;
-} */
-
-.screen .PWbox {
-  height: 48px;
-  /* left: 62px;
-  position: absolute;
-  top: 404px; */
-  width: 193px;
-}
-
-/* .screen .overlap {
-  background-color: #f5f5f5;
-  border: 1px solid;
-  border-color: #000000;
-  border-radius: 5px;
-  height: 48px;
-  position: relative;
-  width: 191px;
-} */
-
-.screen .loginPW {
-  background-color: #f5f5f5;
-  border: 1px solid #00000040;
-  border-radius: 5px;
-  color: #0000009c;
-  font-family: "Inter-Bold", Helvetica;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 57px;
-  /* white-space: nowrap;
-  width: 180px; */
-  height: 40px;
-}
-
-.screen .SIDbox {
-  height: 48px;
-  /* left: 62px;
-  position: absolute;
-  top: 345px; */
-  width: 193px;
-}
 
 .screen .loginSid {
   background-color: #f5f5f5;
@@ -149,20 +75,63 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 7px;
+  top: 1px;
   /* white-space: nowrap;
   width: 180px; */
   height: 40px;
+  left: 10px;
+  cursor: pointer;
 }
+
+.screen .loginPW {
+  background-color: #f5f5f5;
+  border: 1px solid #00000040;
+  border-radius: 5px;
+  color: #0000009c;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 55px;
+  /* white-space: nowrap;
+  width: 180px; */
+  height: 40px;
+  left: 10px;
+  cursor: pointer;
+  
+}
+
+.screen .login {
+  background-color: #85aadb;
+  text-align: center;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  height: 100px;
+  left: 210px;
+  position: absolute;
+  top: 0px;
+  width: 77px;
+  cursor: pointer;
+}
+
+.screen .login:hover {
+  background-color: hsl(219, 67%, 66%); /* 호버 시 더 진한 레드 */
+  transform: scale(1.03);
+}
+
 
 .screen .logo {
   background-image: url("../images/logo.svg");
   background-size: contain; /* 로고 크기를 컨테이너에 맞게 조정 */
   background-repeat: no-repeat; /* 로고가 반복되지 않도록 설정 */
-  height: 220px; /* 로고 높이 설정 */
+  height: 80px; /* 로고 높이 설정 */
   width: 220px; /* 로고 너비 설정 */
   position: absolute;
-  top: 250px; /* 로고의 세로 위치 조정 */
+  top: 230px; /* 로고의 세로 위치 조정 */
   left: 50%; /* 가로 중앙 정렬 */
   transform: translateX(-50%);
 }
