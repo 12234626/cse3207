@@ -63,7 +63,7 @@
 }
 
 .screen .hongBoPostY {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   border-radius: 20px 20px 0px 0px;
   border: 0;
   box-shadow: inset 0px 4px 4px #00000040;
@@ -125,7 +125,7 @@
 } */
 
 .screen .hongBoScreen {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   height: 728px;
   left: 0;
   position: absolute;
@@ -158,13 +158,17 @@
 
 .screen .hongBo {
   background-color: #ffffff;
-  border-bottom-style: solid;
+  /* border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-color: #0000001a;
-  height: 171px;
+  border-color: #0000001a; */
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 2px #00000040;
+  border-bottom: 1px solid #0000001a;
+  height: 165px;
   position: relative;
-  width: 381px;
+  width: 373px;
   cursor: pointer;
+  margin: 5px 0px;
 }
 
 .screen .hongBoName {
@@ -172,20 +176,20 @@
   font-family: "Inter-Bold", Helvetica;
   font-size: 17px;
   font-weight: 700;
-  left: 14px;
+  left: 20px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 18px;
+  top: 25px;
   width: 244px;
 }
 
 .screen .hongBoInfo {
   color: #00000040;
   font-family: "Inter-Bold", Helvetica;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
-  left: 17px;
+  left: 20px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -199,7 +203,7 @@
   width: 89px;
   position: absolute;
   top: 45px;
-  left: 279px;
+  left: 270px;
   border-radius: 8px;
   overflow: hidden;
 }
