@@ -127,6 +127,7 @@
 
 .screen .hongBoScreen {
   background-color: #f1f1f1;
+  border-radius: 0px 0px 40px 40px;
   height: 728px;
   left: 0;
   position: absolute;
@@ -135,6 +136,7 @@
 }
 
 .screen .hongBoList {
+  border-radius: 0px 0px 40px 40px;
   height: 722px;
   left: 6px;
   position: relative;

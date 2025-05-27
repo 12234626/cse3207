@@ -8,7 +8,9 @@
 
 .screen .LoginScreen {
   background-color: #ffffff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   border-radius: 40px;
+  position: relative;
   height: 852px;
   width: 393px;
 }
