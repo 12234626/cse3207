@@ -27,6 +27,11 @@ function SignUp() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleBackClick = () => {
+    navigate(-1);
+  };
+
+
   const handleSignUpClick = async (e) => {
     e.preventDefault();
     // setError("");
@@ -61,6 +66,8 @@ function SignUp() {
   return (
     <div className="screen">
       <form className="SignUpScreen" onSubmit={handleSignUpClick}>
+        <button type="button" className="baack" onClick={handleBackClick}></button>
+
         <div className="inputName">
           {/* <div className="rectangle" /> */}
           <input

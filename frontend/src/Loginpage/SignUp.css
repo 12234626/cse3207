@@ -14,6 +14,27 @@
   position: relative;
   width: 393px;
 }
+.SignUpScreen .baack {
+  background-image: url("../images/backArrow.svg");
+  background-color: #c7d2e0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; 
+
+  border: none;
+
+  border-radius: 20%;
+
+  width: 25px; /* 크기 키우기 */
+  height: 25px;
+  cursor: pointer;
+
+  position: absolute; /* 위치 명시 */
+  top: 50px;
+  left: 50px;
+  z-index: 10;
+}
+
 
 .screen .inputPW {
   height: 71px;
