@@ -36,7 +36,7 @@
   white-space: nowrap; /* ✅ 줄바꿈 방지 */
   scrollbar-width: thin; /* Firefox */
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-  height: 45px; /* 필터 바 높이 줄이기 */
+  height: 50px; /* 필터 바 높이 줄이기 */
   position: relative;
   top: 10px;
 }
@@ -47,17 +47,24 @@
 /* .range, .category, .mo 절대 위치 제거, flex item으로 */
 .screen .filterBar .range,
 .screen .filterBar .category,
-.screen .filterBar .mo {
-  flex: 0 0 auto; /* ✅ 크기 고정, 줄바꿈 없음 */
+.screen .filterBar .mo,
+.screen .filterBar .search
+{
+  flex: 0 0 auto; 
   min-width: 80px;
-  max-width: none; /* 너무 작게 잘리는 것 방지 */
+  max-width: none; 
   height: 28px;
   text-align: center;
-}
+} 
+/* .screen .filterBar .search{
+  width: 100%
+} */
+ 
 
 .screen .textRange2,
 .screen .textCategory2,
-.screen .textMo2 {
+.screen .textMo2,
+.screen .filterBar .searchInput {
   position: relative;
   bottom: 5px;
   width: 100%;
@@ -74,6 +81,18 @@
   font-weight: 700;
   letter-spacing: 0;
   line-height: normal;
+}
+
+.screen .filterBar .searchInput {
+  width: 80px; /* ✅ 직접 고정 */
+}
+
+.screen .searchInput::placeholder {
+  color: #878fc8; /* 플레이스홀더 색상 */
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 1; /* 투명도 설정 */
 }
 
 /* 버튼 및 상단 바 요소들 */
@@ -157,7 +176,7 @@
   position: absolute;
   top: 55px;
   width: 380px;
-  max-height: 669px;
+  max-height: 660px;
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 10px;
@@ -175,7 +194,7 @@
   border-radius: 10px;
   box-shadow: inset 0px 0px 2px #00000040;
   border-bottom: 1px solid #0000001a;
-  min-height: 80px; /* 최소 높이 설정 */
+  height: 80px; /* 최소 높이 설정 */
   position: relative;
   width: 373px;
   left: 5px;
@@ -187,25 +206,29 @@
   margin: 5px;
 }
 
+.screen .club:hover{
+  transform: scale(1.03);
+}
+
 .screen .clubName {
   color: #000000;
-  font-family: "Inter-Bold", Helvetica;
+  font-family: "SUITE-Regular", Helvetica;
   font-size: 17px;
   font-weight: 700;
   left: 22px;
   position: absolute;
-  top: 13px;
+  top: 15px;
   width: 300px;
 }
 
-.screen .shortInfo {
+.club .shortInfo {
   color: #00000040;
-  font-family: "Inter-Bold", Helvetica;
+  font-family: "SUITE-Regular", Helvetica;
   font-size: 9px;
   font-weight: 700;
   left: 20px;
   position: absolute;
-  margin-top: 25px;
+  top: 40px;
   width: 280px;
 }
 
@@ -226,10 +249,16 @@
   position: relative;
   width: 58px;
   color: #0000009c;
+  box-shadow: inset 0px 0px 2px #00000040;
   font-family: "Inter-Bold", Helvetica;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
+}
+.screen .applyButton:hover {
+  background-color: #d1e3ff;
+  border-color: #a0c4f7;
+  transform: scale(1.05);
 }
 
 .overlay {
@@ -262,7 +291,7 @@
   gap: 8px;
   padding: 8px 4px;
   scrollbar-width: thin;
-  scrollbar-color: #007bff #e0e0e0;
+  scrollbar-color: #8f969e #ffffff;
 }
 
 .areaOption {
@@ -282,14 +311,14 @@
 
 .areaOption:hover {
   background-color: #e7f1ff;
-  border-color: #007bff;
+  border-color: #4e6174;
 }
 
 .areaOption.selected {
-  background-color: #007bff;
+  background-color: #849ebe;
   color: white;
-  border-color: #0056b3;
-  box-shadow: 0 0 8px #007bffaa;
+  border-color: #7e8389;
+  box-shadow: 0 0 8px #93a7bcaa;
   font-weight: 700;
 }
 
@@ -300,7 +329,7 @@
 .closeBtn {
   margin-top: 20px;
   padding: 8px 16px;
-  background-color: #f44336;
+  background-color: #c8c6b9;
   color: white;
   border: none;
   border-radius: 8px;
@@ -319,4 +348,17 @@
 
 .screen .filterBar::-webkit-scrollbar {
   height: 1px; /* 가로 스크롤바 높이를 세로 스크롤바와 동일하게 설정 */
+}
+
+
+
+.nojo {
+  display: flex; /* Flexbox 활성화 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  height: 100%; /* 부모 요소의 전체 높이 사용 */
+  font-family: "SUITE-Regular", Helvetica;
+  font-size: 16px; /* 텍스트 크기 */
+  color: #333; /* 텍스트 색상 */
+  text-align: center; /* 텍스트 정렬 */
 }

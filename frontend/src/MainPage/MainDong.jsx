@@ -14,6 +14,8 @@ function MainDong() {
   const [selectedAreas, setSelectedAreas] = useState(["전체"]);
   const [selectedCategories, setSelectedCategories] = useState(["전체"]);
   const [selectedMo, setSelectedMo] = useState(["전체"]);
+  
+  const [searchTerm, setSearchTerm] = useState("");
 
   const areas = [
     "전체",
@@ -256,6 +258,8 @@ function MainDong() {
     setMoDropdownOpen(true);
   };
 
+ 
+
   return (
     <div className="screen">
       <div className="phoneScreen">
@@ -274,6 +278,16 @@ function MainDong() {
 
           <div className="clubScreen">
             <div className="filterBar">
+               
+                  <input
+                    type="text"
+                    placeholder="검색"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="searchInput"
+                  />
+            
+              
               <div className="range">
                 <div
                   className="textRange2 clickableRange"
@@ -311,37 +325,44 @@ function MainDong() {
 
             <div className="clubList">
               {/* <pre>{JSON.stringify(clubs, null, 2)}</pre> */}
-              {clubs.length === 0 ? (
-                <div>조건에 맞는 동아리가 없습니다.</div>
-              ) : (
-                clubs.map((club, index) => (
-                  <div
-                    key={index}
-                    className="club"
-                    onClick={() => handleClubClick(club)}
-                  >
-                    <div className="clubName">{club.name}</div>
-                    <div className="shortInfo">
-                      {club.introduction || "소개 없음"}
-                    </div>
-                    <div className="apply">
-                      <button
-                        className="applyButton"
-                        onClick={(e) => {
-                          e.stopPropagation(); // Prevent triggering the parent div's onClick
-                          if (club.inrecruitment === "모집 마감") {
-                            alert("모집이 마감된 동아리입니다.");
-                            return;
-                          }
-                          handleApply(club);
-                        }}
-                      >
-                        신청
-                      </button>
-                    </div>
-                  </div>
-                ))
-              )}
+              {clubs.filter((club) =>
+  club.name.toLowerCase().includes(searchTerm.toLowerCase())
+).length === 0 ? (
+  <div className="nojo">조건에 맞는 동아리가 없습니다.</div>
+) : (
+  clubs
+    .filter((club) =>
+      club.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .map((club, index) => (
+      <div
+        key={index}
+        className="club"
+        onClick={() => handleClubClick(club)}
+      >
+        <div className="clubName">{club.name}</div>
+        <div className="shortInfo">
+          {club.introduction || "소개 없음"}
+        </div>
+        <div className="apply">
+          <button
+            className="applyButton"
+            onClick={(e) => {
+              e.stopPropagation();
+              if (club.inrecruitment === "모집 마감") {
+                alert("모집이 마감된 동아리입니다.");
+                return;
+              }
+              handleApply(club);
+            }}
+          >
+            신청
+          </button>
+        </div>
+      </div>
+    ))
+)}
+
             </div>
           </div>
 

@@ -58,14 +58,14 @@
 
 .screen .textMyPage {
   color: #000000;
-  font-family: "Inter-Bold", Helvetica;
+  font-family: "SUITE-Regular", Helvetica;
   font-size: 20px;
   font-weight: 700;
   left: 22px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 13px;
+  top: 20px;
   white-space: nowrap;
 }
 
@@ -78,6 +78,7 @@
   position: absolute;
   top: 20px;
   width: 24px;
+  cursor: pointer;
 }
 
 /* .screen .div-wrapper {
@@ -144,6 +145,7 @@
   text-decoration: underline;
   top: 157px;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .screen .profileImage {
@@ -230,10 +232,11 @@
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .screen .withdraw:hover {
-  background-color: #e63946; /* 호버 시 더 진한 레드 */
+  background-color: #b19b85; /* 호버 시 더 진한 레드 */
   transform: scale(1.03);
 }
 /* .screen .text-wrapper-5 {
@@ -258,4 +261,5 @@
   position: absolute;
   top: 9px;
   width: 40px;
+  cursor: pointer;
 }
