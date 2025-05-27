@@ -63,7 +63,7 @@ function Manager() {
     <div className="screen">
       <div className="phoneScreen">
         <div className="managerMain">
-          <div className="requestsBox">
+          <div className="managerList">
             {/* <div className="overlap-group"> */}
             <div className="managerListText">받은 가입 요청</div>
             <button
@@ -72,7 +72,7 @@ function Manager() {
             ></button>
             {/* </div> */}
           </div>
-          <div className="memberListBox">
+          <div className="managerList">
             {/* <div className="overlap-group"> */}
             <div className="managerListText">동아리 부원 명단</div>
             <button
@@ -81,7 +81,7 @@ function Manager() {
             ></button>
             {/* </div> */}
           </div>
-          <div className="writePostBox">
+          <div className="managerList">
             {/* <div className="overlap-group"> */}
             <div className="managerListText">게시글 작성</div>
             <button
@@ -90,7 +90,7 @@ function Manager() {
             ></button>
             {/* </div> */}
           </div>
-          <div className="fixClubBox">
+          <div className="managerList">
             {/* <div className="overlap-group"> */}
             <div className="managerListText">동아리 정보 수정</div>
             <button
@@ -99,7 +99,7 @@ function Manager() {
             ></button>
             {/* </div> */}
           </div>
-          <div className="deleteClubBox">
+          <div className="managerList">
             {/* <div className="overlap-group"> */}
             <div className="managerListText">동아리 삭제</div>
             <button
