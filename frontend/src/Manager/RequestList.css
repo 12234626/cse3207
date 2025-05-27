@@ -30,7 +30,7 @@
   position: absolute;
   top: 124px;
   width: 393px;
-  /* overflow-y: scroll; 세로 스크롤 항상 표시 */
+  overflow-y: scroll; /*세로 스크롤 항상 표시 */
   overflow-x: hidden; /* 가로 스크롤 비활성화 */
   scrollbar-width: thin; /* 스크롤바 두께 조정 (Firefox) */
 }
@@ -40,7 +40,6 @@
 }
 
 .screen .requests::-webkit-scrollbar-thumb {
-  background-color: #cccccc; /* 스크롤바 색상 */
   border-radius: 4px; /* 스크롤바 모서리 둥글게 */
 }
 
