@@ -40,7 +40,10 @@ function MyClubList() {
       <div className="phoneScreen">
         {/* <pre>{JSON.stringify(clubs, null, 2)}</pre> */}
         <div className="myClubs">
-          {clubs.map((club) => (
+        {clubs.length === 0 ? (
+          <div className="noClubs">가입한 동아리가 없습니다.</div>
+        ) : (
+          clubs.map((club) => (
             <div className="element" key={club.club_id}>
               <div className="myClub">
                 <div className="myClubName">{club.club.name}</div>
@@ -50,8 +53,9 @@ function MyClubList() {
                 ></button>
               </div>
             </div>
-          ))}
-        </div>
+          ))
+        )}
+      </div>
 
         <div className="topBar">
           <button className="back" onClick={handleBackClick}></button>
