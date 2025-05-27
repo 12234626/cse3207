@@ -147,42 +147,6 @@ function MyPage() {
               </div>
             </div> */}
 
-            <div className="createClub">
-              <div className="listBox">
-                <div className="textMyPage">동아리 생성</div>
-
-                <button
-                  className="enterButton"
-                  alt="Image"
-                  onClick={handleCreateClub}
-                ></button>
-              </div>
-            </div>
-
-            <div className="requestStatus">
-              <div className="listBox">
-                <div className="textMyPage">동아리 가입 요청 현황</div>
-
-                <button
-                  className="enterButton"
-                  alt="Image"
-                  onClick={handleRequestStatus}
-                />
-              </div>
-            </div>
-
-            <div className="joinedClub">
-              <div className="listBox">
-                <div className="textMyPage">내가 가입한 동아리</div>
-
-                <button
-                  className="enterButton"
-                  alt="Image"
-                  onClick={handleJoinedClub}
-                />
-              </div>
-            </div>
-
             <div className="fixMemberInfo">
               <div className="fixMemberInfo1">
                 <div className="fixInfoButton" onClick={handleFixInfoButton}>
@@ -205,6 +169,39 @@ function MyPage() {
                     <div className="clubIntroduction">{club.introduction}</div>
                   </div>
                 )} */}
+              </div>
+            </div>
+            <div className="joinedClub">
+              <div className="listBox">
+                <div className="textMyPage">내가 가입한 동아리</div>
+
+                <button
+                  className="enterButton"
+                  alt="Image"
+                  onClick={handleJoinedClub}
+                />
+              </div>
+            </div>
+            <div className="requestStatus">
+              <div className="listBox">
+                <div className="textMyPage">동아리 가입 요청 현황</div>
+
+                <button
+                  className="enterButton"
+                  alt="Image"
+                  onClick={handleRequestStatus}
+                />
+              </div>
+            </div>
+            <div className="createClub">
+              <div className="listBox">
+                <div className="textMyPage">동아리 생성</div>
+
+                <button
+                  className="enterButton"
+                  alt="Image"
+                  onClick={handleCreateClub}
+                ></button>
               </div>
             </div>
           </div>

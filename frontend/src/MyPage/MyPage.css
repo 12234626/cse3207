@@ -28,7 +28,7 @@
 }
 
 .screen .myPageScreen {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   border-radius: 0px 0px 40px 40px;
   height: 728px;
   left: 0;
@@ -47,10 +47,11 @@
 
 .screen .listBox {
   background-color: #ffffff;
-  border-bottom-style: solid;
+  border-radius: 10px;
   border-bottom-width: 1px;
+  box-shadow: inset 0px 0px 2px #00000040;
   border-color: #0000001a;
-  height: 54px;
+  height: 64px;
   position: relative;
   width: 383px;
 }
@@ -73,9 +74,9 @@
   border: 0;
   background-color: #ffffff;
   height: 24px;
-  left: 347px;
+  left: 340px;
   position: absolute;
-  top: 13px;
+  top: 20px;
   width: 24px;
 }
 
@@ -121,10 +122,12 @@
 
 .screen .fixMemberInfo1 {
   background-color: #ffffff;
+  border-radius: 10px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #0000001a;
-  height: 194px;
+  box-shadow: inset 0px 0px 2px #00000040;
+  height: 200px;
   position: relative;
   width: 383px;
 }
@@ -134,7 +137,7 @@
   font-family: "Inter-Bold", Helvetica;
   font-size: 15px;
   font-weight: 700;
-  left: 277px;
+  left: 270px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -196,7 +199,7 @@
 } */
 
 .screen .myPageY {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   border-radius: 20px 20px 0px 0px;
   border: 0;
   box-shadow: inset 0px 4px 4px #00000040;
