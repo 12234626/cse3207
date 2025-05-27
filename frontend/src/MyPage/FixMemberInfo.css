@@ -15,6 +15,7 @@
 
 .screen .fixInfoMain {
   background-color: #ffffff;
+  border-radius: 0px 0px 40px 40px;
   height: 728px;
   left: 0;
   position: absolute;
