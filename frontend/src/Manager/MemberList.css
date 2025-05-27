@@ -23,7 +23,7 @@
 }
 
 .screen .members {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   border-radius: 0px 0px 40px 40px;
   height: 728px;
   left: 0;
@@ -61,9 +61,12 @@
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #0000001a;
-  height: 54px;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 2px #00000040;
+  height: 64px;
   position: relative;
   width: 400px;
+  margin: 3px;
 }
 
 .screen .memberName {
@@ -75,7 +78,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 13px;
+  top: 17px;
   white-space: nowrap;
 }
 
@@ -84,11 +87,11 @@
   font-family: "Inter-Bold", Helvetica;
   font-size: 13px;
   font-weight: 700;
-  left: 92px;
+  left: 87px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 19px;
+  top: 26px;
 }
 
 .screen .delete {
@@ -96,9 +99,9 @@
   border: 1px solid #0000001c;
   border-radius: 20px;
   height: 40px;
-  left: 315px;
+  left: 305px;
   position: absolute;
-  top: 6px;
+  top: 12px;
   width: 57px;
 }
 /* .screen .buttonBox {
