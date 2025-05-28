@@ -21,7 +21,7 @@ function FixMemberInfo() {
     if (id === 0 || id === null || id === undefined) {
       return "http://localhost:3000/public/images/default_profile.jpg";
     }
-    return `http://localhost:3000/db/image/${id}`; // 또는 image_table의 url
+    return `http://localhost:3000/api/image?id=${id}`; // 또는 image_table의 url
   };
 
   useEffect(() => {
