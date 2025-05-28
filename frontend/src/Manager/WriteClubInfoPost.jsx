@@ -44,7 +44,7 @@ function WriteClubInfoPost({ initialPostId = null, initialTitle = "", initialCon
       formData.append("type", "공지");
       formData.append("title", title);
       formData.append("content", content);
-      formData.append("club_id", club.id);
+      formData.append("club_id", club.club_id);
 
       if (image) {
         formData.append("image", image);
