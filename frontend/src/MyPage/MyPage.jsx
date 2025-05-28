@@ -92,14 +92,12 @@ function MyPage() {
     navigate("/");
   };
 
-  // const handleWithdraw = () => {
-  //   localStorage.removeItem("user");
-  //   navigate("/");
-  // };
-
   const handleWithdraw = async () => {
     if (!user) return;
 
+    const confirmWithdraw = window.confirm("정말 탈퇴하시겠습니까?");
+    if (!confirmWithdraw) return;
+    
     try {
       const response = await fetch(`http://localhost:3000/db/user/`, {
         method: "DELETE",
