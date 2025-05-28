@@ -173,7 +173,7 @@
   cursor: pointer;
   margin: 5px 0px;
 }
-.hongBo:hover{
+.hongBo:hover {
   transform: scale(1.03);
 }
 
@@ -204,7 +204,7 @@
   height: 100px;
 }
 .hongBoImage {
-  background-color: #899ec7;
+  background-image: url("../images/loading.svg");
   height: 89px;
   width: 89px;
   position: absolute;

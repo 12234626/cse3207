@@ -157,7 +157,7 @@
 }
 
 .screen .profileImage {
-  background-color: #899ec7;
+  background-image: url("../images/default_profile.jpg");
   border-radius: 75px;
   height: 150px;
   left: 31px;
