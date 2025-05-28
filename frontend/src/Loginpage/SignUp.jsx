@@ -66,7 +66,6 @@ function SignUp() {
   return (
     <div className="screen">
       <form className="SignUpScreen" onSubmit={handleSignUpClick}>
-        <button type="button" className="baack" onClick={handleBackClick}></button>
 
         <div className="inputName">
           {/* <div className="rectangle" /> */}
@@ -147,6 +146,19 @@ function SignUp() {
             <div className="text-wrapper-2">가입하기</div>
           </div> */}
         </button>
+
+         {/* ✅ 로그인 안내 추가 */}
+         <div className="loginRedirect">
+          이미 계정이 있으신가요?{" "}
+          <span
+            className="loginLink"
+            onClick={() => navigate("/")}
+            style={{ color: "#007bff", cursor: "pointer", textDecoration: "underline" }}
+          >
+            로그인하러 가기
+          </span>
+        </div>
+        
         {error && <div className="error">{error}</div>}
       </form>
     </div>
