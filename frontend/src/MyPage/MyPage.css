@@ -113,6 +113,14 @@
   width: 385px;
 }
 
+.screen .logout {
+  height: 54px;
+  left: 5px;
+  position: absolute;
+  top: 429px;
+  width: 385px;
+}
+
 .screen .fixMemberInfo {
   height: 194px;
   left: 5px;

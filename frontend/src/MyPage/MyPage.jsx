@@ -88,6 +88,10 @@ function MyPage() {
     navigate("/CreateClub");
   };
 
+  const handleLogout = () => {
+    navigate("/");
+  };
+
   // const handleWithdraw = () => {
   //   localStorage.removeItem("user");
   //   navigate("/");
@@ -202,6 +206,18 @@ function MyPage() {
                   alt="Image"
                   onClick={handleCreateClub}
                 ></button>
+              </div>
+            </div>
+
+            <div className="logout">
+              <div className="listBox">
+                <div className="textMyPage">로그아웃</div>
+
+                <button
+                  className="enterButton"
+                  alt="Image"
+                  onClick={handleLogout}
+                />
               </div>
             </div>
           </div>
