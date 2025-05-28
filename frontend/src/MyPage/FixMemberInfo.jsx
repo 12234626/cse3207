@@ -17,6 +17,7 @@ function FixMemberInfo() {
 
   // 기본 이미지 URL 가져오는 함수
   const getImageUrlById = (id) => {
+    const timestamp = Date.now(); // 캐시 방지용
     if (id === 0 || id === null || id === undefined) {
       return "http://localhost:3000/public/images/default_profile.jpg";
     }
@@ -35,16 +36,22 @@ function FixMemberInfo() {
         phone: user.phone || "",
       });
       setImageId(user.image_id || 0); // 이미지 ID 설정
-      setProfileImage(getImageUrlById(user.image_id)); // 이미지 URL 설정
+      // setProfileImage(getImageUrlById(user.image_id)); // 이미지 URL 설정
     }
   }, []);
+
+  useEffect(() => {
+    if (imageId !== null) {
+      setProfileImage(getImageUrlById(imageId));
+    }
+  }, [imageId]);
 
   // 이미지 업로드 함수
   async function handleImageUpload(file) {
     const formData = new FormData();
     formData.append("image", file);
 
-    const res = await fetch("http://localhost:3000/db/upload", {
+    const res = await fetch("http://localhost:3000/api/upload", {
       method: "POST",
       body: formData,
     });
@@ -70,8 +77,53 @@ function FixMemberInfo() {
     // setProfileImage(imageUrl);
     const uploaded = await handleImageUpload(file);
     if (uploaded) {
-      setProfileImage(`http://localhost:3000${uploaded.imageUrl}`);
       setImageId(uploaded.imageId);
+
+      // const newImageUrl = `http://localhost:3000${uploaded.imageUrl}`;
+      // setProfileImage(newImageUrl);
+      // setImageId(uploaded.imageId);
+      // const storedUser = JSON.parse(localStorage.getItem("user"));
+      // try {
+      //   const res = await fetch(`http://localhost:3000/db/user`, {
+      //     method: "PUT",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify({
+      //       id: storedUser.id,
+      //       name: form.name,
+      //       password: storedUser.password,
+      //       department: form.department,
+      //       phone: form.phone,
+      //       image_id: uploaded.imageId,
+      //     }),
+      //   });
+      //   if (res.ok) {
+      //     const updatedUser = {
+      //       ...storedUser,
+      //       image_id: uploaded.imageId,
+      //     };
+      //     localStorage.setItem("user", JSON.stringify(updatedUser));
+      //   } else {
+      //     console.error("이미지 포함 정보 수정 실패");
+      //   }
+      // } catch (error) {
+      //   console.error("이미지 업로드 후 요청 실패:", error);
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+      await fetch("http://localhost:3000/api/user", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: storedUser.id,
+          name: form.name,
+          password: storedUser.password,
+          department: form.department,
+          phone: form.phone,
+          image_id: uploaded.imageId,
+        }),
+      });
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ ...storedUser, image_id: uploaded.imageId })
+      );
     }
   };
 
@@ -86,7 +138,7 @@ function FixMemberInfo() {
   const handleFixClick = async () => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     try {
-      const response = await fetch(`http://localhost:3000/db/user`, {
+      const response = await fetch(`http://localhost:3000/api/user`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -99,7 +151,7 @@ function FixMemberInfo() {
         }),
       });
 
-      if (response.status === 200) {
+      if (response.ok) {
         const updateUser = {
           ...storedUser,
           name: form.name,
@@ -111,11 +163,12 @@ function FixMemberInfo() {
         localStorage.setItem("user", JSON.stringify(updateUser));
 
         alert("회원 정보 수정 완료");
+
         navigate("/MyPage", { replace: true });
         // window.location.reload();
       } else {
         const data = await response.json();
-        alert("수정 실패: " + JSON.stringify(data));
+        alert("수정 실패");
       }
     } catch (err) {
       console.error(err);
