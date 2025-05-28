@@ -198,14 +198,13 @@ async function login(req: Request, res: Response) {
 async function updateUser(req: Request, res: Response) {
   try {
     const {id, name, password, department, phone} = req.body;
-    // const {path} = req.file as any;
+    const {path} = req.file as any;
 
-    // const image_id = await (await fetch(`http://localhost:3000/api/image`, {
-    //   method: "POST",
-    //   headers: {"Content-Type": "application/json"},
-    //   body: JSON.stringify({path})
-    // })).json();
-    const image_id = null;
+    const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({path})
+    })).json();
     
     await fetch(`http://localhost:3000/db/user`, {
       method: "PUT",
@@ -265,8 +264,6 @@ async function createPost(req: Request, res: Response) {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({path})
     })).json();
-
-    console.log({type, title, content, club_id, image});
     
     fetch(`http://localhost:3000/db/post`, {
       method: "POST",
