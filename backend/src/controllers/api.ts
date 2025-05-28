@@ -288,6 +288,45 @@ async function createPost(req: Request, res: Response) {
   }
 }
 
+// 동아리 가입 신청 생성
+async function createClubRequest(req: Request, res: Response) {
+  try {
+    const {club_id, user_id} = req.body;
+
+    fetch(`http://localhost:3000/db/club_request?club_id=${club_id}&user_id=${user_id}&status=대기`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      if (data.length !== 0) {
+        res
+        .status(409)
+        .json(data);
+
+        return;
+      }
+
+      fetch(`http://localhost:3000/db/club_request`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({club_id, user_id, status: "대기"})
+      })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        res
+        .status(201)
+        .json(data);
+      });
+    });
+  } catch (err) {
+    res
+    .status(500)
+    .json({message: err});
+  }
+}
+
 // 동아리 가입 신청 업데이트
 async function updateClubRequest(req: Request, res: Response) {
   const {id, status} = req.body;
@@ -329,5 +368,6 @@ export {
   updateUser,
   getPost,
   createPost,
+  createClubRequest,
   updateClubRequest
 };
