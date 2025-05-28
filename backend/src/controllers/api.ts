@@ -200,7 +200,7 @@ async function updateUser(req: Request, res: Response) {
     const {id, name, password, department, phone} = req.body;
     const {path} = req.file as any;
 
-    const image_id = await (await fetch(`http://localhost:3000/api/image`, {
+    const image = await (await fetch(`http://localhost:3000/api/image`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({path})
@@ -209,7 +209,7 @@ async function updateUser(req: Request, res: Response) {
     await fetch(`http://localhost:3000/db/user`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id, name, password, department, phone, image_id})
+      body: JSON.stringify({id, name, password, department, phone, image_id: image.id})
     });
 
     fetch(`http://localhost:3000/db/user?id=${id}`)
