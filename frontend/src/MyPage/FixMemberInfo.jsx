@@ -96,11 +96,10 @@ function FixMemberInfo() {
     const file = e.target.files[0];
     if (!file) return;
 
-    // 파일 이름으로 path 생성 (예: public/images/파일명)
     const imagePath = `/public/images/${file.name}`;
 
-    // 서버에 이미지 경로 정보 저장 요청
     try {
+      // 1. 먼저 이미지 정보를 저장
       const res = await fetch("http://localhost:3000/api/image", {
         method: "POST",
         headers: {
@@ -112,19 +111,36 @@ function FixMemberInfo() {
       const data = await res.json();
       if (res.ok && data.id) {
         setImageId(data.id);
-        setProfileImage(`http://localhost:3000${imagePath}`);
 
-        // localStorage 업데이트
+        // 2. 회원정보 업데이트 (이미지 ID 제외)
         const storedUser = JSON.parse(localStorage.getItem("user"));
-        localStorage.setItem(
-          "user",
-          JSON.stringify({ ...storedUser, image_id: data.id })
-        );
+        const updateResponse = await fetch("http://localhost:3000/api/user", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: storedUser.id,
+            name: form.name,
+            password: storedUser.password,
+            department: form.department,
+            phone: form.phone,
+          }),
+        });
+
+        if (updateResponse.ok) {
+          // localStorage 업데이트
+          localStorage.setItem(
+            "user",
+            JSON.stringify({ ...storedUser, image_id: data.id })
+          );
+          setProfileImage(getImageUrlById(data.id));
+        } else {
+          alert("회원정보 업데이트 실패");
+        }
       } else {
         alert("이미지 정보 저장 실패");
       }
     } catch (error) {
-      console.error("이미지 정보 저장 오류:", error);
+      console.error("이미지 처리 오류:", error);
     }
   };
 
