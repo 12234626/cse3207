@@ -32,7 +32,7 @@ async function createImage(req: Request, res: Response) {
     fetch(`http://localhost:3000/db/image`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({path})
+      body: JSON.stringify({path: path.replace(/\\/g, "/")})
     })
     .then(function (response) {
       return response.json();
