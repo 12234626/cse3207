@@ -47,83 +47,84 @@ function FixMemberInfo() {
   }, [imageId]);
 
   // 이미지 업로드 함수
-  async function handleImageUpload(file) {
-    const formData = new FormData();
-    formData.append("image", file);
+  // async function handleImageUpload(file) {
+  //   const formData = new FormData();
+  //   formData.append("image", file);
 
-    const res = await fetch("http://localhost:3000/api/upload", {
-      method: "POST",
-      body: formData,
-    });
-    const data = await res.json();
-    if (res.ok && data.id && data.url) {
-      return {
-        imageId: data.id,
-        imageUrl: data.url,
-      };
-    } else {
-      alert("이미지 업로드 실패");
-      return null;
-    }
-  }
+  //   const res = await fetch("http://localhost:3000/api/upload", {
+  //     method: "POST",
+  //     body: formData,
+  //   });
+  //   const data = await res.json();
+  //   if (res.ok && data.id && data.url) {
+  //     return {
+  //       imageId: data.id,
+  //       imageUrl: data.url,
+  //     };
+  //   } else {
+  //     alert("이미지 업로드 실패");
+  //     return null;
+  //   }
+  // }
 
   // 예시: 파일 선택 핸들러
+  // const handleFileChange = async (e) => {
+  //   const file = e.target.files[0];
+  //   if (!file) return;
+  //    const imagePath = `/public/images/${file.name}`;
+  //     const storedUser = JSON.parse(localStorage.getItem("user"));
+  //     await fetch("http://localhost:3000/api/user", {
+  //       method: "PUT",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({
+  //         id: storedUser.id,
+  //         name: form.name,
+  //         password: storedUser.password,
+  //         department: form.department,
+  //         phone: form.phone,
+  //         image_id: uploaded.imageId,
+  //       }),
+  //     });
+  //     localStorage.setItem(
+  //       "user",
+  //       JSON.stringify({ ...storedUser, image_id: uploaded.imageId })
+  //     );
+  //   }
+  // };
+
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
-    // const imageUrl = await handleImageUpload(file);
-    // // imageUrl을 상태로 저장하거나, 서버에 저장 등 원하는 작업 수행
-    // console.log("업로드된 이미지 경로:", imageUrl);
-    // setProfileImage(imageUrl);
-    const uploaded = await handleImageUpload(file);
-    if (uploaded) {
-      setImageId(uploaded.imageId);
 
-      // const newImageUrl = `http://localhost:3000${uploaded.imageUrl}`;
-      // setProfileImage(newImageUrl);
-      // setImageId(uploaded.imageId);
-      // const storedUser = JSON.parse(localStorage.getItem("user"));
-      // try {
-      //   const res = await fetch(`http://localhost:3000/db/user`, {
-      //     method: "PUT",
-      //     headers: { "Content-Type": "application/json" },
-      //     body: JSON.stringify({
-      //       id: storedUser.id,
-      //       name: form.name,
-      //       password: storedUser.password,
-      //       department: form.department,
-      //       phone: form.phone,
-      //       image_id: uploaded.imageId,
-      //     }),
-      //   });
-      //   if (res.ok) {
-      //     const updatedUser = {
-      //       ...storedUser,
-      //       image_id: uploaded.imageId,
-      //     };
-      //     localStorage.setItem("user", JSON.stringify(updatedUser));
-      //   } else {
-      //     console.error("이미지 포함 정보 수정 실패");
-      //   }
-      // } catch (error) {
-      //   console.error("이미지 업로드 후 요청 실패:", error);
-      const storedUser = JSON.parse(localStorage.getItem("user"));
-      await fetch("http://localhost:3000/api/user", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id: storedUser.id,
-          name: form.name,
-          password: storedUser.password,
-          department: form.department,
-          phone: form.phone,
-          image_id: uploaded.imageId,
-        }),
+    // 파일 이름으로 path 생성 (예: public/images/파일명)
+    const imagePath = `/public/images/${file.name}`;
+
+    // 서버에 이미지 경로 정보 저장 요청
+    try {
+      const res = await fetch("http://localhost:3000/api/image", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ path: imagePath }),
       });
-      localStorage.setItem(
-        "user",
-        JSON.stringify({ ...storedUser, image_id: uploaded.imageId })
-      );
+
+      const data = await res.json();
+      if (res.ok && data.id) {
+        setImageId(data.id);
+        setProfileImage(`http://localhost:3000${imagePath}`);
+
+        // localStorage 업데이트
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ ...storedUser, image_id: data.id })
+        );
+      } else {
+        alert("이미지 정보 저장 실패");
+      }
+    } catch (error) {
+      console.error("이미지 정보 저장 오류:", error);
     }
   };
 
