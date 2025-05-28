@@ -48,18 +48,16 @@
 .screen .filterBar .range,
 .screen .filterBar .category,
 .screen .filterBar .mo,
-.screen .filterBar .search
-{
-  flex: 0 0 auto; 
+.screen .filterBar .search {
+  flex: 0 0 auto;
   min-width: 80px;
-  max-width: none; 
+  max-width: none;
   height: 28px;
   text-align: center;
-} 
+}
 /* .screen .filterBar .search{
   width: 100%
 } */
- 
 
 .screen .textRange2,
 .screen .textCategory2,
@@ -84,7 +82,10 @@
 }
 
 .screen .filterBar .searchInput {
-  width: 80px; /* ✅ 직접 고정 */
+  width: 80px;
+  height: 33px;
+  margin-top: 4px;
+  /* ✅ 직접 고정 */
 }
 
 .screen .searchInput::placeholder {
@@ -206,7 +207,7 @@
   margin: 5px;
 }
 
-.screen .club:hover{
+.screen .club:hover {
   transform: scale(1.03);
 }
 
@@ -349,8 +350,6 @@
 .screen .filterBar::-webkit-scrollbar {
   height: 1px; /* 가로 스크롤바 높이를 세로 스크롤바와 동일하게 설정 */
 }
-
-
 
 .nojo {
   display: flex; /* Flexbox 활성화 */
