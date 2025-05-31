@@ -22,21 +22,26 @@ function MyPage() {
 
     if (userData) {
       try {
-        const parsedUser = JSON.parse(userData);
-        const finalUser = parsedUser.user ? parsedUser.user : parsedUser;
+        // const parsedUser = JSON.parse(userData);
+        // const finalUser = parsedUser.user ? parsedUser.user : parsedUser;
+        const finalUser = (await fetch(
+          `http://localhost:3000/api/user?id=${JSON.parse(userData).id}`
+        ).then((response) => response.json()))[0];
         setUser(finalUser);
         console.log("Loaded user data:", finalUser);
 
         // image_id를 기반으로 프로필 이미지 설정
         if (finalUser.image_id) {
           try {
-            const response = await fetch(
-              `http://localhost:3000/api/image?id=${finalUser.image_id}`
-            );
-            const imageData = await response.json();
-            console.log("Image data:", imageData);
-            if (imageData && imageData.length > 0) {
-              const imageUrl = imageData[0]; // 이미 전체 URL이 들어있음
+            // const response = await fetch(
+            //   `http://localhost:3000/api/image?id=${finalUser.image_id}`
+            // );
+            // const imageData = await response.json();
+            // console.log("Image data:", imageData);
+            // if (imageData && imageData.length > 0) {
+            if (finalUser.image_url) {
+              // const imageUrl = imageData[0]; // 이미 전체 URL이 들어있음
+              const imageUrl = finalUser.image_url;
               console.log("Setting image URL:", imageUrl);
               setProfileImage(imageUrl);
             } else {

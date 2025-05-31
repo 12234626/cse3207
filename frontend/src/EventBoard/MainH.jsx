@@ -9,33 +9,33 @@ function MainH() {
   const [posts, setEventPosts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/db/post?type=홍보").then(async (response) => {
+    axios.get("http://localhost:3000/api/post?type=홍보").then(async (response) => {
       const postsData = response.data;
 
-      // 게시글 각각에 대해 image_url(id)로 실제 URL 요청
-      const postsWithImages = await Promise.all(
-        postsData.map(async (post) => {
-          if (post.image_id) {
-            try {
-              const imgRes = await axios.get(`http://localhost:3000/api/image?id=${post.image_id}`);
-              const imageUrl = imgRes.data[0]; // 응답이 배열이므로 첫 번째 URL 꺼내기
+      // // 게시글 각각에 대해 image_url(id)로 실제 URL 요청
+      // const postsWithImages = await Promise.all(
+      //   postsData.map(async (post) => {
+      //     if (post.image_id) {
+      //       try {
+      //         const imgRes = await axios.get(`http://localhost:3000/api/image?id=${post.image_id}`);
+      //         const imageUrl = imgRes.data[0]; // 응답이 배열이므로 첫 번째 URL 꺼내기
       
-              console.log("이미지 URL:", imageUrl);
+      //         console.log("이미지 URL:", imageUrl);
       
-              return {
-                ...post,
-                image_url: imageUrl,
-              };
-            } catch (error) {
-              console.error("이미지 URL 요청 실패:", error);
-              return { ...post, image_url: null };
-            }
-          }
-          return post;
-        })
-      );
-
-      setEventPosts(postsWithImages);
+      //         return {
+      //           ...post,
+      //           image_url: imageUrl,
+      //         };
+      //       } catch (error) {
+      //         console.error("이미지 URL 요청 실패:", error);
+      //         return { ...post, image_url: null };
+      //       }
+      //     }
+      //     return post;
+      //   })
+      // );
+      
+      setEventPosts(postsData);
     });
   }, []);
 

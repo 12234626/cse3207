@@ -17,27 +17,27 @@ function FixMemberInfo() {
   });
 
   // 기본 이미지 URL 가져오는 함수
-  const getImageUrlById = async (id) => {
-    if (id === 0 || id === null || id === undefined) {
-      console.log("Invalid image_id:", id);
-      return "";
-    }
-    try {
-      const response = await fetch(`http://localhost:3000/api/image?id=${id}`);
-      const imageData = await response.json();
-      console.log("Image data from server:", imageData);
-      if (imageData && imageData.length > 0) {
-        const imageUrl = imageData[0]; // 이미 전체 URL이 들어있음
-        console.log("Generated image URL:", imageUrl);
-        return imageUrl;
-      }
-      console.log("No image data found for id:", id);
-      return "";
-    } catch (error) {
-      console.error("이미지 URL 가져오기 실패:", error);
-      return "";
-    }
-  };
+  // const getImageUrlById = async (id) => {
+  //   if (id === 0 || id === null || id === undefined) {
+  //     console.log("Invalid image_id:", id);
+  //     return "";
+  //   }
+  //   try {
+  //     const response = await fetch(`http://localhost:3000/api/image?id=${id}`);
+  //     const imageData = await response.json();
+  //     console.log("Image data from server:", imageData);
+  //     if (imageData && imageData.length > 0) {
+  //       const imageUrl = imageData[0]; // 이미 전체 URL이 들어있음
+  //       console.log("Generated image URL:", imageUrl);
+  //       return imageUrl;
+  //     }
+  //     console.log("No image data found for id:", id);
+  //     return "";
+  //   } catch (error) {
+  //     console.error("이미지 URL 가져오기 실패:", error);
+  //     return "";
+  //   }
+  // };
 
   useEffect(() => {
     const userData = localStorage.getItem("user");
@@ -55,17 +55,17 @@ function FixMemberInfo() {
     }
   }, []);
 
-  useEffect(() => {
-    const loadImage = async () => {
-      if (imageId !== null) {
-        console.log("Loading image for id:", imageId);
-        const imageUrl = await getImageUrlById(imageId);
-        console.log("Loaded image URL:", imageUrl);
-        setProfileImage(imageUrl);
-      }
-    };
-    loadImage();
-  }, [imageId]);
+  // useEffect(() => {
+  //   const loadImage = async () => {
+  //     if (imageId !== null) {
+  //       console.log("Loading image for id:", imageId);
+  //       const imageUrl = await getImageUrlById(imageId);
+  //       console.log("Loaded image URL:", imageUrl);
+  //       setProfileImage(imageUrl);
+  //     }
+  //   };
+  //   loadImage();
+  // }, [imageId]);
 
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
@@ -122,9 +122,10 @@ function FixMemberInfo() {
         localStorage.setItem("user", JSON.stringify(updateUser));
 
         // 이미지 ID 업데이트 및 이미지 URL 설정
-        if (data.image_id) {
-          setImageId(data.image_id);
-          const newImageUrl = await getImageUrlById(data.image_id);
+        if (data.image_url) {
+          // setImageId(data.image_id);
+          // const newImageUrl = await getImageUrlById(data.image_id);
+          const newImageUrl = data.image_url;
           setProfileImage(newImageUrl);
           console.log("새로운 이미지 URL:", newImageUrl);
         } else {

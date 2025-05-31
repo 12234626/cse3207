@@ -36,7 +36,7 @@ function Login() {
       }
 
       if (response.ok) {
-        const response = await fetch(`http://localhost:3000/db/user?id=${id}`);
+        const response = await fetch(`http://localhost:3000/api/user?id=${id}`);
         const data = (await response.json())[0];
 
         console.log("서버 응답 데이터: ", data);
@@ -82,7 +82,6 @@ function Login() {
           회원가입
         </button>
         <form
-          // action="http://localhost:3000/db/user/login"
           className="loginForm"
         >
             <input

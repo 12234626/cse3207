@@ -1,5 +1,3 @@
-console.log('🚀 서버 시작 시도 중...');
-
 import express from "express";
 import cors from "cors";
 

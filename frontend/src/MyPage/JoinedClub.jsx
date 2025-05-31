@@ -42,7 +42,7 @@ function JoinedClub() {
     const fetchNoticePosts = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/db/post/club?id=${club.club_id}`
+          `http://localhost:3000/api/post?club_id=${club.club_id}`
         );
         const data = await response.json();
         // 공지 타입만 필터링

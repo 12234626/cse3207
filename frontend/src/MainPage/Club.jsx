@@ -23,7 +23,7 @@ function Club() {
     const fetchClubDetail = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/db/post?type=상세 설명&club_id=${clubId}`
+          `http://localhost:3000/api/post?type=상세 설명&club_id=${clubId}`
         );
         if (Array.isArray(res.data) && res.data.length > 0) {
           const detailPost = res.data[0];
@@ -31,10 +31,11 @@ function Club() {
 
           if (detailPost.image_id) {
             try {
-              const imgRes = await axios.get(
-                `http://localhost:3000/api/image?id=${detailPost.image_id}`
-              );
-              const imageUrl = imgRes.data[0]; // 응답이 배열이라면
+              // const imgRes = await axios.get(
+              //   `http://localhost:3000/api/image?id=${detailPost.image_id}`
+              // );
+              // const imageUrl = imgRes.data[0]; // 응답이 배열이라면
+              const imageUrl = detailPost.image_url;
               setDetailImageUrl(imageUrl);
               console.log("상세 설명 이미지 URL:", imageUrl);
             } catch (imgError) {

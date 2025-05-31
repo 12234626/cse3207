@@ -1,52 +1,20 @@
 import {Request, Response} from "express";
 import crypto from "crypto";
 
-// 이미지 조회
-async function getImageUrl(req: Request, res: Response) {
-  try {
-    const {id} = req.query;
-
-    fetch(`http://localhost:3000/db/image?id=${id}`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      res
-      .status(200)
-      .json(data.map(function (image: {path: string}) {
-        return `http://localhost:3000/${image.path}`;
-      }));
-    });
-  } catch (err) {
-    res
-    .status(500)
-    .json({message: err});
-  }
+function getImageUrl(image: {path: string}) {
+  return image ? `http://localhost:3000/${image.path}` : null;
 }
 
 // 이미지 생성
-async function createImage(req: Request, res: Response) {
-  try {
-    const {path} = req.body;
-
-    fetch(`http://localhost:3000/db/image`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({path: path.replace(/\\/g, "/")})
-    })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      res
-      .status(201)
-      .json(data);
-    });
-  } catch (err) {
-    res
-    .status(500)
-    .json({message: err});
-  }
+async function createImage(path: string) {
+  return await fetch(`http://localhost:3000/db/image`, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({path: path.replace(/\\/g, "/")})
+  })
+  .then(function (response) {
+    return response.json();
+  });
 }
 
 // 동아리 및 상세 설명 게시글 생성
@@ -57,12 +25,8 @@ async function createClub(req: Request, res: Response) {
 
     if (req.file) {
       const {path} = req.file as any;
-      
-      const image = await (await fetch(`http://localhost:3000/api/image`, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({path})
-      })).json();
+
+      const image = await createImage(path);
 
       image_id = image.id;
     }
@@ -114,11 +78,7 @@ async function updateClub(req: Request, res: Response) {
     if (req.file) {
       const {path} = req.file as any;
       
-      const image = await (await fetch(`http://localhost:3000/api/image`, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({path})
-      })).json();
+      const image = await createImage(path);
 
       image_id = image.id;
     }
@@ -162,8 +122,8 @@ async function getUser(req: Request, res: Response) {
     .then(async function (data) {
       res
       .status(200)
-      .json(await Promise.all(data.map(async function (user: {image_id: number}) {
-        const image_url = (await (await fetch(`http://localhost:3000/api/image?id=${user.image_id}`)).json())[0];
+      .json(await Promise.all(data.map(async function (user: {image: {path: string}}) {
+        const image_url = getImageUrl(user.image);
 
         return {...user, image_url};
       })));
@@ -180,7 +140,7 @@ async function login(req: Request, res: Response) {
   try {
     const {id, password} = req.body;
     const password_hash = crypto.createHash("sha512").update(password).digest("hex");
-    const is_valid = (await (await fetch(`http://localhost:3000/db/user?id=${id}&password=${password_hash}`)).json()).length !== 0;
+    const is_valid = (await (await fetch(`http://localhost:3000/api/user?id=${id}&password=${password_hash}`)).json()).length !== 0;
     
     if (!id || !password || !is_valid) {
       res
@@ -190,7 +150,7 @@ async function login(req: Request, res: Response) {
       return;
     }
     
-    fetch(`http://localhost:3000/db/user?id=${id}`)
+    fetch(`http://localhost:3000/api/user?id=${id}`)
     .then(function (response) {
       return response.json();
     })
@@ -215,11 +175,7 @@ async function updateUser(req: Request, res: Response) {
     if (req.file) {
       const {path} = req.file as any;
       
-      const image = await (await fetch(`http://localhost:3000/api/image`, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({path})
-      })).json();
+      const image = await createImage(path);
 
       image_id = image.id;
     }
@@ -230,7 +186,7 @@ async function updateUser(req: Request, res: Response) {
       body: JSON.stringify({id, name, password, department, phone, image_id})
     });
 
-    fetch(`http://localhost:3000/db/user?id=${id}`)
+    fetch(`http://localhost:3000/api/user?id=${id}`)
     .then(function (response) {
       return response.json();
     })
@@ -240,7 +196,6 @@ async function updateUser(req: Request, res: Response) {
       .json(data[0]);
     });
   } catch (err) {
-    console.error(err);
     res
     .status(500)
     .json({message: err});
@@ -259,8 +214,8 @@ async function getPost(req: Request, res: Response) {
     .then(async function (data) {
       res
       .status(200)
-      .json(await Promise.all(data.map(async function (post: {image_id: number}) {
-        const image_url = (await (await fetch(`http://localhost:3000/api/image?id=${post.image_id}`)).json())[0];
+      .json(await Promise.all(data.map(async function (post: {image: {path: string}}) {
+        const image_url = getImageUrl(post.image);
 
         return {...post, image_url};
       })));
@@ -281,11 +236,7 @@ async function createPost(req: Request, res: Response) {
     if (req.file) {
       const {path} = req.file as any;
       
-      const image = await (await fetch(`http://localhost:3000/api/image`, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({path})
-      })).json();
+      const image = await createImage(path);
 
       image_id = image.id;
     }
@@ -381,8 +332,6 @@ async function updateClubRequest(req: Request, res: Response) {
 }
 
 export {
-  getImageUrl,
-  createImage,
   createClub,
   updateClub,
   getUser,

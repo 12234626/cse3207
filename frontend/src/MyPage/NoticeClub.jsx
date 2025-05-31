@@ -18,7 +18,7 @@ function NoticeClub() {
   useEffect(() => {
     const fetchNotice = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/db/post?id=${noticeId}`);
+        const response = await fetch(`http://localhost:3000/api/post?id=${noticeId}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -33,26 +33,29 @@ function NoticeClub() {
 
             // 동아리 이미지 가져오기
             try {
-              const clubResponse = await fetch(`http://localhost:3000/db/club?id=${notice.club_id}`);
-              const clubData = await clubResponse.json();
+              // const clubResponse = await fetch(`http://localhost:3000/api/club?id=${notice.club_id}`);
+              // const clubData = await clubResponse.json();
               
-              if (Array.isArray(clubData) && clubData.length > 0) {
-                const club = clubData[0];
-                if (club.image_id) {
-                  const imgRes = await fetch(`http://localhost:3000/api/image?id=${club.image_id}`);
-                  const imgData = await imgRes.json();
-                  setClubImages(imgData); // 동아리 이미지 설정
-                }
-              }
+              // if (Array.isArray(clubData) && clubData.length > 0) {
+              //   const club = clubData[0];
+              //   if (club.image_id) {
+              //     const imgRes = await fetch(`http://localhost:3000/api/image?id=${club.image_id}`);
+              //     const imgData = await imgRes.json();
+              //     setClubImages(imgData); // 동아리 이미지 설정
+              //   }
+              // }
+              setClubImages([notice.image_url])
             } catch (clubError) {
               console.error("동아리 이미지 요청 실패:", clubError);
             }
 
             if (notice.image_id) {
               try {
-                const imgRes = await fetch(`http://localhost:3000/api/image?id=${notice.image_id}`);
-                const imgData = await imgRes.json();
-                const imageUrl = imgData[0];
+                // const imgRes = await fetch(`http://localhost:3000/api/image?id=${notice.image_id}`);
+                // const imgData = await imgRes.json();
+                // const imageUrl = imgData[0]; // 배열에서 첫 번째 URL 사용
+                const imageUrl = notice.image_url;
+                console.log("공지 이미지 URL:", imageUrl);
                 setNoticeImageUrl(imageUrl);
               } catch (imgError) {
                 console.error("이미지 URL 요청 실패:", imgError);
@@ -110,7 +113,7 @@ function NoticeClub() {
                 <div className="noticeContenttext" style={{ whiteSpace: "pre-wrap" }}>
                   {noticeContent}
                 </div>
-                {clubImages.length > 0 && (
+                {/* {clubImages.length > 0 && (
                   <div className="clubImages">
                     {clubImages.map((imageUrl, index) => (
                       <div
@@ -124,7 +127,7 @@ function NoticeClub() {
                       />
                     ))}
                   </div>
-                )}
+                )} */}
               </>
             )}
           </div>
