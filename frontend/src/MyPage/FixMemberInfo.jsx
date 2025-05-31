@@ -75,7 +75,7 @@ function FixMemberInfo() {
 
     // 선택된 파일이 있다면 FormData에 추가
     if (selectedFile) {
-      formData.append("file", selectedFile);
+      formData.append("image", selectedFile);
     }
 
     try {

@@ -57,10 +57,10 @@ function checkUserPassword(req: Request, res: Response) {
 
 // 유저 업데이트
 function updateUser(req: Request, res: Response) {
-  const {id, name, password, department, phone} = req.body;
+  const {id, name, password, department, phone, image_id} = req.body;
   
   User
-  .update({name, password, department, phone}, {where: {id}})
+  .update({name, password, department, phone, image_id}, {where: {id}})
   .then(function (data) {
     res
     .status(200)
