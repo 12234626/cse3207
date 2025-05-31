@@ -188,6 +188,9 @@
   position: absolute;
   top: 25px;
   width: 244px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .screen .hongBoInfo {
@@ -200,8 +203,13 @@
   line-height: normal;
   position: absolute;
   top: 56px;
-  width: 243px;
-  height: 100px;
+  width: 240px;
+  height: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* 줄 수 */
+  -webkit-box-orient: vertical; /* 박스 방향 */
 }
 .hongBoImage {
   background-image: url("../images/loading.svg");
