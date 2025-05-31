@@ -92,7 +92,8 @@
 }
 
 .element .box {
-  background-color: #899ec7;
+  background-image: url("../images/annyong.png");
+  background-size: cover;
   height: 350px;
   left: 22px;
   top: 56px;
