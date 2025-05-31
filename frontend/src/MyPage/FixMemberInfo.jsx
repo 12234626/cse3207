@@ -17,17 +17,33 @@ function FixMemberInfo() {
   });
 
   // 기본 이미지 URL 가져오는 함수
-  const getImageUrlById = (id) => {
+  const getImageUrlById = async (id) => {
     if (id === 0 || id === null || id === undefined) {
-      return "http://localhost:3000/public/images/default_profile.jpg";
+      console.log("Invalid image_id:", id);
+      return "";
     }
-    return `http://localhost:3000/api/image?id=${id}`; // 또는 image_table의 url
+    try {
+      const response = await fetch(`http://localhost:3000/api/image?id=${id}`);
+      const imageData = await response.json();
+      console.log("Image data from server:", imageData);
+      if (imageData && imageData.length > 0) {
+        const imageUrl = imageData[0]; // 이미 전체 URL이 들어있음
+        console.log("Generated image URL:", imageUrl);
+        return imageUrl;
+      }
+      console.log("No image data found for id:", id);
+      return "";
+    } catch (error) {
+      console.error("이미지 URL 가져오기 실패:", error);
+      return "";
+    }
   };
 
   useEffect(() => {
     const userData = localStorage.getItem("user");
     if (userData) {
       const user = JSON.parse(userData);
+      console.log("Loaded user data:", user);
       setForm({
         id: user.id,
         name: user.name || "",
@@ -40,9 +56,15 @@ function FixMemberInfo() {
   }, []);
 
   useEffect(() => {
-    if (imageId !== null) {
-      setProfileImage(getImageUrlById(imageId));
-    }
+    const loadImage = async () => {
+      if (imageId !== null) {
+        console.log("Loading image for id:", imageId);
+        const imageUrl = await getImageUrlById(imageId);
+        console.log("Loaded image URL:", imageUrl);
+        setProfileImage(imageUrl);
+      }
+    };
+    loadImage();
   }, [imageId]);
 
   const handleFileChange = async (e) => {
@@ -102,9 +124,11 @@ function FixMemberInfo() {
         // 이미지 ID 업데이트 및 이미지 URL 설정
         if (data.image_id) {
           setImageId(data.image_id);
-          const newImageUrl = getImageUrlById(data.image_id);
+          const newImageUrl = await getImageUrlById(data.image_id);
           setProfileImage(newImageUrl);
           console.log("새로운 이미지 URL:", newImageUrl);
+        } else {
+          setProfileImage("");
         }
 
         alert("회원 정보 수정 완료");
@@ -127,7 +151,11 @@ function FixMemberInfo() {
           <div className="infoBox">
             <div className="profileWrapper">
               <label htmlFor="profileUpload" className="profileCircle">
-                <img src={profileImage} alt="프로필" className="profileImg" />
+                {profileImage ? (
+                  <img src={profileImage} alt="프로필" className="profileImg" />
+                ) : (
+                  <div className="profileImg" />
+                )}
               </label>
               <input
                 id="profileUpload"

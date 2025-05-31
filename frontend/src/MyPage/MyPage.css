@@ -164,6 +164,9 @@
   position: absolute;
   top: 21px;
   width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .screen .sidAndMajor {
