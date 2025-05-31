@@ -53,13 +53,20 @@ async function createImage(req: Request, res: Response) {
 async function createClub(req: Request, res: Response) {
   try {
     const {name, type, field, recruitment, introduction, admin_user_id, title, content} = req.body;
-    const {path} = req.file as any;
-    
-    const image = await (await fetch(`http://localhost:3000/api/image`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({path})
-    })).json();
+    let image_id = null;
+
+    if (req.file) {
+      const {path} = req.file as any;
+      
+      const image = await (await fetch(`http://localhost:3000/api/image`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({path})
+      })).json();
+
+      image_id = image.id;
+    }
+
     const club = await (await fetch(`http://localhost:3000/db/club`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -68,7 +75,7 @@ async function createClub(req: Request, res: Response) {
     const info_post = await (await fetch(`http://localhost:3000/db/post`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({type: "상세 설명", title, content, club_id: club.id, image_id: image.id})
+      body: JSON.stringify({type: "상세 설명", title, content, club_id: club.id, image_id})
     })).json();
 
     await fetch(`http://localhost:3000/db/club_info_post`, {
@@ -102,14 +109,19 @@ async function createClub(req: Request, res: Response) {
 async function updateClub(req: Request, res: Response) {
   try {
     const {club_id, recruitment, introduction, info_post_id, content} = req.body;
-    // const {path} = req.file as any;
-    
-    // const image_id = await (await fetch(`http://localhost:3000/api/image`, {
-    //   method: "POST",
-    //   headers: {"Content-Type": "application/json"},
-    //   body: JSON.stringify({path})
-    // })).json();
-    const image_id = null;
+    let image_id = null;
+
+    if (req.file) {
+      const {path} = req.file as any;
+      
+      const image = await (await fetch(`http://localhost:3000/api/image`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({path})
+      })).json();
+
+      image_id = image.id;
+    }
 
     await fetch(`http://localhost:3000/db/club`, {
       method: "PUT",
@@ -198,18 +210,24 @@ async function login(req: Request, res: Response) {
 async function updateUser(req: Request, res: Response) {
   try {
     const {id, name, password, department, phone} = req.body;
-    const {path} = req.file as any;
+    let image_id = null;
 
-    const image = await (await fetch(`http://localhost:3000/api/image`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({path})
-    })).json();
-    
+    if (req.file) {
+      const {path} = req.file as any;
+      
+      const image = await (await fetch(`http://localhost:3000/api/image`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({path})
+      })).json();
+
+      image_id = image.id;
+    }
+        
     await fetch(`http://localhost:3000/db/user`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id, name, password, department, phone, image_id: image.id})
+      body: JSON.stringify({id, name, password, department, phone, image_id})
     });
 
     fetch(`http://localhost:3000/db/user?id=${id}`)
@@ -222,6 +240,7 @@ async function updateUser(req: Request, res: Response) {
       .json(data[0]);
     });
   } catch (err) {
+    console.error(err);
     res
     .status(500)
     .json({message: err});
@@ -257,18 +276,24 @@ async function getPost(req: Request, res: Response) {
 async function createPost(req: Request, res: Response) {
   try {
     const {type, title, content, club_id} = req.body;
-    const {path} = req.file as any;
+    let image_id = null;
 
-    const image = await (await fetch(`http://localhost:3000/api/image`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({path})
-    })).json();
+    if (req.file) {
+      const {path} = req.file as any;
+      
+      const image = await (await fetch(`http://localhost:3000/api/image`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({path})
+      })).json();
+
+      image_id = image.id;
+    }
     
     fetch(`http://localhost:3000/db/post`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({type, title, content, club_id, image_id: image.id})
+      body: JSON.stringify({type, title, content, club_id, image_id})
     })
     .then(function (response) {
       return response.json();
