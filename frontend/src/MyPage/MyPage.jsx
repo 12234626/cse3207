@@ -36,26 +36,20 @@ function MyPage() {
             const imageData = await response.json();
             console.log("Image data:", imageData);
             if (imageData && imageData.length > 0) {
-              // 이미지 경로를 public URL로 변환
-              const imagePath = imageData[0].path;
-              const imageUrl = `http://localhost:3000/${imagePath}`;
+              const imageUrl = imageData[0]; // 이미 전체 URL이 들어있음
               console.log("Setting image URL:", imageUrl);
               setProfileImage(imageUrl);
             } else {
-              setProfileImage(
-                "http://localhost:3000/public/images/default_profile.jpg"
-              );
+              console.log("No image data found");
+              setProfileImage("");
             }
           } catch (error) {
             console.error("이미지 로딩 에러:", error);
-            setProfileImage(
-              "http://localhost:3000/public/images/default_profile.jpg"
-            );
+            setProfileImage("");
           }
         } else {
-          setProfileImage(
-            "http://localhost:3000/public/images/default_profile.jpg"
-          );
+          console.log("No image_id found");
+          setProfileImage("");
         }
       } catch (error) {
         console.error("user 데이터 파싱 에러:", error);
@@ -167,13 +161,20 @@ function MyPage() {
                 <div className="fixInfoButton" onClick={handleFixInfoButton}>
                   회원 정보 수정
                 </div>
-                {profileImage && (
-                  <img
-                    src={profileImage}
-                    alt="프로필 이미지"
-                    className="profileImage"
-                  />
-                )}
+                <div className="profileImage">
+                  {profileImage && (
+                    <img
+                      src={profileImage}
+                      alt="프로필"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        borderRadius: "75px",
+                      }}
+                    />
+                  )}
+                </div>
                 <div className="sidAndMajor">
                   {user.department} <br />
                   {user.id}
