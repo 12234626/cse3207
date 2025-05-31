@@ -65,7 +65,6 @@ class User extends Model {
   }
 
   @BeforeBulkCreate
-  @BeforeBulkUpdate
   static hashPasswordBulk(instance: User[]) {
     instance.forEach(user => {
       user.password = crypto.createHash("sha512").update(user.password).digest("hex");

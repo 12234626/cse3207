@@ -60,7 +60,7 @@ function updateUser(req: Request, res: Response) {
   const {id, name, password, department, phone, image_id} = req.body;
   
   User
-  .update({name, password, department, phone, image_id}, {where: {id}})
+  .update({name, password, department, phone, image_id}, {where: {id}, individualHooks: true})
   .then(function (data) {
     res
     .status(200)
@@ -70,8 +70,7 @@ function updateUser(req: Request, res: Response) {
     res
     .status(500)
     .json({message: err});
-  }
-  );
+  });
 }
 
 // 유저 삭제
