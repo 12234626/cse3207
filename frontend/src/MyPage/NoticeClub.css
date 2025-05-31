@@ -99,3 +99,21 @@
   word-break: break-word; /* ✅ 너무 긴 단어는 강제로 줄바꿈 */
   box-sizing: border-box; /* ✅ 패딩 포함한 박스 크기 계산 */
 }
+
+.noticeClubPage .emptyNotice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-family: "SUITE-Regular", Helvetica !important;
+  font-size: 20px;
+  color: #666;
+  text-align: center;
+  font-weight: 500;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
