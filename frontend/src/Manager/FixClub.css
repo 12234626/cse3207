@@ -303,20 +303,24 @@ s .URLIn {
   box-shadow: 0 0 5px rgba(92, 110, 247, 0.5);
 }
 
-.ImagePreviewWrapper {
+.imageAndInputs .ImagePreviewWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
   margin-right: 12px;
 }
 
-.clubImagePreview {
-  width: 100px;
-  height: 100px;
+.imageAndInputs .ImagePreviewWrapper .clubImagePreview {
+   /* 좌우 중앙 정렬 */
+  width: 340px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
   border: 1px solid #ccc;
-  
+  display: block;  
+  margin: 0 auto;    
+  position: relative; /* 또는 absolute */
+  left: 9px;
 }
 
 .changeImageBtn {

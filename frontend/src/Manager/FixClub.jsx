@@ -13,7 +13,6 @@ function FixClub() {
   let storyInit = "";
 
   
-
   if (postData) {
     try {
       const parsed = JSON.parse(postData);
@@ -59,8 +58,9 @@ function FixClub() {
     if (file) {
       setNewImage(file);
       setPreviewUrl(URL.createObjectURL(file));
+      setShowImageInput(false);  // 파일 선택 후 버튼 숨기기
     }
-  };
+  }
 
   const handleokClick = async () => {
     try {
