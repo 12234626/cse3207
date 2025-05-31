@@ -35,7 +35,7 @@ async function initTable() {
       const data = JSON.parse(fs.readFileSync(file_path, "utf-8"));
 
       // 더미 데이터 삽입
-      await model.bulkCreate(data, {individualHooks: true});
+      await model.bulkCreate(data);
 
       console.log(`${model_index} 모델 처리 성공`);
     }

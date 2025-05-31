@@ -1,4 +1,4 @@
-import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AllowNull, BeforeCreate, BeforeUpdate} from "sequelize-typescript";
+import {Model, Table, Column, DataType, PrimaryKey, BelongsTo, AllowNull, BeforeCreate, BeforeUpdate, BeforeBulkCreate, BeforeBulkUpdate} from "sequelize-typescript";
 import crypto from "crypto";
 
 import Image from "./image";
@@ -62,6 +62,14 @@ class User extends Model {
   @BeforeUpdate
   static hashPassword(instance: User) {
     instance.password = crypto.createHash("sha512").update(instance.password).digest("hex");
+  }
+
+  @BeforeBulkCreate
+  @BeforeBulkUpdate
+  static hashPasswordBulk(instance: User[]) {
+    instance.forEach(user => {
+      user.password = crypto.createHash("sha512").update(user.password).digest("hex");
+    });
   }
 };
 
