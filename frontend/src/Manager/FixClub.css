@@ -38,6 +38,7 @@ s .URLIn {
   padding: 0 16px;
   box-sizing: border-box;
 
+  overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; /* 부드러운 스크롤 (iOS) */
   padding: 20px 0; /* 위아래 약간 패딩 */

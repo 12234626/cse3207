@@ -8,8 +8,11 @@ function FixClub() {
   const clubData = localStorage.getItem("club");
   const userData = localStorage.getItem("user");
   const postData = localStorage.getItem("post");
+
   let infoPostId = "";
   let storyInit = "";
+
+  
 
   if (postData) {
     try {
@@ -21,6 +24,8 @@ function FixClub() {
       storyInit = "";
     }
   }
+
+
 
   const [story, setStory] = useState(storyInit);
   const club = clubData ? JSON.parse(clubData) : {};
