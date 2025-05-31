@@ -109,6 +109,9 @@
   line-height: normal;
   position: absolute;
   top: 15px;
+  width: 350px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
