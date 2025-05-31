@@ -42,11 +42,12 @@ function JoinedClub() {
     const fetchNoticePosts = async () => {
       try {
         const response = await fetch(
-          // `http://localhost:3000/db/post?type=공지&club_id=${club.id}`
           `http://localhost:3000/db/post/club?id=${club.club_id}`
         );
         const data = await response.json();
-        setNoticePosts(data);
+        // 공지 타입만 필터링
+        const noticePosts = data.filter(post => post.type === "공지");
+        setNoticePosts(noticePosts);
 
         const detailPost = data.find((post) => post.type === "상세 설명");
         if (detailPost) {
@@ -98,19 +99,23 @@ function JoinedClub() {
   return (
     <div className="screen">
       <div className="phoneScreen">
-        <div className="myClubPosts">
-          {posts.map((post, index) => (
-            <div
-              key={index}
-              className="element"
-              onClick={() => handleNoticeClick(post.id)} // 공지 클릭 시 이동
-              style={{ cursor: "pointer" }} // 클릭 가능한 스타일 추가
-            >
-              <div className="myClubPost">
-                <div className="myClubPostName">{post.title}</div>
+      <div className="myClubPosts">
+          {posts.length === 0 ? (
+            <div className="emptyNotice">아직 작성된 공지글이 없습니다</div>
+          ) : (
+            posts.map((post, index) => (
+              <div
+                key={index}
+                className="element"
+                onClick={() => handleNoticeClick(post.id)}
+                style={{ cursor: "pointer" }}
+              >
+                <div className="myClubPost">
+                  <div className="myClubPostName">{post.title}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
 
         <div className="joinedClubTop">
