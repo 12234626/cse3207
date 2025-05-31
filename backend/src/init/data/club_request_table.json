@@ -165,5 +165,65 @@
         "status": "대기",
         "club_id": 16,
         "user_id": 12000010
+    },
+    {
+        "id": 29,
+        "status": "대기",
+        "club_id": 11,
+        "user_id": 12000001
+    },
+    {
+        "id": 30,
+        "status": "대기",
+        "club_id": 11,
+        "user_id": 12000002
+    },
+    {
+        "id": 31,
+        "status": "대기",
+        "club_id": 11,
+        "user_id": 12000003
+    },
+    {
+        "id": 32,
+        "status": "대기",
+        "club_id": 11,
+        "user_id": 12000004
+    },
+    {
+        "id": 33,
+        "status": "대기",
+        "club_id": 11,
+        "user_id": 12000005
+    },
+    {
+        "id": 34,
+        "status": "대기",
+        "club_id": 11,
+        "user_id": 12000006
+    },
+    {
+        "id": 35,
+        "status": "대기",
+        "club_id": 11,
+        "user_id": 12000007
+    },
+    {
+        "id": 36,
+        "status": "대기",
+        "club_id": 11,
+        "user_id": 12000008
+    },
+    {
+        "id": 37,
+        "status": "대기",
+        "club_id": 11,
+        "user_id": 12000009
+    },
+    {
+        "id": 38,
+        "status": "대기",
+        "club_id": 11,
+        "user_id": 12000010
     }
 ]
