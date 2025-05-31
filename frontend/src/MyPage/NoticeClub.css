@@ -80,6 +80,7 @@
 .noticeClubPage .BBlueBox {
   background-image: url("../images/annyong.png");
   background-size: cover;
+  border-radius: 8px;
   height: 350px;
   left: 22px;
   top: 100px;
