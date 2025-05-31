@@ -7,13 +7,12 @@ import "./WriteHongboPost.css";
 function WriteHongboPost() {
   const navigate = useNavigate();
 
-  const [title, setTitle] = useState("");     // 제목 상태
+  const [title, setTitle] = useState(""); // 제목 상태
   const [content, setContent] = useState(""); // 내용 상태
   const [clubName, setClubName] = useState("");
   const [clubId, setClubId] = useState(null);
   const [image, setImage] = useState(null); //이미지
   const [preview, setPreview] = useState(null); //이미지
-
 
   useEffect(() => {
     const clubData = JSON.parse(localStorage.getItem("club"));
@@ -31,33 +30,31 @@ function WriteHongboPost() {
       alert("제목과 내용을 모두 입력해주세요.");
       return;
     }
-  
+
     try {
       const formData = new FormData();
       formData.append("type", "홍보");
       formData.append("title", title);
       formData.append("content", content);
       formData.append("club_id", clubId); // 숫자라도 문자열로 자동 처리됨
-  
+
       if (image) {
         formData.append("image", image);
       }
-  
+
       await axios.post("http://localhost:3000/api/post", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-  
+
       navigate("/MainH");
     } catch (error) {
       console.error("글 등록 실패:", error);
       alert("글 등록에 실패했습니다.");
     }
   };
-  
 
-  
   const handleBackClick = () => {
     navigate("/Manager");
   };
@@ -65,7 +62,6 @@ function WriteHongboPost() {
   const handleClubInfo = () => {
     navigate("/WriteClubInfoPost");
   };
-
 
   // 이미지 업로드 핸들러
   const handleImageChange = (e) => {
@@ -80,39 +76,35 @@ function WriteHongboPost() {
     <div className="screen">
       <div className="phoneScreen">
         <div className="createClubMain">
-        
-
           <textarea
-              className="clubInfoInput"
-              placeholder="글 작성"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-            />
+            className="hongboInfoInput"
+            placeholder="글 작성"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
 
-            <label htmlFor="imageUpload" className="clubImgInput">
-                {preview ? (
-                  <img src={preview} alt="미리보기" className="previewImage" />
-                ) : (
-                  "+"
-                )}
-              </label>
-              <input
-                id="imageUpload"
-                type="file"
-                accept="image/*"
-                style={{ display: "none" }}
-                onChange={handleImageChange}
-              />
+          <label htmlFor="imageUpload" className="clubImgInput">
+            {preview ? (
+              <img src={preview} alt="미리보기" className="previewImage" />
+            ) : (
+              "+"
+            )}
+          </label>
+          <input
+            id="imageUpload"
+            type="file"
+            accept="image/*"
+            style={{ display: "none" }}
+            onChange={handleImageChange}
+          />
 
-
-            <input
-              type="text"
-              className="postNameInput"
-              placeholder="제목을 입력하세요"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-            
+          <input
+            type="text"
+            className="postNameInput1"
+            placeholder="제목을 입력하세요"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
 
           {/* <div className="view-3"> */}
           <div className="hongboOrClubInfo">
@@ -143,4 +135,3 @@ function WriteHongboPost() {
   );
 }
 export default WriteHongboPost;
-
