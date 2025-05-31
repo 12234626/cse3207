@@ -18,7 +18,6 @@ function FixMemberInfo() {
 
   // 기본 이미지 URL 가져오는 함수
   const getImageUrlById = (id) => {
-    const timestamp = Date.now(); // 캐시 방지용
     if (id === 0 || id === null || id === undefined) {
       return "http://localhost:3000/public/images/default_profile.jpg";
     }
