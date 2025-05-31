@@ -22,16 +22,23 @@ function getPost(req: Request, res: Response) {
 
 // 동아리로 게시글 조회
 function getPostByClub(req: Request, res: Response) {
+  const { id, type } = req.query;
+  
   Club
-  .findAll({where: req.query})
+  .findAll({where: { id }})
   .then(function (data) {
     return data.map(function (data) {
       return data.id;
     })
   })
   .then(function (data) {
+    const whereClause: any = { club_id: data };
+    if (type) {
+      whereClause.type = type;
+    }
+    
     Post
-    .findAll({where: {club_id: data}, include: [{model: Club}, {model: Image}]})
+    .findAll({where: whereClause, include: [{model: Club}, {model: Image}]})
     .then(function (data) {
       res
       .status(200)
