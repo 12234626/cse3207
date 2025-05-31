@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
 // import image2 from "./image-2.svg";
 // import image3 from "./image-3.svg";
@@ -6,49 +7,56 @@ import React, { useEffect, useState } from "react";
 // import image5 from "./image-5.svg";
 // import image6 from "./image-6.svg";
 // import image from "./image.svg";
-import { useNavigate } from "react-router-dom";
 import "./MyPage.css";
 
 function MyPage() {
   const [user, setUser] = useState(null);
   const [club, setClub] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [profileImage, setProfileImage] = useState(""); // 이미지 경로 상태 추가
-  // const location = useLocation();
+  const [profileImage, setProfileImage] = useState("");
+  const location = useLocation();
 
-  useEffect(() => {
+  const loadUserData = async () => {
     const userData = localStorage.getItem("user");
     const clubData = localStorage.getItem("club");
 
     if (userData) {
-      // try {
-      //   const parsedUser = JSON.parse(userData);
-      //   const finalUser = parsedUser.user ? parsedUser.user : parsedUser;
-      //   setUser(finalUser);
-
-      //   // 이미지 불러오기
-      //   fetch(`http://localhost:3000/api/image_url?id={finalUser.id}`)
-      //     .then((res) => res.json())
-      //     .then((data) => {
-      //       if (data && data.length > 0) {
-      //         setProfileImage(data[0].url); // 첫 번째 이미지 URL 사용
-      //       }
-      //     })
-      //     .catch((error) => {
-      //       console.error("이미지 불러오기 실패:", error);
-      //     });
-      // } catch (error) {
-      //   console.error("user 데이터 파싱 에러:", error);
-      // }
-
       try {
         const parsedUser = JSON.parse(userData);
         const finalUser = parsedUser.user ? parsedUser.user : parsedUser;
         setUser(finalUser);
+        console.log("Loaded user data:", finalUser);
 
-        // 임시 기본 프로필 이미지 경로 설정
-        const imageUrl = `http://localhost:3000/public/images/default_profile.jpg`; // 추후 image_id별 URL 매핑 가능
-        setProfileImage(imageUrl);
+        // image_id를 기반으로 프로필 이미지 설정
+        if (finalUser.image_id) {
+          try {
+            const response = await fetch(
+              `http://localhost:3000/api/image?id=${finalUser.image_id}`
+            );
+            const imageData = await response.json();
+            console.log("Image data:", imageData);
+            if (imageData && imageData.length > 0) {
+              // 이미지 경로를 public URL로 변환
+              const imagePath = imageData[0].path;
+              const imageUrl = `http://localhost:3000/${imagePath}`;
+              console.log("Setting image URL:", imageUrl);
+              setProfileImage(imageUrl);
+            } else {
+              setProfileImage(
+                "http://localhost:3000/public/images/default_profile.jpg"
+              );
+            }
+          } catch (error) {
+            console.error("이미지 로딩 에러:", error);
+            setProfileImage(
+              "http://localhost:3000/public/images/default_profile.jpg"
+            );
+          }
+        } else {
+          setProfileImage(
+            "http://localhost:3000/public/images/default_profile.jpg"
+          );
+        }
       } catch (error) {
         console.error("user 데이터 파싱 에러:", error);
       }
@@ -64,7 +72,12 @@ function MyPage() {
     }
 
     setLoading(false);
-  }, []);
+  };
+
+  // 컴포넌트가 마운트될 때와 location이 변경될 때 데이터 로드
+  useEffect(() => {
+    loadUserData();
+  }, [location]);
 
   const navigate = useNavigate();
 
@@ -97,7 +110,7 @@ function MyPage() {
 
     const confirmWithdraw = window.confirm("정말 탈퇴하시겠습니까?");
     if (!confirmWithdraw) return;
-    
+
     try {
       const response = await fetch(`http://localhost:3000/db/user/`, {
         method: "DELETE",
