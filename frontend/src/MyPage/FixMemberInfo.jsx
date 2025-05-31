@@ -85,23 +85,38 @@ function FixMemberInfo() {
       });
 
       if (response.ok) {
+        const data = await response.json();
+        console.log("서버 응답 데이터:", data);
+        console.log("image_id 값:", data.image_id);
+
         const updateUser = {
           ...storedUser,
           name: form.name,
           department: form.department,
           phone: form.phone,
-          // image_id는 백엔드에서 처리된 후 응답으로 받아와야 함
+          image_id: data.image_id,
         };
+        console.log("업데이트된 사용자 정보:", updateUser);
 
         localStorage.setItem("user", JSON.stringify(updateUser));
+
+        // 이미지 ID 업데이트 및 이미지 URL 설정
+        if (data.image_id) {
+          setImageId(data.image_id);
+          const newImageUrl = getImageUrlById(data.image_id);
+          setProfileImage(newImageUrl);
+          console.log("새로운 이미지 URL:", newImageUrl);
+        }
+
         alert("회원 정보 수정 완료");
         navigate("/MyPage", { replace: true });
       } else {
         const data = await response.json();
+        console.log("에러 응답:", data);
         alert("수정 실패: " + (data.message || "알 수 없는 오류"));
       }
     } catch (err) {
-      console.error(err);
+      console.error("에러 발생:", err);
       alert(err);
     }
   };
