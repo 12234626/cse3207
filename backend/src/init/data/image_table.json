@@ -16,5 +16,14 @@
   },
   {
     "path": "public/images/ctp.jpg"
+  },
+  {
+    "path": "public/images/tricky_info.jpg"
+  },
+  {
+    "path": "public/images/tricky_event.jpg"
+  },
+  {
+    "path": "public/images/tricky_event2.jpg"
   }
 ]
