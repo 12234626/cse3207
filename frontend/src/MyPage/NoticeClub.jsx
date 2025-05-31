@@ -8,17 +8,16 @@ function NoticeClub() {
 
   const [noticeTitle, setNoticeTitle] = useState("");
   const [noticeContent, setNoticeContent] = useState("");
-  const [noticeImageUrl, setNoticeImageUrl] = useState(null); // 이미지 URL 상태
-
+  const [noticeImageUrl, setNoticeImageUrl] = useState(null);
+  const [clubImages, setClubImages] = useState([]);
 
   const handleBackClick = () => {
-    navigate("/JoinedClub"); // 이전 페이지로 이동
+    navigate("/JoinedClub");
   };
 
   useEffect(() => {
     const fetchNotice = async () => {
       try {
-        // 'notice' 대신 'post'로, id를 쿼리파라미터로 보냄
         const response = await fetch(`http://localhost:3000/db/post?id=${noticeId}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -26,20 +25,35 @@ function NoticeClub() {
 
         const data = await response.json();
 
-        // 백엔드에서 배열 형태로 반환할 가능성 있으니 첫 번째 요소를 사용
         if (Array.isArray(data) && data.length > 0) {
-          const notice = data[0]; // 첫 번째 게시글 사용
-          if (notice.type === "공지") { // 공지 타입인 경우에만 표시
+          const notice = data[0];
+          if (notice.type === "공지") {
             setNoticeTitle(notice.title || "");
             setNoticeContent(notice.content || "");
+
+            // 동아리 이미지 가져오기
+            try {
+              const clubResponse = await fetch(`http://localhost:3000/db/club?id=${notice.club_id}`);
+              const clubData = await clubResponse.json();
+              
+              if (Array.isArray(clubData) && clubData.length > 0) {
+                const club = clubData[0];
+                if (club.image_id) {
+                  const imgRes = await fetch(`http://localhost:3000/api/image?id=${club.image_id}`);
+                  const imgData = await imgRes.json();
+                  setClubImages(imgData); // 동아리 이미지 설정
+                }
+              }
+            } catch (clubError) {
+              console.error("동아리 이미지 요청 실패:", clubError);
+            }
 
             if (notice.image_id) {
               try {
                 const imgRes = await fetch(`http://localhost:3000/api/image?id=${notice.image_id}`);
                 const imgData = await imgRes.json();
-                const imageUrl = imgData[0]; // 배열에서 첫 번째 URL 사용
+                const imageUrl = imgData[0];
                 setNoticeImageUrl(imageUrl);
-                console.log("공지 이미지 URL:", imageUrl);
               } catch (imgError) {
                 console.error("이미지 URL 요청 실패:", imgError);
                 setNoticeImageUrl(null);
@@ -47,17 +61,16 @@ function NoticeClub() {
             }
           } else {
             setNoticeTitle("");
-            setNoticeContent("해당 공지를 찾을 수 없습니다.");
+            setNoticeContent("아직 작성된 공지글이 없습니다.");
           }
         } else {
           setNoticeTitle("");
-          setNoticeContent("해당 공지를 찾을 수 없습니다.");
+          setNoticeContent("아직 작성된 공지글이 없습니다.");
         }
-  
       } catch (error) {
         console.error("공지 데이터를 불러오는 중 오류 발생:", error);
         setNoticeTitle("");
-        setNoticeContent("공지 데이터를 불러오는데 실패했습니다.");
+        setNoticeContent("아직 작성된 공지글이 없습니다.");
       }
     };
 
@@ -68,35 +81,53 @@ function NoticeClub() {
     <div className="noticeClubPage">
       <div className="noticePhoneScreen">
         <div className="noticetop">
-        <div className="noticeTitletext">{noticeTitle}</div>
-        <button className="backButton" onClick={handleBackClick}></button>
+          <div className="noticeTitletext">{noticeTitle}</div>
+          <button className="backButton" onClick={handleBackClick}></button>
         </div>
 
-
-
         <div className="noticeBody">
-            <div className="noticeGroup">
-                
+          <div className="noticeGroup">
+            {noticeContent === "아직 작성된 공지글이 없습니다." ? (
+              <div className="emptyNotice">
+                {noticeContent}
+              </div>
+            ) : (
+              <>
                 <div className="YB"></div>
                 <div
-              className="BBlueBox"
-              style={
-                noticeImageUrl
-                  ? {
-                      backgroundImage: `url(${noticeImageUrl})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }
-                  : {}
-              }
-            ></div>
+                  className="BBlueBox"
+                  style={
+                    noticeImageUrl
+                      ? {
+                          backgroundImage: `url(${noticeImageUrl})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                        }
+                      : {}
+                  }
+                ></div>
                 <div className="YB"></div>
                 <div className="noticeContenttext" style={{ whiteSpace: "pre-wrap" }}>
-                {noticeContent ? noticeContent : "아직 작성된 공지글이 없습니다"}
+                  {noticeContent}
                 </div>
-
-            </div>
-
+                {clubImages.length > 0 && (
+                  <div className="clubImages">
+                    {clubImages.map((imageUrl, index) => (
+                      <div
+                        key={index}
+                        className="clubImagePreview"
+                        style={{
+                          backgroundImage: `url(${imageUrl})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>
