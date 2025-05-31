@@ -46,17 +46,19 @@ function JoinedClub() {
         );
         const data = await response.json();
         // 공지 타입만 필터링
-        const noticePosts = data.filter(post => post.type === "공지");
+        const noticePosts = data.filter(post => post.type === "공지")
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // ✅ 최신순 정렬;
+
         setNoticePosts(noticePosts);
 
-        const detailPost = data.find((post) => post.type === "상세 설명");
-        if (detailPost) {
-          setClubName(detailPost.club.name);
-          localStorage.setItem("post", JSON.stringify(detailPost));
-        } else {
-          setClubName(club.club.name);
-          localStorage.removeItem("post");
-        }
+        // const detailPost = data.find((post) => post.type === "상세 설명");
+        // if (detailPost) {
+        //   setClubName(detailPost.club.name);
+        //   localStorage.setItem("post", JSON.stringify(detailPost));
+        // } else {
+        //   setClubName(club.club.name);
+        //   localStorage.removeItem("post");
+        // }
       } catch (error) {
         console.error("가입한 동아리 불러오기 실패", error);
       }
@@ -130,6 +132,7 @@ function JoinedClub() {
           ></button>
         )}
       </div>
+      
     </div>
   );
 }

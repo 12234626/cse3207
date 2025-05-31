@@ -12,14 +12,10 @@ function MainH() {
     axios.get("http://localhost:3000/api/post?type=홍보").then(async (response) => {
       const postsData = response.data;
       
-      console.log("서버 응답 데이터:", postsData); 
+      postsData.sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt));
+      
 
-        // createdAt 기준 내림차순 정렬 (최신 글이 위로)
-    const sortedPosts = [...postsData].sort(
-      (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-    );
-
-      setEventPosts(sortedPosts);
+      setEventPosts(postsData);
     });
   }, []);
 
