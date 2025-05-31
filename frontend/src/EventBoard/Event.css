@@ -41,6 +41,8 @@
   align-items: center; /* 수평 가운데 정렬 */
   position: relative;
   width: 393px;
+
+  overflow-y: auto;
 }
 
 .element .text-wrapper {
