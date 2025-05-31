@@ -119,6 +119,7 @@
   position: absolute;
   top: 20px;
   width: 24px;
+  cursor: pointer;
 }
 
 .screen .topBar {

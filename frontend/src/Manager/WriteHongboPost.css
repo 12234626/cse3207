@@ -225,6 +225,7 @@
   left: 19px;
   top: 650px;
   width: 170px;
+  cursor: pointer;
 }
 
 .screen .clubInfoBlack {
@@ -289,6 +290,11 @@
   font-family: "Inter-Bold", Helvetica;
   font-size: 17px;
   font-weight: 700;
+  cursor: pointer;
+}
+
+.screen .okButton:hover {
+  background-color: #adb0c0;
 }
 
 /* .screen .overlap-4 {

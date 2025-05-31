@@ -103,6 +103,10 @@
   position: absolute;
   top: 12px;
   width: 57px;
+  cursor: pointer;
+}
+.screen .delete:hover {
+    background-color: #6464642a;
 }
 /* .screen .buttonBox {
   border: 3px solid green;
